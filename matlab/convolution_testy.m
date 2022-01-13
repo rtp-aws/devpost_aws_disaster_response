@@ -324,8 +324,6 @@ num_new_patients = [1 2 1 0 0]
 % output
 dosages_given = [0 0 0 0 0 0 0]
 
-testy = [0 0 0]
-
 for d=0:5
     a_sum = 0;
     % This cruft is because I need to rewrite for matlab syntax which
@@ -352,7 +350,10 @@ for d=0:5
     fprintf('dosages_given[day = %i] = %d \n', d2, dosages_given(d2))
 end
 
+% unfsck the index starting at one thing
+dosages_given = circshift(dosages_given,  [0, -1]);
 
+% dump output
 dosages_given
 
 
