@@ -10,3 +10,7 @@ I like to know what works for you.
 * irssi
 * slack
 * curl
+* exim
+* mutt
+* make
+
