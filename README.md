@@ -10,13 +10,15 @@ https://devpost.com/software/todo-ot17ds
 * `matlab/`  sample matlab experiments
 * `R/`  sample R experiments
 
-## NCDO Cameras
+## NCDOT Cameras
 
 This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  However they are tiny low res images and not live.  I have contacted the NCDOT but not received a response.
 
-These are static jpg's.  
+These are active webcams which provide a jpg.  
 
-The urls look like its a camera name and timestamp.  Could I just webscrape with that?
+The urls look like its a camera name and timestamp.  Its not a timestamp. Fetch of that URL gives the current camera image.  
+
+*TODO* Determine update frequency
 
 
 ### Best Camera so far
