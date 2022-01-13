@@ -1,0 +1,3 @@
+# mins, hrs, day-of-mon, month, weekday, cmd
+# run every six minutes
+6 * * * * /home/davis/progs/devpost_aws_disaster_recovery/bin/scan_cameras.sh > /dev/null

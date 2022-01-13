@@ -43,7 +43,7 @@ for a_camname_key in "${!cams[@]}"; do
 done
 
 
-
+# REF https://stackoverflow.com/questions/1194882/how-to-generate-random-number-in-bash/1195035
 # I used this before the hash map / loop was implemented
 #cp foo.jpg NC_147_DAVIS_DR$((1 + SRANDOM % 1000)).jpg
 
