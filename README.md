@@ -23,13 +23,12 @@ available.  Perhaps this note will give you an idea of my approach to this proje
 
 1. Make a github id.  Afterwards ask for access to the repo, or send it via slack.
 2. Visit https://rtp-aws.org look at the *about* page and join the slack workspace and then join the `#hackathon` channel.  Try to keep your conversation there. I'm not big on thread stuff, so don't worry about that.
-3. Do whatever you wish.   To update the github repo, you will need to do a `git pull request`.  I'll address the commit.  You will learn how to do it by doing it. The slack is available to ask questions.
-4. If you don't feel like doing whatever you think moves the ball forward yourself,
-examine the code. Look for the keyword `TODO:`  This is your signal something has
-been left to-do.  You can do it.  I believe in you.
+3. Do whatever you wish.   Do whatever you think moves the ball forward based upon your own idea.  To update the github repo, you will need to do a `git pull request`.  I'll address the commit.  You will learn how to "do it by doing it." The slack is available to ask questions. FWIW, we spent two weekends doing `git pull requests` a few weeks ago in our usergroups.  I documented [git usage](https://gitlab.com/netskink/git-testy)  a while back.  If that repo doesn't help you,  do as I do  `google site:stackoverflow.com how do I yadda yadda`. Or, ask me. Most likey we will start together with the previous step though.
+4. If you do whatever you wish is too general,  examine the code. Look for the keyword `TODO:`  This is your signal something has been left to-do.  You can do it.  I believe in you.
 5. Larger to-do tasks are identified in the github issues tab.  You can either file
-a bug or a feature request.  I'll let you know my opinion via the issue.  
-6. Attend the weekly workshop sundays at 11:00am EST. The online meeting is on https://rtp-aws.org in the about page.
+a bug or a feature request.  I'll let you know my opinion via the issue.  Don't be intimidated.  Its an easy way to work out issues.
+6. Attend the weekly workshop Sundays at 11:00am EST. The online meeting is on https://rtp-aws.org in the about page.  If you are so inclined join the earlier 10:00am EST meeting for gcp.
+
 
 General opinion on my approach.  I am not a good leader/motivator whatever. I am not
 even a good teacher.  I am simply a guide.  This is what I want you to
