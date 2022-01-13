@@ -4,7 +4,7 @@
 # run every six minutes
 #0,6,12,18,24,30,36,42,48,54 * * * * /home/davis/progs/devpost_aws_disaster_recovery/bin/scan_cameras.sh > /dev/null
 # run every five minutes
-#0,5,10,15,20,25,30,35,40,45,50,55 * * * * /home/davis/progs/devpost_aws_disaster_recovery/bin/scan_cameras.sh > /dev/null
+0,5,10,15,20,25,30,35,40,45,50,55 * * * * /home/davis/progs/devpost_aws_disaster_recovery/bin/scan_cameras.sh > /dev/null
 # run every four minutes
-0,4,8,12,16,20,24,28,32,36,40,44,48,52,58 * * * * /home/davis/progs/devpost_aws_disaster_recovery/bin/scan_cameras.sh > /dev/null
-~
+# the camera for NC147 updates every 5 minutes
+# 0,4,8,12,16,20,24,28,32,36,40,44,48,52,58 * * * * /home/davis/progs/devpost_aws_disaster_recovery/bin/scan_cameras.sh > /dev/null

@@ -10,12 +10,14 @@ I like to know what works for you.
 * irssi -C irc.libera.chat
 * slack
 * curl
-* exim
+* [exim](mail.md)
 * mutt
 * make
+  make gitupdate
+
 * octave / matlab
 * git
-* R
+* [R](R.md)
 * RStudio
 
 
