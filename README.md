@@ -57,10 +57,10 @@ https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=164208223
 #### Toll 540/US 1
 Newer camera.  Shows junction of roadway and elevated roadway, but distant.
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642082356669)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642082356669
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214
 ```
 
 
@@ -80,10 +80,18 @@ https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082
 
 Shows roadway with wide median and seam in distance.
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642083392226)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642095364324)
 
 ```
 https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642083392226
 ```
+#### TOLL540 and Apex BBQ Rd
 
 
+Shows roadway with wide shoulder and hi res
+
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555)
+
+```
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555
+```
