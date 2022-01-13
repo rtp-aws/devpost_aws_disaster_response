@@ -7,7 +7,7 @@ I like to know what works for you.
 * ghostwriter
 * crontab
 * bash
-* irssi
+* irssi -C irc.libera.chat
 * slack
 * curl
 * exim
@@ -15,5 +15,7 @@ I like to know what works for you.
 * make
 * octave / matlab
 * git
+* R
+* RStudio
 
 
