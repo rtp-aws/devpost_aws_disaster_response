@@ -44,7 +44,9 @@ First thing we are going to do is simple.  See if we can use edge detection to m
 Here is a subset of the NC 147 (Toll) & Davis Drive camera.  The image shows the seam between the elevated portion which will freeze first and the part which is not elevated.  Wind will not be blowing underneath this part.  Also traffic is not likely to be there, so we might find it helpful.  The interesting part is that we are lucky that its concrete on both portions where the edge is.  I'll drive out to take a look.  Perhaps the non elevated portion is where the asphalt starts.  However, note the other end of the bridge looks like the concrete extends to the non elevated portion.
 
 ![img](imgs/NC147_DAVIS_DR_subset.png)
+
 and the edge version
+
 ![img](imgs/NC147_DAVIS_DR_subset_edge.png)
 
 
