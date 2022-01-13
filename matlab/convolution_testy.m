@@ -356,5 +356,10 @@ dosages_given = circshift(dosages_given,  [0, -1]);
 % dump output
 dosages_given
 
+% do it again using the api
+% how much dosages do you do each day?
+conv(dosage_schedule, num_new_patients)
+
+
 
 
