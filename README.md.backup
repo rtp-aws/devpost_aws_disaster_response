@@ -27,7 +27,8 @@ available.  Perhaps this note will give you an idea of my approach to this proje
 4. If you do whatever you wish is too general,  examine the code. Look for the keyword `TODO:`  This is your signal something has been left to-do.  You can do it.  I believe in you.
 5. Larger to-do tasks are identified in the github issues tab.  You can either file
 a bug or a feature request.  I'll let you know my opinion via the issue.  Don't be intimidated.  Its an easy way to work out issues.
-6. Attend the weekly workshop Sundays at 11:00am EST. The online meeting is on https://rtp-aws.org in the about page.  If you are so inclined join the earlier 10:00am E
+6. Attend the weekly workshop Sundays at 11:00am EST. The online meeting is on https://rtp-aws.org in the about page.  If you are so inclined join the earlier 10:00am EST meeting for gcp.
+
 
 General opinion on my approach.  I am not a good leader/motivator whatever. I am not
 even a good teacher.  I am simply a guide.  This is what I want you to
@@ -117,7 +118,7 @@ https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082
 
 #### I-40 @ US-1
 
-Shows roadway with wide median and seam in distance.
+Shows roadway with wide median and seam in distance. Also seems to be well lit.  Is than error?
 
 ![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642095364324)
 
@@ -127,7 +128,7 @@ https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=164208339
 #### TOLL540 and Apex BBQ Rd
 
 
-Shows roadway with wide shoulder and hi res
+Shows roadway with wide shoulder and hi res.  If the camera was angled down some it co
 
 ![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555)
 

@@ -118,7 +118,7 @@ https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082
 
 #### I-40 @ US-1
 
-Shows roadway with wide median and seam in distance.
+Shows roadway with wide median and seam in distance. Also seems to be well lit.  Is than error?
 
 ![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642095364324)
 
@@ -128,7 +128,7 @@ https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=164208339
 #### TOLL540 and Apex BBQ Rd
 
 
-Shows roadway with wide shoulder and hi res
+Shows roadway with wide shoulder and hi res.  If the camera was angled down some it could be awesome.
 
 ![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555)
 
