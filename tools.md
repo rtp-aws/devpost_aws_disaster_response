@@ -14,5 +14,6 @@ I like to know what works for you.
 * mutt
 * make
 * octave / matlab
+* git
 
 
