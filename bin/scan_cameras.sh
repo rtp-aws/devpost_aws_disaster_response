@@ -3,6 +3,9 @@
 
 
 
+# simple config
+TOP_DIR="/home/davis/progs/devpost_aws_disaster_recovery/"
+RAWDATA_DIR="${TOP_DIR}/raw_data/"
 
 
 
@@ -30,13 +33,12 @@ for a_camname_key in "${!cams[@]}"; do
     a_url=${cams[$a_camname_key]}
 
 
-    curl ${a_url}   -H 'Connection: keep-alive'   -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"'   -H 'sec-ch-ua-mobile: ?0'   -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'   -H 'sec-ch-ua-platform: "Linux"'   -H 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'   -H 'Sec-Fetch-Site: cross-site'   -H 'Sec-Fetch-Mode: no-cors'   -H 'Sec-Fetch-Dest: image'   -H 'Referer: https://drivenc.gov/'   -H 'Accept-Language: en-US,en;q=0.9'   --compressed --output ${a_filename_root}_${the_date}.jpg
-
-
     # this is one bring string.
     # TODO: break it up into pieces with variables for each part.  Then combine the expression into one 
     # line less than 80 columns if possible.
-    #curl 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791'   -H 'Connection: keep-alive'   -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"'   -H 'sec-ch-ua-mobile: ?0'   -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'   -H 'sec-ch-ua-platform: "Linux"'   -H 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'   -H 'Sec-Fetch-Site: cross-site'   -H 'Sec-Fetch-Mode: no-cors'   -H 'Sec-Fetch-Dest: image'   -H 'Referer: https://drivenc.gov/'   -H 'Accept-Language: en-US,en;q=0.9'   --compressed --output foo.jpg
+    curl ${a_url}   -H 'Connection: keep-alive'   -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"'   -H 'sec-ch-ua-mobile: ?0'   -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'   -H 'sec-ch-ua-platform: "Linux"'   -H 'Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'   -H 'Sec-Fetch-Site: cross-site'   -H 'Sec-Fetch-Mode: no-cors'   -H 'Sec-Fetch-Dest: image'   -H 'Referer: https://drivenc.gov/'   -H 'Accept-Language: en-US,en;q=0.9'   --compressed --output ${RAWDATA_DIR}/${a_filename_root}_${the_date}.jpg
+
+
 
 done
 
