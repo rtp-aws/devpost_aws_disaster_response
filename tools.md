@@ -13,4 +13,6 @@ I like to know what works for you.
 * exim
 * mutt
 * make
+* octave / matlab
+
 
