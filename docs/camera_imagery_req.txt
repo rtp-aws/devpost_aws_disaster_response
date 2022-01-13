@@ -1,30 +1,60 @@
+
 Hello
 
-I'm sure you heard about the recent ice/snow storm which stranded hundreds of drivers in VA.  I was thinking of a response to that relative to an Amazon Web Services (AWS) sponsored hackathon.
-
-Here is the hackathon info on devpost for the call to action:https://awsdisasterresponse.devpost.com/
-
-I got a late start, but its only because I found out about it just recently.  However, with that said, I have spent considerable time trying to get access to some camera footage via the NCDOT and NCEM.  Sadly that has been a slow painful process. In fact, the folks I spoke to were not very helpful.  I recently talked to someone who suggested I talk to you.
-
-If it helps, I formed two user groups here in Durham, https://www.rtp-aws.org and https://www.rtp-gcp.org.  I mostly help people learn how to use cloud computing on Google Cloud Platform and AWS.  However, I have worked for a few startups over the years.  One did a delta detect system for identifying bounding boxes for areas of change in satellite images.  The business model in this case was for insurance agencies to identify buildings which had large scale changes which might influence insurance liability.  For example a road closing which was the shortest route to emergency services or a water tower constructed on a roof.  I also won an in house contest to count date palm trees in satellite images for large orchards.
 
 
-Please note this is not a project for hire.  Its a project for social good and a workable goal that I can use to teach others how to perform computer vision AI.
+I'm sure you heard about the recent ice/snow storm which stranded hundreds of drivers in VA. I was thinking of a response to that relative to an Amazon Web Services (AWS) sponsored hackathon.
 
 
 
-So how can you help?  Well, I am looking for a contact that will help me get access to training data.  
+Here is the hackathon info on devpost:
 
-Specifically I am looking for images which have the following characteristics
+https://awsdisasterresponse.devpost.com/
 
-o   Sable camera - same footage, same angle, close up is preferrable.
 
-o  Daytime camera footage is great. It will have shadows which vary that might cause a problem.  However its better than night time imagery which might not even be visible. ie. I have seen some public webcams which do not use infrared capabilities for night viewing.
 
-o   Cars will be in the roadway.  I want to isolate the portion of the roadway not obscured by noisy data such as cars.  Preferably the area to the right of white line and the shoulder.
 
-o  A single bridge. I don't need variable bridges for the limited time left in the project.
 
-o   Ideally the seam between roadway and elevated portion since ice will form here first and persist on the elevated portion.
+Please note this is not a project for hire. Its a project for social good and a workable goal that I can use to teach others how to perform computer vision AI.
+
+
+
+I have tried to get access to camera footage via the NCDOT and NCEM. Sadly that has been unfruitful. I recently talked to someone who suggested I talk to you.
+
+
+
+If it helps, I formed two user groups here in Durham, https://www.rtp-aws.org and https://www.rtp-gcp.org. I mostly help people learn how to use cloud computing on AWS and Google Cloud Platform. However, I have worked for a few startups over the years. One did a system for identifying bounding boxes for areas of change in satellite images. The business model in this case was for insurance agencies to identify buildings which had large scale changes which might influence insurance liability. For example a road closing which was the shortest route to emergency services or a water tower constructed on a roof. I also participated in an in-house contest to count date palm trees in satellite images for large orchards.
+
+
+
+So how can you help? Well, I am looking for a contact that will help me get access to training data. 
+
+
+
+Specifically I am looking for images which has the following characteristics
+
+
+
+o  Sable camera - same footage, same angle, close up is preferable. I want to avoid ortho-rectification if possible.
+
+
+
+o Daytime camera footage is great. It will have shadows which vary that might cause a problem. However its better than night time imagery which might not even be visible. ie. I have seen some public webcams which do not use infrared capabilities for night viewing.
+
+
+
+o  Cars will be in the roadway. I want to isolate the portion of the roadway not obscured by noisy data such as cars. Preferably the area to the right of white line and the shoulder. If such a region is visible I can easily enough isolate it.
+
+
+
+o A single bridge. I don't need variable bridges for the limited time left in the project. I would like data during normal conditions and before, during an ice storm. If possible a date stamp and location for correlation with weather data.
+
+
+
+o  Ideally the seam between roadway and elevated portion since ice will form here first and persist on the elevated portion.
+
+
+
+
 
 
