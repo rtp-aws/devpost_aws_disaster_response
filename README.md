@@ -10,9 +10,10 @@ This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  Howev
 These are static jpg's.  
 
 This one has a good view of white line, shoulder and appears to be potentially high res.
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751)
 ```
 I-440 & US 64 Bypass
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751)
+
 https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751
 ```
 
