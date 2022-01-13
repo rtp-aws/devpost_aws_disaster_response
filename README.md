@@ -76,7 +76,7 @@ What are is this, Russia?  Does show the median.  Low res and does not show seam
 https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082877653
 ```
 
-#### I-40 @ US-1
+#### TOLL540 and Apex BBQ Rd
 
 Shows roadway with wide median and seam in distance.
 
