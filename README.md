@@ -10,6 +10,19 @@ https://devpost.com/software/todo-ot17ds
 * `matlab/`  sample matlab experiments
 * `R/`  sample R experiments
 
+## Best Camera so far
+
+### NC 147 (Toll) & Davis Drive
+In the lower right corner is the closest view of boundry of roadway and elevated roadway.  However, the corresponding median portion is not visible.  Such a pity, they could have angled the camera down a few degress and it would be perfect.
+
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791)
+
+```
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209
+```
+
+
 
 ## Potential cameras
 This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  However they are tiny low res images and not live.  I have contacted the NCDOT but not received a response.
@@ -44,14 +57,6 @@ Newer camera.  Shows junction of roadway and elevated roadway, but distant.
 https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642082356669
 ```
 
-### NC 147 (Toll) & Davis Drive
-In the lower right corner is the closest view of boundry of roadway and elevated roadway.  However, the corresponding median portion is not visible.  Such a pity, they could have angled the camera down a few degress and it would be perfect.
-
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209)
-
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209
-```
 
 ## Not good ones, but notable
 
