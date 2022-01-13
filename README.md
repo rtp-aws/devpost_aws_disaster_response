@@ -11,7 +11,7 @@ https://devpost.com/software/todo-ot17ds
 * `R/`  sample R experiments
 
 
-# Potential cameras
+## Potential cameras
 This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  However they are tiny low res images and not live.  I have contacted the NCDOT but not received a response.
 
 These are static jpg's.  
@@ -51,6 +51,18 @@ In the lower right corner is the closest view of boundry of roadway and elevated
 
 ```
 https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209
+```
+
+## Not good ones, but notable
+
+### Toll 540 & NC 54
+
+What are is this, Russia?  Does show the median.  Low res and does not show seam.
+
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082877653)
+
+```
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082877653
 ```
 
 
