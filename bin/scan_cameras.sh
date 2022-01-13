@@ -7,10 +7,11 @@
 TOP_DIR="/home/davis/progs/devpost_aws_disaster_recovery/"
 RAWDATA_DIR="${TOP_DIR}/raw_data/"
 
+echo "images will be put in ${RAWDATA_DIR}"
 
 
 # get date
-the_date=`date +%Y%m%dZ%H%m`
+the_date=`date +%Y%m%dZ%H%M`
 echo ${the_date}
 
 # hashmap 
