@@ -21,7 +21,7 @@ Maintain notes about the directory there.
 I'm getting messages about how to help.  What to do?  I'm sorry I am not more
 available.  Perhaps this note will give you an idea of my approach to this project.
 
-1. Make a github id.  Afterwards ask for access to the repo, or send it via slack.
+1. Make a github id.  Afterwards ask for access to the repo, or send it to slack.
 2. Visit https://rtp-aws.org look at the *about* page and join the slack workspace and then join the `#hackathon` channel.  Try to keep your conversation there. I'm not big on thread stuff, so don't worry about that.
 3. Do whatever you wish.   To update the github repo, you will need to do a `git pull request`.  I'll address the commit.  You will learn how to do it by doing it. The slack is available to ask questions.
 4. If you don't feel like doing whatever you think moves the ball forward yourself,
@@ -32,7 +32,7 @@ a bug or a feature request.  I'll let you know my opinion via the issue.
 6. Attend the weekly workshop sundays at 11:00am EST. The online meeting is on https://rtp-aws.org in the about page.
 
 General opinion on my approach.  I am not a good leader/motivator whatever. I am not
-even a good teacher.  I am simply a guide.  This is what I want you to
+even a good teacher.  However, I feel I am simply a guide.  This is what I want you to
 keep in mind.  I'm pointing the way just a little bit.  I'll use the github issues to
 identify the issues as I see them.  You can adjust the direction by adding new issues
 or updating existing issues.  Its that simple.
