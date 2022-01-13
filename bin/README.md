@@ -1,25 +1,26 @@
 # notes on bin
 
-script to webscrape images
+Script used to webscrape images
 ```
 scan_cameras.sh
 ```
 
 # cron
 
-The jfdcron file is a crontab file.  For format string see `man 5 crontab`
+Using cron to webscrape the camera files periodically.  The `jfdcron`
+file is a crontab file.  For format string see `man 5 crontab`
 
-list existing crontab files
+List existing crontab files
 ```
 $ crontab -l
 ```
 
-remove exisitng crontab files
+Remove exisitng crontab files
 ```
 $ crontab -r
 ```
 
-edit crontab files
+Edit crontab files
 ```
 $ crontab -e
 ```
