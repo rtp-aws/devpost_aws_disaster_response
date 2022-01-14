@@ -52,14 +52,13 @@ and the edge version
 
 ## NCDOT Cameras
 
-This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  However they are tiny low res images and not live.  I have contacted the NCDOT but not received a response.
+This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  However they are tiny low res images and not live.  Instead they are snapshots.  They also seem to change camera view.  
 
-These are active webcams which provide a jpg.  
+I knew it would be difficult to obtain some footage of a particular camera.  I have contacted the NCDOT but not received a response.  Perhaps later we will but for now we are doing a webscrape operation.  
 
-The urls look like its a camera name and timestamp.  Its not a timestamp. Fetch of that URL gives the current camera image.  
+These are some of the URLs obtained by chrome developers tools.  These images will update.  Currently not all of the ones pulled are listed here. See [here](imgs/raw_data) for the current dataset.
 
-
-
+If you are unware of developer tools in chrome look [here](https://youtu.be/RRuaG0_W7B4) is a short video on how to find the url to add to the webscrape dataset.
 
 ### Best Camera so far
 
