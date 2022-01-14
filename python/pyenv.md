@@ -73,3 +73,160 @@ its doing.
 [See this in part i - "This is the only requirement for pyenv to funciton properly"](https://github.com/pyenv/pyenv#advanced-configuration)
 
 
+
+# other notes on pyenv
+
+### List python versions available to install
+
+This shows all the python 3.6, 3.7, 3.8 versions pyenv can install.
+
+```
+pyenv install --list | grep "jython"
+```
+
+### install a specific version of python
+
+```
+pyenv install -v 3.7.12
+```
+
+
+### install locations
+
+The python versions are installed in `~/.pyenv/versions`
+
+### uninstall a python version
+
+```
+pyenv uninstall 2.7.15
+```
+
+
+
+### list installed versions
+
+This command shows that I have the system python is currently active - denoted by `*` and that I also have version 3.7.12 installed.
+
+```
+davis@zatoichi:~/progs/eb_testy$ pyenv versions
+* system (set by /home/davis/.pyenv/version)
+  3.7.12
+```
+
+My installation of Debian does not have a `python2` installed.  So `python --version` does not work.  It does have a `python3` installed.
+
+### using a specific version of python using pyenv
+
+```
+davis@zatoichi:~/progs/eb_testy$ python -v
+bash: python: command not found
+davis@zatoichi:~/progs/eb_testy$ python2 -v
+bash: python2: command not found
+davis@zatoichi:~/progs/eb_testy$ python3 --version
+Python 3.9.2
+davis@zatoichi:~/progs/eb_testy$ python2 --version
+bash: python2: command not found
+davis@zatoichi:~/progs/eb_testy$ which python3
+/usr/bin/python3
+davis@zatoichi:~/progs/eb_testy$ pyenv which python
+pyenv: python: command not found
+
+The `python' command exists in these Python versions:
+  3.7.12
+
+Note: See 'pyenv help global' for tips on allowing both
+      python2 and python3 to be found.
+davis@zatoichi:~/progs/eb_testy$ pyenv which python3
+/usr/bin/python3
+```
+
+### Switch to a specific version
+
+
+#### global local shell
+I prefer to use local.  
+
+Use the `pyenv global xxx` command as shown:
+
+
+```
+davis@zatoichi:~/progs/eb_testy$ pyenv global 3.7.12
+davis@zatoichi:~/progs/eb_testy$ python3 --version
+Python 3.9.2
+davis@zatoichi:~/progs/eb_testy$ pyenv versions
+  system
+* 3.7.12 (set by /home/davis/.pyenv/version)
+davis@zatoichi:~/progs/eb_testy$
+
+```
+
+Use the `pyenv global system` to revert back to the system python.
+
+```
+davis@zatoichi:~/progs/eb_testy$ pyenv global system
+davis@zatoichi:~/progs/eb_testy$ python3 --version
+Python 3.9.2
+```
+
+* The `global` command overrides all shells.  
+* Whereas the `local` command overrides the current subdirectory.
+* The `shell` command overrides the `$PYENV_VERSION` environment variable.
+
+
+
+I local used for this project.
+
+```
+pyenv local 3.7.2
+```
+
+
+# virtual environments
+
+The syntax is
+
+
+```
+pyenv virtualenv <python_version> <environment_name>
+```
+
+I created the virtual env with pyenv
+
+```
+pyenv virtualenv 3.7.2 devpost
+```
+
+Then I activated the virtualenv
+
+```
+pyenv local devpost
+```
+
+It should automatically activate, but if not
+
+```
+pyenv activate devpost
+```
+
+Since I'm using a local config, simply changing directories
+will deactivate the environment.
+
+Note, when prompt will prefix with `(devpost)`
+
+If it does not deactivate when you change directories, you can use
+the following command 
+
+```
+pyenv deactivate
+```
+
+
+
+
+
+
+
+
+
+
+

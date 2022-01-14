@@ -7,6 +7,8 @@
 list_files:
 	ls -l
 
+convolution:
+	python convolution.py
 
 gitupdate:
 	git add .; git commit -m "update imgs"; git push
