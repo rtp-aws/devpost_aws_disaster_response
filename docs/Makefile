@@ -1,4 +1,11 @@
-.phony: gitupdate clean
+# set the default goal.
+.DEFAULT_GOAL := list_docs
+.phony: fetch_new_images gitupdate clean $(DIRS)
+
+
+
+list_docs:
+	ls -l
 
 
 
