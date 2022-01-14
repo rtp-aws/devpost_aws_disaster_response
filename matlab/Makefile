@@ -1,4 +1,4 @@
-.phony: convolution gitupdate
+.phony:  gitupdate  clean convolution
 
 
 
@@ -10,3 +10,5 @@ convolution:
 gitupdate:
 	git add --all; git commit -m "wip"; git push
 
+clean:$(DIRS)
+	-rm -i *.backup
