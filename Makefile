@@ -1,7 +1,17 @@
+# http://www.gnu.org/software/make/manual/make.html#Special-Variables
+# Query the default goal.
+ifeq ($(.DEFAULT_GOAL),)
+  $(warning no default goal is set)
+endif
+# Reset the default goal.
+.DEFAULT_GOAL := deploy
+
+
+
 .phony: deploy gitupdate clean $(DIRS)
 
 
-DIRS = bin docs matlab R 
+DIRS = bin docs matlab R
 
 
 
