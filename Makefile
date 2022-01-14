@@ -1,4 +1,8 @@
-.phony: deploy gitupdate
+.phony: deploy gitupdate clean $(DIRS)
+
+
+DIRS = bin docs matlab R 
+
 
 
 BUCKET = some-bucket
@@ -12,3 +16,6 @@ deploy:
 gitupdate:
 	git add --all; git commit -m "wip"; git push
 
+clean:$(DIRS)
+	-rm -i *.backup
+	$(MAKE) -C $<

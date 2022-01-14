@@ -10,8 +10,8 @@ https://devpost.com/software/todo-ot17ds
 File are mostly kept in directories.  Each directory should have a README.md
 Maintain notes about the directory there.
 
-* `bin/` this is where the scripts are put
-* `imgs/`  sample images used by markdown files
+* `bin/` scripts and crontab for webscrape
+* `imgs/`  images used by markdown files
 * `raw_data/` raw pull of data by the webscrape script. These are put in git so that everyone is working with the same data.  Please don't update this directory
 * `matlab/`  sample matlab experiments
 * `R/`  sample R experiments
