@@ -1,4 +1,7 @@
-.phony:  gitupdate  clean convolution
+.DEFAULT_GOAL := convolution
+.phony: convolution gitupdate clean $(DIRS)
+
+
 
 
 
@@ -8,7 +11,7 @@ convolution:
 
 
 gitupdate:
-	git add --all; git commit -m "wip"; git push
+	git add .; git commit -m "wip"; git push
 
 clean:$(DIRS)
 	-rm -i *.backup
