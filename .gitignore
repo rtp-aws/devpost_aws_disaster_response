@@ -248,6 +248,7 @@ venv.bak/
 *.asv
 *.BACKUP
 *.swp
+*foo*
 
 
 
