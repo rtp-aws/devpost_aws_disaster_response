@@ -1,6 +1,6 @@
 # set the default goal.
 .DEFAULT_GOAL := list_docs
-.phony: fetch_new_images gitupdate clean $(DIRS)
+.phony: list_docs gitupdate clean $(DIRS)
 
 
 
@@ -12,7 +12,7 @@ list_docs:
 
 
 gitupdate:
-	git add --all; git commit -m "wip"; git push
+	git add .; git commit -m "update docs dir"; git push
 
-	clean:$(DIRS)
-		-rm -i *.backup
+clean:$(DIRS)
+	-rm -i *.backup
