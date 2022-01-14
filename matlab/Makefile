@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := convolution
-.phony: convolution gitupdate clean $(DIRS)
+#.phony: convolution gitupdate clean $(DIRS)
 
 
 

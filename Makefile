@@ -1,25 +1,40 @@
 # http://www.gnu.org/software/make/manual/make.html#Special-Variables
 
 # set the default goal.
+# I want the default to really just dump contents of dirs
+# as a stub.  For instance, I don't want it to
+# push code or
 .DEFAULT_GOAL := deploy
-.phony: deploy gitupdate clean $(DIRS)
+#.phony: all deploy gitupdate clean $(DIRS)
 
+TOPTARGETS := all clean
 
-DIRS = bin docs matlab R
-BUCKET = some-bucket
+SUBDIRS := docs foo bin imgs python matlab R raw_data
+#SUBDIRS := docs foo bin imgs python matlab R raw_data
+#SUBDIRS := $(wildcard */.)
+#BUCKET := some-bucket
+
+$(TOPTARGETS): $(SUBDIRS)
+$(SUBDIRS):
+	echo "make arg is" $(MAKECMDGOALS)
+	$(MAKE) -C $@ $(MAKECMDGOALS)
+
+#.phony: $(TOPTARGETS) $(SUBDIRS)
 
 
 gitupdate:
 	git add --all; git commit -m "wip"; git push
 
+SUBCLEAN = $(addsuffix .clean,$(SUBDIRS))
 
-# aws s3 command for rsync. hopefully exclude can be added twice
-deploy:
-	echo deploy to $(BUCKET)
-	#aws s3 sync ${BUCKET}/. s3://rtp-aws.org --exclude "*.swp" --exclude "*.key"
+clean: $(SUBCLEAN)
 
-
-
-clean:$(DIRS)
-	-rm -i *.backup
-	$(MAKE) -C $<
+$(SUBCLEAN): %.clean:
+#	echo "top: make clean"
+#	echo "top: subdirs is $(SUBDIRS)"
+#	echo "clean in top dir"
+#	echo "first prereq "$<
+#	echo "top: all prereqs "$?
+#	echo "top: all prereqs " $(SUBDIRS)
+#	make -C $? clean
+	$(MAKE) -C $* clean
