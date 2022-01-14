@@ -14,4 +14,4 @@ gitupdate:
 	git add .; git commit -m "update imgs"; git push
 
 clean:
-	-rm -i *.backup
+	-rm  *.backup

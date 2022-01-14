@@ -19,31 +19,3 @@ for d in range(5):
 
 
 
-# for d=0:5
-#     a_sum = 0;
-#     % This cruft is because I need to rewrite for matlab syntax which
-#     % uses first array index as 1, instead of 0 as I prefer.
-#     % hashtag python_rocks
-#     d2 = d+1;
-#     if d2 < 1
-#         % no need to modify a_sum by zero.
-#        continue
-#     end
-#
-#     for k=-3:3
-#         % This cruft is because I need to rewrite for matlab syntax which
-#         % uses first array index as 1, instead of 0 as I prefer.
-#         % hashtag python_rocks
-#         k2 = k+1;
-#         if k2 < 1 | (d2-k2) < 1
-#             % no need to modify a_sum by zero.
-#            continue
-#         end
-#         a_sum = a_sum + num_new_patients(k2) * dosage_schedule(d2 - k2);
-#     end
-#     dosages_given(d2) = a_sum;
-#     fprintf('dosages_given[day = %i] = %d \n', d2, dosages_given(d2))
-# end
-
-#% unfsck the index starting at one thing
-#dosages_given = circshift(dosages_given,  [0, -1]);
