@@ -1,11 +1,17 @@
-.phony: gitupdate clean
+# set the default goal.
+.DEFAULT_GOAL := list_images
+.phony: list_images gitupdate clean $(DIRS)
 
+
+
+list_images:
+	ls -l
 
 
 
 
 gitupdate:
-	git add --all; git commit -m "wip"; git push
+	git add .; git commit -m "update imgs"; git push
 
 clean:$(DIRS)
 	-rm -i *.backup
