@@ -5,7 +5,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 # I had problems on the other laptop.  To fix it I had to go back to 
 # the pyenv github
 # sets up your shims path.
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 # sets up autocompletion
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
