@@ -1,7 +1,27 @@
-# debian notes
+# Debian notes
 
 Adding a debian notes section to track down why the two linux laptops
 fail to use pyenv the same.  Taken from my private gitlab.com notes.
+
+On zatoichi, it works correctly.
+
+```
+. ./setenv.sh
+python --versions
+works good
+```
+
+
+# Redirect output for pagers and logging
+
+```
+Redirect stderr to stdout
+2>&1
+Capture both stderr and stdout to a file
+command &> foo.log
+```
+
+
 
 
 # Which packages are installed?
@@ -23,4 +43,3 @@ dpkg -L eterm | grep bin
 ```
 dpkg -s eterm
 ```
-
