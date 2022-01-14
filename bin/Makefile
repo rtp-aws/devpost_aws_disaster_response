@@ -1,9 +1,13 @@
 # http://www.gnu.org/software/make/manual/make.html#Special-Variables
 
 # set the default goal.
-.DEFAULT_GOAL := fetch_new_images
-.phony: fetch_new_images gitupdate clean $(DIRS)
+.DEFAULT_GOAL := list_files
+.phony: list_files fetch_new_images gitupdate clean $(DIRS)
 
+
+
+list_files:
+	ls -l
 
 
 
@@ -14,7 +18,7 @@ fetch_new_images:
 
 
 gitupdate:
-	git add --all; git commit -m "wip"; git push
+	git add .; git commit -m "update bin dir"; git push
 
 clean:$(DIRS)
 	-rm -i *.backup
