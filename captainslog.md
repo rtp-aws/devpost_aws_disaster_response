@@ -58,7 +58,8 @@ I had to sidestep to resolve this.  Turns out the eb_cli scripts and the
 realpython.com blogs missed this one key point from the pyenv github
 
 
-> ```
+ 
+>```
 eval "$(pyenv init --path)":
-```
+>```
 > Sets up your shims path. This is the only requirement for `pyenv` to function properly. You can do this by hand by prepending `$(pyenv root)/shims` to your `$PATH`.
