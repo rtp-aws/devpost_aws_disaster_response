@@ -13,5 +13,5 @@ convolution:
 gitupdate:
 	git add .; git commit -m "wip"; git push
 
-clean:$(DIRS)
+clean:
 	-rm -i *.backup
