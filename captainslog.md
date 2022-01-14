@@ -53,3 +53,12 @@ pyenv already installed.  It installed it, and it did it globally.  Also the
 setup script seems wonky.  Bottom line is that on that box. Its now broken using
 the instructions on the big computer.  The big computer had pyenvv already installed
 prior to usage of the scripts so it used pyenv instead of installing.
+
+I had to sidestep to resolve this.  Turns out the eb_cli scripts and the
+realpython.com blogs missed this one key point from the pyenv github
+
+
+> ```
+eval "$(pyenv init --path)":
+```
+> Sets up your shims path. This is the only requirement for `pyenv` to function properly. You can do this by hand by prepending `$(pyenv root)/shims` to your `$PATH`.
