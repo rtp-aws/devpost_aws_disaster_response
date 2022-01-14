@@ -58,7 +58,7 @@ I knew it would be difficult to obtain some footage of a particular camera.  I h
 
 These are some of the URLs obtained by chrome developers tools.  These images will update.  Currently not all of the ones pulled are listed here. See [here](imgs/raw_data) for the current dataset.
 
-
+If you are unware of developer tools in chrome look [here](https://youtu.be/RRuaG0_W7B4) is a short video on how to find the url to add to the webscrape dataset.
 
 ### Best Camera so far
 
