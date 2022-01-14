@@ -247,6 +247,7 @@ venv.bak/
 #JFD
 *.asv
 *.BACKUP
+*.backup
 *.swp
 *foo*
 
