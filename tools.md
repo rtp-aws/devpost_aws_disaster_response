@@ -13,8 +13,7 @@ I like to know what works for you.
 * [exim](mail.md)
 * mutt
 * make
-  make gitupdate
-
+* atom script, ide-python, python-virtualenv
 * octave / matlab
 * git
 * [R](R.md)

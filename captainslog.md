@@ -9,6 +9,13 @@ The cameras were either moved or something else happened.  I'll need
 to look into it.  See NC147_DAVIS_DR_20220114Z0620.jpg vs NC147_DAVIS_DR_20220114Z0625.jpg.
 Prior to this the camera was pointed almost perfectly.
 
+I added some additional cameras in case they change view.
+
+### adjusted camera webscape cron
+
+adjusted cameras to not pull overnight
+
+
 ### matlab sample
 
 I also got an update last night regarding a call to help on the matlab code.
@@ -45,6 +52,12 @@ Yesterday I had some issues with Makefiles.  I'm trying to resolve that.  I want
 iterate clean in all the dirs from top of tree.  I also want to be able to push
 to git no matter which dir I'm working in.
 
+It took me awhile. I actually learned a few things.  This is a very clean implementation
+of a nested makefile.  I'll be honest, I used to do the for loop trick.  I made 
+a SO post since I liked the mad-scientist post [here](https://stackoverflow.com/questions/17834582/run-make-in-each-subdirectory/70715518#70715518)
+
+
+
 
 ### python
 Started the python setup, but noticed I have a problem on the laptop where
@@ -64,3 +77,9 @@ realpython.com blogs missed this one key point from the pyenv github
 eval "$(pyenv init --path)":
 ```
 > Sets up your shims path. This is the only requirement for `pyenv` to function properly. You can do this by hand by prepending `$(pyenv root)/shims` to your `$PATH`.
+
+### twitter
+
+Tom posted a GondorCallsForAdd.exe for me [here](https://twitter.com/AWSOpen/status/1482031484420739072).  That was nice.
+I also checked the slacks, IRC, discord on devpost etc for teammates.
+

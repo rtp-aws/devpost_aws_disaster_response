@@ -1,5 +1,7 @@
 import numpy as np
 
+# ctrl-shift-b
+
 dosage_schedule = np.array([3,2,1,0,0,0,0,0])
 
 num_new_patients = np.array([1,2,1,0,0])
@@ -15,7 +17,3 @@ for d in range(5):
         a_sum = a_sum + num_new_patients[k] * dosage_schedule[d-k]
     dosages_given[d] = a_sum;
     print("dosages_given[day={0}] = {1}" .format(d,dosages_given[d]))
-
-
-
-
