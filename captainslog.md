@@ -83,3 +83,14 @@ eval "$(pyenv init --path)":
 Tom posted a GondorCallsForAdd.exe for me [here](https://twitter.com/AWSOpen/status/1482031484420739072).  That was nice.
 I also checked the slacks, IRC, discord on devpost etc for teammates.
 
+## 20220115
+
+### Atom
+
+Last night I finished setting up atom.  I reimaged zatoichi at the start of the new year.  I have been installing software and tools ever since.  That will help.  My vim setup does tabs right for python but not for Makefiles.  I used it when I fixed up the multi directory clean target.  Afterwards I did a python 1-D convolution sample.  I intend to use atom for the python console development whenI am not using vim.  For the entry we need to use Sagemaker.  I hope they mean Sagemaker as in studiolab and not juptery notebook. Which leads to the next entry.
+
+I updated the tools markdown to show some of the configs I used for atom.  Afterwards, I was thinking I wish I had included some of the pip installs.  I did setup atom so it uses my local pyenv-virtualenv setup rather than the global path mods as many of the packages required.
+
+### youtube and sagemaker
+I watched the first part of the AWS ML video playlist and made a markdown on how to do the sagemaker setup.  I will update it and start using their provided tutors this morning.
+
