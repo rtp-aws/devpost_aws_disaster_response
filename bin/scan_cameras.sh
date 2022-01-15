@@ -4,7 +4,7 @@
 
 
 # simple config
-TOP_DIR="/home/davis/progs/devpost_aws_disaster_recovery/"
+TOP_DIR="/home/davis/progs/devpost_aws_disaster_response/"
 RAWDATA_DIR="${TOP_DIR}/raw_data/"
 
 echo "images will be put in ${RAWDATA_DIR}"
