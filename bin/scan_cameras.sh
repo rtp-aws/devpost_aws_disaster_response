@@ -43,7 +43,6 @@ cams=( \
        )
 
 
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG&t=1642179822842
 
 
 # get images based upon hash and save with timestamp
