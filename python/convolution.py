@@ -17,3 +17,7 @@ for d in range(5):
         a_sum = a_sum + num_new_patients[k] * dosage_schedule[d-k]
     dosages_given[d] = a_sum;
     print("dosages_given[day={0}] = {1}" .format(d,dosages_given[d]))
+
+print("alternatively use numpy.convole")
+
+print(np.convolve(dosage_schedule,num_new_patients))
