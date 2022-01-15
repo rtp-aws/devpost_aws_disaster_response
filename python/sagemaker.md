@@ -15,7 +15,7 @@ This one: `https://github.com/aws-samples/aws-machine-learning-university-accele
 8. If it fails, just type at the terminal `git clone https://github.com/aws-samples/aws-machine-learning-university-accelerated-cv.git` from the ~/sagemaker-studiolab-notebook.
 
 
-# Once you are in sagemaker and the repo is clone
+# Once you are in sagemaker and the repo is cloned
 
 * click the .. icon to change file preview pane on left to go up a directory.
 * click down into the cv folder and not the tab folder.  The -tab suffix folder
@@ -23,6 +23,8 @@ is for the default notebook on tabular data.
 * right-click the preview for the READM.md and select preview markdown
 * start the video in the playlist
 This is the [url](https://www.youtube.com/playlist?list=PL8P_Z6C4GcuU4knhhCouJujFZ2tTqU-Ta)
+
+
 
 
 
