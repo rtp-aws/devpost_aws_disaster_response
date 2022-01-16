@@ -31,10 +31,56 @@ for filename in ${RAWDATA_DIR}/*Z0[234]*.jpg; do
 done
 
 
+# rm any at 6pm:35-55 mins
+for filename in ${RAWDATA_DIR}/*Z18[345]*.jpg; do
+    echo $filename
+    rm $filename
+done
+
+
+# rm any at 7pm:35-55 mins
+for filename in ${RAWDATA_DIR}/*Z19[345]*.jpg; do
+    echo $filename
+    rm $filename
+done
+
+# rm any at 8pm:
+for filename in ${RAWDATA_DIR}/*Z20*.jpg; do
+    echo $filename
+    rm $filename
+done
+
+# rm any at 9pm:
+for filename in ${RAWDATA_DIR}/*Z21*.jpg; do
+    echo $filename
+    rm $filename
+done
+
+# rm any at 10pm:
+for filename in ${RAWDATA_DIR}/*Z22*.jpg; do
+    echo $filename
+    rm $filename
+done
+
+# rm any at 7am:00-15 mins
+for filename in ${RAWDATA_DIR}/*Z07[01][012345].jpg; do
+    echo $filename
+    rm $filename
+done
 
 
 
 
+# rm any at 11pm:
+for filename in ${RAWDATA_DIR}/*Z23*.jpg; do
+    echo $filename
+    rm $filename
+done
 
 
+# rm any at 12am:
+for filename in ${RAWDATA_DIR}/*Z00*.jpg; do
+    echo $filename
+    rm $filename
+done
 
