@@ -39,4 +39,5 @@ $(SUBCLEAN): %.clean:
 #	echo "top: all prereqs "$?
 #	echo "top: all prereqs " $(SUBDIRS)
 #	make -C $? clean
+	-rm *.backup
 	$(MAKE) -C $* clean

@@ -101,3 +101,18 @@ I made some more posts for recruiting yesterday and this morning I met with a ne
 During this time noticed the recovery vs response typo.  Fixed that.
 
 
+### python
+
+Worked with mxnet and juypter notebooks.  Basically started up my old class instance in storage from 1.5 years ago.  Pulled some of the files from another repo to here.
+Experimented briefly with the convolution code.  Created some notes on convolution at top docs dir.  Noted the stuff from watching the videos in part one.  I included
+my notes as goodnotes.pdf.  I tried to look at the sum(axis=0) stuff.  I can't remember the python numpy array syntax for multi-dimensonal arrays.
+Will make some test code in conjunction with notes.
+
+I'm tirec.
+
+Was thinking do I ask people to clean up the images or writ some code to clean it up?
+
+I also need to md5sum and hash table3 the dupes.
+
+
+Rnamed the repo. It was recovery insteadc of response.
