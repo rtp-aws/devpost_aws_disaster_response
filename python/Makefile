@@ -11,7 +11,7 @@ convolution:
 	python convolution.py
 
 gitupdate:
-	git add .; git commit -m "update imgs"; git push
+	git add .; git commit -m "update python"; git push
 
 clean:
 	-rm  *.backup

@@ -94,3 +94,10 @@ I updated the tools markdown to show some of the configs I used for atom.  After
 ### youtube and sagemaker
 I watched the first part of the AWS ML video playlist and made a markdown on how to do the sagemaker setup.  I will update it and start using their provided tutors this morning.
 
+### Recruiting 
+
+I made some more posts for recruiting yesterday and this morning I met with a new friend.  Cool sounding guy.  Has similar interests.  We shared screens and talked at length.
+
+During this time noticed the recovery vs response typo.  Fixed that.
+
+

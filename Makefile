@@ -9,7 +9,7 @@
 
 TOPTARGETS := all clean
 
-SUBDIRS := docs foo bin imgs python matlab R raw_data
+SUBDIRS := docs bin imgs python matlab R raw_data
 #SUBDIRS := docs foo bin imgs python matlab R raw_data
 #SUBDIRS := $(wildcard */.)
 #BUCKET := some-bucket
