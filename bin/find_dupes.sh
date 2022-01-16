@@ -6,9 +6,9 @@
 # simple config
 TOP_DIR="/home/davis/progs/devpost_aws_disaster_response/"
 # PROD DIR
-#RAWDATA_DIR="${TOP_DIR}/raw_data/"
+RAWDATA_DIR="${TOP_DIR}/raw_data/"
 # TESTING
-RAWDATA_DIR="${TOP_DIR}/foo/"
+#RAWDATA_DIR="${TOP_DIR}/foo/"
 
 echo "images will be examined from ${RAWDATA_DIR}"
 
@@ -59,7 +59,7 @@ for a_hash_key in "${!hashes[@]}"; do
     # dump all but first
     #echo ${tokens[@]:1}
     # rm any which are more than first
-    echo ${tokens[@]:1}
+    rm -f ${tokens[@]:1}
 done
 
 
@@ -67,40 +67,6 @@ done
 
 
 
-
-
-
-
-exit
-
-# hashmap 
-# camera_names :  URLS
-# REF: https://stackoverflow.com/questions/1494178/how-to-define-hash-tables-in-bash
-#       [""]="" \
-cams=( \
-       ["BUS40_MACY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536" \
-       ["BUS40_SALEM"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588" \
-       ["TOLL54_APEXBBQ"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555" \
-       ["US52_UNIV"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885" \
-       )
-
-
-
-
-# get images based upon hash and save with timestamp
-
-for a_camname_key in "${!cams[@]}"; do
-    echo "$a_camname_key : ${cams[$a_camname_key]}";
-    #a_filename_root=$a_camname_key
-    #a_url=${cams[$a_camname_key]}
-
-    
-
-
-
-
-
-done
 
 
 
