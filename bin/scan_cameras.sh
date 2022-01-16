@@ -25,6 +25,7 @@ cams=( \
        ["HANESMall_JONES"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg&t=1642181838811" \
        ["HANESMALL_KESTER"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg&t=1642181836688" \
        ["I26_BROADWAY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967" \
+       ["I40_MM53"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg&t=1642341041721" \
        ["I40_MM27"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg&t=1642180476481" \
        ["I40W_MM8"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg&t=1642180599578" \
        ["I440_US64_Bypass"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751" \
