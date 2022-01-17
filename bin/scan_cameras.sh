@@ -20,9 +20,10 @@ echo ${the_date}
 declare -A cams
 #       [""]="" \
 cams=( \
+       ["NC147_US15501"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&t=1642382016647" \
+       ["I85_CHURTON"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688" \
        ["BUS40_MACY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536" \
        ["BUS40_SALEM"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588" \
-       ["NC147_US15501"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&t=1642382016647" \
        ["HANESMall_JONES"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg&t=1642181838811" \
        ["HANESMALL_KESTER"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg&t=1642181836688" \
        ["I26_BROADWAY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967" \
