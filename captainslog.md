@@ -141,7 +141,13 @@ Talked to Arjun a few times.
 
 ## 20220117
 
+### MVP
+
 Woke up this morning and realized we need a MVP.  Created one using the eb_testy code.  Created and somewhat documented process.  Also created a devpost user in aws so I can 
-start handing out userids for people.  Not a security expert with aws.  Did add encrypted credentials.  Updated makefiles to ensure any puts do a clean to remove any keys or swap/backup files.
+start handing out userids for people.  
+
+### IAMS
+
+While doing the eb webapp, realized I needed seprate credentials.  Not a security expert with aws.  Did add some. Added notes on how to recreate.  Did add encrypted credentials to repo.  Updated makefiles to ensure any puts do a clean to remove any keys or swap/backup files.
 
 
