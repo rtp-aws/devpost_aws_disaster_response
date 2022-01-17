@@ -22,7 +22,7 @@ class MvpRc1 {
 //
 //
 // button
-const nc147Us15501Button = document.querySelector('[nc147_us15501_button]')
+const nc147Us15501Button = document.querySelector('[nc147_us15501]')
 
 
 
