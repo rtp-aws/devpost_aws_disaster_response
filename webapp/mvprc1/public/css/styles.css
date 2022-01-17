@@ -47,6 +47,7 @@ body {
 }
 
 /* style sheet for radio buttons */
+/* begin */
 p,
 label {
     font: 1rem 'Fira Sans', sans-serif;
@@ -55,3 +56,4 @@ label {
 input {
     margin: .4rem;
 }
+/* end */
