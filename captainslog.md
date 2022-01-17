@@ -146,6 +146,8 @@ Talked to Arjun a few times.
 Woke up this morning and realized we need a MVP.  Created one using the eb_testy code.  Created and somewhat documented process.  Also created a devpost user in aws so I can 
 start handing out userids for people.  
 
+16:49 lol, I have a webapp with a selectable camera feed.
+
 ### IAMS
 
 While doing the eb webapp, realized I needed seprate credentials.  Not a security expert with aws.  Did add some. Added notes on how to recreate.  Did add encrypted credentials to repo.  Updated makefiles to ensure any puts do a clean to remove any keys or swap/backup files.

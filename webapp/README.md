@@ -14,3 +14,19 @@ the mods I added when I created a sample app.
 
 ### install and use eb cli
 [eb install and use](eb_cli.md)
+
+
+### local execution
+
+```
+make runlocal
+```
+
+open browser to 
+
+```
+http://localhost:8080/
+```
+
+
+
