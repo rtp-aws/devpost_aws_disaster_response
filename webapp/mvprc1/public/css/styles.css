@@ -46,5 +46,12 @@ body {
     color: antiquewhite;
 }
 
+/* style sheet for radio buttons */
+p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
 
-
+input {
+    margin: .4rem;
+}
