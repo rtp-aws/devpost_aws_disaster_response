@@ -1,4 +1,45 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+
+
+
+
+
+class MvpRc1 {
+  constructor() {
+      console.log("MvpRc1:Constructor() ");
+  }
+
+}
+
+
+// Get reference to HTML elements
+//
+// querySelector() returns the first Element within document that
+// matches the specified selector or group.  A selector is a
+// DOMString containing one or more selectors to match (hence
+// the array syntax
+//
+// querySelectorAll() returns all elements ...
+//
+//
+// button
+const nc147Us15501Button = document.querySelector('[nc147_us15501_button]')
+
+
+
+// Build class with some of these specified?
+const mvprc1 = new MvpRc1()
+
+// Hook an event listener for the AC button
+nc147Us15501Button.addEventListener('click', button => {
+  console.log("nc147Us15501Button: click() ");
+})
+
+
+
+
+
+
 //const pb = require('@dendra-science/goes-pseudo-binary');
 
 /*

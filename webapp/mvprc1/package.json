@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dendra-science/goes-pseudo-binary": "^0.1.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2"
   },
