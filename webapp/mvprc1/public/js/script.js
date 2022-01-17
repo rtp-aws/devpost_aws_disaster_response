@@ -11,30 +11,38 @@ class MvpRc1 {
 }
 
 
-// Get reference to HTML elements
-//
-// querySelector() returns the first Element within document that
-// matches the specified selector or group.  A selector is a
-// DOMString containing one or more selectors to match (hence
-// the array syntax
-//
-// querySelectorAll() returns all elements ...
-//
-//
 // button
-const nc147Us15501Button = document.querySelector('[nc147_us15501]')
+// https://stackoverflow.com/questions/362614/calling-onclick-on-a-radiobutton-list-using-javascript
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+// https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
+const nc147_us15501 = document.getElementById("nc147_us15501");
+const i85_churton = document.getElementById("i85_churton");
+const bus40_macy = document.getElementById("bus40_macy");
 
-
+// The camera feed img
+var camera_feed_img = document.getElementsByClassName("jfd")[0];
 
 // Build class with some of these specified?
 const mvprc1 = new MvpRc1()
 
 // Hook an event listener for the AC button
-nc147Us15501Button.addEventListener('click', button => {
-  console.log("nc147Us15501Button: click() ");
+nc147_us15501.addEventListener('click', button => {
+  console.log("nc147_us15501: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&amp;t=1642382016647"
+
 })
 
+// Hook an event listener for the AC button
+i85_churton.addEventListener('click', button => {
+  console.log("i85_churton: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688"
+})
 
+// Hook an event listener for the AC button
+bus40_macy.addEventListener('click', button => {
+  console.log("bus40_macy: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536"
+})
 
 
 
