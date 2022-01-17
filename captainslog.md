@@ -116,3 +116,32 @@ I also need to md5sum and hash table3 the dupes.
 
 
 Rnamed the repo. It was recovery insteadc of response.
+
+
+## 20220116
+
+### weekly workshop
+
+Spent some time with rtp-aws.org going over the project.  Short demo on rekognition.   Short demo on the convolution testy code in notebook form.
+
+### Removal of dupe images
+
+Adrian added code for removing dupes in juypter notebook form.  I went ahead and created a bash script to remove dupes.  Removed the dupes.  Removed the image pulls of 
+the camera with a lot of overlays.
+
+
+### Rekognition
+
+Watched some of the videos.  Will use Adrians advice for determining labels.
+
+### Recruiting 
+
+Talked to Arjun a few times.
+
+
+## 20220117
+
+Woke up this morning and realized we need a MVP.  Created one using the eb_testy code.  Created and somewhat documented process.  Also created a devpost user in aws so I can 
+start handing out userids for people.  Not a security expert with aws.  Did add encrypted credentials.  Updated makefiles to ensure any puts do a clean to remove any keys or swap/backup files.
+
+

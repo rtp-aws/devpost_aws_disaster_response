@@ -12,4 +12,4 @@ gitupdate:
 	git add .; git commit -m "webapp"; git push
 
 clean:
-	-rm  *.backup
+	-rm  *.backup *.BACKUP *.key *.swp

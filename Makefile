@@ -9,7 +9,7 @@
 
 TOPTARGETS := all clean
 
-SUBDIRS := docs bin imgs python matlab R raw_data webapp
+SUBDIRS := docs bin imgs python matlab R raw_data webapp secrets
 #SUBDIRS := docs foo bin imgs python matlab R raw_data
 #SUBDIRS := $(wildcard */.)
 #BUCKET := some-bucket
@@ -24,7 +24,7 @@ $(SUBDIRS):
 deploy:
 	echo do deploy stub
 
-gitupdate:
+gitupdate: clean
 	git add --all; git commit -m "wip"; git push
 
 SUBCLEAN = $(addsuffix .clean,$(SUBDIRS))
@@ -39,5 +39,5 @@ $(SUBCLEAN): %.clean:
 #	echo "top: all prereqs "$?
 #	echo "top: all prereqs " $(SUBDIRS)
 #	make -C $? clean
-	-rm *.backup
+	-rm *.backup *.swp *.BACKUP
 	$(MAKE) -C $* clean
