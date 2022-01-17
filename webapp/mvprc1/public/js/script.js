@@ -1,6 +1,6 @@
-const pb = require('@dendra-science/goes-pseudo-binary');
+//const pb = require('@dendra-science/goes-pseudo-binary');
 
-
+/*
 class GoesDecoder {
     constructor(format, buffer, decoder) {
         console.log("GoesDecoder() ");
@@ -52,13 +52,13 @@ class GoesDecoder {
 // Get reference to HTML elements
 //
 // querySelector() returns the first Element within document that
-// matches the specified selector or group.  A selector is a 
+// matches the specified selector or group.  A selector is a
 // DOMString containing one or more selectors to match (hence
 // the array syntax
 //
 // querySelectorAll() returns all elements ...
 //
-// 
+//
 // button
 const allClearButton = document.querySelector('[ac-button]')
 const decodeButton = document.querySelector('[decode-button]')
@@ -89,3 +89,4 @@ formatEditBox.addEventListener("keyup",function(event) {
 });
 
 
+*/

@@ -5,7 +5,7 @@ public/js/bundle.js: public/js/script.js
 runlocal:
 	npm run devStart
 
-deploy: public/js/bundle.js
+deploy: public/js/bundle.js gitupdate
 	eb deploy
 
 
