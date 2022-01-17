@@ -4,7 +4,7 @@ rtp-aws.org submission for devpost.com AWS Disaster Response Hackathon
 While working on this project, [this](https://www.wral.com/tractor-trailer-slides-off-n-c-147-2-killed-in-nash-county-crash/20081601/) occured.
 ![img](imgs/truck1-DMID1-5tkyirekb-640x360.jpg)
 
-# debpost entry
+# devpost entry
 https://devpost.com/software/todo-ot17ds
 
 
