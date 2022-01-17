@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 
 // setup a route
-// get has two parameters - the second is 
+// get has two parameters - the second is
 // a function/callback which has two
 // or three parameters.
 //
@@ -37,9 +37,9 @@ app.get('/', (req, res) => {
     //res.send('Hi')
     // or a file
     //res.download('README.md')
-    // or 
+    // or
     //res.render("index")
-    // or add some text 
+    // or add some text
     res.render("index")
 })
 
@@ -53,12 +53,12 @@ app.get('/index.ejs', (req, res) => {
 })
 
 
-app.get('/notes.ejs', (req, res) => {
+app.get('/about.ejs', (req, res) => {
 
     console.log("get /")
     //console.log(req)
 
-    res.render("notes")
+    res.render("about")
 })
 
 
@@ -76,5 +76,3 @@ app.get('/notes.ejs', (req, res) => {
 
 
 app.listen(8080)
-
-
