@@ -9,6 +9,12 @@
 ###
 
 
+add this 
+2399  eb init
+ 2400  eb create --sample mvprc1-env
+ 2401  eb deploy
+ 2402  eb open
+
 
 
 
