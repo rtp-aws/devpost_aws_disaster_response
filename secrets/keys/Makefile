@@ -18,7 +18,8 @@ gitupdate: clean
 clean:
 	echo "docs: make clean"
 	#-find . -name "*.backup" -print | xargs rm
-	-rm "*.backup" "*.BACKUP" "*.swp" "*.key" "*.md"
+	#-rm *.md
+	-rm *.backup *.BACKUP *.swp *.key *.md
 
 
 
