@@ -1,0 +1,138 @@
+/*
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+*/
+body {
+/*
+    padding: 0;
+    margin: 0;
+*/
+    background: linear-gradient(to bottom, #00FF6C, #00AACF);
+}
+
+/* grid-template-columns  1fr means this col is 1 flex factor, it takes that proportion
+        repeat(2, 50px 1f5) 100px
+        makes five columns, 
+        50pixels, one flex col, 50px, one flex col, 100px
+ */
+
+.goes-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows:  repeat(7, 100px);
+}
+
+.goes-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255, 0.75);
+}
+
+.textarea_d {
+    background-color: #dddddd;
+    color: #666666;
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: Gotham Rounded, sans-serif;
+    width: 90%;
+    height: 100px;
+    transition: all 0.2s;
+    grid-column: 1/-1;
+    box-sizing: border-box;
+}
+
+
+
+.textarea_d:hover {
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+
+.textarea_d:focus {
+    cursor: text;
+    color: #333333;
+    background-color: white;
+    border-color: #333333;
+}
+
+
+.textarea_e {
+    width: 100%;
+    height: 100%;
+}
+
+/*    grid-column: 1/5; */
+.format-label {
+    grid-row: 1;
+}
+
+/*
+    grid-column-start: 1;
+    grid-column-end: 5;
+*/
+.format-ta_d {
+    grid-row: 2;
+}
+
+.buffer-label {
+    grid-column: span 5;
+    grid-row: 3;
+}
+
+/*
+    grid-column-start: 1;
+    grid-column-end: 5;
+    */
+.buffer-ta_d {
+    grid-row: 4;
+}
+
+/*
+    grid-column: 1/5;
+    */
+.output-label {
+    grid-row: 5;
+}
+
+/*
+    grid-column-start: 1;
+    grid-column-end: 5;
+    */
+.output-ta_d {
+    grid-row: 6;
+}
+
+
+.ac-button {
+    grid-column: span 2;
+    grid-row: 7;
+
+}
+
+
+.decode-button {
+    grid-column: 4/6;
+    grid-row: 7;
+}
+
+
+
+
+
+
+
+
+

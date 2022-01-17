@@ -1,0 +1,50 @@
+
+
+body {
+    margin: 0;
+    background: #232f3e;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+
+.the_body {
+    background: #232f3e;
+    color: #FFFFFF;
+}
+
+.logo {
+    float: left;
+    padding: 10px 0;
+}
+
+/* this is weird. It sets the link color all the time
+.the_body >  p > a {
+    color: #CCCCFF;
+}
+*/
+
+/* proper way to change link colors */
+/* TODO: rename the_body to the_body_div */
+
+/* give them a default value, before you can dork with the colors */
+.the_body a {
+  /* Specify non-transparent defaults to certain properties,
+     allowing them to be styled with the :visited state */
+  background-color: #232f3e;
+  /*border: 1px solid white;*/
+}
+
+
+/* a unvisited link */
+.the_body a:link {
+    color: aquamarine;
+}
+
+/* a visited link */
+.the_body a:visited {
+    color: antiquewhite;
+}
+
+
+

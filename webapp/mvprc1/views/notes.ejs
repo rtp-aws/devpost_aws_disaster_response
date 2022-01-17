@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GOES Decoder</title>
+    <link href="css/stylesnav.css" rel="stylesheet">
+    <link href="css/styles2.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <div class="container">
+        <img src="imgs/goes_112x68.png" alt="logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.ejs">App</a></li>
+                <li><a href="notes.ejs">Notes</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <div>
+        <H1>Spec Format Notes</H1>
+        <H2>Four types of Format Specifiers</H2>
+        <ul>
+            <li >fp2_n</li>
+            <li >i_b_n</li>
+            <li >u_b_n</li>
+            <li >s_b_n</li>
+        </ul>
+        <p>Where the format specifier identifies the type, number of bytes and number of values</p>
+        
+        <ul>
+            <li >fp2 : FP2</li>
+            <li >i : signed int</li>
+            <li >u : unsigned int</li>
+            <li >s : string</li>
+        </ul>
+        <div >b is num bytes</div>
+        <div >n is num values of this type</div>
+        <p>The first byte (b or `) should be removed.  It specifies if a gps time sync occurred since the last transmission.</p>
+        <p>a / byte means a fill character has been added.</p>
+        <H2>Sample Pseudo binary buffers</H2>
+            <p> NOTE: I've added a catch for the ENTER key.  No need to use 
+                mouse to click the decode button.
+        
+            <p> The default buffer is i_3. The data is col1 values then col2 values.</p>
+            <p> This buffer has the gps sync byte which needs to be removed.
+                It uses the i_4 format buffer.  It is interleaved columns. One counts up
+                and the other counts down.  At the end it has fill characters.</p>
+            <p> b@@Eh??zX@@CR??|n@@@|???D//////////////////////////////////////////////////////////////////////////////////////////</p>
+            <p> This buffer has the gps sync byte which needs to be removed.
+                It uses the i_3 format buffer.  Otherwise its the same.</p>
+            <p>  b@KP?tp@Hz?wF@Fd?y\@DN?{r@Ax?~H//////////////////////////////////////////</p>
+            <p> This buffer has the gps sync byte which needs to be removed.
+                It uses the i_4 format buffer.  Its a single column of data with
+                trailing fill characters. The value starts negative and increases
+                by 150 each time.</p>
+            <p>`??uN??wd??yz??|P??~f///////////////////////////////////</p>
+            <p> This buffer has the gps sync byte which needs to be removed.
+                Not sure about the decode. Perhaps two columns of differnt lengths.
+                I can't remember what the code specified.</p>
+            <p>b??}t??|F??~\?}RP?}Tf?}V|?}YR?}[h?}]~?}`T?}bj?}e@</p>
+    </div>
+</body>
+</html>
+
+
