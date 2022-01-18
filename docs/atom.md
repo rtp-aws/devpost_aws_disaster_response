@@ -13,6 +13,17 @@ apt-get update
 apt-get install atom
 ```
 
+```
+pyenv activate devpost
+pip install --upgrade pip
+pip install lsp-server
+pip install python-lsp-server
+python -m pip install 'python-lsp-server[all]'
+python -m pip install git+https://github.com/tomv564/pyls-mypy.git
+pip install numpy
+
+```
+
 ## packages
 
 ### Script
@@ -40,5 +51,8 @@ For package config
 
 Use for webapp
 
+### ide-css
+
+Use for webapp
 
 
