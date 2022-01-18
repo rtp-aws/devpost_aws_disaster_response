@@ -9,7 +9,7 @@ https://devpost.com/software/todo-ot17ds
 
 
 # MvpRc1
-[webapp](http://mvprc1-env.eba-sw3ee4ww.us-east-1.elasticbeanstalk.com/about.ejs)
+[webapp](http://mvprc1-env.eba-sw3ee4ww.us-east-1.elasticbeanstalk.com/)
 
 # About the repo
 
