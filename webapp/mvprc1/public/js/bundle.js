@@ -48,6 +48,11 @@ nc147_us15501.addEventListener('click', button => {
 
 })
 
+US52_UNIV.addEventListener('click', button => {
+ console.log("US52_UNIV: click() ");
+ camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885"
+})
+
 
 
 
@@ -127,11 +132,6 @@ TOLL540_DMS7.addEventListener('click', button => {
 TOLL54_APEXBBQ.addEventListener('click', button => {
   console.log("TOLL54_APEXBBQ: click() ");
   camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555"
-})
-
-US52_UNIV.addEventListener('click', button => {
- console.log("US52_UNIV: click() ");
- camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885"
 })
 
 
