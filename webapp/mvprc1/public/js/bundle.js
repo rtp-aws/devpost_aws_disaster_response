@@ -26,25 +26,25 @@ const I26_BROADWAY = document.getElementById("I26_BROADWAY");
 
 i85_churton.addEventListener('click', button => {
   console.log("i85_churton: click() ");
-  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688"
 })
 
 
 bus40_macy.addEventListener('click', button => {
   console.log("bus40_macy: click() ");
-  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536"
 })
 
 
 BUS40_SALEM.addEventListener('click', button => {
   console.log("BUS40_SALEM: click() ");
-  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588"
 })
 
 
 I26_BROADWAY.addEventListener('click', button => {
  console.log("I26_BROADWAY: click() ");
- camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967"
+ camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967"
 })
 
 
@@ -183,7 +183,7 @@ I440_US64_Bypass.addEventListener('click', button => {
 
 
 // The camera feed img
-var camera_feed_img = document.getElementsByClassName("camera_feed")[0];
+var camera_feed_bridge_img = document.getElementsByClassName("camera_feed_bridge")[0];
 var camera_feed_road_img = document.getElementsByClassName("camera_feed_road")[0];
 var camera_feed_odd_img = document.getElementsByClassName("camera_feed_odd")[0];
 
