@@ -18,7 +18,7 @@ class MvpRc1 {
 const i85_churton = document.getElementById("i85_churton");
 const bus40_macy = document.getElementById("bus40_macy");
 const BUS40_SALEM = document.getElementById("BUS40_SALEM");
-const I26_BROADWAY = document.getElementById("I26_BROADWAY");
+const nc147_us15501 = document.getElementById("nc147_us15501");
 
 
 
@@ -41,11 +41,11 @@ BUS40_SALEM.addEventListener('click', button => {
 })
 
 
-I26_BROADWAY.addEventListener('click', button => {
- console.log("I26_BROADWAY: click() ");
- camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967"
-})
+nc147_us15501.addEventListener('click', button => {
+  console.log("nc147_us15501: click() ");
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&amp;t=1642382016647"
 
+})
 
 
 
@@ -57,7 +57,6 @@ I26_BROADWAY.addEventListener('click', button => {
 
 
 
-const nc147_us15501 = document.getElementById("nc147_us15501");
 const HANESMALL_JONES = document.getElementById("HANESMALL_JONES");
 const HANESMALL_KESTER = document.getElementById("HANESMALL_KESTER");
 const I40_MM53 = document.getElementById("I40_MM53");
@@ -71,12 +70,8 @@ const TOLL540_DMS7 = document.getElementById("TOLL540_DMS7");
 const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 const US52_UNIV = document.getElementById("US52_UNIV");
 
+const I26_BROADWAY = document.getElementById("I26_BROADWAY");
 
-nc147_us15501.addEventListener('click', button => {
-  console.log("nc147_us15501: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&amp;t=1642382016647"
-
-})
 
 HANESMALL_JONES.addEventListener('click', button => {
   console.log("HANESMALL_JONES: click() ");
@@ -138,6 +133,11 @@ US52_UNIV.addEventListener('click', button => {
  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885"
 })
 
+
+I26_BROADWAY.addEventListener('click', button => {
+ console.log("I26_BROADWAY: click() ");
+ camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967"
+})
 
 
 
