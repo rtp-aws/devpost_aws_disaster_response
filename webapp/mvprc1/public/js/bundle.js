@@ -97,23 +97,12 @@ I540_US401.addEventListener('click', button => {
 })
 
 const I540_US1 = document.getElementById("I540_US1");
-const NC147_DAVIS_DR = document.getElementById("NC147_DAVIS_DR");
-const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
 
 I540_US1.addEventListener('click', button => {
   console.log("I540_US1: click() ");
   camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214"
 })
 
-NC147_DAVIS_DR.addEventListener('click', button => {
-  console.log("NC147_DAVIS_DR: click() ");
-  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791"
-})
-
-TOLL147_DAVIS_DR.addEventListener('click', button => {
-  console.log("TOLL147_DAVIS_DR: click() ");
-  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906"
-})
 
 const TOLL147_HOPSON_RD = document.getElementById("TOLL147_HOPSON_RD");
 const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
@@ -152,8 +141,31 @@ US52_UNIV.addEventListener('click', button => {
  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885"
 })
 
+
+
+
+
+// Weird ones
+const NC147_DAVIS_DR = document.getElementById("NC147_DAVIS_DR");
+const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
+
+NC147_DAVIS_DR.addEventListener('click', button => {
+  console.log("NC147_DAVIS_DR: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791"
+})
+
+TOLL147_DAVIS_DR.addEventListener('click', button => {
+  console.log("TOLL147_DAVIS_DR: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906"
+})
+
+
+
+
+
 // The camera feed img
 var camera_feed_img = document.getElementsByClassName("camera_feed")[0];
+var camera_feed_odd_img = document.getElementsByClassName("camera_feed_odd")[0];
 
 // Build class with some of these specified?
 const mvprc1 = new MvpRc1()
