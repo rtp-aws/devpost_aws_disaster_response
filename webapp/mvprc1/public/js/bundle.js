@@ -40,7 +40,7 @@ bus40_macy.addEventListener('click', button => {
 
 const BUS40_SALEM = document.getElementById("BUS40_SALEM");
 const HANESMall_JONES = document.getElementById("HANESMall_JONES");
-const HANESMALL_KESTER = document.getElementById("");
+const HANESMALL_KESTER = document.getElementById("HANESMALL_KESTER");
 
 
 BUS40_SALEM.addEventListener('click', button => {
