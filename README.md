@@ -21,6 +21,11 @@ Maintain notes about the directory there.
 * `raw_data/` raw pull of data by the webscrape script. These are put in git so that everyone is working with the same data.  Please don't update this directory
 * `matlab/`  sample matlab experiments
 * `R/`  sample R experiments
+* `docs/`  docs
+* `python/`  .py files and jupyter notebooks
+* `webapp/`  webapp releases
+
+
 
 # Quickstart for contributors
 
