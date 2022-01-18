@@ -19,6 +19,8 @@ const i85_churton = document.getElementById("i85_churton");
 const bus40_macy = document.getElementById("bus40_macy");
 const BUS40_SALEM = document.getElementById("BUS40_SALEM");
 const nc147_us15501 = document.getElementById("nc147_us15501");
+const US52_UNIV = document.getElementById("US52_UNIV");
+
 
 
 
@@ -73,8 +75,6 @@ const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
 const TOLL540_DAVIS_DR = document.getElementById("TOLL540_DAVIS_DR");
 const TOLL540_DMS7 = document.getElementById("TOLL540_DMS7");
 const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
-const US52_UNIV = document.getElementById("US52_UNIV");
-
 const I26_BROADWAY = document.getElementById("I26_BROADWAY");
 
 
