@@ -33,14 +33,14 @@ cams=( \
        ["I440_US64_Bypass"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751" \
        ["I540_US401"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=1642082230568" \
        ["I540_US1"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214" \
-       ["NC147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791" \
-       ["TOLL147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906" \
        ["TOLL147_HOPSON_RD"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG&t=1642180160169" \
        ["TOLL147_NC54"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG&t=1642180214727" \
        ["TOLL540_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG&t=1642179822842" \
        ["TOLL540_DMS7"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG&t=1642179901932" \
        ["TOLL54_APEXBBQ"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555" \
        ["US52_UNIV"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885" \
+       ["NC147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791" \
+       ["TOLL147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906" \
        )
 
 

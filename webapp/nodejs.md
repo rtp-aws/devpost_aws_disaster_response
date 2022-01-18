@@ -11,7 +11,6 @@ cd goes_webapp
 npm init -y
 npm install express
 npm install --save-dev nodemon
-npm install @dendra-science/goes-pseudo-binary
 npm i ejs
 sudo npm install -g browserify
 ```
