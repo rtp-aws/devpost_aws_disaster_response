@@ -20,32 +20,143 @@ const nc147_us15501 = document.getElementById("nc147_us15501");
 const i85_churton = document.getElementById("i85_churton");
 const bus40_macy = document.getElementById("bus40_macy");
 
-// The camera feed img
-var camera_feed_img = document.getElementsByClassName("jfd")[0];
 
-// Build class with some of these specified?
-const mvprc1 = new MvpRc1()
-
-// Hook an event listener for the AC button
 nc147_us15501.addEventListener('click', button => {
   console.log("nc147_us15501: click() ");
   camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&amp;t=1642382016647"
 
 })
 
-// Hook an event listener for the AC button
 i85_churton.addEventListener('click', button => {
   console.log("i85_churton: click() ");
   camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688"
 })
 
-// Hook an event listener for the AC button
+
 bus40_macy.addEventListener('click', button => {
   console.log("bus40_macy: click() ");
   camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536"
 })
 
+const BUS40_SALEM = document.getElementById("BUS40_SALEM");
+const HANESMall_JONES = document.getElementById("HANESMall_JONES");
+const HANESMALL_KESTER = document.getElementById("");
 
+
+BUS40_SALEM.addEventListener('click', button => {
+  console.log("BUS40_SALEM: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588"
+})
+
+HANESMall_JONES.addEventListener('click', button => {
+  console.log("HANESMall_JONES: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg&t=1642181838811"
+})
+
+HANESMALL_KESTER.addEventListener('click', button => {
+  console.log("HANESMALL_KESTER: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg&t=1642181836688"
+})
+
+const I26_BROADWAY = document.getElementById("I26_BROADWAY");
+const I40_MM53 = document.getElementById("I40_MM53");
+const I40_MM27 = document.getElementById("I40_MM27");
+
+I26_BROADWAY.addEventListener('click', button => {
+ console.log("I26_BROADWAY: click() ");
+ camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967"
+})
+
+I40_MM53.addEventListener('click', button => {
+ console.log("I40_MM53: click() ");
+ camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg&t=1642341041721"
+})
+
+I40_MM27.addEventListener('click', button => {
+ console.log(": click() ");
+ camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg&t=1642180476481"
+})
+
+const I40W_MM8 = document.getElementById("I40W_MM8");
+const I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
+const I540_US401 = document.getElementById("I540_US401");
+
+I40W_MM8.addEventListener('click', button => {
+  console.log("I40W_MM8: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg&t=1642180599578"
+})
+
+I440_US64_Bypass.addEventListener('click', button => {
+ console.log("I440_US64_Bypass: click() ");
+ camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751"
+})
+
+I540_US401.addEventListener('click', button => {
+  console.log("I540_US401: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=1642082230568"
+})
+
+const I540_US1 = document.getElementById("I540_US1");
+const NC147_DAVIS_DR = document.getElementById("NC147_DAVIS_DR");
+const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
+
+I540_US1.addEventListener('click', button => {
+  console.log("I540_US1: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214"
+})
+
+NC147_DAVIS_DR.addEventListener('click', button => {
+  console.log("NC147_DAVIS_DR: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791"
+})
+
+TOLL147_DAVIS_DR.addEventListener('click', button => {
+  console.log("TOLL147_DAVIS_DR: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906"
+})
+
+const TOLL147_HOPSON_RD = document.getElementById("TOLL147_HOPSON_RD");
+const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
+const TOLL540_DAVIS_DR = document.getElementById("TOLL540_DAVIS_DR");
+
+TOLL147_HOPSON_RD.addEventListener('click', button => {
+  console.log("TOLL147_HOPSON_RD: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG&t=1642180160169"
+})
+TOLL147_NC54.addEventListener('click', button => {
+  console.log("TOLL147_NC54: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG&t=1642180214727"
+})
+
+TOLL540_DAVIS_DR.addEventListener('click', button => {
+  console.log(": click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG&t=1642179822842"
+})
+
+const TOLL540_DMS7 = document.getElementById("TOLL540_DMS7");
+const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
+const US52_UNIV = document.getElementById("US52_UNIV");
+
+TOLL540_DMS7.addEventListener('click', button => {
+  console.log("TOLL540_DMS7: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG&t=1642179901932"
+})
+
+TOLL54_APEXBBQ.addEventListener('click', button => {
+  console.log("TOLL54_APEXBBQ: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555"
+})
+
+US52_UNIV.addEventListener('click', button => {
+ console.log("US52_UNIV: click() ");
+ camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885"
+})
+
+// The camera feed img
+var camera_feed_img = document.getElementsByClassName("camera_feed")[0];
+
+// Build class with some of these specified?
+const mvprc1 = new MvpRc1()
 
 
 //const pb = require('@dendra-science/goes-pseudo-binary');
