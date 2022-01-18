@@ -9,3 +9,16 @@ If you fsck things up
 3. `git stash drop` this will toss whatever state you were in.
 
 
+# restore deleted file
+
+```
+git checkout hashcode file
+```
+
+example
+
+```
+$ git checkout f363395dcaacd165286f416eadd32d224aadc93f docs/atom.md
+```
+
+
