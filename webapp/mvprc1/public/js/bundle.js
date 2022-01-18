@@ -59,7 +59,7 @@ I26_BROADWAY.addEventListener('click', button => {
 
 
 const nc147_us15501 = document.getElementById("nc147_us15501");
-const HANESMALL_JONES = document.getElementById("HANESMall_JONES");
+const HANESMALL_JONES = document.getElementById("HANESMALL_JONES");
 const HANESMALL_KESTER = document.getElementById("HANESMALL_KESTER");
 const I40_MM53 = document.getElementById("I40_MM53");
 const I40_MM27 = document.getElementById("I40_MM27");
