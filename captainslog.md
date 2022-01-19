@@ -214,6 +214,12 @@ Updated 1 path from 3c6c91c
 (devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response/docs$ 
 ```
 
+### My own cameras
+
+Last night I thought I should upload some of my own cameras footage.  In particular of driveway and the snow.  Discovered this morning when I went to do it. The cameras had
+been turned off a few days before the storm. timingandluck.com  I did get some clips from frontdoor.  Sadly I swept that portion so no such ice to water to ice.  I did pour 
+a bucket of water and recorded the flow though.
+
 
 
 
