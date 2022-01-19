@@ -152,4 +152,68 @@ start handing out userids for people.
 
 While doing the eb webapp, realized I needed seprate credentials.  Not a security expert with aws.  Did add some. Added notes on how to recreate.  Did add encrypted credentials to repo.  Updated makefiles to ensure any puts do a clean to remove any keys or swap/backup files.
 
+## 20220118
+
+### R
+
+Wasted some time studying R.  I did put one file here just for reference.
+
+### Rekognition
+
+Watched some videos.  Uploaded some raw_data to S3 in prep for usage.
+
+### Sagemaker ground truth
+
+Watched some videos  Uploaded some raw_data to S3 in prep for usage.
+
+
+## 20220119
+
+### overzealous clean
+
+I copied a makefile line for clean to the docs folder two days ago.
+As a result, I deleted some files.  I restored some of the files.  I noticed today
+some are still missing.
+
+```
+John F. Davis committed 2 days ago
+1 parent 7e5dcdf commit 85c341b6536d62e8005f869dbf23b915b81b0029
+```
+
+* docs/aws_account.md
+* docs/convolution.md
+
+
+This commit seems to be where I want to be.
+
+```
+John F. Davis committed 3 days ago
+1 parent 485bd80 commit 83eb0242e482f9cee20115dc793ee25902c6724c
+```
+
+Missing from the restore are
+
+* urls.md
+* tools.md
+* rekognition.md
+
+
+I restored them via this method:
+
+```
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response$ git checkout 83eb0242e482f9cee20115dc793ee25902c6724c urls.md
+Updated 1 path from 3c6c91c
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response$ git checkout 83eb0242e482f9cee20115dc793ee25902c6724c tools.md
+Updated 1 path from 3c6c91c
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response$ git checkout 83eb0242e482f9cee20115dc793ee25902c6724c rekognition.md
+Updated 1 path from 3c6c91c
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response$ cd docs
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response/docs$ git mv ../urls.md .
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response/docs$ git mv ../tools.md .
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response/docs$ git mv ../rekognition.md .
+(devpost) davis@zatoichi:~/progs/devpost_aws_disaster_response/docs$ 
+```
+
+
+
 
