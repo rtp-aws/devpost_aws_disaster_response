@@ -41,3 +41,7 @@ $(SUBCLEAN): %.clean:
 #	make -C $? clean
 	-rm *.backup *.swp *.BACKUP
 	$(MAKE) -C $* clean
+
+
+upload_raw:
+	aws s3 sync raw_data/. s3://icy-bridge-dataset --exclude "*.swp" --exclude "*.key"

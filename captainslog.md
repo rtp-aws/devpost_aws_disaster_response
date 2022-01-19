@@ -221,5 +221,18 @@ been turned off a few days before the storm. timingandluck.com  I did get some c
 a bucket of water and recorded the flow though.
 
 
+### Sagemaker groundtruth
 
+I created a poll, job and submitted myself to the job.  Labeled some.  Realized I needed a bad data label for the camera images which were messed up.  Did that.  Redid with
+additional labels.  Made a video.  Went through 300 images.
+
+Documented it.
+
+Tried to import into rekognition and had problems.  The json file doesn't match.
+
+Found this url for fixing it.
+
+https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-gt-cl-transform.html
+
+I'm tired for the day though.
 
