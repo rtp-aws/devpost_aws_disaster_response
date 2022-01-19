@@ -16,6 +16,7 @@ fetch_new_images:
 
 
 gitupdate:
+	./find_dupes.sh
 	git add .; git commit -m "update bin dir"; git push
 
 clean:
