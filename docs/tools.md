@@ -18,5 +18,6 @@ I like to know what works for you.
 * git
 * [R](R.md)
 * RStudio
+* SimpleScreenRecorder
 
 

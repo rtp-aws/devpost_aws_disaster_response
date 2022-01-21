@@ -44,4 +44,5 @@ $(SUBCLEAN): %.clean:
 
 
 upload_raw:
-	aws s3 sync raw_data/. s3://icy-bridge-dataset --exclude "*.swp" --exclude "*.key"
+	#aws s3 sync raw_data/. s3://icy-bridge-dataset --exclude "*.swp" --exclude "*.key"
+	aws s3 sync raw_data/. s3://icy-bridge/raw_data_2 --exclude "*.swp" --exclude "*.key"

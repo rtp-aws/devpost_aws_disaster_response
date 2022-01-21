@@ -236,3 +236,49 @@ https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-gt-cl-transfor
 
 I'm tired for the day though.
 
+### Rekognition
+
+Figured out how to import Ground Truth to Rekognition.
+
+Trained a model
+
+Added code to sync git with S3.
+
+Added code to random pick images and upload to a different bucket.  Did this to work on Ground Truth and Rekognition when I noticed GT was not randomly picking images.  It was picking
+the first set of images up to 1000 max.
+
+
+## 20220120
+
+Started looking at model training results.  Getting a feel for the workflow.
+
+Uploaded a video on issue with labeling images added to dataset after the fact.
+
+I'm thinking of a multi stage model.  I'll explain more later as I learn more how Rekognition and Ground Truth work, but for now basically.  I want to run through a series of 
+models from an input camera image.  Is is a daylight image? Yes, proceed to is it a bridge? Yes, proceed is snow is the sceene?  Use object detection to locate the bridge seam.
+Pass this bounding box to the code to detect ice.  Of course this will all be checked with a temperature at current location.
+
+Anyway that is the general idea.
+
+I am going to set aside the rekognition work for a bit.  The video is out on the bug with images.  I will revisit later.  I'll catch up on some of the other todos.
+
+I worked on the videos/github from cloudacademy regarding rekognition.  I gave a [pull request](https://github.com/cloudacademy/aws-machinelearning/pull/1#pullrequestreview-858789590).  It will help with this project but only slightly.  Perhaps with the 
+webapp.
+
+
+Tried a lot to get a foo.rtp-aws.org webapp working.  I don't want to break the user group website, so I moved skink.net to aws.  I tried to get it working with foo.skink.net.
+On the upside my notes from rtp-aws.org were helpful. I can see how I need to adjust them.  Sadly still could not get it working.  Will try again in morning.
+
+
+almost forgot.  I noticed in my pull request I had left off some stuff between my version and the commit.  I had the editor open in atom.  When I did my pull i had a conflict.
+atom handled the merge like a mergetool.  Very nice.  Totally without any skill.  Something to keep in mind.
+
+## 20220121
+
+Waiting overnight the foo.skink.net entry still did not work.  In fact, http://www.skink.net/index.html did not work either.
+
+Did some recruiting via linkedin.  Asked for some help in various slack channels and linkedin for the above problem.  Kind of a inconjunction with the hackathon, because it is.
+
+Posted the encrypted secrets for the hackathon on linkedin.  We will see if its a problem.
+
+
