@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 
 app.get('/index.ejs', (req, res) => {
 
-    console.log("get /")
+    console.log("get /index.ejs")
     console.log(req)
 
     res.render("index")
@@ -55,10 +55,38 @@ app.get('/index.ejs', (req, res) => {
 
 app.get('/about.ejs', (req, res) => {
 
-    console.log("get /")
+    console.log("get /about.ejs")
     //console.log(req)
 
     res.render("about")
+})
+
+////
+
+app.get('/bridge.ejs', (req, res) => {
+
+    console.log("get /bridge.ejs")
+    //console.log(req)
+
+    res.render("bridge")
+})
+
+
+app.get('/road.ejs', (req, res) => {
+
+    console.log("get /road.ejs")
+    //console.log(req)
+
+    res.render("road")
+})
+
+
+app.get('/odd.ejs', (req, res) => {
+
+    console.log("get /odd.ejs")
+    //console.log(req)
+
+    res.render("odd")
 })
 
 
