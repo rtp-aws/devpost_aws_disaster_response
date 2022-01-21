@@ -1,6 +1,9 @@
-public/js/bundle.js: public/js/script.js
+
+SRC:= public/js/script.js public/js/bridge.js
+
+public/js/bundle.js: $(SRC)
 	echo "running browserify ..."
-	browserify public/js/script.js -o public/js/bundle.js
+	browserify public/js/script.js public/js/bridge.js -o public/js/bundle.js
 
 
 runlocal: public/js/bundle.js
