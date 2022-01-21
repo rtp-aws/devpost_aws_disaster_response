@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/stylesnav.css">
 <link rel="manifest" href="manifest.json" >
 
-<script src="js/bridge_bundle.js" defer></script>
+<script src="js/both_bundle.js" defer></script>
 <meta charset="UTF-8">
 
 <title>Icy Bridge Detector</title>
@@ -44,13 +44,13 @@
 
 
   <div>
-    <H2> Cameras Bridge </H2>
-    <p> These are the cameras which are fixed bridge</p><br>
-    <img class="camera_feed_bridge" style="-webkit-user-select: none;
+    <H2> Cameras Bridge/Road (both) </H2>
+    <p> These are the cameras which vary betwen bridge or road</p><br>
+    <img class="camera_feed_both" style="-webkit-user-select: none;
                  margin: auto;
                  background-color: hsl(0, 0%, 90%);
                  transition: background-color 300ms;"
-                 src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG">
+                 src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg">
 
 
 
@@ -58,16 +58,36 @@
      <p>Select a camera feed:</p>
 
      <div>
-       <input type="radio" id="i85_churton" name="feed_bridge" value="i85_churton" checked>
-       <label for="i85_churton">I85 Churton</label>
+       <input type="radio" id="I40_MM53" name="feed_both" value="I40_MM53" checked>
+       <label for="I40_MM53">I40_MM53</label>
+     </div>
+
+     <div>
+       <input type="radio" id="BUS40_MACY" name="feed_both" value="BUS40_MACY">
+       <label for="BUS40_MACY">Bus40 and Macy</label>
+     </div>
+
+     <div>
+       <input type="radio" id="NC147_US15501" name="feed_both" value="NC147_US15501" >
+       <label for="NC147_US15501">NC 147 and US 15-501 </label>
      </div>
 
 
      <div>
-       <input type="radio" id="BUS40_SALEM" name="feed_bridge" value="BUS40_SALEM">
-       <label for="BUS40_SALEM">BUS40_SALEM</label>
+        <input type="radio" id="US52_UNIV" name="feed_both" value="US52_UNIV">
+        <label for="US52_UNIV">US52_UNIV</label>
      </div>
 
+     <div>
+       <input type="radio" id="TOLL147_HOPSON_RD" name="feed_both" value="TOLL147_HOPSON_RD">
+       <label for="TOLL147_HOPSON_RD">TOLL147_HOPSON_RD</label>
+     </div>
+
+
+     <div>
+       <input type="radio" id="TOLL147_NC54" name="feed_both" value="TOLL147_NC54">
+       <label for="TOLL147_NC54">TOLL147_NC54</label>
+     </div>
 
 </div>
 

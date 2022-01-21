@@ -1,32 +1,33 @@
 
-#SRC:= public/js/road.js public/js/bridge.js public/js/odd.js
+SRC:= public/js/road.js public/js/bridge.js public/js/odd.js public/js/both.js
+EXE:= public/js/road_bundle.js public/js/bridge_bundle.js public/js/odd_bundle.js public/js/both_bundle.js
 
-#public/js/bundle.js: $(SRC)
-#	echo "running browserify ..."
-#	browserify $(SRC) -o public/js/bundle.js
 
-# TODO change to makefile vars
-all: public/js/bridge_bundle.js public/js/road_bundle.js public/js/odd_bundle.js
+# TODO use implicit rule
+all: $(EXE)
 
-public/js/bridge_bundle.js: $(SRC)
+public/js/bridge_bundle.js: public/js/bridge.js
 		echo "running browserify on bridge ..."
-		browserify public/js/bridge.js -o public/js/bridge_bundle.js
+		browserify $< -o $@
 
-public/js/road_bundle.js: $(SRC)
+public/js/road_bundle.js: public/js/road.js
 		echo "running browserify on road ..."
-		browserify public/js/road.js  -o public/js/road_bundle.js
+		browserify $< -o $@
 
-public/js/odd_bundle.js: $(SRC)
+public/js/both_bundle.js: public/js/both.js
+		echo "running browserify on both ..."
+		browserify $< -o $@
+
+public/js/odd_bundle.js: public/js/odd.js
 		echo "running browserify on odd ..."
-		browserify public/js/odd.js  -o public/js/odd_bundle.js
+		browserify $< -o $@
 
 
-
-runlocal: public/js/bridge_bundle.js public/js/road_bundle.js public/js/odd_bundle.js
+runlocal: $(EXE)
 	echo "running runlocal ..."
 	npm run devStart
 
-deploy: public/js/bridge_bundle.js public/js/road_bundle.js public/js/odd_bundle.js gitupdate
+deploy: $(EXE) gitupdate
 	echo "running deploy ..."
 	eb deploy
 
@@ -34,3 +35,8 @@ deploy: public/js/bridge_bundle.js public/js/road_bundle.js public/js/odd_bundle
 gitupdate:
 	echo "running gitupdate ..."
 	git add .; git commit -m "mvprc1"; git push
+
+
+clean:
+	echo "running clean"
+	-rm $(EXE)

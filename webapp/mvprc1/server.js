@@ -89,6 +89,15 @@ app.get('/odd.ejs', (req, res) => {
     res.render("odd")
 })
 
+app.get('/both.ejs', (req, res) => {
+
+    console.log("get /both.ejs")
+    //console.log(req)
+
+    res.render("both")
+})
+
+
 
 
 
