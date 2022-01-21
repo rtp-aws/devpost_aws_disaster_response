@@ -75,59 +75,79 @@ const mvprc1bridge = new MvpRc1Bridge()
 
 
 
-class MvpRc1 {
+
+class MvpRc1Odd {
   constructor() {
-      console.log("MvpRc1:Constructor() ");
+      console.log("MvpRc1Odd:Constructor() ");
   }
 
 }
 
 
-// button
-// https://stackoverflow.com/questions/362614/calling-onclick-on-a-radiobutton-list-using-javascript
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-// https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
-const i85_churton = document.getElementById("i85_churton");
-const bus40_macy = document.getElementById("bus40_macy");
-const BUS40_SALEM = document.getElementById("BUS40_SALEM");
-const nc147_us15501 = document.getElementById("nc147_us15501");
-const US52_UNIV = document.getElementById("US52_UNIV");
 
 
 
 
 
-i85_churton.addEventListener('click', button => {
-  console.log("i85_churton: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG"
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+// ODD ONES
+/////////////////////////////////////////////////////////////////
+
+const NC147_DAVIS_DR = document.getElementById("NC147_DAVIS_DR");
+const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
+const I40W_MM8 = document.getElementById("I40W_MM8");
+const I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
+
+NC147_DAVIS_DR.addEventListener('click', button => {
+  console.log("NC147_DAVIS_DR: click() ");
+  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
+})
+
+TOLL147_DAVIS_DR.addEventListener('click', button => {
+  console.log("TOLL147_DAVIS_DR: click() ");
+  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
+})
+
+I40W_MM8.addEventListener('click', button => {
+  console.log("I40W_MM8: click() ");
+  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
+})
+
+I440_US64_Bypass.addEventListener('click', button => {
+ console.log("I440_US64_Bypass: click() ");
+ camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
 })
 
 
-bus40_macy.addEventListener('click', button => {
-  console.log("bus40_macy: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg"
-})
-
-
-BUS40_SALEM.addEventListener('click', button => {
-  console.log("BUS40_SALEM: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg"
-})
-
-
-nc147_us15501.addEventListener('click', button => {
-  console.log("nc147_us15501: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG"
-
-})
-
-US52_UNIV.addEventListener('click', button => {
- console.log("US52_UNIV: click() ");
- camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg"
-})
 
 
 
+// The camera feed img
+var camera_feed_odd_img = document.getElementsByClassName("camera_feed_odd")[0];
+
+// Build class with some of these specified?
+const mvprc1odd = new MvpRc1Odd()
+
+},{}],3:[function(require,module,exports){
+
+
+
+
+
+class MvpRc1Road {
+  constructor() {
+      console.log("MvpRc1Road:Constructor() ");
+  }
+
+}
 
 
 /////////////////////////////////////////////////////
@@ -218,141 +238,10 @@ I26_BROADWAY.addEventListener('click', button => {
 
 
 
-
-/////////////////////////////////////////////////////////////////
-// ODD ONES
-/////////////////////////////////////////////////////////////////
-
-// Weird ones
-const NC147_DAVIS_DR = document.getElementById("NC147_DAVIS_DR");
-const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
-const I40W_MM8 = document.getElementById("I40W_MM8");
-const I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
-
-NC147_DAVIS_DR.addEventListener('click', button => {
-  console.log("NC147_DAVIS_DR: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
-})
-
-TOLL147_DAVIS_DR.addEventListener('click', button => {
-  console.log("TOLL147_DAVIS_DR: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
-})
-
-I40W_MM8.addEventListener('click', button => {
-  console.log("I40W_MM8: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
-})
-
-I440_US64_Bypass.addEventListener('click', button => {
- console.log("I440_US64_Bypass: click() ");
- camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
-})
-
-
-
-
-
 // The camera feed img
-var camera_feed_bridge_img = document.getElementsByClassName("camera_feed_bridge")[0];
 var camera_feed_road_img = document.getElementsByClassName("camera_feed_road")[0];
-var camera_feed_odd_img = document.getElementsByClassName("camera_feed_odd")[0];
 
 // Build class with some of these specified?
-const mvprc1 = new MvpRc1()
+const mvprc1road = new MvpRc1Road()
 
-
-//const pb = require('@dendra-science/goes-pseudo-binary');
-
-/*
-class GoesDecoder {
-    constructor(format, buffer, decoder) {
-        console.log("GoesDecoder() ");
-        this.formatInput = format
-        this.bufferInput = buffer
-        this.decoderOutput = decoder
-
-        // Add some default values
-        //this.formatInput.value = 'fp2_29,fp2_29'
-        //this.bufferInput.value = 'CKDS@[AKCBEO@N~@@@CQRBKEF@CAKCCET@N~@@@CQRB_DH@JAYCCEZ@N}@@@CQRB`DD@BAYCDE`@N}@@@CQRB[DK@KAICCEB@N}@@@CQRBTEF@NBOCCEE@N}@@@CQRBVCN@KBKCEEL@N~@@@CQRBFED@NAZCCEI@N}@@@CQRBFBN@IANCDEB@N~@@@CQRBTCR@KASCFED@N~@@@CQRCADL@MBMCDET@N~@@@CQRB}DW@]AICDE~@N~@@@CQRBG'
-        this.formatInput.value = 'i_3'
-        this.bufferInput.value = 'AhlAjPAktAmXAn|Ap`ArDAshAuLAvpAxTAyx~WT~Up~TL~Rh~QD~O`~M|~LX~Jt~IP~Gl~FH'
-        this.decoderOutput.value = ''
-    }
-
-    clear() {
-        console.log("clear() ");
-        this.formatInput.value = ''
-        this.bufferInput.value = ''
-        this.decoderOutput.value = ''
-    }
-
-    performDecode() {
-        console.log("performDecode()");
-        let pbf;
-        let ret;
-
-        const fp2Buf = Buffer.from(this.bufferInput.value,'ascii')
-        console.log(`format: ${this.formatInput.value}`);
-        console.log(`buffer: ${fp2Buf}`);
-        pbf = new pb.Decoder(this.formatInput.value);
-        ret = pbf.decode(fp2Buf);
-        ret.then((val) => {
-            console.log(`result: ${val.rows.toString()}`);
-            if (val.rows.toString() === "") {
-                console.log("empty string");
-                this.decoderOutput.value = "invalid format/buffer combination";
-            } else {
-                console.log("non empty string");
-                console.log(`val = ${val}`);
-                console.log(`val.rows = ${val.rows}`);
-                this.decoderOutput.value = val.rows.toString();
-            }
-        });
-    }
-
-}
-
-// Get reference to HTML elements
-//
-// querySelector() returns the first Element within document that
-// matches the specified selector or group.  A selector is a
-// DOMString containing one or more selectors to match (hence
-// the array syntax
-//
-// querySelectorAll() returns all elements ...
-//
-//
-// button
-const allClearButton = document.querySelector('[ac-button]')
-const decodeButton = document.querySelector('[decode-button]')
-// text areas
-const formatElement = document.querySelector('[format-ta]')
-const bufferElement = document.querySelector('[buffer-ta]')
-const decoderElement = document.querySelector('[output-ta]')
-
-// Build class with some of these specified?
-const goesdecoder = new GoesDecoder(formatElement, bufferElement, decoderElement)
-
-// Hook an event listener for the AC button
-allClearButton.addEventListener('click', button => {
-    goesdecoder.clear()
-})
-
-// Hook an event listener for the Decode button
-decodeButton.addEventListener('click', button => {
-    goesdecoder.performDecode()
-})
-
-const formatEditBox = document.getElementsByClassName("textarea_e")[0];
-formatEditBox.addEventListener("keyup",function(event) {
-    if (event.key === "Enter") {
-        //console.log("yo")
-        goesdecoder.performDecode()
-    }
-});
-
-
-*/
-
-},{}]},{},[2,1]);
+},{}]},{},[3,1,2]);
