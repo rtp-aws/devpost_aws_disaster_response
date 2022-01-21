@@ -27,31 +27,31 @@ const US52_UNIV = document.getElementById("US52_UNIV");
 
 i85_churton.addEventListener('click', button => {
   console.log("i85_churton: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG"
 })
 
 
 bus40_macy.addEventListener('click', button => {
   console.log("bus40_macy: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg"
 })
 
 
 BUS40_SALEM.addEventListener('click', button => {
   console.log("BUS40_SALEM: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg"
 })
 
 
 nc147_us15501.addEventListener('click', button => {
   console.log("nc147_us15501: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&amp;t=1642382016647"
+  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG"
 
 })
 
 US52_UNIV.addEventListener('click', button => {
  console.log("US52_UNIV: click() ");
- camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885"
+ camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg"
 })
 
 
@@ -80,63 +80,63 @@ const I26_BROADWAY = document.getElementById("I26_BROADWAY");
 
 HANESMALL_JONES.addEventListener('click', button => {
   console.log("HANESMALL_JONES: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg&t=1642181838811"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg"
 })
 
 HANESMALL_KESTER.addEventListener('click', button => {
   console.log("HANESMALL_KESTER: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg&t=1642181836688"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg"
 })
 
 I40_MM53.addEventListener('click', button => {
  console.log("I40_MM53: click() ");
- camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg&t=1642341041721"
+ camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg"
 })
 
 I40_MM27.addEventListener('click', button => {
  console.log(": click() ");
- camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg&t=1642180476481"
+ camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg"
 })
 
 I540_US401.addEventListener('click', button => {
   console.log("I540_US401: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=1642082230568"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG"
 })
 
 I540_US1.addEventListener('click', button => {
   console.log("I540_US1: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg"
 })
 
 TOLL147_HOPSON_RD.addEventListener('click', button => {
   console.log("TOLL147_HOPSON_RD: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG&t=1642180160169"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
 })
 
 TOLL147_NC54.addEventListener('click', button => {
   console.log("TOLL147_NC54: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG&t=1642180214727"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
 })
 
 TOLL540_DAVIS_DR.addEventListener('click', button => {
   console.log(": click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG&t=1642179822842"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG"
 })
 
 TOLL540_DMS7.addEventListener('click', button => {
   console.log("TOLL540_DMS7: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG&t=1642179901932"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG"
 })
 
 TOLL54_APEXBBQ.addEventListener('click', button => {
   console.log("TOLL54_APEXBBQ: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555"
+  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
 })
 
 
 I26_BROADWAY.addEventListener('click', button => {
  console.log("I26_BROADWAY: click() ");
- camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967"
+ camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
 })
 
 
@@ -159,22 +159,22 @@ const I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
 
 NC147_DAVIS_DR.addEventListener('click', button => {
   console.log("NC147_DAVIS_DR: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791"
+  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
 })
 
 TOLL147_DAVIS_DR.addEventListener('click', button => {
   console.log("TOLL147_DAVIS_DR: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906"
+  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
 })
 
 I40W_MM8.addEventListener('click', button => {
   console.log("I40W_MM8: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg&t=1642180599578"
+  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
 })
 
 I440_US64_Bypass.addEventListener('click', button => {
  console.log("I440_US64_Bypass: click() ");
- camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751"
+ camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
 })
 
 
