@@ -19,29 +19,54 @@ echo ${the_date}
 # REF: https://stackoverflow.com/questions/1494178/how-to-define-hash-tables-in-bash
 declare -A cams
 #       [""]="" \
+# In ABC/lexi order
 cams=( \
-       ["NC147_US15501"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG&t=1642382016647" \
-       ["I85_CHURTON"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG&t=1642424792688" \
-       ["BUS40_MACY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg&t=1642182080536" \
-       ["BUS40_SALEM"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg&t=1642181977588" \
-       ["HANESMall_JONES"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg&t=1642181838811" \
-       ["HANESMALL_KESTER"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg&t=1642181836688" \
-       ["I26_BROADWAY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg&t=1642180541967" \
-       ["I40_MM53"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg&t=1642341041721" \
-       ["I40_MM27"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg&t=1642180476481" \
-       ["I40W_MM8"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg&t=1642180599578" \
-       ["I440_US64_Bypass"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751" \
-       ["I540_US401"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=1642082230568" \
-       ["I540_US1"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214" \
-       ["TOLL147_HOPSON_RD"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG&t=1642180160169" \
-       ["TOLL147_NC54"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG&t=1642180214727" \
-       ["TOLL540_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG&t=1642179822842" \
-       ["TOLL540_DMS7"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG&t=1642179901932" \
-       ["TOLL54_APEXBBQ"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555" \
-       ["US52_UNIV"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg&t=1642181703885" \
-       ["NC147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791" \
-       ["TOLL147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906" \
+       ["BUS40_MACY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg" \
+       ["BUS40_SALEM"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg" \
+       ["HANESMall_JONES"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg" \
+       ["HANESMALL_KESTER"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg" \
+       ["I26_BROADWAY"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg" \
+       ["I40_MM27"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg" \
+       ["I40_MM53"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg" \
+       ["I40W_MM8"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg" \
+       ["I440_I87"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG" \
+       ["I540_US1_64"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg" \
+       ["I540_US401"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG" \
+       ["I85_CHURTON"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG" \
+       ["NC147_US15501"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG" \
+       ["TOLL147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG" \
+       ["TOLL147_HOPSON_RD"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG" \
+       ["TOLL147_NC54"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG" \
+       ["TOLL540_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG" \
+       ["TOLL540_DMS7"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG" \
+       ["TOLL54_APEXBBQ"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG" \
+       ["US52_UNIV"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg" \
        )
+
+
+#
+#
+# some maintenance is required here.
+#
+#
+
+#
+# The urls for these have a number at end which I thought was significant.  Turns out they are not.
+# Via testing, I have seen the URLS Change without the t=nnnn parameter.
+#
+# 
+# NC147_DAVIS_DR
+# https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642084415791
+# 
+# TOLL147_DAVIS_DR
+# https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642180093906
+#
+# As a result, I pruned the NC147 version. I also removed all the t=nnn parameters.  Added
+# I540_US401 since I found it as a highres bridge while looking for i-87 and us64b for 
+# lastnights ambulance wreck.
+#
+
+
 
 
 # this one has a lot of text on it

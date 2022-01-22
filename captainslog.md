@@ -281,4 +281,6 @@ Did some recruiting via linkedin.  Asked for some help in various slack channels
 
 Posted the encrypted secrets for the hackathon on linkedin.  We will see if its a problem.
 
+### MVPRC1
 
+Spent way to much time on the app.  Went through cameras.  Trying to find the ones which are best.  Adjusted some code in camera scans script.
