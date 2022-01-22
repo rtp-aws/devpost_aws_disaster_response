@@ -284,3 +284,9 @@ Posted the encrypted secrets for the hackathon on linkedin.  We will see if its 
 ### MVPRC1
 
 Spent way to much time on the app.  Went through cameras.  Trying to find the ones which are best.  Adjusted some code in camera scans script.
+
+## 20220122
+
+The webapps are hosted using the rtp-aws.org.  They also use SSL.  The notes on how to config are in different repos though.  Need to add copies here.  The S3/Route53/CloudFront doc is in rtp-aws.org source repo.  The elastic beanstalk notes on how to set load blancer is
+in the eb_testy repo.
+
