@@ -12,7 +12,7 @@ https://devpost.com/software/todo-ot17ds
 
 
 # MvpRc1
-[webapp](http://mvprc1-env.eba-sw3ee4ww.us-east-1.elasticbeanstalk.com/)
+[webapp](http://mvprc1.rtp-aws.org/)
 
 # About the repo
 
@@ -66,85 +66,76 @@ and the edge version
 
 ## NCDOT Cameras
 
-This [site](https://drivenc.gov/#adverse-weather)  has potential cameras.  However they are tiny low res images and not live.  Instead they are snapshots.  They also seem to change camera view.  
+This [site](https://drivenc.gov/#adverse-weather)  has cameras.  
 
-I knew it would be difficult to obtain some footage of a particular camera.  I have contacted the NCDOT but not received a response.  Perhaps later we will but for now we are doing a webscrape operation.  
+I've managed to establish communications with [ncdot](https://www.ncdot.gov/travel-maps/traffic-travel/severe-weather/Pages/winter.aspx).  As a result, I have learned they don't maintain camera footage.  So, I can't ask for them to provide a stable, hi-res, continous feed of past events in conjunction with a camera using the same viewpoint.  It is what it is.  Hence, I am using what is publicly avaiable and web scraping and archiving.
+
+
+### Issue with these cameras
+
+* The cameras vary in quality
+* The cameras are not fixed. Sometimes they point at a road.  Sometimes a bridge.
+* Furthermore, the angle is not fixed.  When pointing at a bridge, a seam between elevated portion and non elevated is never the same.
+
 
 These are some of the URLs obtained by chrome developers tools.  These images will update.  Currently not all of the ones pulled are listed here. See [here](imgs/raw_data) for the current dataset.
 
-If you are unware of developer tools in chrome look [here](https://youtu.be/RRuaG0_W7B4) is a short video on how to find the url to add to the webscrape dataset.
+These were obtained by watching the urls via chrome developer tools.  I made a video in hopes of having additional folks provide find good footage [here.](https://youtu.be/RRuaG0_W7B4) 
 
-### Best Camera so far
+### Sample cameras.
+
+The cameras used for the project are reflected in the web app.  These are the intial cameras found with some commentary for historical reference.
 
 #### NC 147 (Toll) & Davis Drive
-In the lower right corner is the closest view of boundry of roadway and elevated roadway.  However, the corresponding median portion is not visible.  Such a pity, they could have angled the camera down a few degress and it would be perfect.
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG&t=1642082764209
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG
 ```
-
-
-
-### Other Potential cameras
-
 
 #### I-440 & US 64 Bypass
-This one has a good view of white line, shoulder and appears to be potentially high res.  Its also not obscurred with text overlay.
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG&t=1642081402751
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG
 ```
 
 #### I-540 & US 401
-This one could be hi-res.  It shows the seam between road and elevated roadway.
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=1642082230568)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG&t=1642082230568
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG
 ```
 #### Toll 540/US 1
-Newer camera.  Shows junction of roadway and elevated roadway, but distant.
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642094997214
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg
 ```
-
-
-### Not good ones, but notable
 
 #### Toll 540 & NC 54
 
-What are is this, Russia?  Does show the median.  Low res and does not show seam.
-
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082877653)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG&t=1642082877653
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG
 ```
 
 #### I-40 @ US-1
 
-Shows roadway with wide median and seam in distance. Also seems to be well lit.  Is than error?
-
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG&t=1642095364324)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg&t=1642083392226
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg
 ```
 #### TOLL540 and Apex BBQ Rd
 
-
-Shows roadway with wide shoulder and hi res.  If the camera was angled down some it could be awesome.
-
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555)
+![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG)
 
 ```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG&t=1642095317555
+https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG
 ```
