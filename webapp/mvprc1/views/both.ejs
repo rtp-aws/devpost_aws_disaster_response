@@ -38,24 +38,31 @@
 
 <!-- ---------------------------------------------------------------- -->
 
+
+
 <div class="the_body">
 
 	<H1> MVP-RC1 </H1>
-
-
   <div>
     <H2> Cameras Bridge/Road (both) </H2>
     <p> These are the cameras which vary betwen bridge or road</p><br>
-    <img class="camera_feed_both" style="-webkit-user-select: none;
-                 margin: auto;
-                 background-color: hsl(0, 0%, 90%);
-                 transition: background-color 300ms;"
-                 src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg">
+  </div>
+
+  <div>
+    <label class="switch">
+      <input type="checkbox" id="slider">
+      <span class="slider round"></span>
+    </label>
+    Actual Size
+  </div>
 
 
 
 
+
+   <div>
      <p>Select a camera feed:</p>
+   </div>
 
      <div>
        <input type="radio" id="I40_MM53" name="feed_both" value="I40_MM53" checked>
@@ -89,11 +96,21 @@
        <label for="TOLL147_NC54">TOLL147_NC54</label>
      </div>
 
-</div>
+     <div>
+       <img class="camera_feed_both" style="-webkit-user-select: none;
+                    margin: auto;
+                    background-color: hsl(0, 0%, 90%);
+                    max-width: 200px;
+                    max-height: 200px;
+                    transition: background-color 300ms;"
+                    src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg">
+      </div>
+
+
+  </div> <!-- The_body div -->
 
 
 
 
-</div>
 </body>
 </html>

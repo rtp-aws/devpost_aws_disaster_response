@@ -45,18 +45,23 @@
 
 
 <div>
-  <H2> Cameras Road </H2>
-  <p> These are the cameras which are fixed road</p><br>
-  <img class="camera_feed_road" style="-webkit-user-select: none;
-               margin: auto;
-               background-color: hsl(0, 0%, 90%);
-               transition: background-color 300ms;"
-               src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg">
+  <div>
+    <H2> Cameras Road </H2>
+    <p> These are the cameras which are fixed road</p><br>
+  </div>
+
+  <div>
+    <label class="switch">
+      <input type="checkbox" id="slider">
+      <span class="slider round"></span>
+    </label>
+    Actual Size
+  </div>
 
 
-
-
-   <p>Select a camera feed:</p>
+   <div>
+     <p>Select a camera feed:</p>
+   </div>
 
    <div>
      <input type="radio" id="HANESMALL_JONES" name="feed_road" value="HANESMALL_JONES" checked>
@@ -101,13 +106,22 @@
       <label for="TOLL54_APEXBBQ">TOLL54_APEXBBQ</label>
     </div>
 
+    <div>
+      <img class="camera_feed_road" style="-webkit-user-select: none;
+                   margin: auto;
+                   background-color: hsl(0, 0%, 90%);
+                   max-width: 200px;
+                   max-height: 200px;
+                   transition: background-color 300ms;"
+                   src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg">
+    </div>
 
 
-</div>
+
+  </div> <!-- The_body div -->
 
 
 
 
-</div>
 </body>
 </html>

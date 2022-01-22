@@ -33,70 +33,82 @@
       <li><a href="about.ejs">About</a></li>
     </ul>
   </nav>
-  </div>
+</div>
 </header>
 
 <!-- ---------------------------------------------------------------- -->
+
+
 
 <div class="the_body">
 
 	<H1> MVP-RC1 </H1>
 
+  <div>
+    <H2> Cameras Odd </H2>
+    <p> These are the cameras which show oddness. </p><br>
+  </div>
+
+  <div>
+    <label class="switch">
+      <input type="checkbox" id="slider">
+      <span class="slider round"></span>
+    </label>
+    Actual Size
+  </div>
 
 
+  <div>
+    <p>Select a camera feed:</p>
+  </div>
+
+ <div>
+   <input type="radio" id="NC147_DAVIS_DR" name="feed_odd" value="NC147_DAVIS_DR" checked>
+   <label for="NC147_DAVIS_DR">NC147_DAVIS_DR</label>
+ </div>
+
+ <div>
+   <input type="radio" id="NC540_DAVIS_DR" name="feed_odd" value="NC540_DAVIS_DR">
+   <label for="NC540_DAVIS_DR">NC540_DAVIS_DR</label>
+ </div>
 
 
-
-<div>
-  <H2> Cameras Odd </H2>
-  <p> These are the cameras which show oddness. </p><br>
-  <img class="camera_feed_odd" style="-webkit-user-select: none;
-               margin: auto;
-               background-color: hsl(0, 0%, 90%);
-               transition: background-color 300ms;"
-               src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG">
+ <div>
+   <input type="radio" id="TOLL147_DAVIS_DR" name="feed_odd" value="TOLL147_DAVIS_DR">
+   <label for="TOLL147_DAVIS_DR">TOLL147_DAVIS_DR</label>
+ </div>
 
 
+ <div>
+   <input type="radio" id="I40W_MM8" name="feed_odd" value="I40W_MM8">
+   <label for="I40W_MM8">I40W_MM8</label>
+ </div>
 
+ <div>
+   <input type="radio" id="I440_US64_Bypass" name="feed_odd" value="I440_US64_Bypass">
+   <label for="I440_US64_Bypass">I440_US64_Bypass</label>
+ </div>
 
-   <p>Select a camera feed:</p>
-   <div>
-     <input type="radio" id="NC147_DAVIS_DR" name="feed_odd" value="NC147_DAVIS_DR" checked>
-     <label for="NC147_DAVIS_DR">NC147_DAVIS_DR</label>
-   </div>
+ <div>
+   <input type="radio" id="I26_BROADWAY" name="feed_odd" value="I26_BROADWAY">
+   <label for="I26_BROADWAY">I26_BROADWAY</label>
+ </div>
 
-   <div>
-     <input type="radio" id="NC540_DAVIS_DR" name="feed_odd" value="NC540_DAVIS_DR">
-     <label for="NC540_DAVIS_DR">NC540_DAVIS_DR</label>
-   </div>
+ <div>
+   <img class="camera_feed_odd" style="-webkit-user-select: none;
+                margin: auto;
+                background-color: hsl(0, 0%, 90%);
+                max-width: 200px;
+                max-height: 200px;
+                transition: background-color 300ms;"
+                src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG">
 
-
-   <div>
-     <input type="radio" id="TOLL147_DAVIS_DR" name="feed_odd" value="TOLL147_DAVIS_DR">
-     <label for="TOLL147_DAVIS_DR">TOLL147_DAVIS_DR</label>
-   </div>
-
-
-   <div>
-     <input type="radio" id="I40W_MM8" name="feed_odd" value="I40W_MM8">
-     <label for="I40W_MM8">I40W_MM8</label>
-   </div>
-
-   <div>
-     <input type="radio" id="I440_US64_Bypass" name="feed_odd" value="I440_US64_Bypass">
-     <label for="I440_US64_Bypass">I440_US64_Bypass</label>
-   </div>
-
-   <div>
-     <input type="radio" id="I26_BROADWAY" name="feed_odd" value="I26_BROADWAY">
-     <label for="I26_BROADWAY">I26_BROADWAY</label>
-   </div>
-
+ </div>
 
 
 </div>
 
 
-</div>
+
 </body>
 </html>

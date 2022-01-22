@@ -64,6 +64,23 @@ I26_BROADWAY.addEventListener('click', button => {
 
 
 
+const slider = document.getElementById("slider");
+
+slider.addEventListener('click', button => {
+  console.log("slider: click() ", slider.checked);
+  if (slider.checked) {
+    camera_feed_odd_img.style.maxWidth = "";
+    camera_feed_odd_img.style.maxHeight = "";
+
+  } else {
+    camera_feed_odd_img.style.maxWidth = "200px";
+    camera_feed_odd_img.style.maxHeight = "200px";
+
+  }
+})
+
+
+
 
 // The camera feed img
 var camera_feed_odd_img = document.getElementsByClassName("camera_feed_odd")[0];

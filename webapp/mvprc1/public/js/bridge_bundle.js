@@ -36,6 +36,25 @@ BUS40_SALEM.addEventListener('click', button => {
 })
 
 
+//const slider = document.getElementsByClassName("slider")[0];
+const slider = document.getElementById("slider");
+
+slider.addEventListener('click', button => {
+  console.log("slider: click() ", slider.checked);
+  if (slider.checked) {
+    camera_feed_bridge_img.style.maxWidth = "";
+    camera_feed_bridge_img.style.maxHeight = "";
+
+  } else {
+    camera_feed_bridge_img.style.maxWidth = "200px";
+    camera_feed_bridge_img.style.maxHeight = "200px";
+
+  }
+  //camera_feed_road_img.max-width = ""
+  //camera_feed_road_img.max-height = ""
+})
+
+
 
 
 

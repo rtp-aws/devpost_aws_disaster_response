@@ -59,6 +59,21 @@ TOLL147_NC54.addEventListener('click', button => {
 })
 
 
+//const slider = document.getElementsByClassName("slider")[0];
+const slider = document.getElementById("slider");
+
+slider.addEventListener('click', button => {
+  console.log("slider: click() ", slider.checked);
+  if (slider.checked) {
+    camera_feed_both_img.style.maxWidth = "";
+    camera_feed_both_img.style.maxHeight = "";
+  } else {
+    camera_feed_both_img.style.maxWidth = "200px";
+    camera_feed_both_img.style.maxHeight = "200px";
+  }
+})
+
+
 
 
 

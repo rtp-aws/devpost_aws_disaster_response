@@ -70,13 +70,31 @@ TOLL54_APEXBBQ.addEventListener('click', button => {
 
 
 
+//const slider = document.getElementsByClassName("slider")[0];
+const slider = document.getElementById("slider");
 
+slider.addEventListener('click', button => {
+  console.log("slider: click() ", slider.checked);
+  if (slider.checked) {
+    camera_feed_road_img.style.maxWidth = "";
+    camera_feed_road_img.style.maxHeight = "";
+
+  } else {
+    camera_feed_road_img.style.maxWidth = "200px";
+    camera_feed_road_img.style.maxHeight = "200px";
+
+  }
+  //camera_feed_road_img.max-width = ""
+  //camera_feed_road_img.max-height = ""
+})
 
 
 
 
 // The camera feed img
 var camera_feed_road_img = document.getElementsByClassName("camera_feed_road")[0];
+
+
 
 // Build class with some of these specified?
 const mvprc1road = new MvpRc1Road()

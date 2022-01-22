@@ -46,34 +46,54 @@
   <div>
     <H2> Cameras Bridge </H2>
     <p> These are the cameras which are fixed bridge</p><br>
-    <img class="camera_feed_bridge" style="-webkit-user-select: none;
-                 margin: auto;
-                 background-color: hsl(0, 0%, 90%);
-                 transition: background-color 300ms;"
-                 src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG">
+  </div>
+
+  <div>
+    <label class="switch">
+      <input type="checkbox" id="slider">
+      <span class="slider round"></span>
+    </label>
+    Actual Size
+  </div>
 
 
 
-
+  <div>
      <p>Select a camera feed:</p>
+  </div>
 
-     <div>
-       <input type="radio" id="i85_churton" name="feed_bridge" value="i85_churton" checked>
-       <label for="i85_churton">I85 Churton</label>
-     </div>
-
-
-     <div>
-       <input type="radio" id="BUS40_SALEM" name="feed_bridge" value="BUS40_SALEM">
-       <label for="BUS40_SALEM">BUS40_SALEM</label>
-     </div>
+   <div>
+     <input type="radio" id="i85_churton" name="feed_bridge" value="i85_churton" checked>
+     <label for="i85_churton">I85 Churton</label>
+   </div>
 
 
-</div>
+   <div>
+     <input type="radio" id="BUS40_SALEM" name="feed_bridge" value="BUS40_SALEM">
+     <label for="BUS40_SALEM">BUS40_SALEM</label>
+   </div>
+
+
+   <div>
+     <img class="camera_feed_bridge" style="-webkit-user-select: none;
+                  margin: auto;
+                  background-color: hsl(0, 0%, 90%);
+                  max-width: 200px;
+                  max-height: 200px;
+                  transition: background-color 300ms;"
+                  src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG">
+   </div>
+
+
+
+</div> <!-- The_body div -->
 
 
 
 
-</div>
+
+
+
+
 </body>
 </html>
