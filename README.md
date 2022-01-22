@@ -12,23 +12,29 @@ Later still [this](https://www.wral.com/ambulance-carrying-patient-skids-off-i-8
 https://devpost.com/software/todo-ot17ds
 
 
-# MvpRc1
+# MVPRC1
+
+This is the webapp which is the frontend. MVPRC1 identifies the cameras used for model training and prediction.  Currently its just a viewer
+but as of 20220121 it has SSL and is prepped for S3 access with cognitio for unauthenticated users to access S3 and hosted ML models.
+
 [webapp](http://mvprc1.rtp-aws.org/)
 
 # About the repo
 
-File are mostly kept in directories.  Each directory should have a README.md
-Maintain notes about the directory there.
+Each directory has a README.md.  Each directory has a Makefile.  Operations for the directory are makefile targets.
 
-* `bin/` scripts and crontab for webscrape
-* `imgs/`  images used by markdown files
-* `raw_data/` raw pull of data by the webscrape script. These are put in git so that everyone is working with the same data.  Please don't update this directory
-* `matlab/`  sample matlab experiments
-* `R/`  sample R experiments
-* `docs/`  docs
-* `python/`  .py files and jupyter notebooks
-* `webapp/`  webapp releases
-
+* `bin/` Scripts and crontab for webscrape, sampling and S3 upload scripts are here.
+* `imgs/`  Images used by markdown files
+* `raw_data/` Raw pull of data by the webscrape script. These are put in git so that everyone is working with the same data.  Please don't update this directory.
+* `webapp/`  webapp releases written in HTML/CSS/Javascript via Node.js.
+* `python/`  .py files and jupyter notebooks.
+* `matlab/`  Sample matlab experiments.
+* `R/`  Sample R experiments.
+* `docs/`  Notes on how everything works is here.
+* `secrets`  encrypted keys for authentication.
+* `groundtruth` AWS SageMaker Ground Truth notes and scripts.
+* `rekognition` AWS Rekognition notes and scripts.
+* `video` Any videos are put here.  These are for time lapse of my personal camera showing a sidewalk seam.
 
 
 # Quickstart for contributors
