@@ -25,6 +25,7 @@ deploy:
 	echo do deploy stub
 
 gitupdate: clean
+	./bin/find_dupes.sh
 	git add --all; git commit -m "wip"; git push
 
 SUBCLEAN = $(addsuffix .clean,$(SUBDIRS))

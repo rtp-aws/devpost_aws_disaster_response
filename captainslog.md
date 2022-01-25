@@ -290,3 +290,22 @@ Spent way to much time on the app.  Went through cameras.  Trying to find the on
 The webapps are hosted using the rtp-aws.org.  They also use SSL.  The notes on how to config are in different repos though.  Need to add copies here.  The S3/Route53/CloudFront doc is in rtp-aws.org source repo.  The elastic beanstalk notes on how to set load blancer is
 in the eb_testy repo.
 
+## 20220123
+
+Hosted the two user group meetings.  Figured out part of my problem with the
+cloud watch and logging was due to IAM permissions.  The IAM permissions also
+apply to these tools.  Created different IAM login and roles to address logging
+and devpost user.
+
+Started a class on Cloud Watch via cloudacademy.
+
+Git pull request to cloudacadmey git repo approved.
+
+Pruned S3 buckets of images and old rekognition models for custom labels.
+
+
+## 20220124
+
+Continued the study of AWS Cloud and Recognition classes via cloudacademy.
+
+

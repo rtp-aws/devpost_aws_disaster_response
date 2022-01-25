@@ -19,5 +19,6 @@ I like to know what works for you.
 * [R](R.md)
 * RStudio
 * SimpleScreenRecorder
+* jq
 
 
