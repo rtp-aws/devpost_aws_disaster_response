@@ -96,9 +96,6 @@
                 max-height: 200px;
                 transition: background-color 300ms;"
                 src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG">
-    <!--
-    <canvas id='my_canvas' width='200px' height='200px'></canvas>
-    -->
     <canvas id='my_canvas'></canvas>
 
   </div>
@@ -110,14 +107,8 @@
 <script>
   function Draw() {
     // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
-    // delete existing Canvas
-    //var el=document.getElementById('my_canvas');
-    //el.remove();
 
     var img = document.getElementById("camera_feed_odd");
-    //var cnvs = document.createElement('canvas')
-    //cnvs.id = btoa('my_canvas')
-    //img.appendChild(cnvs);
     var cnvs = document.getElementById("my_canvas");
     cnvs.width = img.width;
     cnvs.height = img.height;

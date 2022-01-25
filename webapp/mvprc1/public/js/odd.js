@@ -76,8 +76,6 @@ slider.addEventListener('click', button => {
 
   var ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  //canvas.style.width = camera_feed_odd_img.width;
-  //canvas.style.height = camera_feed_odd_img.height;
 })
 
 

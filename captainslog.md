@@ -308,4 +308,8 @@ Pruned S3 buckets of images and old rekognition models for custom labels.
 
 Continued the study of AWS Cloud and Recognition classes via cloudacademy.
 
+Got a cli method of peforming object identificaton of images with json output working via cloud
+[this](https://github.com/cloudacademy/aws-machinelearning) repo.  
+
+Updated the mvprc1 webapp to draw bounding boxes with resizable images as an overlay.
 
