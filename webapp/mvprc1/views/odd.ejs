@@ -62,51 +62,104 @@
     <p>Select a camera feed:</p>
   </div>
 
- <div>
-   <input type="radio" id="NC147_DAVIS_DR" name="feed_odd" value="NC147_DAVIS_DR" checked>
-   <label for="NC147_DAVIS_DR">NC147_DAVIS_DR</label>
- </div>
 
- <div>
-   <input type="radio" id="NC540_DAVIS_DR" name="feed_odd" value="NC540_DAVIS_DR">
-   <label for="NC540_DAVIS_DR">NC540_DAVIS_DR</label>
- </div>
+  <div>
+    <input type="radio" id="TOLL147_DAVIS_DR" name="feed_odd" value="TOLL147_DAVIS_DR" checked>
+    <label for="TOLL147_DAVIS_DR">TOLL147_DAVIS_DR</label>
+  </div>
 
 
- <div>
-   <input type="radio" id="TOLL147_DAVIS_DR" name="feed_odd" value="TOLL147_DAVIS_DR">
-   <label for="TOLL147_DAVIS_DR">TOLL147_DAVIS_DR</label>
- </div>
+  <div>
+    <input type="radio" id="I40W_MM8" name="feed_odd" value="I40W_MM8">
+    <label for="I40W_MM8">I40W_MM8</label>
+  </div>
 
+  <div>
+    <input type="radio" id="I440_US64_Bypass" name="feed_odd" value="I440_US64_Bypass">
+    <label for="I440_US64_Bypass">I440_US64_Bypass</label>
+  </div>
 
- <div>
-   <input type="radio" id="I40W_MM8" name="feed_odd" value="I40W_MM8">
-   <label for="I40W_MM8">I40W_MM8</label>
- </div>
+  <div>
+    <input type="radio" id="I26_BROADWAY" name="feed_odd" value="I26_BROADWAY">
+    <label for="I26_BROADWAY">I26_BROADWAY</label>
+  </div>
 
- <div>
-   <input type="radio" id="I440_US64_Bypass" name="feed_odd" value="I440_US64_Bypass">
-   <label for="I440_US64_Bypass">I440_US64_Bypass</label>
- </div>
+  <div>
+   <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
+  </div>
 
- <div>
-   <input type="radio" id="I26_BROADWAY" name="feed_odd" value="I26_BROADWAY">
-   <label for="I26_BROADWAY">I26_BROADWAY</label>
- </div>
-
- <div>
-   <img class="camera_feed_odd" style="-webkit-user-select: none;
+  <div>
+    <img id="camera_feed_odd" class="camera_feed_odd" style="-webkit-user-select: none;
                 margin: auto;
                 background-color: hsl(0, 0%, 90%);
                 max-width: 200px;
                 max-height: 200px;
                 transition: background-color 300ms;"
                 src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG">
+    <!--
+    <canvas id='my_canvas' width='200px' height='200px'></canvas>
+    -->
+    <canvas id='my_canvas'></canvas>
 
- </div>
+  </div>
+
 
 
 </div>
+
+<script>
+  function Draw() {
+    // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+    // delete existing Canvas
+    //var el=document.getElementById('my_canvas');
+    //el.remove();
+
+    var img = document.getElementById("camera_feed_odd");
+    //var cnvs = document.createElement('canvas')
+    //cnvs.id = btoa('my_canvas')
+    //img.appendChild(cnvs);
+    var cnvs = document.getElementById("my_canvas");
+    cnvs.width = img.width;
+    cnvs.height = img.height;
+
+    cnvs.style.position = "absolute";
+    cnvs.style.left = img.offsetLeft + "px";
+    cnvs.style.top = img.offsetTop + "px";
+
+    // hmm, both settings are identical?
+    console.log("width = %i", img.width);
+    console.log("height = %i", img.height);
+    console.log("offset width = %i", img.offsetWidth);
+    console.log("offset height = %i", img.offsetHeight);
+
+
+    var TOP=0;
+    var BOTTOM=img.height;
+    var LEFT=0;
+    var RIGHT=img.width;
+
+    console.log("TOP = %i", TOP);
+    console.log("BOTTOM = %i", BOTTOM);
+    console.log("LEFT = %i", LEFT);
+    console.log("RIGHT = %i", RIGHT);
+
+
+    var ctx = cnvs.getContext("2d");
+    ctx.clearRect(0, 0, cnvs.width, cnvs.height);
+
+    ctx.beginPath();
+    ctx.moveTo(LEFT+10,TOP+10); // top left
+    ctx.lineTo(RIGHT-10,TOP+10); // top right
+    ctx.lineTo(RIGHT-10,BOTTOM-10); // bottom right
+    ctx.lineTo(LEFT+10,BOTTOM-10); // bottom right
+    ctx.lineTo(LEFT+10,TOP+10); // bottom right
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#00ff88';
+    ctx.stroke();
+
+  }
+</script>
 
 
 

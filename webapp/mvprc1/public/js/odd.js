@@ -29,16 +29,11 @@ class MvpRc1Odd {
 // ODD ONES
 /////////////////////////////////////////////////////////////////
 
-const NC147_DAVIS_DR = document.getElementById("NC147_DAVIS_DR");
 const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
 const I40W_MM8 = document.getElementById("I40W_MM8");
 const I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
 const I26_BROADWAY = document.getElementById("I26_BROADWAY");
 
-NC147_DAVIS_DR.addEventListener('click', button => {
-  console.log("NC147_DAVIS_DR: click() ");
-  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
-})
 
 TOLL147_DAVIS_DR.addEventListener('click', button => {
   console.log("TOLL147_DAVIS_DR: click() ");
@@ -65,6 +60,7 @@ I26_BROADWAY.addEventListener('click', button => {
 
 
 const slider = document.getElementById("slider");
+const canvas = document.getElementById("my_canvas");
 
 slider.addEventListener('click', button => {
   console.log("slider: click() ", slider.checked);
@@ -77,6 +73,11 @@ slider.addEventListener('click', button => {
     camera_feed_odd_img.style.maxHeight = "200px";
 
   }
+
+  var ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  //canvas.style.width = camera_feed_odd_img.width;
+  //canvas.style.height = camera_feed_odd_img.height;
 })
 
 
