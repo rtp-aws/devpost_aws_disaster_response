@@ -315,3 +315,22 @@ Updated the mvprc1 webapp to draw bounding boxes with resizable images as an ove
 
 For grins put the face app up.  Had to modify the CORS setting for S3.
 
+Learned that the icons in the cloudacademy face tracking app uses this line
+
+```
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+```
+
+Its getting icons from there.  I guess this means its more than just fonts.  I suppose
+its like bootstrap.css
+
+Complted the rek lab on cloud academy.
+
+## 20220125
+
+Updated bbq road.  closed some issues.
+
+Worked on the  cloud acadmey class for aws cloud watch
+
