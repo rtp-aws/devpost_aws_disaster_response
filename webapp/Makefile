@@ -8,7 +8,7 @@ list_files:
 	ls -l
 
 activate:
-	echo ". ./setenv.sh; pyenv activate devpost"
+	@echo ". ./setenv.sh; pyenv activate devpost"
 
 gitupdate: clean
 	git add .; git commit -m "webapp"; git push
