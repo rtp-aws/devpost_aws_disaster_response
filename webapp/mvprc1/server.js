@@ -97,6 +97,13 @@ app.get('/both.ejs', (req, res) => {
     res.render("both")
 })
 
+app.get('/face.ejs', (req, res) => {
+
+    console.log("get /face.ejs")
+    //console.log(req)
+
+    res.render("face")
+})
 
 
 
