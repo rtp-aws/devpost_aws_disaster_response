@@ -313,3 +313,5 @@ Got a cli method of peforming object identificaton of images with json output wo
 
 Updated the mvprc1 webapp to draw bounding boxes with resizable images as an overlay.
 
+For grins put the face app up.  Had to modify the CORS setting for S3.
+
