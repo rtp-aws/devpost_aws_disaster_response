@@ -1,5 +1,5 @@
 # set the default goal.
-.DEFAULT_GOAL := list_files
+.DEFAULT_GOAL := activate
 #.phony: list_images gitupdate clean $(DIRS)
 
 
@@ -7,8 +7,10 @@
 list_files:
 	ls -l
 
+activate:
+	echo ". ./setenv.sh; pyenv activate devpost"
 
-gitupdate:
+gitupdate: clean
 	git add .; git commit -m "webapp"; git push
 
 clean:
