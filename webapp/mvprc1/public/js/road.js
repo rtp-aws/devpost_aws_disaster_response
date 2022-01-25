@@ -24,7 +24,6 @@ const I540_US401 = document.getElementById("I540_US401");
 const I540_US1 = document.getElementById("I540_US1");
 const TOLL540_DAVIS_DR = document.getElementById("TOLL540_DAVIS_DR");
 const TOLL540_DMS7 = document.getElementById("TOLL540_DMS7");
-const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
 
 HANESMALL_JONES.addEventListener('click', button => {
@@ -62,10 +61,6 @@ TOLL540_DMS7.addEventListener('click', button => {
   camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG"
 })
 
-TOLL54_APEXBBQ.addEventListener('click', button => {
-  console.log("TOLL54_APEXBBQ: click() ");
-  camera_feed_road_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
-})
 
 
 

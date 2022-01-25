@@ -24,6 +24,7 @@ const NC147_US15501 = document.getElementById("NC147_US15501");
 const US52_UNIV = document.getElementById("US52_UNIV");
 const TOLL147_HOPSON_RD = document.getElementById("TOLL147_HOPSON_RD");
 const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
+const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
 
 
@@ -57,6 +58,11 @@ TOLL147_HOPSON_RD.addEventListener('click', button => {
 TOLL147_NC54.addEventListener('click', button => {
   console.log("TOLL147_NC54: click() ");
   camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
+})
+
+TOLL54_APEXBBQ.addEventListener('click', button => {
+  console.log("TOLL54_APEXBBQ: click() ");
+  camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
 })
 
 
