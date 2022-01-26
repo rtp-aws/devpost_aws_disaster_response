@@ -60,3 +60,43 @@ Use for webapp
 
 Use for webapp
 
+### node-repl
+
+Use for webapp
+
+### Python mods
+
+I give up on weirdness with requiring python specific path to use atom.  I modified
+the startup desktop file to be like so:
+
+```
+cat /usr/share/applications/atom.desktop 
+
+[Desktop Entry]
+Name=Atom
+Comment=A hackable text editor for the 21st Century.
+GenericName=Text Editor
+#Exec=env ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false /usr/bin/atom %F
+Exec=/home/davis/bin/my_atom.sh
+Icon=atom
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;TextEditor;Development;
+MimeType=text/plain;
+StartupWMClass=atom
+```
+
+and then a script for my home dir like so:
+
+```
+cat ~/bin/my_atom.sh
+
+#!/bin/bash
+pushd "/home/davis/"
+. /home/davis/progs/devpost_aws_disaster_response/webapp/setenv.sh
+/usr/bin/atom
+popd
+
+```
+
+
