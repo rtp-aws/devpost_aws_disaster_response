@@ -1,8 +1,22 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    //var albumBucketName = // 'S3_BUCKET_NAME_HERE';
+    //var bucketRegion = // 'S3_BUCKET_REGION_HERE';
+    //var IdentityPoolId = // 'IDENTITYPOOLID_HERE';
 
     var albumBucketName = 'cloudacademy-rek'; // 'S3_BUCKET_NAME_HERE';
     var bucketRegion = 'us-east-1'; // 'S3_BUCKET_REGION_HERE';
     var IdentityPoolId = 'us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b';   // 'IDENTITYPOOLID_HERE';
+
+
+    readJSON2();
+
+
+
+
 
 
     AWS.config.update({
@@ -126,6 +140,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+    function readJSON2() {
+      // http://localhost:8080
+      //fetch('/config/aws-config.json')
+      //fetch('https://mvprc1.rtp-aws.org/config')
+      console.log("readJSON2")
+      fetch('/config')
+      .then(response => {
+        console.log("one");
+         if (!response.ok) {
+             throw new Error("HTTP error " + response.status);
+         }
+         return response.json();
+      })
+      .then(json => {
+         this.users = json;
+         console.log("two");
+         console.log(this.users);
+      })
+      .catch(function () {
+         this.dataError = true;
+         console.log("three");
+         console.log(this.users);
+      })
+    }
 
     function showVideo() {
         // Display the video stream and the controls.
@@ -252,4 +290,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-});
+});  // end document.addEventListener

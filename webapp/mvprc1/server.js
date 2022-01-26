@@ -106,6 +106,16 @@ app.get('/face.ejs', (req, res) => {
 })
 
 
+app.get('/config', (req, res) => {
+
+    console.log("get /config.json")
+    //console.log(req)
+    //res.status(500).json({message: "Error"}) // error on server
+    res.json({message: "yo"})
+    //res.send("yo")
+
+})
+
 
 
 
