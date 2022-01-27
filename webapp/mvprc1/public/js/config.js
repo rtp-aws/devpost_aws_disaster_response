@@ -1,6 +1,6 @@
 // credentials
 
-//document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
 
   var config = {
     config: 'good',
@@ -10,4 +10,4 @@
 
   }
 
-//});  // end document.addEventListener
+});  // end document.addEventListener
