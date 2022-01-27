@@ -334,3 +334,9 @@ Updated bbq road.  closed some issues.
 
 Worked on the  cloud acadmey class for aws cloud watch
 
+Noticed that my rek credentials were in git.  I need to fix that.  I worked
+on varioous ways to hide them.  Don't know how to hide via google developer tools.
+Using some various techniques to at least not show in git.  This prompted me to how
+to read files, how to load json files, etc.
+
+
