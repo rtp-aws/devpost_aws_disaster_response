@@ -7,9 +7,21 @@ document.addEventListener('DOMContentLoaded', function() {
     //var bucketRegion = // 'S3_BUCKET_REGION_HERE';
     //var IdentityPoolId = // 'IDENTITYPOOLID_HERE';
 
-    var albumBucketName = 'cloudacademy-rek'; // 'S3_BUCKET_NAME_HERE';
-    var bucketRegion = 'us-east-1'; // 'S3_BUCKET_REGION_HERE';
-    var IdentityPoolId = 'us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b';   // 'IDENTITYPOOLID_HERE';
+    //var albumBucketName = 'cloudacademy-rek'; // 'S3_BUCKET_NAME_HERE';
+    //var bucketRegion = 'us-east-1'; // 'S3_BUCKET_REGION_HERE';
+    //var IdentityPoolId = 'us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b';   // 'IDENTITYPOOLID_HERE';
+
+
+    var albumBucketName = '';
+    var bucketRegion = '';
+    var IdentityPoolId = '';
+
+    // Read values from config.js
+    if (config.good == 'good') {
+      albumBucketName = config.albumBucketName;
+      bucketRegion = config.bucketRegion;
+      IdentityPoolId = config.IdentityPoolId;
+    }
 
 
     readJSON2();
