@@ -177,3 +177,11 @@ index 2dc54be,52ccaff..0000000
 Simply delete the lines between `<<<<` and `===`.  Then delete the line `>>>`.  `Git push` afterwards.
 
 
+
+# how to see a file as is currently in head
+
+```
+git show :0:./public/js/face.js
+```
+
+
