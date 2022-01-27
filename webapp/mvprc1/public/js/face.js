@@ -7,36 +7,27 @@ document.addEventListener('DOMContentLoaded', function() {
     //var bucketRegion = // 'S3_BUCKET_REGION_HERE';
     //var IdentityPoolId = // 'IDENTITYPOOLID_HERE';
 
-    //var albumBucketName = 'cloudacademy-rek'; // 'S3_BUCKET_NAME_HERE';
+    var albumBucketName = 'cloudacademy-rek'; // 'S3_BUCKET_NAME_HERE';
     //var bucketRegion = 'us-east-1'; // 'S3_BUCKET_REGION_HERE';
-    //var IdentityPoolId = 'us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b';   // 'IDENTITYPOOLID_HERE';
-
-
-    var albumBucketName = '';
-    var bucketRegion = '';
-    var IdentityPoolId = '';
-
-    // Read values from config.js
-    if (config.good == 'good') {
-      albumBucketName = config.albumBucketName;
-      bucketRegion = config.bucketRegion;
-      IdentityPoolId = config.IdentityPoolId;
-    }
-
-
-    readJSON2();
+    var IdentityPoolId = 'us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b';   // 'IDENTITYPOOLID_HERE';
 
 
 
 
+    var jsonthing = readJSON2();
 
 
-    AWS.config.update({
-        region: bucketRegion,
-        credentials: new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: IdentityPoolId
-        })
-    });
+    //AWS.config.loadFromPath('aws-config1.json');
+    //AWS.CognitoIdentityCredentials.loadFromPath('aws-config2.json');
+    //AWS.S3.loadFromPath('aws-config3.json')
+
+
+  //  AWS.config.update({
+  //      region: bucketRegion,
+  //      credentials: new AWS.CognitoIdentityCredentials({
+  //          IdentityPoolId: IdentityPoolId
+  //      })
+  //  });
 
     var s3 = new AWS.S3({
         apiVersion: '2006-03-01',
@@ -176,6 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
          console.log(this.users);
       })
     }
+
+
+
 
     function showVideo() {
         // Display the video stream and the controls.
