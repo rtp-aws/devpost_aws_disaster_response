@@ -82,19 +82,18 @@ function set_widgets_event_listeners() {
 
     console.log('set_widgets_event_listeners')
 
-
     // these are equivalent
     // Save for future refrence. why the difference?
     //const TAKE_PHOTO_BTN = document.getElementById('#take-photo');
     //const TAKE_PHOTO_BTN = document.querySelector('#take-photo');
 
-    myglobals.take_photo_btn.addEventListener('click', button => {
+    myglobals.take_photo_btn.addEventListener('click', button=>{
 
         console.log('take_photo_button event listener')
 
         button.preventDefault();
 
-        var snap = takeSnapshot();
+        var snap = take_snapshot();
 
         // Show image.
         myglobals.image.setAttribute('src', snap);
@@ -131,11 +130,10 @@ function set_widgets_event_listeners() {
 
 }
 
-
 function showVideo() {
     // Display the video stream and the controls.
 
-    hideUI();
+    hide_ui();
     myglobals.video.classList.add("visible");
     myglobals.controls.classList.add("visible");
 }
@@ -159,7 +157,7 @@ function startCamera() {
 
         // Start video playback manually.
         video.play();
-        showVideo();
+        show_video();
 
     });
 
@@ -185,7 +183,7 @@ function take_snapshot() {
 
         // Turn the canvas image into a dataURL that can be used as a src for our photo.
         var dataURL = hidden_canvas.toDataURL('image/png');
-        var blobData = dataURItoBlob(dataURL);
+        var blobData = data_uri_to_blob(dataURL);
         var fileName = "pix." + getId() + ".png";
         var params = {
             Key: fileName,
@@ -219,7 +217,8 @@ function take_snapshot() {
 
         return dataURL
     }
-} // take_snapshot
+}
+// take_snapshot
 
 function display_error_message(error_msg, error) {
     error = error || "";
@@ -288,13 +287,11 @@ class MyApp {
         // hello is now available
     }
 
-
     modify_library() {
         if (!this.library) {
             this.library = {};
         }
         myglobals.library = this.library;
-
 
         this.library.json = {
             replacer: function(match, pIndent, pKey, pVal, pEnd) {
@@ -313,11 +310,8 @@ class MyApp {
                 return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, myglobals.myApp.library.json.replacer);
             }
         };
-    } // modify_library
-
-
-
-
+    }
+    // modify_library
 
     his_doit() {
         console.log('his_doit')
@@ -352,7 +346,8 @@ class MyApp {
 
         this.modify_library();
 
-    } // hisdoit
+    }
+    // hisdoit
 
     doit() {
         console.log('MyApp: doit()')
@@ -360,7 +355,8 @@ class MyApp {
         var jsonthing = this.caller();
         set_widgets();
         set_widgets_event_listeners();
-    } // doit
+    }
+    // doit
 
     //const sleep = (seconds) => {
     //    const waitUntil = new Date().getTime() + seconds * 1000
@@ -369,7 +365,8 @@ class MyApp {
     //    }
     //}
 
-} // MyApp
+}
+// MyApp
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -382,9 +379,8 @@ document.addEventListener('DOMContentLoaded', function() {
     myApp.doit();
     myApp.his_doit();
     myglobals.myApp = myApp;
-});  // document.addEventListener
-
-
+});
+// document.addEventListener
 
 /*****************************************************/
 
