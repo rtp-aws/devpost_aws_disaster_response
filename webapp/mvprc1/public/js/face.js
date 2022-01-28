@@ -194,7 +194,7 @@ function take_snapshot() {
         // Turn the canvas image into a dataURL that can be used as a src for our photo.
         var dataURL = hidden_canvas.toDataURL('image/png');
         var blobData = data_uri_to_blob(dataURL);
-        var fileName = "pix." + getId() + ".png";
+        var fileName = "pix." + get_id() + ".png";
         var params = {
             Key: fileName,
             ContentType: 'image/png',
