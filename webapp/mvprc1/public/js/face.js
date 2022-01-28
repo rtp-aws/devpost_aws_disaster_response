@@ -1,5 +1,15 @@
 // this is a comment
 // 20220128
+//
+// Changed all his routines which were in the one on load function
+// to separate routines.  He created globals, I just moved those
+// to what I think is a global namespace.
+//
+// To further distinguish the functions written by the author from
+// existing routines in the AWS-SDK or the google material css
+// I renamed all his functions as foo_bar as if it was C code.
+//
+
 
 var myglobals = {
     // video is a variable
@@ -130,7 +140,7 @@ function set_widgets_event_listeners() {
 
 }
 
-function showVideo() {
+function show_video() {
     // Display the video stream and the controls.
 
     hide_ui();
@@ -138,7 +148,7 @@ function showVideo() {
     myglobals.controls.classList.add("visible");
 }
 
-function hideUI() {
+function hide_ui() {
     // Helper function for clearing the app UI.
 
     myglobals.controls.classList.remove("visible");
@@ -148,7 +158,7 @@ function hideUI() {
     myglobals.error_message.classList.remove("visible");
 }
 
-function startCamera() {
+function start_camera() {
     // Mobile browsers cannot play video without user input,
     // so here we're using a button to start it manually.
     this.start_camera.addEventListener("click", function(e) {
