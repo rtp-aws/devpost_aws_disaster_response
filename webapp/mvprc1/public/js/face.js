@@ -1,5 +1,5 @@
 // this is a comment
-// 
+// 20220128
 
 var myglobals = {
     // video is a variable
@@ -82,21 +82,13 @@ function set_widgets_event_listeners() {
 
     console.log('set_widgets_event_listeners')
 
-    //const I26_BROADWAY = document.getElementById("I26_BROADWAY");
-    //
-    //
-    //TOLL147_DAVIS_DR.addEventListener('click', button => {
-    //  console.log("TOLL147_DAVIS_DR: click() ");
-    //  camera_feed_odd_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
-    //})
 
-    // myglobals.take_photo_btn = document.querySelector('#take-photo');
-
-    // these might be equivalent
-    //const TAKE_PHOTO_BTN = document.getElementById();
+    // these are equivalent
+    // Save for future refrence. why the difference?
+    //const TAKE_PHOTO_BTN = document.getElementById('#take-photo');
     //const TAKE_PHOTO_BTN = document.querySelector('#take-photo');
 
-    myglobals.take_photo_btn.addEventListener('click', button=>{
+    myglobals.take_photo_btn.addEventListener('click', button => {
 
         console.log('take_photo_button event listener')
 
@@ -173,7 +165,7 @@ function startCamera() {
 
 }
 
-function takeSnapshot() {
+function take_snapshot() {
     // Here we're using a trick that involves a hidden canvas element.
 
     var hidden_canvas = document.querySelector('canvas');
@@ -227,9 +219,9 @@ function takeSnapshot() {
 
         return dataURL
     }
-}
+} // take_snapshot
 
-function displayErrorMessage(error_msg, error) {
+function display_error_message(error_msg, error) {
     error = error || "";
     if (error) {
         console.error(error);
@@ -241,7 +233,7 @@ function displayErrorMessage(error_msg, error) {
     error_message.classList.add("visible");
 }
 
-function dataURItoBlob(dataURI) {
+function data_uri_to_blob(dataURI) {
     var binary = atob(dataURI.split(',')[1]);
     var array = [];
     for (var i = 0; i < binary.length; i++) {
@@ -252,7 +244,7 @@ function dataURItoBlob(dataURI) {
     });
 }
 
-function getId() {
+function get_id() {
     var newDate = new Date();
     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
 }
@@ -321,9 +313,7 @@ class MyApp {
                 return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, myglobals.myApp.library.json.replacer);
             }
         };
-
-
-    }
+    } // modify_library
 
 
 
@@ -362,8 +352,7 @@ class MyApp {
 
         this.modify_library();
 
-    }
-    // hisdoit
+    } // hisdoit
 
     doit() {
         console.log('MyApp: doit()')
@@ -371,8 +360,7 @@ class MyApp {
         var jsonthing = this.caller();
         set_widgets();
         set_widgets_event_listeners();
-        //
-    }
+    } // doit
 
     //const sleep = (seconds) => {
     //    const waitUntil = new Date().getTime() + seconds * 1000
@@ -381,8 +369,7 @@ class MyApp {
     //    }
     //}
 
-}
-// MyApp
+} // MyApp
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -395,19 +382,11 @@ document.addEventListener('DOMContentLoaded', function() {
     myApp.doit();
     myApp.his_doit();
     myglobals.myApp = myApp;
-});
-
-/*
+});  // document.addEventListener
 
 
 
-
-
-
-
-
-}
-*/
+/*****************************************************/
 
 //});  // end document.addEventListener
 
