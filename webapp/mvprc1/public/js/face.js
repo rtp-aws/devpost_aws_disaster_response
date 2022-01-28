@@ -138,30 +138,6 @@ function set_widgets_event_listeners() {
 
 }
 
-function modify_library() {
-    if (!library) {
-        var library = {};
-    }
-
-    library.json = {
-        replacer: function(match, pIndent, pKey, pVal, pEnd) {
-            var key = '<span class=json-key>';
-            var val = '<span class=json-value>';
-            var str = '<span class=json-string>';
-            var r = pIndent || '';
-            if (pKey)
-                r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
-            if (pVal)
-                r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
-            return r + (pEnd || '');
-        },
-        prettyPrint: function(obj) {
-            var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
-            return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, library.json.replacer);
-        }
-    };
-
-}
 
 function showVideo() {
     // Display the video stream and the controls.
@@ -242,7 +218,7 @@ function takeSnapshot() {
                 if (err)
                     console.log(err, err.stack);
                 else {
-                    rek.innerHTML = library.json.prettyPrint(data);
+                    rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
                 }
             });
 
@@ -292,6 +268,7 @@ class MyApp {
     bucketRegion;
     identityPoolId;
     s3;
+    library;
 
     constructor() {
         console.log('MyApp: constructor()')
@@ -317,6 +294,36 @@ class MyApp {
         console.log(json);
         // hello is now available
     }
+
+
+    modify_library() {
+        if (!this.library) {
+            var library = {};
+        }
+
+        this.library.json = {
+            replacer: function(match, pIndent, pKey, pVal, pEnd) {
+                var key = '<span class=json-key>';
+                var val = '<span class=json-value>';
+                var str = '<span class=json-string>';
+                var r = pIndent || '';
+                if (pKey)
+                    r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+                if (pVal)
+                    r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+                return r + (pEnd || '');
+            },
+            prettyPrint: function(obj) {
+                var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+                return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, library.json.replacer);
+            }
+        };
+
+    }
+
+
+
+
 
     his_doit() {
         console.log('his_doit')
