@@ -354,7 +354,7 @@ class MyApp {
             })
         });
 
-        myglobals.myapp.s3 = new AWS.S3({
+        myglobals.myApp.s3 = new AWS.S3({
             apiVersion: '2006-03-01',
             params: {
                 Bucket: this.albumBucketName
