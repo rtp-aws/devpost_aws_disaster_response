@@ -10,7 +10,6 @@
 // I renamed all his functions as foo_bar as if it was C code.
 //
 
-
 var myglobals = {
     // video is a variable
     video: true,
@@ -21,7 +20,6 @@ var myglobals = {
     delete_photo_btn: true,
     download_photo_btn: true,
     error_message: true,
-    rek: true,
     myApp: true,
     library: true
 }
@@ -37,7 +35,7 @@ function set_widgets() {
     myglobals.delete_photo_btn = document.querySelector('#delete-photo');
     myglobals.download_photo_btn = document.querySelector('#download-photo');
     myglobals.error_message = document.querySelector('#error-message');
-    myglobals.rek = document.querySelector('#rek');
+    myglobals.myApp.rek = document.querySelector('#rek');
 
     // The getUserMedia interface is used for handling camera input.
     // Some browsers need a prefix so here we're covering all the options
@@ -119,7 +117,8 @@ function set_widgets_event_listeners() {
         // Pause video playback of stream.
         myglobals.video.pause();
 
-    });
+    }
+    );
 
     myglobals.delete_photo_btn.addEventListener("click", function(e) {
 
@@ -258,17 +257,14 @@ function get_id() {
     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
 }
 
-
 // this is code not used.  How does it compare to the other
 // code in terms of coverage analysis
-const sleep = (seconds) => {
+const sleep = (seconds)=>{
     const waitUntil = new Date().getTime() + seconds * 1000
-    while(new Date().getTime() < waitUntil) {
-        // do nothing
+    while (new Date().getTime() < waitUntil) {// do nothing
     }
 }
 // sleep
-
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -278,11 +274,10 @@ const sleep = (seconds) => {
 
 class MyApp {
 
+    // These are the class privates?  
     albumBucketName;
     bucketRegion;
     identityPoolId;
-    s3;
-    library;
 
     constructor() {
         console.log('MyApp: constructor()')
@@ -359,7 +354,7 @@ class MyApp {
             })
         });
 
-        this.s3 = new AWS.S3({
+        myglobals.myapp.s3 = new AWS.S3({
             apiVersion: '2006-03-01',
             params: {
                 Bucket: this.albumBucketName
@@ -379,7 +374,6 @@ class MyApp {
         set_widgets_event_listeners();
     }
     // doit
-
 
 }
 // MyApp
