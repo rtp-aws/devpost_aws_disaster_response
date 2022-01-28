@@ -278,6 +278,7 @@ class MyApp {
     albumBucketName;
     bucketRegion;
     identityPoolId;
+    s3;
 
     constructor() {
         console.log('MyApp: constructor()')
