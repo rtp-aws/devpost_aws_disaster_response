@@ -105,16 +105,22 @@ app.get('/face.ejs', (req, res) => {
     res.render("face")
 })
 
+app.get('/config', (req, res) => {
 
-app.get('/config.json', (req, res) => {
-
-    console.log("get /config.json")
-    //console.log(req)
-    //res.status(500).json({message: "Error"}) // error on server
-    res.json({albumBucketName: "cloudacademy-rek", bucketRegion: "us-east-1", identityPoolId: "us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b"})
-    //res.send("yo")
+    console.log("get /config")
+    res.send("cloudacademy-rek us-east-1 us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b")
 
 })
+
+// app.get('/config.json', (req, res) => {
+//
+//     console.log("get /config.json")
+//     //console.log(req)
+//     //res.status(500).json({message: "Error"}) // error on server
+//     res.json({albumBucketName: "cloudacademy-rek", bucketRegion: "us-east-1", identityPoolId: "us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b"})
+//     //res.send("yo")
+//
+// })
 
 app.get('/doit', (req, res) => {
 

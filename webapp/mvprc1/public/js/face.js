@@ -300,17 +300,27 @@ class MyApp {
         this.identityPoolId = '';
     }
 
-    async getJSON() {
-        console.log('MyApp: getJSON()');
-        return await fetch('/config.json').then((response)=>response.json()).then((responseJson)=>{
-            return responseJson;
+    // async getJSON() {
+    //     console.log('MyApp: getJSON()');
+    //     return await fetch('/config.json').then((response)=>response.json()).then((responseJson)=>{
+    //         return responseJson;
+    //     }
+    //     );
+    // }
+
+    async fetch_config() {
+        console.log('MyApp: fethc_config()');
+        return await fetch('/config').
+          then((response)=>{
+            return response
         }
         );
     }
 
 
-    async getDoit() {
-        console.log('MyApp: getDoit()');
+
+    async fetch_doit() {
+        console.log('MyApp: fetch_doit()');
         return await fetch('/doit').
           then((response)=>{
             return response
@@ -320,24 +330,26 @@ class MyApp {
 
 
 
-    async caller_get_json() {
-        console.log('MyApp: caller_get_json()');
-        const json = await this.getJSON();
-        // command waits until completion
-        //const json = await readJSON2();  // command waits until completion
-        //console.log(json.hello);            // hello is now available
-        console.log(json);
-        // hello is now available
+    // async caller_get_json() {
+    //     console.log('MyApp: caller_get_json()');
+    //     const json = await this.getJSON();
+    //     // command waits until completion
+    //     //const json = await readJSON2();  // command waits until completion
+    //     //console.log(json.hello);            // hello is now available
+    //     console.log(json);
+    //     // hello is now available
+    // }
+
+    async caller_fetch_config() {
+        console.log('MyApp: caller_fetch_config()');
+        const msg = await this.fetch_config();
+        console.log(msg);
     }
 
-    async caller_doit() {
-        console.log('MyApp: caller_doit()');
-        const msg = await this.getDoit();
-        // command waits until completion
-        //const json = await readJSON2();  // command waits until completion
-        //console.log(json.hello);            // hello is now available
+    async caller_fetch_doit() {
+        console.log('MyApp: caller_fetch_doit()');
+        const msg = await this.fetch_doit();
         console.log(msg);
-        // hello is now available
     }
 
 
@@ -408,8 +420,8 @@ class MyApp {
     do_init() {
         console.log('MyApp: do_init()')
 
-        var jsonthing = this.caller_get_json();
-        console.log(jsonthing)
+        var msg = this.caller_fetch_config();
+        console.log(msg)
         set_widgets();
     }
     // do_init
@@ -417,7 +429,7 @@ class MyApp {
     do_his_init() {
         console.log('MyApp: do_his_init()')
 
-        var msg = this.caller_doit();
+        var msg = this.caller_fetch_doit();
         console.log(msg)
         set_widgets_event_listeners();
         this.his_doit();
