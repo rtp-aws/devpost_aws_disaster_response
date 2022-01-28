@@ -12,7 +12,8 @@ var myglobals = {
     download_photo_btn: true,
     error_message: true,
     rek: true,
-    myApp: true
+    myApp: true,
+    library: true
 }
 
 function set_widgets() {
@@ -318,6 +319,8 @@ class MyApp {
                 return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, library.json.replacer);
             }
         };
+
+        myglobals.library = this.myGlobals.library;
 
     }
 
