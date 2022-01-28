@@ -340,3 +340,23 @@ Using some various techniques to at least not show in git.  This prompted me to 
 to read files, how to load json files, etc.
 
 
+## 20220126
+
+Worked on mvprc1.  I am trying to fix the problem with leaked git credentials.
+
+I noticed the cloudacademy sample uses the AWS SDK v2.  I noticed the rekog-ai sample uses credentials.
+The code mentions not to put them in git, but to work the file with his overall creds need to be
+read by the code.  this is worse than the cloudacademy source.
+
+However, I have been trying to figure a way to work with fetch to read a file.  I noticed that 
+the aws sdk has multiple variants of how to read creds for the different components.  Only the
+top level one seems to readfrom a file.  However it will pose the same problem.  
+If the file is not put in the repo it will not be in the webapp.  If it is in the webapp
+it can be read via console developer tools.
+
+
+
+
+## 20220127
+
+Continuing to work on the git credentials.

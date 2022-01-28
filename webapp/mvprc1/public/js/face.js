@@ -1,3 +1,173 @@
+// this is a comment
+
+
+var myglobals = {
+  // video is a variable
+  video: true
+
+}
+
+//var video;
+var image;
+var start_camera;
+var controls;
+var take_photo_btn;
+var delete_photo_btn;
+var download_photo_btn;
+var error_message;
+var rek;
+
+
+
+
+
+function setWidgets() {
+
+  // References in the myglobals struct/namespace
+  myglobals.video = document.querySelector('#camera-stream');
+
+  // References in the global namespace
+  //video = document.querySelector('#camera-stream');
+  image = document.querySelector('#snap');
+  start_camera = document.querySelector('#start-camera');
+  controls = document.querySelector('.controls');
+  take_photo_btn = document.querySelector('#take-photo');
+  delete_photo_btn = document.querySelector('#delete-photo');
+  download_photo_btn = document.querySelector('#download-photo');
+  error_message = document.querySelector('#error-message');
+  rek = document.querySelector('#rek');
+
+
+
+  // The getUserMedia interface is used for handling camera input.
+  // Some browsers need a prefix so here we're covering all the options
+  navigator.getMedia = (navigator.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.msGetUserMedia);
+
+
+  if (!navigator.getMedia) {
+      displayErrorMessage("Your browser doesn't have support for the navigator.getUserMedia interface.");
+      return;
+  }
+
+  // Request the camera.
+  // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+  navigator.getMedia({
+          // This is a parameter constraint. it can be video and/or audio
+          video: true,
+      },
+      // Success Callback
+      function(stream) {
+          //var video = document.querySelector('#camera-stream');
+
+          // Create an object URL for the video stream and
+          // set it as src of our HTLM video element.
+          //video.src = window.URL.createObjectURL(stream);
+
+          //updated (and tested) to run on Chrome Version 76.0.3809.132 (Official Build) (64-bit)
+          myglobals.video.srcObject = stream;
+
+          // Play the video element to start the stream.
+          myglobals.video.play();
+          myglobals.video.onplay = function() {
+              showVideo();
+          };
+
+      },
+      // Error Callback
+      function(err) {
+          displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
+      }
+
+
+
+
+  );  // SetWidgets.navigator.getMedia
+
+
+
+} // SetWidgets
+
+
+
+function modify_library() {
+  if (!library) {
+    var library = {};
+  }
+
+  library.json = {
+      replacer: function(match, pIndent, pKey, pVal, pEnd) {
+          var key = '<span class=json-key>';
+          var val = '<span class=json-value>';
+          var str = '<span class=json-string>';
+          var r = pIndent || '';
+          if (pKey)
+              r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+          if (pVal)
+              r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+          return r + (pEnd || '');
+      },
+      prettyPrint: function(obj) {
+          var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+          return JSON.stringify(obj, null, 3)
+              .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+              .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+              .replace(jsonLine, library.json.replacer);
+      }
+  };
+
+}
+
+function showVideo() {
+    // Display the video stream and the controls.
+
+    hideUI();
+    myglobals.video.classList.add("visible");
+    controls.classList.add("visible");
+}
+
+
+function hideUI() {
+    // Helper function for clearing the app UI.
+
+    controls.classList.remove("visible");
+    start_camera.classList.remove("visible");
+    myglobals.video.classList.remove("visible");
+    snap.classList.remove("visible");
+    error_message.classList.remove("visible");
+}
+
+
+
+
+function  startCamera() {
+  // Mobile browsers cannot play video without user input,
+  // so here we're using a button to start it manually.
+  this.start_camera.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      // Start video playback manually.
+      video.play();
+      showVideo();
+
+  });
+
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// class
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
 
 class MyApp {
@@ -5,15 +175,6 @@ class MyApp {
   albumBucketName;
   bucketRegion;
   identityPoolId;
-  video;
-  image;
-  start_camera;
-  controls;
-  take_photo_btn;
-  delete_photo_btn;
-  download_photo_btn;
-  error_message;
-  rek;
 
 
   constructor() {
@@ -53,7 +214,7 @@ class MyApp {
     console.log('MyApp: doit()')
 
     var jsonthing = this.caller();
-    this.setWidgets();
+    setWidgets();
     console.log(jsonthing);
     this.doit4(jsonthing);
   }
@@ -71,122 +232,6 @@ class MyApp {
   //        // do nothing
   //    }
   //}
-
-  showVideo() {
-      // Display the video stream and the controls.
-
-      hideUI();
-      this.video.classList.add("visible");
-      this.controls.classList.add("visible");
-  }
-
-
-
-  setWidgets() {
-
-    // References to all the element we will need.
-    this.video = document.querySelector('#camera-stream');
-    this.image = document.querySelector('#snap');
-    this.start_camera = document.querySelector('#start-camera');
-    this.controls = document.querySelector('.controls');
-    this.take_photo_btn = document.querySelector('#take-photo');
-    this.delete_photo_btn = document.querySelector('#delete-photo');
-    this.download_photo_btn = document.querySelector('#download-photo');
-    this.error_message = document.querySelector('#error-message');
-    this.rek = document.querySelector('#rek');
-
-    // The getUserMedia interface is used for handling camera input.
-    // Some browsers need a prefix so here we're covering all the options
-    navigator.getMedia = (navigator.getUserMedia ||
-        navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia ||
-        navigator.msGetUserMedia);
-
-
-    if (!navigator.getMedia) {
-        displayErrorMessage("Your browser doesn't have support for the navigator.getUserMedia interface.");
-        return;
-    }
-
-    // Request the camera.
-    navigator.getMedia({
-            video: true,
-        },
-        // Success Callback
-        function(stream) {
-            var video = document.querySelector('#camera-stream');
-
-            // Create an object URL for the video stream and
-            // set it as src of our HTLM video element.
-            //video.src = window.URL.createObjectURL(stream);
-
-            //updated (and tested) to run on Chrome Version 76.0.3809.132 (Official Build) (64-bit)
-            video.srcObject = stream;
-
-            // Play the video element to start the stream.
-            video.play();
-            video.onplay = function() {
-                this.showVideo();
-            };
-
-        },
-        // Error Callback
-        function(err) {
-            displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
-        }
-
-
-
-
-    );  // MyApp:SetWidgets.navigator.getMedia
-
-    if (!library) {
-      var library = {};
-    }
-
-    library.json = {
-        replacer: function(match, pIndent, pKey, pVal, pEnd) {
-            var key = '<span class=json-key>';
-            var val = '<span class=json-value>';
-            var str = '<span class=json-string>';
-            var r = pIndent || '';
-            if (pKey)
-                r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
-            if (pVal)
-                r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
-            return r + (pEnd || '');
-        },
-        prettyPrint: function(obj) {
-            var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
-            return JSON.stringify(obj, null, 3)
-                .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
-                .replace(/</g, '&lt;').replace(/>/g, '&gt;')
-                .replace(jsonLine, library.json.replacer);
-        }
-    };
-
-
-  } // MyApp:SetWidgets
-
-
-  startCamera() {
-    // Mobile browsers cannot play video without user input,
-    // so here we're using a button to start it manually.
-    this.start_camera.addEventListener("click", function(e) {
-
-        e.preventDefault();
-
-        // Start video playback manually.
-        video.play();
-        showVideo();
-
-    });
-
-  }
-
-
-
-
 
 } // MyApp
 
@@ -357,16 +402,6 @@ document.addEventListener('DOMContentLoaded', function() {
         error_message.classList.add("visible");
     }
 
-
-    function hideUI() {
-        // Helper function for clearing the app UI.
-
-        controls.classList.remove("visible");
-        start_camera.classList.remove("visible");
-        video.classList.remove("visible");
-        snap.classList.remove("visible");
-        error_message.classList.remove("visible");
-    }
 
     function dataURItoBlob(dataURI) {
         var binary = atob(dataURI.split(',')[1]);
