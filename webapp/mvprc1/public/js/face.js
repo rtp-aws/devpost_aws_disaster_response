@@ -308,9 +308,9 @@ class MyApp {
     //     );
     // }
 
-    async fetch_config() {
-        console.log('MyApp: fetch_config()');
-        return await fetch('/config').
+    async fetch_myconfig() {
+        console.log('MyApp: fetch_myconfig()');
+        return await fetch('/myconfig').
           then((response)=>{
             return response
         }
@@ -319,9 +319,9 @@ class MyApp {
 
 
 
-    async fetch_doit() {
-        console.log('MyApp: fetch_doit()');
-        return await fetch('/doit').
+    async fetch_mystart() {
+        console.log('MyApp: fetch_mystart()');
+        return await fetch('/mystart').
           then((response)=>{
             return response
         }
@@ -340,15 +340,15 @@ class MyApp {
     //     // hello is now available
     // }
 
-    async caller_fetch_config() {
-        console.log('MyApp: caller_fetch_config()');
-        const msg = await this.fetch_config();
+    async caller_fetch_myconfig() {
+        console.log('MyApp: caller_fetch_myconfig()');
+        const msg = await this.fetch_myconfig();
         console.log(msg);
     }
 
-    async caller_fetch_doit() {
-        console.log('MyApp: caller_fetch_doit()');
-        const msg = await this.fetch_doit();
+    async caller_fetch_mystart() {
+        console.log('MyApp: caller_fetch_mystart()');
+        const msg = await this.fetch_mystart();
         console.log(msg);
     }
 
@@ -420,7 +420,7 @@ class MyApp {
     do_init() {
         console.log('MyApp: do_init()')
 
-        var msg = this.caller_fetch_config();
+        var msg = this.caller_fetch_myconfig();
         console.log(msg)
         set_widgets();
     }
@@ -429,7 +429,7 @@ class MyApp {
     do_his_init() {
         console.log('MyApp: do_his_init()')
 
-        var msg = this.caller_fetch_doit();
+        var msg = this.caller_fetch_mystart();
         console.log(msg)
         set_widgets_event_listeners();
         this.his_doit();
