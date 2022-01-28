@@ -389,8 +389,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const myApp = new MyApp();
     myApp.doit();
-    myApp.his_doit();
     myglobals.myApp = myApp;
+    myApp.his_doit();
 });
 // document.addEventListener
 
