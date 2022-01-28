@@ -417,7 +417,7 @@ class MyApp {
     do_his_init() {
         console.log('MyApp: do_his_init()')
 
-        var msg = this.caller();
+        var msg = this.caller_doit();
         console.log(msg)
         set_widgets_event_listeners();
         this.his_doit();
