@@ -359,6 +359,8 @@ class MyApp {
             }
         });
 
+        this.modify_library();
+
     }
     // hisdoit
 
