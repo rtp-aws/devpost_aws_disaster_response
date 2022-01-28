@@ -299,7 +299,7 @@ class MyApp {
 
     modify_library() {
         if (!this.library) {
-            var library = {};
+            this.library = {};
         }
 
         this.library.json = {
@@ -320,7 +320,7 @@ class MyApp {
             }
         };
 
-        myglobals.library = this.myGlobals.library;
+        myglobals.library = this.library;
 
     }
 
