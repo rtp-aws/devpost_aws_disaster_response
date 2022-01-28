@@ -301,6 +301,8 @@ class MyApp {
         if (!this.library) {
             this.library = {};
         }
+        myglobals.library = this.library;
+
 
         this.library.json = {
             replacer: function(match, pIndent, pKey, pVal, pEnd) {
@@ -316,11 +318,10 @@ class MyApp {
             },
             prettyPrint: function(obj) {
                 var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
-                return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, library.json.replacer);
+                return JSON.stringify(obj, null, 3).replace(/&/g, '&amp;').replace(/\\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(jsonLine, myglobals.myApp.library.json.replacer);
             }
         };
 
-        myglobals.library = this.library;
 
     }
 
