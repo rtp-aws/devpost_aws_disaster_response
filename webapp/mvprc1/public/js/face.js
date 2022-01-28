@@ -362,6 +362,7 @@ class MyApp {
             }
         });
 
+        // Call the modify_library() code in this class.
         this.modify_library();
 
     }
