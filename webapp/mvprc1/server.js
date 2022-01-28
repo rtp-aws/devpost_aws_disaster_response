@@ -119,7 +119,7 @@ app.get('/config.json', (req, res) => {
 app.get('/doit', (req, res) => {
 
     console.log("get /doit")
-    res.send("doit")
+    res.send("this is doit response text")
 
 })
 
