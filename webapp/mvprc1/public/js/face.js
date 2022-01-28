@@ -83,7 +83,7 @@ function set_widgets() {
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-// It appears some items are not present on load, so they 
+// It appears some items are not present on load, so they
 // can not have event listeners added initially.
 
 function set_widgets_event_listeners() {
@@ -266,6 +266,19 @@ const sleep = (seconds)=>{
 }
 // sleep
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // class
@@ -274,7 +287,7 @@ const sleep = (seconds)=>{
 
 class MyApp {
 
-    // These are the class privates?  
+    // These are the class privates?
     albumBucketName;
     bucketRegion;
     identityPoolId;
@@ -290,13 +303,25 @@ class MyApp {
     async getJSON() {
         console.log('MyApp: getJSON()');
         return await fetch('/config.json').then((response)=>response.json()).then((responseJson)=>{
-            return responseJson
+            return responseJson;
         }
         );
     }
 
-    async caller() {
-        console.log('MyApp: caller()');
+
+    async getDoit() {
+        console.log('MyApp: getDoit()');
+        return await fetch('/doit').
+          then((response)=>{
+            return response
+        }
+        );
+    }
+
+
+
+    async caller_get_json() {
+        console.log('MyApp: caller_get_json()');
         const json = await this.getJSON();
         // command waits until completion
         //const json = await readJSON2();  // command waits until completion
@@ -304,6 +329,18 @@ class MyApp {
         console.log(json);
         // hello is now available
     }
+
+    async caller_doit() {
+        console.log('MyApp: caller_doit()');
+        const msg = await this.getDoit();
+        // command waits until completion
+        //const json = await readJSON2();  // command waits until completion
+        //console.log(json.hello);            // hello is now available
+        console.log(msg);
+        // hello is now available
+    }
+
+
 
     modify_library() {
         if (!this.library) {
@@ -368,15 +405,24 @@ class MyApp {
     }
     // hisdoit
 
-    doit() {
-        console.log('MyApp: doit()')
+    do_init() {
+        console.log('MyApp: do_init()')
 
-        var jsonthing = this.caller();
+        var jsonthing = this.caller_get_json();
+        console.log(jsonthing)
         set_widgets();
-        set_widgets_event_listeners();
     }
-    // doit
+    // do_init
 
+    do_his_init() {
+        console.log('MyApp: do_his_init()')
+
+        var msg = this.caller();
+        console.log(msg)
+        set_widgets_event_listeners();
+        this.his_doit();
+    }
+    // do_get_config
 }
 // MyApp
 
@@ -388,9 +434,9 @@ class MyApp {
 document.addEventListener('DOMContentLoaded', function() {
 
     const myApp = new MyApp();
-    myApp.doit();
     myglobals.myApp = myApp;
-    myApp.his_doit();
+    myApp.do_init();
+    myApp.do_his_init();
 });
 // document.addEventListener
 
