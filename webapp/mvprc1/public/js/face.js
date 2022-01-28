@@ -258,6 +258,18 @@ function get_id() {
     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
 }
 
+
+// this is code not used.  How does it compare to the other
+// code in terms of coverage analysis
+const sleep = (seconds) => {
+    const waitUntil = new Date().getTime() + seconds * 1000
+    while(new Date().getTime() < waitUntil) {
+        // do nothing
+    }
+}
+// sleep
+
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 // class
@@ -368,12 +380,6 @@ class MyApp {
     }
     // doit
 
-    //const sleep = (seconds) => {
-    //    const waitUntil = new Date().getTime() + seconds * 1000
-    //    while(new Date().getTime() < waitUntil) {
-    //        // do nothing
-    //    }
-    //}
 
 }
 // MyApp
