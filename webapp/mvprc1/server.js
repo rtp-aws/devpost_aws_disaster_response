@@ -105,9 +105,9 @@ app.get('/face.ejs', (req, res) => {
     res.render("face")
 })
 
-app.get('/config', (req, res) => {
+app.get('/myconfig', (req, res) => {
 
-    console.log("get /config")
+    console.log("get /myconfig")
     res.send("cloudacademy-rek us-east-1 us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b")
 
 })
@@ -122,10 +122,10 @@ app.get('/config', (req, res) => {
 //
 // })
 
-app.get('/doit', (req, res) => {
+app.get('/mystart', (req, res) => {
 
-    console.log("get /doit")
-    res.send("this is doit response text")
+    console.log("get /mystart")
+    res.send("this is mystart response text")
 
 })
 
