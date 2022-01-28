@@ -67,7 +67,7 @@ function set_widgets() {
         // Play the video element to start the stream.
         myglobals.video.play();
         myglobals.video.onplay = function() {
-            showVideo();
+            show_video();
         }
         ;
 
