@@ -309,7 +309,7 @@ class MyApp {
     // }
 
     async fetch_config() {
-        console.log('MyApp: fethc_config()');
+        console.log('MyApp: fetch_config()');
         return await fetch('/config').
           then((response)=>{
             return response
@@ -451,45 +451,3 @@ document.addEventListener('DOMContentLoaded', function() {
     myApp.do_his_init();
 });
 // document.addEventListener
-
-/*****************************************************/
-
-//});  // end document.addEventListener
-
-//async function readJSON2() {
-// http://localhost:8080
-//fetch('/config/aws-config.json')
-//fetch('https://mvprc1.rtp-aws.org/config')
-//console.log("readJSON2")
-//fetch('/config.json')
-//.then(response => {
-//  console.log("one");
-//   if (!response.ok) {
-//       throw new Error("HTTP error " + response.status);
-//   }
-//   return response.json();
-//})
-//.then(json => {
-//   this.users = json;
-//   console.log("two");
-//   console.log(this.users);
-//})
-//.catch(function () {
-//   this.dataError = true;
-//   console.log("three");
-//   console.log(this.users);
-//})
-//}
-
-//  if (!jsonthing.promise) {
-//    console.log('jsonthing.promise is null?')
-//    jsonthing.promise = doit3();
-//    jsonthing.promise.catch(() => {}).then(() => { jsonthing.promise.done = true; });
-//retVal = true;
-//  }
-
-//   if ( jsonthing.promise.done ) {
-//       console.log('promise done')
-//       this.promise.catch(() => {}).then(() => { this.promise.done = true; });
-//       retVal = true;
-//   }
