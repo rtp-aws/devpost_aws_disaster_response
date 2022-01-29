@@ -15,4 +15,10 @@ https://commonmark.org/help/tutorial/05-blockquotes.html
 
 # sagemaker groundtruth
 
+# freecode camp gittr
+
+Free code camp does not have a slack
+
+https://gitter.im/FreeCodeCamp/Help?source=orgpage
+
 
