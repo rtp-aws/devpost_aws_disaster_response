@@ -301,14 +301,6 @@ class MyApp {
         this.s3 = null;
     }
 
-    // async getJSON() {
-    //     console.log('MyApp: getJSON()');
-    //     return await fetch('/config.json').then((response)=>response.json()).then((responseJson)=>{
-    //         return responseJson;
-    //     }
-    //     );
-    // }
-
     // json version
     async fetch_myconfig() {
         console.log('MyApp: getJSON()');
@@ -323,38 +315,6 @@ class MyApp {
         );
     }
 
-
-    // non json version
-    // async fetch_myconfig() {
-    //     console.log('MyApp: fetch_myconfig()');
-    //     return await fetch('/myconfig').
-    //       then((response)=>{
-    //         console.log(response)
-    //         this.his_init();
-    //         return response
-    //     }
-    //     );
-    // }
-
-
-
-
-    // async caller_get_json() {
-    //     console.log('MyApp: caller_get_json()');
-    //     const json = await this.getJSON();
-    //     // command waits until completion
-    //     //const json = await readJSON2();  // command waits until completion
-    //     //console.log(json.hello);            // hello is now available
-    //     console.log(json);
-    //     // hello is now available
-    // }
-
-    //async caller_fetch_myconfig() {
-    //    console.log('MyApp: caller_fetch_myconfig()');
-    //    const msg = await this.fetch_myconfig();
-    //    console.log(msg);
-    //    this.do_my_init();
-    //}
 
 
 
@@ -413,6 +373,8 @@ class MyApp {
         var msg = await this.fetch_myconfig();
         console.log(msg)
         set_widgets();
+        set_widgets_event_listeners();
+
     }
     // do_init
 
