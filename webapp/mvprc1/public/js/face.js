@@ -298,7 +298,7 @@ class MyApp {
         this.albumBucketName = '';
         this.bucketRegion = '';
         this.identityPoolId = '';
-        this.identityPoolId = null;
+        this.s3 = null;
     }
 
     // async getJSON() {
@@ -313,7 +313,10 @@ class MyApp {
     async fetch_myconfig() {
         console.log('MyApp: getJSON()');
         return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
-          console.log(responseJson)
+          console.log(responseJson);
+          this.bucketRegion = responseJson.bucketRegion;
+          this.identityPoolId = responseJson.identityPoolId;
+          this.albumBucketName = responseJson.albumBucketName;
           this.his_init();
           return responseJson;
         }
@@ -383,25 +386,11 @@ class MyApp {
 
     his_init() {
         console.log('his_doit')
-        //var albumBucketName = // 'S3_BUCKET_NAME_HERE';
-        //var bucketRegion = // 'S3_BUCKET_REGION_HERE';
-        //var IdentityPoolId = // 'IDENTITYPOOLID_HERE';
-
-        this.albumBucketName = 'cloudacademy-rek';
-        // 'S3_BUCKET_NAME_HERE';
-        this.bucketRegion = 'us-east-1';
-        // 'S3_BUCKET_REGION_HERE';
-        this.IdentityPoolId = 'us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b';
-        // 'IDENTITYPOOLID_HERE';
-
-        //AWS.config.loadFromPath('aws-config1.json');
-        //AWS.CognitoIdentityCredentials.loadFromPath('aws-config2.json');
-        //AWS.S3.loadFromPath('aws-config3.json')
 
         AWS.config.update({
             region: this.bucketRegion,
             credentials: new AWS.CognitoIdentityCredentials({
-                IdentityPoolId: this.IdentityPoolId
+                IdentityPoolId: this.identityPoolId
             })
         });
 
