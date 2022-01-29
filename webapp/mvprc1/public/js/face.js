@@ -309,16 +309,29 @@ class MyApp {
     //     );
     // }
 
+    // json version
     async fetch_myconfig() {
-        console.log('MyApp: fetch_myconfig()');
-        return await fetch('/myconfig').
-          then((response)=>{
-            console.log(response)
-            this.his_init();
-            return response
+        console.log('MyApp: getJSON()');
+        return await fetch('/config.json').then((response)=>response.json()).then((responseJson)=>{
+          console.log(responseJson)
+          this.his_init();
+          return responseJson;
         }
         );
     }
+
+
+    // non json version
+    // async fetch_myconfig() {
+    //     console.log('MyApp: fetch_myconfig()');
+    //     return await fetch('/myconfig').
+    //       then((response)=>{
+    //         console.log(response)
+    //         this.his_init();
+    //         return response
+    //     }
+    //     );
+    // }
 
 
 

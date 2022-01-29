@@ -125,8 +125,9 @@ app.get('/myconfig', (req, res) => {
 app.get('/mystart', (req, res) => {
 
     console.log("get /mystart")
-    res.send("this is mystart response text")
-
+    //res.send("this is mystart response text")
+    res.json({albumBucketName: "cloudacademy-rek", bucketRegion: "us-east-1", identityPoolId: "us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b"})
+   
 })
 
 
