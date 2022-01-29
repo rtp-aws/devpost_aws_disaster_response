@@ -407,7 +407,7 @@ class MyApp {
     async do_my_init() {
         console.log('MyApp: do_init()')
 
-        var msg = await this.caller_fetch_myconfig();
+        var msg = await this.fetch_myconfig();
         console.log(msg)
         set_widgets();
     }
