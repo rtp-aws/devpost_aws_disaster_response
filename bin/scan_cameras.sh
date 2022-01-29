@@ -14,6 +14,13 @@ echo "images will be put in ${RAWDATA_DIR}"
 the_date=`date +%Y%m%dZ%H%M`
 echo ${the_date}
 
+# Adds
+#
+# TOLL540_TOLL147
+# TOLL540_NC55
+# TOLL540_MCCRIMMON
+# I40_DAVIS_DR
+
 # hashmap 
 # camera_names :  URLS
 # REF: https://stackoverflow.com/questions/1494178/how-to-define-hash-tables-in-bash
@@ -36,6 +43,10 @@ cams=( \
        ["NC147_US15501"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG" \
        ["TOLL147_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG" \
        ["TOLL147_HOPSON_RD"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG" \
+       ["TOLL540_TOLL147"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG" \
+       ["TOLL540_NC55"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG" \
+       ["TOLL540_MCCRIMMON"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg" \
+       ["I40_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg" \
        ["TOLL147_NC54"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG" \
        ["TOLL540_DAVIS_DR"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG" \
        ["TOLL540_DMS7"]="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG" \
