@@ -312,7 +312,7 @@ class MyApp {
     // json version
     async fetch_myconfig() {
         console.log('MyApp: getJSON()');
-        return await fetch('/config.json').then((response)=>response.json()).then((responseJson)=>{
+        return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
           console.log(responseJson)
           this.his_init();
           return responseJson;
