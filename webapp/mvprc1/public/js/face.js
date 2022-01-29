@@ -145,7 +145,6 @@ function show_video() {
     hide_ui();
     myglobals.video.classList.add("visible");
     myglobals.controls.classList.add("visible");
-    set_widgets_event_listeners();
 }
 
 function hide_ui() {

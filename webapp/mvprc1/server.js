@@ -108,8 +108,12 @@ app.get('/face.ejs', (req, res) => {
 app.get('/myconfig', (req, res) => {
 
     console.log("get /myconfig")
-    res.json({albumBucketName: "cloudacademy-rek", bucketRegion: "us-east-1", identityPoolId: "us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b"})
-    //res.send("cloudacademy-rek us-east-1 us-east-1:44456c50-199b-4fe8-8ec5-8337b329051b")
+
+    var ALBUMBUCKETNAME = process.env.ALBUMBUCKETNAME;
+    var IDENTITYPOOLID = process.env.IDENTPOOLID;
+    var BUCKETREGION = process.env.BUCKETREGION;
+    
+    res.json({albumBucketName: ALBUMBUCKETNAME, bucketRegion: BUCKETREGION, identityPoolId: IDENTITYPOOLID})
 
 })
 
