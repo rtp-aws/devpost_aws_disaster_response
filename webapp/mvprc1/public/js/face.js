@@ -298,6 +298,7 @@ class MyApp {
         this.albumBucketName = '';
         this.bucketRegion = '';
         this.identityPoolId = '';
+        this.identityPoolId = null;
     }
 
     // async getJSON() {
@@ -312,6 +313,7 @@ class MyApp {
         console.log('MyApp: fetch_myconfig()');
         return await fetch('/myconfig').
           then((response)=>{
+            console.log(response)
             return response
         }
         );
@@ -330,12 +332,12 @@ class MyApp {
     //     // hello is now available
     // }
 
-    async caller_fetch_myconfig() {
-        console.log('MyApp: caller_fetch_myconfig()');
-        const msg = await this.fetch_myconfig();
-        console.log(msg);
-        this.do_my_init();
-    }
+    //async caller_fetch_myconfig() {
+    //    console.log('MyApp: caller_fetch_myconfig()');
+    //    const msg = await this.fetch_myconfig();
+    //    console.log(msg);
+    //    this.do_my_init();
+    //}
 
 
 
@@ -402,10 +404,10 @@ class MyApp {
     }
     // hisdoit
 
-    do_my_init() {
+    async do_my_init() {
         console.log('MyApp: do_init()')
 
-        var msg = this.caller_fetch_myconfig();
+        var msg = await this.caller_fetch_myconfig();
         console.log(msg)
         set_widgets();
     }
