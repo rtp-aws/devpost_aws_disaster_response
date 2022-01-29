@@ -334,7 +334,7 @@ class MyApp {
         console.log('MyApp: caller_fetch_myconfig()');
         const msg = await this.fetch_myconfig();
         console.log(msg);
-        myApp.do_my_init();
+        this.do_my_init();
     }
 
 
