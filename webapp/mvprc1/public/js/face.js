@@ -314,6 +314,7 @@ class MyApp {
         return await fetch('/myconfig').
           then((response)=>{
             console.log(response)
+            this.his_init();
             return response
         }
         );
@@ -367,7 +368,7 @@ class MyApp {
     }
     // modify_library
 
-    his_doit() {
+    his_init() {
         console.log('his_doit')
         //var albumBucketName = // 'S3_BUCKET_NAME_HERE';
         //var bucketRegion = // 'S3_BUCKET_REGION_HERE';
@@ -413,14 +414,6 @@ class MyApp {
     }
     // do_init
 
-    do_his_init() {
-        console.log('MyApp: do_his_init()')
-
-        var msg = this.caller_fetch_mystart();
-        console.log(msg)
-        set_widgets_event_listeners();
-        this.his_doit();
-    }
     // do_get_config
 }
 // MyApp
@@ -435,6 +428,5 @@ document.addEventListener('DOMContentLoaded', function() {
     const myApp = new MyApp();
     myglobals.myApp = myApp;
     myApp.do_my_init();
-    //myApp.do_his_init();
 });
 // document.addEventListener
