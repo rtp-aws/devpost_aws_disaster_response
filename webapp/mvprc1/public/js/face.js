@@ -305,7 +305,9 @@ class MyApp {
     async fetch_myconfig() {
         console.log('MyApp: getJSON()');
         return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
-          console.log(responseJson);
+          console.log("-----");
+          console.log(process.env.IDENTITYPOOLID)
+          console.log("-----");
           this.bucketRegion = responseJson.bucketRegion;
           this.identityPoolId = responseJson.identityPoolId;
           this.albumBucketName = responseJson.albumBucketName;

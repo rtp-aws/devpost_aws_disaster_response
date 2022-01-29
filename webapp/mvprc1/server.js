@@ -110,9 +110,9 @@ app.get('/myconfig', (req, res) => {
     console.log("get /myconfig")
 
     var ALBUMBUCKETNAME = process.env.ALBUMBUCKETNAME;
-    var IDENTITYPOOLID = process.env.IDENTPOOLID;
+    var IDENTITYPOOLID = process.env.IDENTITYPOOLID;
     var BUCKETREGION = process.env.BUCKETREGION;
-    
+
     res.json({albumBucketName: ALBUMBUCKETNAME, bucketRegion: BUCKETREGION, identityPoolId: IDENTITYPOOLID})
 
 })
