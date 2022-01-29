@@ -319,16 +319,6 @@ class MyApp {
 
 
 
-    async fetch_mystart() {
-        console.log('MyApp: fetch_mystart()');
-        return await fetch('/mystart').
-          then((response)=>{
-            return response
-        }
-        );
-    }
-
-
 
     // async caller_get_json() {
     //     console.log('MyApp: caller_get_json()');
@@ -344,12 +334,7 @@ class MyApp {
         console.log('MyApp: caller_fetch_myconfig()');
         const msg = await this.fetch_myconfig();
         console.log(msg);
-    }
-
-    async caller_fetch_mystart() {
-        console.log('MyApp: caller_fetch_mystart()');
-        const msg = await this.fetch_mystart();
-        console.log(msg);
+        myApp.do_my_init();
     }
 
 
@@ -417,7 +402,7 @@ class MyApp {
     }
     // hisdoit
 
-    do_init() {
+    do_my_init() {
         console.log('MyApp: do_init()')
 
         var msg = this.caller_fetch_myconfig();
@@ -447,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const myApp = new MyApp();
     myglobals.myApp = myApp;
-    myApp.do_init();
-    myApp.do_his_init();
+    myApp.do_my_init();
+    //myApp.do_his_init();
 });
 // document.addEventListener
