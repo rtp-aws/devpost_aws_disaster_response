@@ -370,7 +370,6 @@ class MyApp {
         console.log('MyApp: do_init()')
 
         var msg = await this.fetch_myconfig();
-        console.log(msg)
         set_widgets();
         set_widgets_event_listeners();
 
