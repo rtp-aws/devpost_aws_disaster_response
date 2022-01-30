@@ -21,6 +21,7 @@ class MvpRc1Predict {
     canvas;
     ctx;
     camera_feed_img;
+    s3;
 
     /////////////////////////////////////////////////////////////////
     // PREDICT radio buttons
@@ -174,6 +175,15 @@ class MvpRc1Predict {
                     IdentityPoolId: this.identityPoolId
                 })
             });
+
+            this.s3 = new AWS.S3({
+                apiVersion: '2006-03-01',
+                params: {
+                    Bucket: this.albumBucketName
+                }
+            });
+
+            console.log("Region: ", AWS.config.region);
 
             return responseJson;
         }
