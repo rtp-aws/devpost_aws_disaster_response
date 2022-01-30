@@ -72,7 +72,7 @@ class MvpRc1Predict {
         )
 
         I26_BROADWAY.addEventListener('click', button=>{
-            this.console.log("I26_BROADWAY: click() ");
+            console.log("I26_BROADWAY: click() ");
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
             this.erase_canvas();
         }
