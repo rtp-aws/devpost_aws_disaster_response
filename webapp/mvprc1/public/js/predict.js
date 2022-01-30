@@ -234,7 +234,7 @@ class MvpRc1Predict {
                 this.the_blob = blob;
                 }, "image/jpeg", 0.75);
             };
-            img.crossOrigin = "";              // if from different origin
+            img.crossOrigin = "Access-Control-Allow-Origin";              // if from different origin
             img.src = dataURL;
 
 
