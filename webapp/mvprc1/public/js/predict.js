@@ -46,7 +46,7 @@ class MvpRc1Predict {
         // This was a var and not a const?      
         this.camera_feed_img = document.getElementsByClassName("camera_feed")[0];
 
-        add_listeners();
+        this.add_listeners();
 
     }
     ;
