@@ -200,6 +200,18 @@ class MvpRc1Predict {
             });
 
 
+            var blobData = fetch("url-to-image")
+                                .then(function(response) {
+                                    return response.blob()
+                                })
+                                .then(function(blob) {
+                                    // here the image is a blob
+                                    return blob;
+                                });
+
+
+
+
             //var blobData = data_uri_to_blob(dataURL);
             var fileName = "pix." + get_id() + ".png";
             var params = {
