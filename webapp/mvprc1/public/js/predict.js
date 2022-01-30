@@ -191,7 +191,10 @@ class MvpRc1Predict {
             //var dataURL = hidden_canvas.toDataURL('image/png');
             var dataURL = this.camera_feed_img.src;
 
-            var blobData = loadXHR(dataURL).then(function(blob) {
+
+            // https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
+
+            var blobData = loadXHR('https://cors-anywhere.herokuapp.com/' + dataURL).then(function(blob) {
                 // here the image is a blob
                 return blob;
             });
