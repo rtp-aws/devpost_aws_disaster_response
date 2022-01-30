@@ -1,11 +1,13 @@
+var AWS = require("aws-sdk");
 
-//require('process/')
+AWS.config.getCredentials(function(err) {
+  if (err) console.log(err.stack);
+  // credentials not loaded
+  else {
+    console.log("Access key:", AWS.config.credentials.accessKeyId);
+  }
+});
 
-// ES5 method to specify AWS client
-const {AccountClient, DeleteAlternateContactCommand} = require("@aws-sdk/client-account");
-
-// ES5 method to specify AWS S3
-const {S3Client, AbortMultipartUploadCommand} = require("@aws-sdk/client-s3");
 
 class MvpRc1Predict {
 
@@ -163,9 +165,9 @@ class MvpRc1Predict {
             console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
 
             // a client can be shared by different commands.
-            this.client = new AccountClient({
-                region: this.bucketRegion
-            });
+            //this.client = new AccountClient({
+            //    region: this.bucketRegion
+            //});
 
             //            AWS.config.update({
             //                region: this.bucketRegion,
