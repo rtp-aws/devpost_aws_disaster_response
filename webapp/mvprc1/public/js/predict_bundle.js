@@ -64670,9 +64670,9 @@ class MvpRc1Predict {
             console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
 
             // a client can be shared by different commands.
-            //this.client = new AccountClient({
-            //    region: "REGION"
-            //});
+            this.client = new AccountClient({
+                region: this.bucketRegion
+            });
 
             //            AWS.config.update({
             //                region: this.bucketRegion,
