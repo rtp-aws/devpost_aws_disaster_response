@@ -204,7 +204,7 @@ class MvpRc1Predict {
                 ContentType: 'image/png',
                 Body: blobData
             };
-            myglobals.myApp.s3.upload(params, function(err, data) {
+            s3.upload(params, function(err, data) {
                 console.log(data);
                 console.log(err ? 'ERROR!' : 'UPLOADED.');
 
