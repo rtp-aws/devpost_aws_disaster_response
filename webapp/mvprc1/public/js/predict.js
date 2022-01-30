@@ -1,7 +1,7 @@
 class MvpRc1Predict {
 
     // These are public object variables?
-    // I don't know javascript
+    // I don't know javascript.  Down below I get them? WTF?
     slider;
     canvas;
     ctx;
@@ -23,6 +23,20 @@ class MvpRc1Predict {
     TOLL147_NC54 = document.getElementById("TOLL147_NC54");
     TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
+
+
+    // I had these original as global const.  I wonder how to do this 
+    // with the pedantic class member variables above?
+    slider = document.getElementById("slider");
+    canvas = document.getElementById("my_canvas");
+    // This was a var and not a const?
+    ctx = this.canvas.getContext("2d");
+
+    // The camera feed img
+    // This was a var and not a const?      
+    camera_feed_img = document.getElementsByClassName("camera_feed")[0];
+
+
     // the constructor
     constructor() {
         console.log("MvpRc1Predict:Constructor() ");
@@ -35,22 +49,12 @@ class MvpRc1Predict {
         //       const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
         //       const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
-        // I had these original as global const.  I wonder how to do this 
-        // with the pedantic class member variables above?
-        this.slider = document.getElementById("slider");
-        this.canvas = document.getElementById("my_canvas");
-        // This was a var and not a const?
-        this.ctx = this.canvas.getContext("2d");
-
-        // The camera feed img
-        // This was a var and not a const?      
-        this.camera_feed_img = document.getElementsByClassName("camera_feed")[0];
 
         this.add_listeners();
 
     }
     ;
-    
+
     // erase the canvas
     erase_canvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -138,14 +142,14 @@ class MvpRc1Predict {
 
         // Control is the slider
         this.slider.addEventListener('click', button=>{
-            console.log("slider: click() ", slider.checked);
-            if (slider.checked) {
-                camera_feed_img.style.maxWidth = "";
-                camera_feed_img.style.maxHeight = "";
+            console.log("slider: click() ", this.slider.checked);
+            if (this.slider.checked) {
+                this.camera_feed_img.style.maxWidth = "";
+                this.camera_feed_img.style.maxHeight = "";
 
             } else {
-                camera_feed_img.style.maxWidth = "200px";
-                camera_feed_img.style.maxHeight = "200px";
+                this.camera_feed_img.style.maxWidth = "200px";
+                this.camera_feed_img.style.maxHeight = "200px";
             }
             this.erase_canvas();
             //var ctx = canvas.getContext("2d");
