@@ -13,6 +13,10 @@ npm install express
 npm install --save-dev nodemon
 npm i ejs
 sudo npm install -g browserify
+npm install aws-sdk
+npm install uuid
+
+
 ```
 
 # First Steps - setup nodemon

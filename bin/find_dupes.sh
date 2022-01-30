@@ -36,6 +36,7 @@ for filename in ${RAWDATA_DIR}/*.jpg; do
         #echo "array is not empty"
         hashes[${THE_HASH}]+=';'
         hashes[${THE_HASH}]+=${filename}
+        echo "dupe  ${filename}"
     else
         #echo "array is empty"
         hashes[${THE_HASH}]=${filename}

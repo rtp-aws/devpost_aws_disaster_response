@@ -359,4 +359,27 @@ it can be read via console developer tools.
 
 ## 20220127
 
-Continuing to work on the git credentials.
+Continuing to work on the removing credentials from git.
+
+
+
+## 20220128
+
+Fixed the issue with credentials.  Reworked the cloudacadmey code.  Now it 
+fetches credentials from express server.  Express server pulls creds from
+environment setup by elastic beanstalk environment settings in aws.
+
+Talked with Mike S in the gcp slack. Possibly he will help with labeling.
+
+Added some more camera images.
+
+
+## 20220129
+
+More snowfall.  Will have meeting with Adrian to help him on his entry.
+I am rewroking the face app to have a navigator so I can use it in conjunction with the node version.
+
+
+
+
+
