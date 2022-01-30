@@ -191,7 +191,7 @@ class MvpRc1Predict {
             //var dataURL = hidden_canvas.toDataURL('image/png');
             var dataURL = this.camera_feed_img.src;
 
-            var blobData = loadXHR("url-to-image").then(function(blob) {
+            var blobData = loadXHR(dataURL).then(function(blob) {
                 // here the image is a blob
                 return blob;
             });
