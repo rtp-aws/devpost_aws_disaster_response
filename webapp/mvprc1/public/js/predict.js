@@ -3,6 +3,8 @@
 
 class MvpRc1Predict {
 
+  // These are public object variables?
+  // I don't know javascript
   slider;
   canvas;
   ctx;
@@ -11,6 +13,10 @@ class MvpRc1Predict {
   /////////////////////////////////////////////////////////////////
   // PREDICT radio buttons
   /////////////////////////////////////////////////////////////////
+  //
+  // hmm, you can't specify var or const but you can specify and assign
+  // in one step.  Then not use this.  Is this the method for specifying
+  // a class variable in javascript?
 
   TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
   I40W_MM8 = document.getElementById("I40W_MM8");
@@ -43,72 +49,72 @@ class MvpRc1Predict {
 
       TOLL147_DAVIS_DR.addEventListener('click', button => {
         console.log("TOLL147_DAVIS_DR: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
         this.erase_canvas();
       })
 
       I40W_MM8.addEventListener('click', button => {
         console.log("I40W_MM8: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
         this.erase_canvas();
       })
 
       I440_US64_Bypass.addEventListener('click', button => {
-       console.log("I440_US64_Bypass: click() ");
-       camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
+        console.log("I440_US64_Bypass: click() ");
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
         this.erase_canvas();
       })
 
 
       I26_BROADWAY.addEventListener('click', button => {
-       console.log("I26_BROADWAY: click() ");
-       camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
+        this.console.log("I26_BROADWAY: click() ");
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
         this.erase_canvas();
       })
 
       TOLL147_HOPSON_RD.addEventListener('click', button => {
         console.log("TOLL147_HOPSON_RD: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
         this.erase_canvas();
       })
 
       TOLL147_NC54.addEventListener('click', button => {
         console.log("TOLL147_NC54: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
         this.erase_canvas();
       })
 
       TOLL54_APEXBBQ.addEventListener('click', button => {
         console.log("TOLL54_APEXBBQ: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
         this.erase_canvas();
       })
 
 
       TOLL540_TOLL147.addEventListener('click', button => {
         console.log("TOLL540_TOLL147: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG"
         this.erase_canvas();
       })
 
 
       TOLL540_NC55.addEventListener('click', button => {
         console.log("TOLL540_NC55: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG"
         this.erase_canvas();
       })
 
 
       TOLL540_MCCRIMMON.addEventListener('click', button => {
         console.log("TOLL540_MCCRIMMON: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg"
         this.erase_canvas();
       })
 
 
       I40_DAVIS_DR.addEventListener('click', button => {
         console.log("I40_DAVIS_DR: click() ");
-        camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
+        this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
         this.erase_canvas();
 
       })
