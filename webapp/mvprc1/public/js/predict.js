@@ -200,7 +200,7 @@ class MvpRc1Predict {
 //             });
 
 
-            var blobData = fetch("url-to-image")
+            var blobData = fetch(dataURL)
                                 .then(function(response) {
                                     return response.blob()
                                 })
