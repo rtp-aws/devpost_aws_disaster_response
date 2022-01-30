@@ -184,4 +184,11 @@ Simply delete the lines between `<<<<` and `===`.  Then delete the line `>>>`.  
 git show :0:./public/js/face.js
 ```
 
+# how to config git merge tool
+
+```
+git config merge.tool kdiff3
+git mergetool
+```
+
 

@@ -200,6 +200,12 @@ class MvpRc1Predict {
 //             });
 
 
+
+// Give it up.  Do it this way
+// https://stackoverflow.com/questions/42471755/convert-image-into-blob-using-javascript
+// using the canvas method
+//
+
             var blobData = fetch(dataURL)
                                 .then(function(response) {
                                     return response.blob()
