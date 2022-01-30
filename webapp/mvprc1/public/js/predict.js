@@ -41,6 +41,25 @@ function get_id() {
     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
 }
 
+function loadXHR(url) {
+
+    return new Promise(function(resolve, reject) {
+        try {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.responseType = "blob";
+            xhr.onerror = function() {reject("Network error.")};
+            xhr.onload = function() {
+                if (xhr.status === 200) {resolve(xhr.response)}
+                else {reject("Loading error:" + xhr.statusText)}
+            };
+            xhr.send();
+        }
+        catch(err) {reject(err.message)}
+    });
+}
+
+
 
 
 class MvpRc1Predict {
@@ -168,29 +187,36 @@ class MvpRc1Predict {
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
             this.erase_canvas();
 
-        // Turn the canvas image into a dataURL that can be used as a src for our photo.
-        //var dataURL = hidden_canvas.toDataURL('image/png');
-        var dataURL = this.camera_feed_img.src;
-        var blobData = data_uri_to_blob(dataURL);
-        var fileName = "pix." + get_id() + ".png";
-        var params = {
-            Key: fileName,
-            ContentType: 'image/png',
-            Body: blobData
-        };
-        myglobals.myApp.s3.upload(params, function(err, data) {
-            console.log(data);
-            console.log(err ? 'ERROR!' : 'UPLOADED.');
+            // Turn the canvas image into a dataURL that can be used as a src for our photo.
+            //var dataURL = hidden_canvas.toDataURL('image/png');
+            var dataURL = this.camera_feed_img.src;
 
+            var blobData = loadXHR("url-to-image").then(function(blob) {
+                // here the image is a blob
+                return blob;
+            });
+
+
+            //var blobData = data_uri_to_blob(dataURL);
+            var fileName = "pix." + get_id() + ".png";
             var params = {
-                Image: {
-                    S3Object: {
-                        Bucket: this.albumBucketName ,
-                        Name: fileName
-                    }
-                },
-                Attributes: ["ALL"]
+                Key: fileName,
+                ContentType: 'image/png',
+                Body: blobData
             };
+            myglobals.myApp.s3.upload(params, function(err, data) {
+                console.log(data);
+                console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+                var params = {
+                    Image: {
+                        S3Object: {
+                            Bucket: this.albumBucketName ,
+                            Name: fileName
+                        }
+                    },
+                    Attributes: ["ALL"]
+                };
 
             var rekognition = new AWS.Rekognition();
             rekognition.detectLabels(params, function(err, data) {
@@ -199,6 +225,16 @@ class MvpRc1Predict {
                 else {
                     //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
                     console.log(data);
+
+
+//                     const css = [
+//                         "background-image: url(https://example.com)",
+//                         "background-size: cover",
+//                         "height: 100px",
+//                         "padding: 15px",
+//                         "width: 100px"
+//                     ];
+//                     console.log("%cI'm An Image!", css.join(";"));
                 }
             });
 
