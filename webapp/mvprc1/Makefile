@@ -1,10 +1,17 @@
 
-SRC:= public/js/road.js public/js/bridge.js public/js/odd.js public/js/both.js
-EXE:= public/js/road_bundle.js public/js/bridge_bundle.js public/js/odd_bundle.js public/js/both_bundle.js
+SRC:= public/js/road.js public/js/bridge.js public/js/odd.js \
+	 public/js/both.js public/js/predict.js
+EXE:= public/js/road_bundle.js public/js/bridge_bundle.js \
+	public/js/odd_bundle.js public/js/both_bundle.js  public/js/predict_bundle.js
 
 
 # TODO use implicit rule
 all: $(EXE)
+
+public/js/predict_bundle.js: public/js/predict.js
+		echo "running browserify on predict ..."
+		browserify $< -o $@
+
 
 public/js/bridge_bundle.js: public/js/bridge.js
 		echo "running browserify on bridge ..."

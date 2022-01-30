@@ -1,6 +1,6 @@
 {
   "name": "mvprc1",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.49.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2"
   },
