@@ -8,9 +8,39 @@ var AWS = require("aws-sdk");
 //   }
 // });
 
-
+// hmm, so the environment variables do not work
 console.log("Region: ", AWS.config.region);
 //console.log("Access key:", AWS.config.credentials.accessKeyId);
+
+
+function display_error_message(error_msg, error) {
+    error = error || "";
+    if (error) {
+        console.error(error);
+    }
+
+    error_message.innerText = error_msg;
+
+    hideUI();
+    error_message.classList.add("visible");
+}
+
+function data_uri_to_blob(dataURI) {
+    var binary = atob(dataURI.split(',')[1]);
+    var array = [];
+    for (var i = 0; i < binary.length; i++) {
+        array.push(binary.charCodeAt(i));
+    }
+    return new Blob([new Uint8Array(array)],{
+        type: 'image/png'
+    });
+}
+
+function get_id() {
+    var newDate = new Date();
+    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
+}
+
 
 
 class MvpRc1Predict {
@@ -137,6 +167,43 @@ class MvpRc1Predict {
             console.log("I40_DAVIS_DR: click() ");
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
             this.erase_canvas();
+
+        // Turn the canvas image into a dataURL that can be used as a src for our photo.
+        //var dataURL = hidden_canvas.toDataURL('image/png');
+        var dataURL = this.camera_feed_img.src;
+        var blobData = data_uri_to_blob(dataURL);
+        var fileName = "pix." + get_id() + ".png";
+        var params = {
+            Key: fileName,
+            ContentType: 'image/png',
+            Body: blobData
+        };
+        myglobals.myApp.s3.upload(params, function(err, data) {
+            console.log(data);
+            console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+            var params = {
+                Image: {
+                    S3Object: {
+                        Bucket: myglobals.myApp.albumBucketName,
+                        Name: fileName
+                    }
+                },
+                Attributes: ["ALL"]
+            };
+
+            var rekognition = new AWS.Rekognition();
+            rekognition.detectLabels(params, function(err, data) {
+                if (err)
+                    console.log(err, err.stack);
+                else {
+                    //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
+                    console.log(data);
+                }
+            });
+
+        });
+
 
         }
         )
