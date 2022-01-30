@@ -106,10 +106,7 @@ class MvpRc1Predict {
         this.add_listeners();
     }
 
-    // erase the canvas
-    erase_canvas() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
+    upload_blog() {
         // hack
          console.log('hook to see if we upload to s3');
         var blobData = this.the_blob;
@@ -134,6 +131,12 @@ class MvpRc1Predict {
                 Attributes: ["ALL"]
             };
          })
+        
+    }
+
+    // erase the canvas
+    erase_canvas() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     } // erase_canvas end
 
