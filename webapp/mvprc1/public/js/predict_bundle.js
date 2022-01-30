@@ -78,6 +78,40 @@ TOLL54_APEXBBQ.addEventListener('click', button => {
 
 
 
+
+
+TOLL540_TOLL147.addEventListener('click', button => {
+  console.log("TOLL540_TOLL147: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG"
+})
+
+
+TOLL540_NC55.addEventListener('click', button => {
+  console.log("TOLL540_NC55: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG"
+})
+
+
+TOLL540_MCCRIMMON.addEventListener('click', button => {
+  console.log("TOLL540_MCCRIMMON: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg"
+})
+
+
+I40_DAVIS_DR.addEventListener('click', button => {
+  console.log("I40_DAVIS_DR: click() ");
+  camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
+})
+
+
+
+
+
+
+
+
+
+
 const slider = document.getElementById("slider");
 const canvas = document.getElementById("my_canvas");
 
