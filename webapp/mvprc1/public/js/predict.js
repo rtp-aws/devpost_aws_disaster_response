@@ -206,52 +206,92 @@ class MvpRc1Predict {
                                 })
                                 .then(function(blob) {
                                     // here the image is a blob
+                                    var fileName = "pix." + get_id() + ".png";
+                                    var params = {
+                                        Key: fileName,
+                                        ContentType: 'image/png',
+                                        Body: blobData
+                                    };
+                                    this.s3.upload(params, function(err, data) {
+                                        console.log(data);
+                                        console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+                                        var params = {
+                                            Image: {
+                                                S3Object: {
+                                                    Bucket: this.albumBucketName ,
+                                                    Name: fileName
+                                                }
+                                            },
+                                            Attributes: ["ALL"]
+                                        };
+
+                                    var rekognition = new AWS.Rekognition();
+                                    rekognition.detectLabels(params, function(err, data) {
+                                        if (err)
+                                            console.log(err, err.stack);
+                                        else {
+                                            //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
+                                            console.log(data);
+
+
+                        //                     const css = [
+                        //                         "background-image: url(https://example.com)",
+                        //                         "background-size: cover",
+                        //                         "height: 100px",
+                        //                         "padding: 15px",
+                        //                         "width: 100px"
+                        //                     ];
+                        //                     console.log("%cI'm An Image!", css.join(";"));
+                                        }
+                                    });
+                                    
                                     return blob;
                                 });
 
 
 
 
-            //var blobData = data_uri_to_blob(dataURL);
-            var fileName = "pix." + get_id() + ".png";
-            var params = {
-                Key: fileName,
-                ContentType: 'image/png',
-                Body: blobData
-            };
-            this.s3.upload(params, function(err, data) {
-                console.log(data);
-                console.log(err ? 'ERROR!' : 'UPLOADED.');
+//             //var blobData = data_uri_to_blob(dataURL);
+//             var fileName = "pix." + get_id() + ".png";
+//             var params = {
+//                 Key: fileName,
+//                 ContentType: 'image/png',
+//                 Body: blobData
+//             };
+//             this.s3.upload(params, function(err, data) {
+//                 console.log(data);
+//                 console.log(err ? 'ERROR!' : 'UPLOADED.');
 
-                var params = {
-                    Image: {
-                        S3Object: {
-                            Bucket: this.albumBucketName ,
-                            Name: fileName
-                        }
-                    },
-                    Attributes: ["ALL"]
-                };
+//                 var params = {
+//                     Image: {
+//                         S3Object: {
+//                             Bucket: this.albumBucketName ,
+//                             Name: fileName
+//                         }
+//                     },
+//                     Attributes: ["ALL"]
+//                 };
 
-            var rekognition = new AWS.Rekognition();
-            rekognition.detectLabels(params, function(err, data) {
-                if (err)
-                    console.log(err, err.stack);
-                else {
-                    //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
-                    console.log(data);
+//             var rekognition = new AWS.Rekognition();
+//             rekognition.detectLabels(params, function(err, data) {
+//                 if (err)
+//                     console.log(err, err.stack);
+//                 else {
+//                     //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
+//                     console.log(data);
 
 
-//                     const css = [
-//                         "background-image: url(https://example.com)",
-//                         "background-size: cover",
-//                         "height: 100px",
-//                         "padding: 15px",
-//                         "width: 100px"
-//                     ];
-//                     console.log("%cI'm An Image!", css.join(";"));
-                }
-            });
+// //                     const css = [
+// //                         "background-image: url(https://example.com)",
+// //                         "background-size: cover",
+// //                         "height: 100px",
+// //                         "padding: 15px",
+// //                         "width: 100px"
+// //                     ];
+// //                     console.log("%cI'm An Image!", css.join(";"));
+//                 }
+//             });
 
         });
 
