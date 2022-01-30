@@ -98,4 +98,15 @@ select value
 gpg> quit
 ```
 
+## send key to specific server
+
+```
+gpg --send-keys --keyserver pgp.mit.edu
+```
+
+## search a specific server 
+
+```
+gpg --keyserver pgp.mit.edu --search davisjf@gmail.com
+```
 
