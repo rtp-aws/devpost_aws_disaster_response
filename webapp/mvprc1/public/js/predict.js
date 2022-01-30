@@ -117,12 +117,12 @@ const canvas = document.getElementById("my_canvas");
 slider.addEventListener('click', button => {
   console.log("slider: click() ", slider.checked);
   if (slider.checked) {
-    camera_feed_odd_img.style.maxWidth = "";
-    camera_feed_odd_img.style.maxHeight = "";
+    camera_feed_img.style.maxWidth = "";
+    camera_feed_img.style.maxHeight = "";
 
   } else {
-    camera_feed_odd_img.style.maxWidth = "200px";
-    camera_feed_odd_img.style.maxHeight = "200px";
+    camera_feed_img.style.maxWidth = "200px";
+    camera_feed_img.style.maxHeight = "200px";
 
   }
 
@@ -137,4 +137,4 @@ slider.addEventListener('click', button => {
 var camera_feed_img = document.getElementsByClassName("camera_feed")[0];
 
 // Build class with some of these specified?
-const mvprc1preict = new MvpRc1Predict()
+const mvprc1predict = new MvpRc1Predict()
