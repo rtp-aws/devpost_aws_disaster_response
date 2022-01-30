@@ -117,6 +117,14 @@ app.get('/myconfig', (req, res) => {
 
 })
 
+app.get('/predict.ejs', (req, res) => {
+
+    console.log("get /predict.ejs")
+    //console.log(req)
+
+    res.render("predict")
+})
+
 
 
 app.listen(8080)
