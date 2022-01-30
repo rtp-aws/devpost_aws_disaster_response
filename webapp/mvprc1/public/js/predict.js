@@ -23,8 +23,6 @@ class MvpRc1Predict {
     TOLL147_NC54 = document.getElementById("TOLL147_NC54");
     TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
-
-
     // I had these original as global const.  I wonder how to do this 
     // with the pedantic class member variables above?
     slider = document.getElementById("slider");
@@ -36,25 +34,12 @@ class MvpRc1Predict {
     // This was a var and not a const?      
     camera_feed_img = document.getElementsByClassName("camera_feed")[0];
 
-
     // the constructor
     constructor() {
         console.log("MvpRc1Predict:Constructor() ");
-
-        //       const TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
-        //       const I40W_MM8 = document.getElementById("I40W_MM8");
-        //       const I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
-        //       const I26_BROADWAY = document.getElementById("I26_BROADWAY");
-        //       const TOLL147_HOPSON_RD = document.getElementById("TOLL147_HOPSON_RD");
-        //       const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
-        //       const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
-
-
         this.add_listeners();
-
     }
     ;
-
     // erase the canvas
     erase_canvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -152,8 +137,6 @@ class MvpRc1Predict {
                 this.camera_feed_img.style.maxHeight = "200px";
             }
             this.erase_canvas();
-            //var ctx = canvas.getContext("2d");
-            //ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
         )
         // slider end
