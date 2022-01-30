@@ -43,9 +43,7 @@ class MvpRc1Predict {
     // erase the canvas
     erase_canvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        console.log(this.bucketRegion);
-        console.log(this.identityPoolId);
-        console.log(this.albumBucketName);
+        console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
     }
 
     add_listeners() {
@@ -130,7 +128,7 @@ class MvpRc1Predict {
 
         // Control is the slider
         this.slider.addEventListener('click', button=>{
-            console.log("slider: click() ", this.slider.checked);
+            console.log("slider: click() value is %o", this.slider.checked);
             if (this.slider.checked) {
                 this.camera_feed_img.style.maxWidth = "";
                 this.camera_feed_img.style.maxHeight = "";
