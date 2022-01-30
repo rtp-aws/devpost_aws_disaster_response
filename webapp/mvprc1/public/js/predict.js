@@ -10,7 +10,7 @@ var AWS = require("aws-sdk");
 
 
 console.log("Region: ", AWS.config.region);
-console.log("Access key:", AWS.config.credentials.accessKeyId);
+//console.log("Access key:", AWS.config.credentials.accessKeyId);
 
 
 class MvpRc1Predict {
@@ -168,17 +168,12 @@ class MvpRc1Predict {
             this.albumBucketName = responseJson.albumBucketName;
             console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
 
-            // a client can be shared by different commands.
-            //this.client = new AccountClient({
-            //    region: this.bucketRegion
-            //});
-
-            //            AWS.config.update({
-            //                region: this.bucketRegion,
-            //                credentials: new AWS.CognitoIdentityCredentials({
-            //                IdentityPoolId: this.identityPoolId
-            //            })
-            //            });
+            AWS.config.update({
+                region: this.bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: this.identityPoolId
+                })
+            });
 
             return responseJson;
         }
