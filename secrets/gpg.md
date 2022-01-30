@@ -46,6 +46,8 @@ To refresh all your keys (e.g. new revocation certificates and subkeys):
 
 ```
 gpg --refresh-keys
+gpg --refresh-keys --keyserver pgp.mit.edu
+
 ```
 
 ### Uploading your key
@@ -108,5 +110,11 @@ gpg --send-keys --keyserver pgp.mit.edu
 
 ```
 gpg --keyserver pgp.mit.edu --search davisjf@gmail.com
+```
+
+## encrypt multiple receipeinets
+
+```
+gpg --output testy.txt.gpg --encrypt --recipient sedrick@10ronline.net --recipient davisjf@gmail.com testy.txt
 ```
 
