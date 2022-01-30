@@ -1,3 +1,12 @@
+
+require('process/')
+
+// ES5 method to specify AWS client
+const {AccountClient, DeleteAlternateContactCommand} = require("@aws-sdk/client-account");
+
+// ES5 method to specify AWS S3
+const {S3Client, AbortMultipartUploadCommand} = require("@aws-sdk/client-s3");
+
 class MvpRc1Predict {
 
     // These are public object variables?
@@ -39,11 +48,10 @@ class MvpRc1Predict {
         console.log("MvpRc1Predict:Constructor() ");
         this.add_listeners();
     }
-    ;
+
     // erase the canvas
     erase_canvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
     }
 
     add_listeners() {
@@ -145,21 +153,31 @@ class MvpRc1Predict {
     }
     // add_listeners end
 
-
-
-
     // json version
     async fetch_myconfig() {
         console.log('MyApp: getJSON()');
         return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
-          this.bucketRegion = responseJson.bucketRegion;
-          this.identityPoolId = responseJson.identityPoolId;
-          this.albumBucketName = responseJson.albumBucketName;
-          return responseJson;
+            this.bucketRegion = responseJson.bucketRegion;
+            this.identityPoolId = responseJson.identityPoolId;
+            this.albumBucketName = responseJson.albumBucketName;
+            console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
+
+            // a client can be shared by different commands.
+            this.client = new AccountClient({
+                region: "REGION"
+            });
+
+            //            AWS.config.update({
+            //                region: this.bucketRegion,
+            //                credentials: new AWS.CognitoIdentityCredentials({
+            //                IdentityPoolId: this.identityPoolId
+            //            })
+            //            });
+
+            return responseJson;
         }
         );
     }
-
 
     async do_my_init() {
         console.log('MyApp: do_init()')
@@ -168,12 +186,9 @@ class MvpRc1Predict {
         console.log(msg);
     }
 
-
-
 }
 // class end
 
 // Build class with some of these specified?
 const mvprc1predict = new MvpRc1Predict()
 mvprc1predict.do_my_init();
-
