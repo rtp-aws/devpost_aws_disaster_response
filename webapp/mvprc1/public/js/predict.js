@@ -185,7 +185,7 @@ class MvpRc1Predict {
             var params = {
                 Image: {
                     S3Object: {
-                        Bucket: myglobals.myApp.albumBucketName,
+                        Bucket: this.albumBucketName ,
                         Name: fileName
                     }
                 },
