@@ -71,6 +71,7 @@ class MvpRc1Predict {
     ctx;
     camera_feed_img;
     s3;
+    the_blob;
 
     /////////////////////////////////////////////////////////////////
     // PREDICT radio buttons
@@ -108,7 +109,25 @@ class MvpRc1Predict {
     // erase the canvas
     erase_canvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
+
+        // hack
+         console.log('hook to see if we upload to s3');
+         this.s3.upload(params, function(err, data) {
+            console.log(data);
+            console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+            var params = {
+                Image: {
+                    S3Object: {
+                        Bucket: this.albumBucketName ,
+                        Name: fileName
+                    }
+                },
+                Attributes: ["ALL"]
+            };
+         })
+
+    } // erase_canvas end
 
     add_listeners() {
 
@@ -190,6 +209,22 @@ class MvpRc1Predict {
             // Turn the canvas image into a dataURL that can be used as a src for our photo.
             //var dataURL = hidden_canvas.toDataURL('image/png');
             var dataURL = this.camera_feed_img.src;
+
+            var img = new Image;
+            var c = document.createElement("canvas");
+            var ctx = c.getContext("2d");
+
+            img.onload = function() {
+                c.width = this.naturalWidth;     // update canvas size to match image
+                c.height = this.naturalHeight;
+                ctx.drawImage(this, 0, 0);       // draw in image
+                c.toBlob(function(blob) {        // get content as JPEG blob
+                // here the image is a blob
+                this.the_blob = blob;
+                }, "image/jpeg", 0.75);
+            };
+            img.crossOrigin = "";              // if from different origin
+            img.src = dataURL;
 
 
             // https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
