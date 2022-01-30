@@ -7,8 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <link rel="stylesheet" type="text/css" href="css/stylesnav.css">
 <link rel="manifest" href="manifest.json" >
-
-<script src="js/odd_bundle.js" defer></script>
+<script src="js/predict_bundle.js" defer></script>
 <meta charset="UTF-8">
 
 <title>Icy Bridge Detector</title>
@@ -47,8 +46,8 @@
 	<H1> MVP-RC1 </H1>
 
   <div>
-    <H2> Cameras Odd </H2>
-    <p> These are the cameras which show oddness. </p><br>
+    <H2> Cameras for Prediction </H2>
+    <p> These are the cameras chosen for prediction. </p><br>
   </div>
 
   <div>
@@ -112,7 +111,7 @@
 
 
   <div>
-    <img id="camera_feed_odd" class="camera_feed_odd" style="-webkit-user-select: none;
+    <img id="camera_feed" class="camera_feed" style="-webkit-user-select: none;
                 margin: auto;
                 background-color: hsl(0, 0%, 90%);
                 max-width: 200px;
@@ -131,7 +130,7 @@
   function Draw() {
     // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
 
-    var img = document.getElementById("camera_feed_odd");
+    var img = document.getElementById("camera_feed");
     var cnvs = document.getElementById("my_canvas");
     cnvs.width = img.width;
     cnvs.height = img.height;
