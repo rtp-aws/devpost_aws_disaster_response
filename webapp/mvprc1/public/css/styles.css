@@ -118,6 +118,53 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-
 /* slider switch end */
+
+/* hidden canvas class style */
+
+.hidden_canvas {
+  display: none;
+}
+
+
+/* hidden canvas class style END*/
+
+
+
+/* style notes
+
+A <p> element with two classes "center" and "large"
+
+<p class="center large"> some text </p>
+
+Applies to all <p> elements
+
+p {
+  color: red;
+}
+
+Applies to HTML element with id="foo"
+
+#foo {
+  color: red;
+}
+
+Applies to specific classes: .center
+
+.center {
+  color: red;
+}
+
+Applies to elements of specific class: p.center
+
+p.center {
+  color: red;
+}
+
+Grouping multiple elements
+
+h1, h2, p {
+  color: red;
+}
+
+*/
