@@ -288,15 +288,12 @@ class MvpRc1Predict {
         let blob1 = new Blob([hello, ' ', 'world'],{
             type: 'text/plain'
         });
-
-
     }
     // download test end
 
 
 }
 // class end
-
 
         // we can extract Blob slices with:
         //blob.slice([byteStart],[byteEnd],[contentType])
@@ -315,12 +312,6 @@ class MvpRc1Predict {
         // This behavior is similar to JavaScript strings: we can’t change a
         // character in a string, but we can make a new corrected string.
 
-        // To get the string back out from the blob
-        //
-        // This requires and async function
-        //const text = await new Response(blob1).text();
-        //Console.log(text);
-        //
         // These require the function in this class.
         //
         //console.log(this.blob_to_string(blob0));
@@ -328,6 +319,26 @@ class MvpRc1Predict {
 
 
 
+
+
+        // To get the string back out from the blob
+        //
+        // This requires and async function
+        //const text = await new Response(blob1).text();
+        //Console.log(text);
+        //
+
+
+
+//     blob_to_string(b) {
+//         var u, x;
+//         u = URL.createObjectURL(b);
+//         x = new XMLHttpRequest();
+//         x.open('GET', u, false); // although sync, you're not fetching over internet
+//         x.send();
+//         URL.revokeObjectURL(u);
+//         return x.responseText;
+//     }
 
 
 
@@ -474,15 +485,6 @@ class MvpRc1Predict {
 //         )
 // predict_btn on click end
 
-//     //     blob_to_string(b) {
-//     //         var u, x;
-//     //         u = URL.createObjectURL(b);
-//     //         x = new XMLHttpRequest();
-//     //         x.open('GET', u, false); // although sync, you're not fetching over internet
-//     //         x.send();
-//     //         URL.revokeObjectURL(u);
-//     //         return x.responseText;
-//     //     }
 
 // Build class with some of these specified?
 const mvprc1predict = new MvpRc1Predict();
