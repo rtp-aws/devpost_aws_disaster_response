@@ -235,10 +235,10 @@ function display_error_message(error_msg, error) {
         console.error(error);
     }
 
-    error_message.innerText = error_msg;
+    myglobals.error_message.innerText = error_msg;
 
     hideUI();
-    error_message.classList.add("visible");
+    myglobals.error_message.classList.add("visible");
 }
 
 function data_uri_to_blob(dataURI) {
