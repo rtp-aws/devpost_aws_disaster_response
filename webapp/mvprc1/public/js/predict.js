@@ -1,7 +1,5 @@
 var AWS = require("aws-sdk");
 
-
-
 // function data_uri_to_blob(dataURI) {
 //     var binary = atob(dataURI.split(',')[1]);
 //     var array = [];
@@ -53,8 +51,8 @@ class MvpRc1Predict {
     canvas;
     ctx;
     camera_feed_img;
-//    s3;
-//    the_blob;
+    //    s3;
+    //    the_blob;
 
     /////////////////////////////////////////////////////////////////
     // PREDICT radio buttons
@@ -90,7 +88,6 @@ class MvpRc1Predict {
         console.log("MvpRc1Predict:Constructor() ");
         this.add_listeners();
     }
-
 
     // erase the canvas
     erase_canvas() {
@@ -195,9 +192,10 @@ class MvpRc1Predict {
 
     }
     // add_listeners end
+
     // json version
     async fetch_myconfig() {
-        
+
         console.log('MyApp: getJSON()');
         return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
             this.bucketRegion = responseJson.bucketRegion;
@@ -225,15 +223,127 @@ class MvpRc1Predict {
         }
         );
     }
+
     async do_my_init() {
         console.log('MyApp: do_init()')
 
         var msg = await this.fetch_myconfig();
         console.log(msg);
-    } // do_my)init END
+    }
+    // do_my)init END
 
 }
 // class end
+    
+
+//     download_test_one() {
+//         console.log('download_test_one()');
+
+//         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+//         // This url fails with:
+//         // Access to fetch at 
+//         //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg' 
+//         //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by 
+//         //  CORS policy: No 'Access-Control-Allow-Origin' 
+//         //  header is present on the requested resource. 
+//         //  If an opaque response serves your needs, 
+//         //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+//         // 
+//         //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg 
+//         //  net::ERR_FAILED 200
+
+//         //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+//         // This url works though:
+
+//         // Gets the response and returns it as a blob
+//         fetch(the_url).then(res=>res.blob()).then(blob=>{
+//             // Here's where you get access to the blob
+//             // And you can use it for whatever you want
+//             // Like calling ref().put(blob)
+
+//             // Here, I use it to make an image appear on the page
+//             let objectURL = URL.createObjectURL(blob);
+//             let myImage = new Image();
+//             myImage.src = objectURL;
+//             document.getElementById('predict_img').appendChild(myImage)
+//         }
+//         );
+//     }
+//     // download test end
+
+//     download_test_two() {
+//         console.log('download_test_two()');
+
+//         // This also fails.  The code for objectURL assignment is run but the result
+//         // is all nulls so nothing is done.
+
+//         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+//         fetch(the_url, {
+//             mode: 'no-cors'
+//         }).then(res=>res.blob())// Gets the response and returns it as a blob
+//         .then(blob=>{
+//             // Here's where you get access to the blob
+//             // And you can use it for whatever you want
+//             // Like calling ref().put(blob)
+
+//             // Here, I use it to make an image appear on the page
+//             let objectURL = URL.createObjectURL(blob);
+//             let myImage = new Image();
+//             myImage.src = objectURL;
+//             document.getElementById('predict_img').appendChild(myImage)
+//         }
+//         );
+//     }
+//     // download test end
+
+//     download_test_three() {
+//         console.log('download_test_three()');
+//         console.log('blob test 1');
+//         // from this website
+//         // https://javascript.info/blob
+
+//         // Create a Blob from a string
+//         let blob0 = new Blob(["<html>...</html>"],{
+//             type: 'text/html'
+//         });
+//         // please note: the first argument must be an array [..]
+
+//         // create a Blob from a typed array and strings
+//         let hello = new Uint8Array([72, 101, 108, 108, 111]);
+//         // Hello in decimal Ascii
+//         let blob1 = new Blob([hello, ' ', 'world'],{
+//             type: 'text/plain'
+//         });
+//         // we can extract Blob slices with:
+//         //blob.slice([byteStart],[byteEnd],[contentType])
+//         //
+//         // byteStart - starting byte. defaul is 0
+//         // byteEnd - the last byte (exclusive, by default is till end)
+//         // contentType - the type of new blob, by default identicial as source
+//         //
+//         // The args are similar to array.slice, negative numbers are allowed too
+//         //
+//         // Blob objects are immutable
+//         // We can’t change data directly in a Blob, but we can slice parts of a 
+//         // Blob, create new Blob objects from them, mix them into a new Blob 
+//         // and so on.
+//         // 
+//         // This behavior is similar to JavaScript strings: we can’t change a 
+//         // character in a string, but we can make a new corrected string.
+
+//         // To get the string back out from the blob
+//         //
+//         // This requires and async function
+//         //const text = await new Response(blob1).text();
+//         //Console.log(text);
+//         //
+//         // These require the function in this class. 
+//         //
+//         //console.log(this.blob_to_string(blob0));
+//         //console.log(this.blob_to_string(blob1));
+
+//     }
+//     // download test end
 
 
 // //     upload_blob() {
@@ -264,9 +374,6 @@ class MvpRc1Predict {
 
 // //     }
 
-
-
-
 //             // Turn the canvas image into a dataURL that can be used as a src for our photo.
 //             //var dataURL = hidden_canvas.toDataURL('image/png');
 //             var dataURL = this.camera_feed_img.src;
@@ -292,68 +399,67 @@ class MvpRc1Predict {
 //             // if from different origin
 //             img.src = dataURL;
 
-            // https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
+// https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
 
-            //             var blobData = loadXHR('https://cors-anywhere.herokuapp.com/' + dataURL).then(function(blob) {
-            //                 // here the image is a blob
-            //                 return blob;
-            //             });
+//             var blobData = loadXHR('https://cors-anywhere.herokuapp.com/' + dataURL).then(function(blob) {
+//                 // here the image is a blob
+//                 return blob;
+//             });
 
-            // Give it up.  Do it this way
-            // https://stackoverflow.com/questions/42471755/convert-image-into-blob-using-javascript
-            // using the canvas method
-            //
+// Give it up.  Do it this way
+// https://stackoverflow.com/questions/42471755/convert-image-into-blob-using-javascript
+// using the canvas method
+//
 
-            //             var blobData = fetch(dataURL)
-            //                                 .then(function(response) {
-            //                                     return response.blob()
-            //                                 })
-            //                                 .then(function(blob) {
-            //                                     // here the image is a blob
-            //                                     var fileName = "pix." + get_id() + ".png";
-            //                                     var params = {
-            //                                         Key: fileName,
-            //                                         ContentType: 'image/png',
-            //                                         Body: blobData
-            //                                     };
-            //                                     this.s3.upload(params, function(err, data) {
-            //                                         console.log(data);
-            //                                         console.log(err ? 'ERROR!' : 'UPLOADED.');
+//             var blobData = fetch(dataURL)
+//                                 .then(function(response) {
+//                                     return response.blob()
+//                                 })
+//                                 .then(function(blob) {
+//                                     // here the image is a blob
+//                                     var fileName = "pix." + get_id() + ".png";
+//                                     var params = {
+//                                         Key: fileName,
+//                                         ContentType: 'image/png',
+//                                         Body: blobData
+//                                     };
+//                                     this.s3.upload(params, function(err, data) {
+//                                         console.log(data);
+//                                         console.log(err ? 'ERROR!' : 'UPLOADED.');
 
-            //                                         var params = {
-            //                                             Image: {
-            //                                                 S3Object: {
-            //                                                     Bucket: this.albumBucketName ,
-            //                                                     Name: fileName
-            //                                                 }
-            //                                             },
-            //                                             Attributes: ["ALL"]
-            //                                         };
+//                                         var params = {
+//                                             Image: {
+//                                                 S3Object: {
+//                                                     Bucket: this.albumBucketName ,
+//                                                     Name: fileName
+//                                                 }
+//                                             },
+//                                             Attributes: ["ALL"]
+//                                         };
 
-            //                                     var rekognition = new AWS.Rekognition();
-            //                                     rekognition.detectLabels(params, function(err, data) {
-            //                                         if (err)
-            //                                             console.log(err, err.stack);
-            //                                         else {
-            //                                             //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
-            //                                             console.log(data);
+//                                     var rekognition = new AWS.Rekognition();
+//                                     rekognition.detectLabels(params, function(err, data) {
+//                                         if (err)
+//                                             console.log(err, err.stack);
+//                                         else {
+//                                             //rek.innerHTML = myglobals.myApp.library.json.prettyPrint(data);
+//                                             console.log(data);
 
-            //                         //                     const css = [
-            //                         //                         "background-image: url(https://example.com)",
-            //                         //                         "background-size: cover",
-            //                         //                         "height: 100px",
-            //                         //                         "padding: 15px",
-            //                         //                         "width: 100px"
-            //                         //                     ];
-            //                         //                     console.log("%cI'm An Image!", css.join(";"));
-            //                                         }
-            //                                     });
+//                         //                     const css = [
+//                         //                         "background-image: url(https://example.com)",
+//                         //                         "background-size: cover",
+//                         //                         "height: 100px",
+//                         //                         "padding: 15px",
+//                         //                         "width: 100px"
+//                         //                     ];
+//                         //                     console.log("%cI'm An Image!", css.join(";"));
+//                                         }
+//                                     });
 
-            //                                     return blob;
-            //                                 });
+//                                     return blob;
+//                                 });
 
-
-        // control is the predict button
+// control is the predict button
 //         this.predict_btn.addEventListener('click', button=>{
 //             console.log("predict_btn: click() value is %o", this.predict_btn);
 
@@ -366,117 +472,7 @@ class MvpRc1Predict {
 
 //         }
 //         )
-        // predict_btn on click end
-
-
-
-
-// //     download_test_one() {
-// //         console.log('download_test_one()')
-
-// // //         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-// // //         // This url fails with:
-// // //         // Access to fetch at 
-// // //         //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg' 
-// // //         //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by 
-// // //         //  CORS policy: No 'Access-Control-Allow-Origin' 
-// // //         //  header is present on the requested resource. 
-// // //         //  If an opaque response serves your needs, 
-// // //         //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-// // //         // 
-// // //         //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg 
-// // //         //  net::ERR_FAILED 200
-
-// // //         //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
-// // //         // This url works though:
-
-// // //         fetch(the_url).then(res=>res.blob())// Gets the response and returns it as a blob
-// // //         .then(blob=>{
-// // //             // Here's where you get access to the blob
-// // //             // And you can use it for whatever you want
-// // //             // Like calling ref().put(blob)
-
-// // //             // Here, I use it to make an image appear on the page
-// // //             let objectURL = URL.createObjectURL(blob);
-// // //             let myImage = new Image();
-// // //             myImage.src = objectURL;
-// // //             document.getElementById('predict_img').appendChild(myImage)
-// // //         }
-// // //         );
-// //     }
-// //     // download test end
-
-// //     download_test_two() {
-// //         console.log('download_test_two()')
-
-// //         // This also fails.  The code for objectURL assignment is run but the result
-// //         // is all nulls so nothing is done.
-
-// // //         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-// // //         fetch(the_url, {
-// // //             mode: 'no-cors'
-// // //         }).then(res=>res.blob())// Gets the response and returns it as a blob
-// // //         .then(blob=>{
-// // //             // Here's where you get access to the blob
-// // //             // And you can use it for whatever you want
-// // //             // Like calling ref().put(blob)
-
-// // //             // Here, I use it to make an image appear on the page
-// // //             let objectURL = URL.createObjectURL(blob);
-// // //             let myImage = new Image();
-// // //             myImage.src = objectURL;
-// // //             document.getElementById('predict_img').appendChild(myImage)
-// // //         }
-// // //         );
-// //     }
-// //     // download test end
-
-// //     download_test_three() {
-// //         console.log('download_test_three()')
-// //         console.log('blob test 1')
-// //         // from this website
-// //         // https://javascript.info/blob
-
-// //         // Create a Blob from a string
-// // //        let blob0 = new Blob(["<html>...</html>"],{
-// // //            type: 'text/html'
-// // //        });
-// //         // please note: the first argument must be an array [..]
-
-// //         // create a Blob from a typed array and strings
-// // //        let hello = new Uint8Array([72, 101, 108, 108, 111]);
-// //         // Hello in decimal Ascii
-// //         //let blob1 = new Blob([hello, ' ', 'world'], {type:'text/plain'});
-// //         // we can extract Blob slices with:
-// //         //blob.slice([byteStart],[byteEnd],[contentType])
-// //         //
-// //         // byteStart - starting byte. defaul is 0
-// //         // byteEnd - the last byte (exclusive, by default is till end)
-// //         // contentType - the type of new blob, by default identicial as source
-// //         //
-// //         // The args are similar to array.slice, negative numbers are allowed too
-// //         //
-// //         // Blob objects are immutable
-// //         // We can’t change data directly in a Blob, but we can slice parts of a 
-// //         // Blob, create new Blob objects from them, mix them into a new Blob 
-// //         // and so on.
-// //         // 
-// //         // This behavior is similar to JavaScript strings: we can’t change a 
-// //         // character in a string, but we can make a new corrected string.
-
-// //         // To get the string back out from the blob
-// //         //
-// //         // This requires and async function
-// //         //const text = await new Response(blob1).text();
-// //         //Console.log(text);
-// //         //
-// //         // These require the function in this class. 
-// //         //
-// //         //console.log(this.blob_to_string(blob0));
-// //         //console.log(this.blob_to_string(blob1));
-
-// //     }
-//     // download test end
+// predict_btn on click end
 
 //     //     blob_to_string(b) {
 //     //         var u, x;
@@ -487,7 +483,6 @@ class MvpRc1Predict {
 //     //         URL.revokeObjectURL(u);
 //     //         return x.responseText;
 //     //     }
-
 
 // Build class with some of these specified?
 const mvprc1predict = new MvpRc1Predict()
