@@ -311,25 +311,15 @@ class MvpRc1Predict {
         }
         )
 
+
+
        // control is the predict button
        this.predict_btn.addEventListener('click', button=> {
             console.log("predict_btn: click() value is %o", this.predict_btn);
 
-            fetch('https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg')
-            //fetch('https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg')
-              .then(res => res.blob()) // Gets the response and returns it as a blob
-              .then(blob => {
-                // Here's where you get access to the blob
-                // And you can use it for whatever you want
-                // Like calling ref().put(blob)
+            this.download_test_one();
 
-                // Here, I use it to make an image appear on the page
-                let objectURL = URL.createObjectURL(blob);
-                let myImage = new Image();
-                myImage.src = objectURL;
-                document.getElementById('predict_img').appendChild(myImage)
-            });
-           
+
        }) // predict_btn on click end
 
 
@@ -381,6 +371,61 @@ class MvpRc1Predict {
             return responseJson;
         }
         );
+    }
+
+
+    download_test_one() {
+        console.log('download_test_one()')
+
+        //var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+        fetch(the_url)
+          .then(res => res.blob()) // Gets the response and returns it as a blob
+          .then(blob => {
+            // Here's where you get access to the blob
+            // And you can use it for whatever you want
+            // Like calling ref().put(blob)
+
+            // Here, I use it to make an image appear on the page
+            let objectURL = URL.createObjectURL(blob);
+            let myImage = new Image();
+            myImage.src = objectURL;
+            document.getElementById('predict_img').appendChild(myImage)
+        });
+           
+
+    }
+
+
+    download_test_two() {
+        console.log('download_test_two()')
+
+
+        let headers = new Headers();
+
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+        headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
+        headers.append('Origin','http://localhost:3000');
+
+        //fetch()
+        //var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+        fetch(the_url, {mode: 'no-cors'})
+          .then(res => res.blob()) // Gets the response and returns it as a blob
+          .then(blob => {
+            // Here's where you get access to the blob
+            // And you can use it for whatever you want
+            // Like calling ref().put(blob)
+
+            // Here, I use it to make an image appear on the page
+            let objectURL = URL.createObjectURL(blob);
+            let myImage = new Image();
+            myImage.src = objectURL;
+            document.getElementById('predict_img').appendChild(myImage)
+        });
+           
+
     }
 
 
