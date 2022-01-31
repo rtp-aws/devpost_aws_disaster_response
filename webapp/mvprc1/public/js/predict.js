@@ -238,7 +238,7 @@ class MvpRc1Predict {
     download_test_one() {
         console.log('download_test_one()');
 
-        var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        //var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
         // This url fails with:
         // Access to fetch at
         //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
@@ -251,7 +251,7 @@ class MvpRc1Predict {
         //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
         //  net::ERR_FAILED 200
 
-        //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+        var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg';
         // This url works though:
 
         // Gets the response and returns it as a blob
@@ -280,17 +280,6 @@ class MvpRc1Predict {
 }
 // class end
 
-
-
-
-
-
-//     download_test_three() {
-//         console.log('download_test_three()');
-//         console.log('blob test 1');
-
-//     }
-    // download test end
 
         // from this website
         // https://javascript.info/blob
@@ -334,6 +323,20 @@ class MvpRc1Predict {
         //
         //console.log(this.blob_to_string(blob0));
         //console.log(this.blob_to_string(blob1));
+
+
+
+
+
+
+
+//     download_test_three() {
+//         console.log('download_test_three()');
+//         console.log('blob test 1');
+
+//     }
+    // download test end
+
 
 
 
