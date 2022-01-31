@@ -275,7 +275,8 @@ class MvpRc1Predict {
         var u, x;
         u = URL.createObjectURL(b);
         x = new XMLHttpRequest();
-        x.open('GET', u, false); // although sync, you're not fetching over internet
+        // although sync, you're not fetching over internet
+        x.open('GET', u, false); 
         x.send();
         URL.revokeObjectURL(u);
         return x.responseText;
