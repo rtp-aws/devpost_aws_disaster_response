@@ -234,40 +234,40 @@ class MvpRc1Predict {
 
 
 
-//     download_test_one() {
-//         console.log('download_test_one()');
+    download_test_one() {
+        console.log('download_test_one()');
 
-//         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-//         // This url fails with:
-//         // Access to fetch at 
-//         //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg' 
-//         //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by 
-//         //  CORS policy: No 'Access-Control-Allow-Origin' 
-//         //  header is present on the requested resource. 
-//         //  If an opaque response serves your needs, 
-//         //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-//         // 
-//         //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg 
-//         //  net::ERR_FAILED 200
+        var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        // This url fails with:
+        // Access to fetch at 
+        //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg' 
+        //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by 
+        //  CORS policy: No 'Access-Control-Allow-Origin' 
+        //  header is present on the requested resource. 
+        //  If an opaque response serves your needs, 
+        //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+        // 
+        //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg 
+        //  net::ERR_FAILED 200
 
-//         //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
-//         // This url works though:
+        //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+        // This url works though:
 
-//         // Gets the response and returns it as a blob
-//         fetch(the_url).then(res=>res.blob()).then(blob=>{
-//             // Here's where you get access to the blob
-//             // And you can use it for whatever you want
-//             // Like calling ref().put(blob)
+        // Gets the response and returns it as a blob
+        fetch(the_url).then(res=>res.blob()).then(blob=>{
+            // Here's where you get access to the blob
+            // And you can use it for whatever you want
+            // Like calling ref().put(blob)
 
-//             // Here, I use it to make an image appear on the page
-//             let objectURL = URL.createObjectURL(blob);
-//             let myImage = new Image();
-//             myImage.src = objectURL;
-//             document.getElementById('predict_img').appendChild(myImage)
-//         }
-//         );
-//     }
-//     // download test end
+            // Here, I use it to make an image appear on the page
+            let objectURL = URL.createObjectURL(blob);
+            let myImage = new Image();
+            myImage.src = objectURL;
+            document.getElementById('predict_img').appendChild(myImage)
+        }
+        );
+    }
+    // download test end
 
 
 
