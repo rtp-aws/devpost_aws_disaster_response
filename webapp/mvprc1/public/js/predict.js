@@ -291,6 +291,18 @@ class MvpRc1Predict {
     }
     // download test end
 
+
+//     blob_to_string(b) {
+//         var u, x;
+//         u = URL.createObjectURL(b);
+//         x = new XMLHttpRequest();
+//         x.open('GET', u, false); // although sync, you're not fetching over internet
+//         x.send();
+//         URL.revokeObjectURL(u);
+//         return x.responseText;
+//     }
+
+
 //
 //
 //
@@ -349,15 +361,6 @@ class MvpRc1Predict {
 
 
 
-//     blob_to_string(b) {
-//         var u, x;
-//         u = URL.createObjectURL(b);
-//         x = new XMLHttpRequest();
-//         x.open('GET', u, false); // although sync, you're not fetching over internet
-//         x.send();
-//         URL.revokeObjectURL(u);
-//         return x.responseText;
-//     }
 
 
 
