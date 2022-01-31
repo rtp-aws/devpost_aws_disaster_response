@@ -232,9 +232,7 @@ class MvpRc1Predict {
     }
     // do_my)init END
 
-}
-// class end
-    
+
 
 //     download_test_one() {
 //         console.log('download_test_one()');
@@ -270,6 +268,13 @@ class MvpRc1Predict {
 //         );
 //     }
 //     // download test end
+
+
+
+}
+// class end
+
+
 
 //     download_test_two() {
 //         console.log('download_test_two()');
