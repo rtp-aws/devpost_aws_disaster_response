@@ -88,7 +88,7 @@ class MvpRc1Predict {
     // the constructor
     constructor() {
         console.log("MvpRc1Predict:Constructor() ");
-        //this.add_listeners();
+        this.add_listeners();
     }
 
 // //     upload_blob() {
@@ -126,102 +126,102 @@ class MvpRc1Predict {
 //     }
 //     // erase_canvas end
 
-//     add_listeners() {
+    add_listeners() {
 
-//         TOLL147_DAVIS_DR.addEventListener('click', button=>{
-//             console.log("TOLL147_DAVIS_DR: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL147_DAVIS_DR.addEventListener('click', button=>{
+            console.log("TOLL147_DAVIS_DR: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         I40W_MM8.addEventListener('click', button=>{
-//             console.log("I40W_MM8: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
-//             this.erase_canvas();
-//         }
-//         )
+        I40W_MM8.addEventListener('click', button=>{
+            console.log("I40W_MM8: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
+            this.erase_canvas();
+        }
+        )
 
-//         I440_US64_Bypass.addEventListener('click', button=>{
-//             console.log("I440_US64_Bypass: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        I440_US64_Bypass.addEventListener('click', button=>{
+            console.log("I440_US64_Bypass: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         I26_BROADWAY.addEventListener('click', button=>{
-//             console.log("I26_BROADWAY: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
-//             this.erase_canvas();
-//         }
-//         )
+        I26_BROADWAY.addEventListener('click', button=>{
+            console.log("I26_BROADWAY: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
+            this.erase_canvas();
+        }
+        )
 
-//         TOLL147_HOPSON_RD.addEventListener('click', button=>{
-//             console.log("TOLL147_HOPSON_RD: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL147_HOPSON_RD.addEventListener('click', button=>{
+            console.log("TOLL147_HOPSON_RD: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         TOLL147_NC54.addEventListener('click', button=>{
-//             console.log("TOLL147_NC54: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL147_NC54.addEventListener('click', button=>{
+            console.log("TOLL147_NC54: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         TOLL54_APEXBBQ.addEventListener('click', button=>{
-//             console.log("TOLL54_APEXBBQ: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL54_APEXBBQ.addEventListener('click', button=>{
+            console.log("TOLL54_APEXBBQ: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         TOLL540_TOLL147.addEventListener('click', button=>{
-//             console.log("TOLL540_TOLL147: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL540_TOLL147.addEventListener('click', button=>{
+            console.log("TOLL540_TOLL147: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         TOLL540_NC55.addEventListener('click', button=>{
-//             console.log("TOLL540_NC55: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL540_NC55.addEventListener('click', button=>{
+            console.log("TOLL540_NC55: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG"
+            this.erase_canvas();
+        }
+        )
 
-//         TOLL540_MCCRIMMON.addEventListener('click', button=>{
-//             console.log("TOLL540_MCCRIMMON: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg"
-//             this.erase_canvas();
-//         }
-//         )
+        TOLL540_MCCRIMMON.addEventListener('click', button=>{
+            console.log("TOLL540_MCCRIMMON: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg"
+            this.erase_canvas();
+        }
+        )
 
-//         I40_DAVIS_DR.addEventListener('click', button=>{
-//             console.log("I40_DAVIS_DR: click() ");
-//             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
-//             this.erase_canvas();
-//         }
-//         )
-//         // Control is the slider
-//         this.slider.addEventListener('click', button=>{
-//             console.log("slider: click() value is %o", this.slider.checked);
-//             if (this.slider.checked) {
-//                 this.camera_feed_img.style.maxWidth = "";
-//                 this.camera_feed_img.style.maxHeight = "";
+        I40_DAVIS_DR.addEventListener('click', button=>{
+            console.log("I40_DAVIS_DR: click() ");
+            this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
+            this.erase_canvas();
+        }
+        )
+        // Control is the slider
+        this.slider.addEventListener('click', button=>{
+            console.log("slider: click() value is %o", this.slider.checked);
+            if (this.slider.checked) {
+                this.camera_feed_img.style.maxWidth = "";
+                this.camera_feed_img.style.maxHeight = "";
 
-//             } else {
-//                 this.camera_feed_img.style.maxWidth = "200px";
-//                 this.camera_feed_img.style.maxHeight = "200px";
-//             }
-//             this.erase_canvas();
-//         }
-//         )
-//         // slider end
+            } else {
+                this.camera_feed_img.style.maxWidth = "200px";
+                this.camera_feed_img.style.maxHeight = "200px";
+            }
+            this.erase_canvas();
+        }
+        )
+        // slider end
 
-//     }
-//     // add_listeners end
+    }
+    // add_listeners end
 
 
 //             // Turn the canvas image into a dataURL that can be used as a src for our photo.
