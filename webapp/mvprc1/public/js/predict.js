@@ -70,7 +70,7 @@ class MvpRc1Predict {
     TOLL147_NC54 = document.getElementById("TOLL147_NC54");
     TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
-    // I had these original as global const.  I wonder how to do this 
+    // I had these original as global const.  I wonder how to do this
     // with the pedantic class member variables above?
     slider = document.getElementById("slider");
     canvas = document.getElementById("my_canvas");
@@ -80,7 +80,7 @@ class MvpRc1Predict {
     ctx = this.canvas.getContext("2d");
 
     // The camera feed img
-    // This was a var and not a const?      
+    // This was a var and not a const?
     camera_feed_img = document.getElementsByClassName("camera_feed")[0];
 
     // the constructor
@@ -98,86 +98,86 @@ class MvpRc1Predict {
 
     add_listeners() {
 
-        TOLL147_DAVIS_DR.addEventListener('click', button=>{
-            console.log("TOLL147_DAVIS_DR: click() ");
+        TOLL147_DAVIS_DR.addEventListener('click', button => {
+            console.log("TOLL147_DAVIS_DR: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG"
             this.erase_canvas();
         }
         );
 
-        I40W_MM8.addEventListener('click', button=>{
-            console.log("I40W_MM8: click() ");
+        I40W_MM8.addEventListener('click', button => {
+            console.log("I40W_MM8: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg"
             this.erase_canvas();
         }
         );
 
-        I440_US64_Bypass.addEventListener('click', button=>{
-            console.log("I440_US64_Bypass: click() ");
+        I440_US64_Bypass.addEventListener('click', button => {
+            console.log("I440_US64_Bypass: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG"
             this.erase_canvas();
         }
         );
 
-        I26_BROADWAY.addEventListener('click', button=>{
-            console.log("I26_BROADWAY: click() ");
+        I26_BROADWAY.addEventListener('click', button => {
+            console.log("I26_BROADWAY: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg"
             this.erase_canvas();
         }
         );
 
-        TOLL147_HOPSON_RD.addEventListener('click', button=>{
-            console.log("TOLL147_HOPSON_RD: click() ");
+        TOLL147_HOPSON_RD.addEventListener('click', button => {
+            console.log("TOLL147_HOPSON_RD: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
             this.erase_canvas();
         }
         );
 
-        TOLL147_NC54.addEventListener('click', button=>{
-            console.log("TOLL147_NC54: click() ");
+        TOLL147_NC54.addEventListener('click', button => {
+            console.log("TOLL147_NC54: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
             this.erase_canvas();
         }
         );
 
-        TOLL54_APEXBBQ.addEventListener('click', button=>{
-            console.log("TOLL54_APEXBBQ: click() ");
+        TOLL54_APEXBBQ.addEventListener('click', button => {
+            console.log("TOLL54_APEXBBQ: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
             this.erase_canvas();
         }
         );
 
-        TOLL540_TOLL147.addEventListener('click', button=>{
-            console.log("TOLL540_TOLL147: click() ");
+        TOLL540_TOLL147.addEventListener('click', button => {
+            console.log("TOLL540_TOLL147: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG"
             this.erase_canvas();
         }
         );
 
-        TOLL540_NC55.addEventListener('click', button=>{
-            console.log("TOLL540_NC55: click() ");
+        TOLL540_NC55.addEventListener('click', button => {
+            console.log("TOLL540_NC55: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG"
             this.erase_canvas();
         }
         );
 
-        TOLL540_MCCRIMMON.addEventListener('click', button=>{
-            console.log("TOLL540_MCCRIMMON: click() ");
+        TOLL540_MCCRIMMON.addEventListener('click', button => {
+            console.log("TOLL540_MCCRIMMON: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg"
             this.erase_canvas();
         }
         );
 
-        I40_DAVIS_DR.addEventListener('click', button=>{
-            console.log("I40_DAVIS_DR: click() ");
+        I40_DAVIS_DR.addEventListener( 'click', button => {
+            console.log("I40_DAVIS_DR: click() %o ", button);
             this.camera_feed_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg"
             this.erase_canvas();
         }
         );
-        
+
         // Control is the slider
-        this.slider.addEventListener('click', button=>{
-            console.log("slider: click() value is %o", this.slider.checked);
+        this.slider.addEventListener('click', button =>{
+            console.log("slider: click() value is %o %o", this.slider.checked, button);
             if (this.slider.checked) {
                 this.camera_feed_img.style.maxWidth = "";
                 this.camera_feed_img.style.maxHeight = "";
@@ -240,15 +240,15 @@ class MvpRc1Predict {
 
         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
         // This url fails with:
-        // Access to fetch at 
-        //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg' 
-        //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by 
-        //  CORS policy: No 'Access-Control-Allow-Origin' 
-        //  header is present on the requested resource. 
-        //  If an opaque response serves your needs, 
+        // Access to fetch at
+        //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by
+        //  CORS policy: No 'Access-Control-Allow-Origin'
+        //  header is present on the requested resource.
+        //  If an opaque response serves your needs,
         //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-        // 
-        //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg 
+        //
+        //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
         //  net::ERR_FAILED 200
 
         //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
@@ -316,11 +316,11 @@ class MvpRc1Predict {
         // The args are similar to array.slice, negative numbers are allowed too
         //
         // Blob objects are immutable
-        // We can’t change data directly in a Blob, but we can slice parts of a 
-        // Blob, create new Blob objects from them, mix them into a new Blob 
+        // We can’t change data directly in a Blob, but we can slice parts of a
+        // Blob, create new Blob objects from them, mix them into a new Blob
         // and so on.
-        // 
-        // This behavior is similar to JavaScript strings: we can’t change a 
+        //
+        // This behavior is similar to JavaScript strings: we can’t change a
         // character in a string, but we can make a new corrected string.
 
         // To get the string back out from the blob
@@ -329,7 +329,7 @@ class MvpRc1Predict {
         //const text = await new Response(blob1).text();
         //Console.log(text);
         //
-        // These require the function in this class. 
+        // These require the function in this class.
         //
         //console.log(this.blob_to_string(blob0));
         //console.log(this.blob_to_string(blob1));
