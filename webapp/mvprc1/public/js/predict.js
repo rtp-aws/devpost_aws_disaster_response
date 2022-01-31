@@ -91,40 +91,13 @@ class MvpRc1Predict {
         this.add_listeners();
     }
 
-// //     upload_blob() {
-// //         // hack
-// //         console.log('hook to see if we upload to s3');
-// //         var blobData = this.the_blob;
-// //         var fileName = "pix." + get_id() + ".png";
-// //         var params = {
-// //             Key: fileName,
-// //             ContentType: 'image/png',
-// //             Body: blobData
-// //         };
 
-// //         this.s3.upload(params, function(err, data) {
-// //             console.log(data);
-// //             console.log(err ? 'ERROR!' : 'UPLOADED.');
+    // erase the canvas
+    erase_canvas() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-// //             var params = {
-// //                 Image: {
-// //                     S3Object: {
-// //                         Bucket: this.albumBucketName,
-// //                         Name: fileName
-// //                     }
-// //                 },
-// //                 Attributes: ["ALL"]
-// //             };
-// //         })
-
-// //     }
-
-//     // erase the canvas
-//     erase_canvas() {
-//         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-//     }
-//     // erase_canvas end
+    }
+    // erase_canvas end
 
     add_listeners() {
 
@@ -222,6 +195,76 @@ class MvpRc1Predict {
 
     }
     // add_listeners end
+    // json version
+    async fetch_myconfig() {
+        
+        console.log('MyApp: getJSON()');
+        return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
+            this.bucketRegion = responseJson.bucketRegion;
+            this.identityPoolId = responseJson.identityPoolId;
+            this.albumBucketName = responseJson.albumBucketName;
+            console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
+
+            AWS.config.update({
+                region: this.bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: this.identityPoolId
+                })
+            });
+
+            this.s3 = new AWS.S3({
+                apiVersion: '2006-03-01',
+                params: {
+                    Bucket: this.albumBucketName
+                }
+            });
+
+            console.log("Region: ", AWS.config.region);
+
+            return responseJson;
+        }
+        );
+    }
+    async do_my_init() {
+        console.log('MyApp: do_init()')
+
+        var msg = await this.fetch_myconfig();
+        console.log(msg);
+    } // do_my)init END
+
+}
+// class end
+
+
+// //     upload_blob() {
+// //         // hack
+// //         console.log('hook to see if we upload to s3');
+// //         var blobData = this.the_blob;
+// //         var fileName = "pix." + get_id() + ".png";
+// //         var params = {
+// //             Key: fileName,
+// //             ContentType: 'image/png',
+// //             Body: blobData
+// //         };
+
+// //         this.s3.upload(params, function(err, data) {
+// //             console.log(data);
+// //             console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+// //             var params = {
+// //                 Image: {
+// //                     S3Object: {
+// //                         Bucket: this.albumBucketName,
+// //                         Name: fileName
+// //                     }
+// //                 },
+// //                 Attributes: ["ALL"]
+// //             };
+// //         })
+
+// //     }
+
+
 
 
 //             // Turn the canvas image into a dataURL that can be used as a src for our photo.
@@ -326,46 +369,7 @@ class MvpRc1Predict {
         // predict_btn on click end
 
 
-    // json version
-    async fetch_myconfig() {
-        
-        console.log('MyApp: getJSON()');
-        return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
-            this.bucketRegion = responseJson.bucketRegion;
-            this.identityPoolId = responseJson.identityPoolId;
-            this.albumBucketName = responseJson.albumBucketName;
-            console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
 
-            AWS.config.update({
-                region: this.bucketRegion,
-                credentials: new AWS.CognitoIdentityCredentials({
-                    IdentityPoolId: this.identityPoolId
-                })
-            });
-
-            this.s3 = new AWS.S3({
-                apiVersion: '2006-03-01',
-                params: {
-                    Bucket: this.albumBucketName
-                }
-            });
-
-            console.log("Region: ", AWS.config.region);
-
-            return responseJson;
-        }
-        );
-    }
-    async do_my_init() {
-        console.log('MyApp: do_init()')
-
-        var msg = await this.fetch_myconfig();
-        console.log(msg);
-    } // do_my)init END
-
-}
-// class end
-    
 
 // //     download_test_one() {
 // //         console.log('download_test_one()')
