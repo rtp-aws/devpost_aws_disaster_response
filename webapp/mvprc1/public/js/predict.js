@@ -315,8 +315,8 @@ class MvpRc1Predict {
        this.predict_btn.addEventListener('click', button=> {
             console.log("predict_btn: click() value is %o", this.predict_btn);
 
-            //fetch('https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg')
-            fetch('https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg')
+            fetch('https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg')
+            //fetch('https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg')
               .then(res => res.blob()) // Gets the response and returns it as a blob
               .then(blob => {
                 // Here's where you get access to the blob
