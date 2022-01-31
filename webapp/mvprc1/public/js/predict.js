@@ -45,7 +45,7 @@ function get_id() {
 // //     );
 // // }
 
-// class MvpRc1Predict {
+class MvpRc1Predict {
 
 //     // These are public object variables?
 //     // I don't know javascript.  Down below I get them? WTF?
@@ -480,8 +480,8 @@ function get_id() {
 //         console.log(msg);
 //     }
 
-// }
-// // class end
+}
+// class end
 
 // // Build class with some of these specified?
 // const mvprc1predict = new MvpRc1Predict()
