@@ -314,8 +314,23 @@ class MvpRc1Predict {
        // control is the predict button
        this.predict_btn.addEventListener('click', button=> {
             console.log("predict_btn: click() value is %o", this.predict_btn);
+
+            //fetch('https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg')
+            fetch('https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg')
+              .then(res => res.blob()) // Gets the response and returns it as a blob
+              .then(blob => {
+                // Here's where you get access to the blob
+                // And you can use it for whatever you want
+                // Like calling ref().put(blob)
+
+                // Here, I use it to make an image appear on the page
+                let objectURL = URL.createObjectURL(blob);
+                let myImage = new Image();
+                myImage.src = objectURL;
+                document.getElementById('predict_img').appendChild(myImage)
+            });
            
-       })
+       }) // predict_btn on click end
 
 
 
