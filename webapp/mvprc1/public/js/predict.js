@@ -13,10 +13,10 @@ var AWS = require("aws-sdk");
 //     });
 // }
 
-function get_id() {
-    var newDate = new Date();
-    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
-}
+// function get_id() {
+//     var newDate = new Date();
+//     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
+// }
 
 // // function loadXHR(url) {
 
@@ -47,49 +47,15 @@ function get_id() {
 
 class MvpRc1Predict {
 
-//     // These are public object variables?
-//     // I don't know javascript.  Down below I get them? WTF?
-//     slider;
-//     canvas;
-//     ctx;
-//     camera_feed_img;
-//     s3;
-//     the_blob;
+    // the constructor
+    constructor() {
+        console.log("MvpRc1Predict:Constructor() ");
+//        this.add_listeners();
 
-//     /////////////////////////////////////////////////////////////////
-//     // PREDICT radio buttons
-//     /////////////////////////////////////////////////////////////////
-//     //
-//     // hmm, you can't specify var or const but you can specify and assign
-//     // in one step.  Then not use this.  Is this the method for specifying
-//     // a class variable in javascript?
 
-//     TOLL147_DAVIS_DR = document.getElementById("TOLL147_DAVIS_DR");
-//     I40W_MM8 = document.getElementById("I40W_MM8");
-//     I440_US64_Bypass = document.getElementById("I440_US64_Bypass");
-//     I26_BROADWAY = document.getElementById("I26_BROADWAY");
-//     TOLL147_HOPSON_RD = document.getElementById("TOLL147_HOPSON_RD");
-//     TOLL147_NC54 = document.getElementById("TOLL147_NC54");
-//     TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
-//     // I had these original as global const.  I wonder how to do this 
-//     // with the pedantic class member variables above?
-//     slider = document.getElementById("slider");
-//     canvas = document.getElementById("my_canvas");
-//     predict_btn = document.getElementById('predict-btn');
 
-//     // This was a var and not a const?
-//     ctx = this.canvas.getContext("2d");
-
-//     // The camera feed img
-//     // This was a var and not a const?      
-//     camera_feed_img = document.getElementsByClassName("camera_feed")[0];
-
-//     // the constructor
-//     constructor() {
-//         console.log("MvpRc1Predict:Constructor() ");
-//         this.add_listeners();
-//     }
+    }
 
 // //     upload_blob() {
 // //         // hack
@@ -325,36 +291,36 @@ class MvpRc1Predict {
 //     }
 //     // add_listeners end
 
-//     // json version
-//     async fetch_myconfig() {
-        
-//         console.log('MyApp: getJSON()');
-//         return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
-//             this.bucketRegion = responseJson.bucketRegion;
-//             this.identityPoolId = responseJson.identityPoolId;
-//             this.albumBucketName = responseJson.albumBucketName;
-//             console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
+    // json version
+    async fetch_myconfig() {
 
-//             AWS.config.update({
-//                 region: this.bucketRegion,
-//                 credentials: new AWS.CognitoIdentityCredentials({
-//                     IdentityPoolId: this.identityPoolId
-//                 })
-//             });
+        console.log('MyApp: getJSON()');
+        return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
+            this.bucketRegion = responseJson.bucketRegion;
+            this.identityPoolId = responseJson.identityPoolId;
+            this.albumBucketName = responseJson.albumBucketName;
+            console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
 
-//             this.s3 = new AWS.S3({
-//                 apiVersion: '2006-03-01',
-//                 params: {
-//                     Bucket: this.albumBucketName
-//                 }
-//             });
+            AWS.config.update({
+                region: this.bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: this.identityPoolId
+                })
+            });
 
-//             console.log("Region: ", AWS.config.region);
+            this.s3 = new AWS.S3({
+                apiVersion: '2006-03-01',
+                params: {
+                    Bucket: this.albumBucketName
+                }
+            });
 
-//             return responseJson;
-//         }
-//         );
-//     }
+            console.log("Region: ", AWS.config.region);
+
+            return responseJson;
+        }
+        );
+    }
 
 // //     download_test_one() {
 // //         console.log('download_test_one()')
@@ -473,16 +439,16 @@ class MvpRc1Predict {
 //     //         return x.responseText;
 //     //     }
 
-//     async do_my_init() {
-//         console.log('MyApp: do_init()')
+    async do_my_init() {
+        console.log('MyApp: do_init()')
 
-//         var msg = await this.fetch_myconfig();
-//         console.log(msg);
-//     }
+        var msg = await this.fetch_myconfig();
+        console.log(msg);
+    } // do_my)init END
 
 }
 // class end
 
-// // Build class with some of these specified?
-// const mvprc1predict = new MvpRc1Predict()
-// mvprc1predict.do_my_init();
+// Build class with some of these specified?
+const mvprc1predict = new MvpRc1Predict()
+mvprc1predict.do_my_init();
