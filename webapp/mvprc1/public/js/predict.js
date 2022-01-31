@@ -377,8 +377,8 @@ class MvpRc1Predict {
     download_test_one() {
         console.log('download_test_one()')
 
-        //var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-        var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+        var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
         fetch(the_url)
           .then(res => res.blob()) // Gets the response and returns it as a blob
           .then(blob => {
