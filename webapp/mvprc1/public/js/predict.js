@@ -1,28 +1,6 @@
-// var AWS = require("aws-sdk");
+var AWS = require("aws-sdk");
 
-// // AWS.config.getCredentials(function(err) {
-// //   if (err) console.log(err.stack);
-// //   // credentials not loaded
-// //   else {
-// //     console.log("Access key:", AWS.config.credentials.accessKeyId);
-// //   }
-// // });
 
-// // hmm, so the environment variables do not work
-// console.log("Region: ", AWS.config.region);
-// //console.log("Access key:", AWS.config.credentials.accessKeyId);
-
-// function display_error_message(error_msg, error) {
-//     error = error || "";
-//     if (error) {
-//         console.error(error);
-//     }
-
-//     error_message.innerText = error_msg;
-
-//     hideUI();
-//     error_message.classList.add("visible");
-// }
 
 // function data_uri_to_blob(dataURI) {
 //     var binary = atob(dataURI.split(',')[1]);
@@ -35,10 +13,10 @@
 //     });
 // }
 
-// function get_id() {
-//     var newDate = new Date();
-//     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
-// }
+function get_id() {
+    var newDate = new Date();
+    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
+}
 
 // // function loadXHR(url) {
 
