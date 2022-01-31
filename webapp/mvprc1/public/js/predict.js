@@ -93,6 +93,8 @@ class MvpRc1Predict {
     // with the pedantic class member variables above?
     slider = document.getElementById("slider");
     canvas = document.getElementById("my_canvas");
+    predict_btn = document.getElementById('predict-btn');
+
     // This was a var and not a const?
     ctx = this.canvas.getContext("2d");
 
@@ -131,7 +133,7 @@ class MvpRc1Predict {
                 Attributes: ["ALL"]
             };
          })
-        
+
     }
 
     // erase the canvas
@@ -309,6 +311,14 @@ class MvpRc1Predict {
         }
         )
 
+       // control is the predict button
+       this.predict_btn.addEventListener('click', button=> {
+            console.log("predict_btn: click() value is %o", this.predict_btn);
+           
+       })
+
+
+
         // Control is the slider
         this.slider.addEventListener('click', button=>{
             console.log("slider: click() value is %o", this.slider.checked);
@@ -357,6 +367,8 @@ class MvpRc1Predict {
         }
         );
     }
+
+
 
     async do_my_init() {
         console.log('MyApp: do_init()')
