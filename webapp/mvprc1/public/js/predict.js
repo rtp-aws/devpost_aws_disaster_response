@@ -317,7 +317,12 @@ class MvpRc1Predict {
        this.predict_btn.addEventListener('click', button=> {
             console.log("predict_btn: click() value is %o", this.predict_btn);
 
-            this.download_test_one();
+            //this.download_test_one();
+            this.download_test_two();
+            //this.download_test_one();
+            //this.download_test_one();
+            //this.download_test_one();
+            //this.download_test_one();
 
 
        }) // predict_btn on click end
@@ -378,7 +383,23 @@ class MvpRc1Predict {
         console.log('download_test_one()')
 
         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        // This url fails with:
+        // Access to fetch at 
+        //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg' 
+        //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by 
+        //  CORS policy: No 'Access-Control-Allow-Origin' 
+        //  header is present on the requested resource. 
+        //  If an opaque response serves your needs, 
+        //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+        // 
+        //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg 
+        //  net::ERR_FAILED 200
+
+
         //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+        // This url works though:
+
+        
         fetch(the_url)
           .then(res => res.blob()) // Gets the response and returns it as a blob
           .then(blob => {
@@ -392,12 +413,30 @@ class MvpRc1Predict {
             myImage.src = objectURL;
             document.getElementById('predict_img').appendChild(myImage)
         });
-           
+    } // download test end
 
-    }
 
 
     download_test_two() {
+        console.log('download_test_two()')
+
+        var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        fetch(the_url, {mode: 'no-cors'})
+          .then(res => res.blob()) // Gets the response and returns it as a blob
+          .then(blob => {
+            // Here's where you get access to the blob
+            // And you can use it for whatever you want
+            // Like calling ref().put(blob)
+
+            // Here, I use it to make an image appear on the page
+            let objectURL = URL.createObjectURL(blob);
+            let myImage = new Image();
+            myImage.src = objectURL;
+            document.getElementById('predict_img').appendChild(myImage)
+        });         
+    } // download test end
+
+    download_test_three() {
         console.log('download_test_two()')
 
 
@@ -426,7 +465,7 @@ class MvpRc1Predict {
         });
            
 
-    }
+    } // download test end
 
 
 
