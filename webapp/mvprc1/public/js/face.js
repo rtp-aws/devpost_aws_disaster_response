@@ -150,7 +150,7 @@ function show_video() {
 function hide_ui() {
     // Helper function for clearing the app UI.
 
-    myglobals.controls.classList.remove("visible");
+    //myglobals.controls.classList.remove("visible");
     myglobals.start_camera.classList.remove("visible");
     myglobals.video.classList.remove("visible");
     snap.classList.remove("visible");
