@@ -1,0 +1,11 @@
+https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html
+
+https://www.cloudsavvyit.com/9501/ways-to-format-console-output-in-javascript/
+
+https://stackoverflow.com/questions/62511789/javascript-how-to-get-image-as-bytes-from-a-page-without-redownloading/62511959#62511959
+
+https://stackoverflow.com/questions/42471755/convert-image-into-blob-using-javascript
+
+https://stackoverflow.com/questions/44070437/how-to-get-a-file-or-blob-from-an-url-in-javascript
+
+
