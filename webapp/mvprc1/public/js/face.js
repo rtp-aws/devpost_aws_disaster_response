@@ -71,7 +71,7 @@ function set_widgets() {
 
     }, // Error Callback
     function(err) {
-        displayErrorMessage("There was an error with accessing the camera stream: " + err.name, err);
+        display_error_message("There was an error with accessing the camera stream: " + err.name, err);
     });
     // SetWidgets.navigator.getMedia
 }
