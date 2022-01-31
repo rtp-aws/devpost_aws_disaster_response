@@ -318,8 +318,8 @@ class MvpRc1Predict {
             console.log("predict_btn: click() value is %o", this.predict_btn);
 
             //this.download_test_one();
-            this.download_test_two();
-            //this.download_test_one();
+            //this.download_test_two();
+            this.download_test_three();
             //this.download_test_one();
             //this.download_test_one();
             //this.download_test_one();
@@ -399,7 +399,7 @@ class MvpRc1Predict {
         //var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
         // This url works though:
 
-        
+
         fetch(the_url)
           .then(res => res.blob()) // Gets the response and returns it as a blob
           .then(blob => {
@@ -420,6 +420,10 @@ class MvpRc1Predict {
     download_test_two() {
         console.log('download_test_two()')
 
+
+        // This also fails.  The code for objectURL assignment is run but the result
+        // is all nulls so nothing is done.
+
         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
         fetch(the_url, {mode: 'no-cors'})
           .then(res => res.blob()) // Gets the response and returns it as a blob
@@ -437,33 +441,38 @@ class MvpRc1Predict {
     } // download test end
 
     download_test_three() {
-        console.log('download_test_two()')
+        console.log('download_test_three()')
+        console.log('blob test 1')
+        // from this website
+        // https://javascript.info/blob
+
+        // Create a Blob from a string
+        let blob0 = new Blob(["<html>...</html>"], {type: 'text/html'});
+        // please note: the first argument must be an array [..]
+
+        // create a Blob from a typed array and strings
+        let hello = new Uint8Array([72, 101, 108, 108, 111]); // Hello in decimal Ascii
+        let blob = new Blob([hello, ' ', world], {type:'text/plain'});
+        // we can extract Blob slices with:
+        //blob.slice([byteStart],[byteEnd],[contentType])
+        //
+        // byteStart - starting byte. defaul is 0
+        // byteEnd - the last byte (exclusive, by default is till end)
+        // contentType - the type of new blob, by default identicial as source
+        //
+        // The args are similar to array.slice, negative numbers are allowed too
+        //
+        // Blob objects are immutable
+        // We can’t change data directly in a Blob, but we can slice parts of a 
+        // Blob, create new Blob objects from them, mix them into a new Blob 
+        // and so on.
+        // 
+        // This behavior is similar to JavaScript strings: we can’t change a 
+        // character in a string, but we can make a new corrected string.
 
 
-        let headers = new Headers();
 
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
-        headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
-        headers.append('Origin','http://localhost:3000');
 
-        //fetch()
-        //var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-        var the_url = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
-        fetch(the_url, {mode: 'no-cors'})
-          .then(res => res.blob()) // Gets the response and returns it as a blob
-          .then(blob => {
-            // Here's where you get access to the blob
-            // And you can use it for whatever you want
-            // Like calling ref().put(blob)
-
-            // Here, I use it to make an image appear on the page
-            let objectURL = URL.createObjectURL(blob);
-            let myImage = new Image();
-            myImage.src = objectURL;
-            document.getElementById('predict_img').appendChild(myImage)
-        });
-           
 
     } // download test end
 
