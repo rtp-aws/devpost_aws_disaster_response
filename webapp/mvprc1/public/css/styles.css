@@ -121,14 +121,16 @@ input:checked + .slider:before {
 /* slider switch end */
 
 /* hidden canvas class style */
-
-
 .hidden_canvas {
   display: none;
 }
-
-
 /* hidden canvas class style END*/
+
+/* hidden img element style hide */
+#snap {
+  display: none;
+}
+/* hidden img element style hide END*/
 
 
 
