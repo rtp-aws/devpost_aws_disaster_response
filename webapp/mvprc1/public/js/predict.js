@@ -270,6 +270,19 @@ class MvpRc1Predict {
     }
     // download test end
 
+
+    blob_to_string(b) {
+        var u, x;
+        u = URL.createObjectURL(b);
+        x = new XMLHttpRequest();
+        x.open('GET', u, false); // although sync, you're not fetching over internet
+        x.send();
+        URL.revokeObjectURL(u);
+        return x.responseText;
+    }
+
+
+
     download_test_two() {
         console.log('download_test_two()');
 
@@ -288,40 +301,14 @@ class MvpRc1Predict {
         let blob1 = new Blob([hello, ' ', 'world'],{
             type: 'text/plain'
         });
+
+
+
+
+
+
     }
     // download test end
-
-
-    blob_to_string(b) {
-        var u, x;
-        u = URL.createObjectURL(b);
-        x = new XMLHttpRequest();
-        x.open('GET', u, false); // although sync, you're not fetching over internet
-        x.send();
-        URL.revokeObjectURL(u);
-        return x.responseText;
-    }
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 }
 // class end
@@ -347,6 +334,29 @@ class MvpRc1Predict {
         //
         //console.log(this.blob_to_string(blob0));
         //console.log(this.blob_to_string(blob1));
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
