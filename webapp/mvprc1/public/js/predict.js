@@ -270,87 +270,73 @@ class MvpRc1Predict {
     // download test end
 
 
-    download_test_two() {
-        console.log('download_test_two()');
-
-        // This also fails.  The code for objectURL assignment is run but the result
-        // is all nulls so nothing is done.
-
-        var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-        fetch(the_url, {
-            mode: 'no-cors'
-        }).then(res=>res.blob())// Gets the response and returns it as a blob
-        .then(blob=>{
-            // Here's where you get access to the blob
-            // And you can use it for whatever you want
-            // Like calling ref().put(blob)
-
-            // Here, I use it to make an image appear on the page
-            let objectURL = URL.createObjectURL(blob);
-            let myImage = new Image();
-            myImage.src = objectURL;
-            document.getElementById('predict_img').appendChild(myImage)
-        }
-        );
-    }
-    // download test end
-
-
-
 }
 // class end
 
+
+
+//     download_test_two() {
+//         console.log('download_test_two()');
+
+//     }
+    // download test end
 
 
 
 //     download_test_three() {
 //         console.log('download_test_three()');
 //         console.log('blob test 1');
-//         // from this website
-//         // https://javascript.info/blob
 
-//         // Create a Blob from a string
+//     }
+    // download test end
+
+        // from this website
+        // https://javascript.info/blob
+
+        // Create a Blob from a string
 //         let blob0 = new Blob(["<html>...</html>"],{
 //             type: 'text/html'
 //         });
-//         // please note: the first argument must be an array [..]
+        // please note: the first argument must be an array [..]
 
-//         // create a Blob from a typed array and strings
+        // create a Blob from a typed array and strings
 //         let hello = new Uint8Array([72, 101, 108, 108, 111]);
 //         // Hello in decimal Ascii
 //         let blob1 = new Blob([hello, ' ', 'world'],{
 //             type: 'text/plain'
 //         });
-//         // we can extract Blob slices with:
-//         //blob.slice([byteStart],[byteEnd],[contentType])
-//         //
-//         // byteStart - starting byte. defaul is 0
-//         // byteEnd - the last byte (exclusive, by default is till end)
-//         // contentType - the type of new blob, by default identicial as source
-//         //
-//         // The args are similar to array.slice, negative numbers are allowed too
-//         //
-//         // Blob objects are immutable
-//         // We can’t change data directly in a Blob, but we can slice parts of a 
-//         // Blob, create new Blob objects from them, mix them into a new Blob 
-//         // and so on.
-//         // 
-//         // This behavior is similar to JavaScript strings: we can’t change a 
-//         // character in a string, but we can make a new corrected string.
+        // we can extract Blob slices with:
+        //blob.slice([byteStart],[byteEnd],[contentType])
+        //
+        // byteStart - starting byte. defaul is 0
+        // byteEnd - the last byte (exclusive, by default is till end)
+        // contentType - the type of new blob, by default identicial as source
+        //
+        // The args are similar to array.slice, negative numbers are allowed too
+        //
+        // Blob objects are immutable
+        // We can’t change data directly in a Blob, but we can slice parts of a 
+        // Blob, create new Blob objects from them, mix them into a new Blob 
+        // and so on.
+        // 
+        // This behavior is similar to JavaScript strings: we can’t change a 
+        // character in a string, but we can make a new corrected string.
 
-//         // To get the string back out from the blob
-//         //
-//         // This requires and async function
-//         //const text = await new Response(blob1).text();
-//         //Console.log(text);
-//         //
-//         // These require the function in this class. 
-//         //
-//         //console.log(this.blob_to_string(blob0));
-//         //console.log(this.blob_to_string(blob1));
+        // To get the string back out from the blob
+        //
+        // This requires and async function
+        //const text = await new Response(blob1).text();
+        //Console.log(text);
+        //
+        // These require the function in this class. 
+        //
+        //console.log(this.blob_to_string(blob0));
+        //console.log(this.blob_to_string(blob1));
 
-//     }
-//     // download test end
+
+
+
+
 
 
 // //     upload_blob() {
