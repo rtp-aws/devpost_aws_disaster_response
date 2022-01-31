@@ -273,6 +273,23 @@ class MvpRc1Predict {
     download_test_two() {
         console.log('download_test_two()');
 
+        // from this website
+        // https://javascript.info/blob
+
+        // Create a Blob from a string
+        let blob0 = new Blob(["<html>...</html>"],{
+            type: 'text/html'
+        });
+        // please note: the first argument must be an array [..]
+
+        // create a Blob from a typed array and strings
+        let hello = new Uint8Array([72, 101, 108, 108, 111]);
+        // Hello in decimal Ascii
+        let blob1 = new Blob([hello, ' ', 'world'],{
+            type: 'text/plain'
+        });
+
+
     }
     // download test end
 
@@ -281,21 +298,6 @@ class MvpRc1Predict {
 // class end
 
 
-        // from this website
-        // https://javascript.info/blob
-
-        // Create a Blob from a string
-//         let blob0 = new Blob(["<html>...</html>"],{
-//             type: 'text/html'
-//         });
-        // please note: the first argument must be an array [..]
-
-        // create a Blob from a typed array and strings
-//         let hello = new Uint8Array([72, 101, 108, 108, 111]);
-//         // Hello in decimal Ascii
-//         let blob1 = new Blob([hello, ' ', 'world'],{
-//             type: 'text/plain'
-//         });
         // we can extract Blob slices with:
         //blob.slice([byteStart],[byteEnd],[contentType])
         //
