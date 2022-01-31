@@ -304,6 +304,12 @@ class MvpRc1Predict {
         });
 
 
+        // we can extract Blob slices with:
+        // blob.slice([byteStart],[byteEnd],[contentType])
+        //
+        // byteStart - starting byte. defaul is 0
+        // byteEnd - the last byte (exclusive, by default is till end)
+        // contentType - the type of new blob, by default identicial as source
 
 
 
@@ -314,12 +320,6 @@ class MvpRc1Predict {
 }
 // class end
 
-        // we can extract Blob slices with:
-        //blob.slice([byteStart],[byteEnd],[contentType])
-        //
-        // byteStart - starting byte. defaul is 0
-        // byteEnd - the last byte (exclusive, by default is till end)
-        // contentType - the type of new blob, by default identicial as source
         //
         // The args are similar to array.slice, negative numbers are allowed too
         //
