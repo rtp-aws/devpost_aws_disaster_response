@@ -204,21 +204,21 @@ class MvpRc1Predict {
             this.albumBucketName = responseJson.albumBucketName;
             console.log("region: %s  poolId: %s  bucket: %s", this.bucketRegion, this.identityPoolId, this.albumBucketName);
 
-//             AWS.config.update({
-//                 region: this.bucketRegion,
-//                 credentials: new AWS.CognitoIdentityCredentials({
-//                     IdentityPoolId: this.identityPoolId
-//                 })
-//             });
+            AWS.config.update({
+                region: this.bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: this.identityPoolId
+                })
+            });
 
-//             this.s3 = new AWS.S3({
-//                 apiVersion: '2006-03-01',
-//                 params: {
-//                     Bucket: this.albumBucketName
-//                 }
-//             });
+            this.s3 = new AWS.S3({
+                apiVersion: '2006-03-01',
+                params: {
+                    Bucket: this.albumBucketName
+                }
+            });
 
-//             console.log("Region: ", AWS.config.region);
+            console.log("Region: ", AWS.config.region);
 
             return responseJson;
         }
@@ -270,17 +270,18 @@ class MvpRc1Predict {
     }
     // download test end
 
+    download_test_two() {
+        console.log('download_test_two()');
+
+    }
+    // download test end
+
 
 }
 // class end
 
 
 
-//     download_test_two() {
-//         console.log('download_test_two()');
-
-//     }
-    // download test end
 
 
 
@@ -479,5 +480,5 @@ class MvpRc1Predict {
 //     //     }
 
 // Build class with some of these specified?
-const mvprc1predict = new MvpRc1Predict()
+const mvprc1predict = new MvpRc1Predict();
 mvprc1predict.do_my_init();
