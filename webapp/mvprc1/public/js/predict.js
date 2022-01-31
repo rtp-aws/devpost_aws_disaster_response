@@ -270,36 +270,38 @@ class MvpRc1Predict {
     // download test end
 
 
+    download_test_two() {
+        console.log('download_test_two()');
+
+        // This also fails.  The code for objectURL assignment is run but the result
+        // is all nulls so nothing is done.
+
+        var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+        fetch(the_url, {
+            mode: 'no-cors'
+        }).then(res=>res.blob())// Gets the response and returns it as a blob
+        .then(blob=>{
+            // Here's where you get access to the blob
+            // And you can use it for whatever you want
+            // Like calling ref().put(blob)
+
+            // Here, I use it to make an image appear on the page
+            let objectURL = URL.createObjectURL(blob);
+            let myImage = new Image();
+            myImage.src = objectURL;
+            document.getElementById('predict_img').appendChild(myImage)
+        }
+        );
+    }
+    // download test end
+
+
 
 }
 // class end
 
 
 
-//     download_test_two() {
-//         console.log('download_test_two()');
-
-//         // This also fails.  The code for objectURL assignment is run but the result
-//         // is all nulls so nothing is done.
-
-//         var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-//         fetch(the_url, {
-//             mode: 'no-cors'
-//         }).then(res=>res.blob())// Gets the response and returns it as a blob
-//         .then(blob=>{
-//             // Here's where you get access to the blob
-//             // And you can use it for whatever you want
-//             // Like calling ref().put(blob)
-
-//             // Here, I use it to make an image appear on the page
-//             let objectURL = URL.createObjectURL(blob);
-//             let myImage = new Image();
-//             myImage.src = objectURL;
-//             document.getElementById('predict_img').appendChild(myImage)
-//         }
-//         );
-//     }
-//     // download test end
 
 //     download_test_three() {
 //         console.log('download_test_three()');
