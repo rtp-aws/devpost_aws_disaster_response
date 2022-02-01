@@ -177,18 +177,18 @@
 
 <script>
 
-//  function blobToString (b) {
-//  var u
-//  var x
-//  u = URL.createObjectURL(b)
-//  x = new XMLHttpRequest()
-//  // although sync, you're not fetching over internet
-//      x.open('GET', u, false);
-//      x.send();
-//      URL.revokeObjectURL(u);
-//      return x.responseText;
-//  }
-//
+ function blobToString (b) {
+   var u
+   var x
+   u = URL.createObjectURL(b)
+   x = new XMLHttpRequest()
+   // although sync, you're not fetching over internet
+   x.open('GET', u, false);
+   x.send();
+   URL.revokeObjectURL(u);
+   return x.responseText;
+ }
+
 
 function downloadTestOne () {
   console.log('download_test_one()')
@@ -263,7 +263,7 @@ function download_test_two() {
   // character in a string, but we can make a new corrected string.
 
   /* These requiree in this class. */
-  console.log(this.blob_to_string(a_blob0))
+  console.log(blobToString(a_blob0))
 } // download test end
 
 function Draw() {
