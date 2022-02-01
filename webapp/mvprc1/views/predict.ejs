@@ -341,10 +341,10 @@ function download_test_four() {
   // download a dynamically-generated Blob with hello world contents 
   // as a file:
 
-  let blob0 = new Blob(["Hello, world!"], {type: 'text/plain'})
+  let blob2 = new Blob(["Hello, world!"], {type: 'text/plain'})
 
-  link.href = URL.createObjectURL(blob0)
-  console.log(blobToString(blob))
+  link.href = URL.createObjectURL(blob2)
+  console.log("blob 2 is %0 ", blobToString(a_blob2))
 
   // We can also create a link dynamically in JavaScript and simulate a 
   // click by link.click(), then downl  oad starts automatically.
@@ -355,9 +355,9 @@ function download_test_four() {
   let link = document.createElement('a');
   link.download = 'hello.txt';
 
-  let blob1 = new Blob(['Hello, world!'], {type: 'text/plain'});
+  let blob3 = new Blob(['Hello, world!'], {type: 'text/plain'});
 
-  link.href = URL.createObjectURL(blob1);
+  link.href = URL.createObjectURL(blob3);
 
   link.click();
 
@@ -368,8 +368,7 @@ function download_test_four() {
   //
   // That’s what the value of link.href looks like:
 
-  console.log("blob 0 is %0 ", blobToString(a_blob0))
-  console.log("blob 1 is %0 ", blobToString(a_blob1))
+  console.log("blob 3 is %0 ", blobToString(a_blob3))
 
 
 } // download test end
