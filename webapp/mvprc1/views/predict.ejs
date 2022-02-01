@@ -173,6 +173,8 @@
 
   <!-- download attribute forces the browser to download instead of navigating -->
   <!--
+    These tests were done for download test three and four
+    
     What is href='#'
    
     https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used
@@ -194,7 +196,7 @@
   -->
 
   <div>
-      <a download="hello.txt" href='#' id="link">Download</a>
+      <a download="hello.txt" href='#!' id="link">Download</a>
   </div>
 
 
@@ -300,28 +302,77 @@ function download_test_three() {
 
   // A Blob can be easily used as a URL for <a>, <img> or other tags, 
   // to show its contents.
-
+  //
   // Thanks to type, we can also download/upload Blob objects, and the 
   // type naturally becomes Content-Type in network requests.
-
+  //
   // Let’s start with a simple example. By clicking on a link you 
   // download a dynamically-generated Blob with hello world contents 
   // as a file:
 
+  let blob = new Blob(["Hello, world!"], {type: 'text/plain'})
 
-  let blob = new Blob(["Hello, world!"], {type: 'text/plain'});
-
-  link.href = URL.createObjectURL(blob);
+  link.href = URL.createObjectURL(blob)
   console.log(blobToString(blob))
 } // download test end
+
+function download_test_four() {
+  console.log('download_test_four()')
+
+  // from this website
+  // https://javascript.info/blob
+
+  // A Blob can be easily used as a URL for <a>, <img> or other tags, 
+  // to show its contents.
+  //
+  // Thanks to type, we can also download/upload Blob objects, and the 
+  // type naturally becomes Content-Type in network requests.
+  //
+  // Let’s start with a simple example. By clicking on a link you 
+  // download a dynamically-generated Blob with hello world contents 
+  // as a file:
+
+  let blob = new Blob(["Hello, world!"], {type: 'text/plain'})
+
+  link.href = URL.createObjectURL(blob)
+  console.log(blobToString(blob))
+
+  // We can also create a link dynamically in JavaScript and simulate a 
+  // click by link.click(), then downl  oad starts automatically.
+  //
+  // Here’s the similar code that causes user to download the dynamically 
+  // created Blob, without any HTML:
+
+  let link = document.createElement('a');
+  link.download = 'hello.txt';
+
+  let blob = new Blob(['Hello, world!'], {type: 'text/plain'});
+
+  link.href = URL.createObjectURL(blob);
+
+  link.click();
+
+  URL.revokeObjectURL(link.href);  
+
+  // URL.createObjectURL takes a Blob and creates a unique URL 
+  // for it, in the form blob:<origin>/<uuid>.
+  //
+  // That’s what the value of link.href looks like:
+
+
+
+} // download test end
+
+
+
 
 function Predict() {
     console.log("predict_btn: click() ");
 
     //download_test_one();
     //download_test_two();
-    download_test_three();
-    //download_test_one();
+    //download_test_three();
+    download_test_four();
     //download_test_one();
 
 }
