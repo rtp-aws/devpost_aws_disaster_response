@@ -497,8 +497,13 @@ function download_test_six() {
   // Note: The matching is done using depth-first pre-order traversal of the
   //  document's nodes starting with the first element in the document's markup 
   // and iterating through sequential nodes by order of the number of child nodes.
-  
-  let img = document.querySelector('img');
+  //
+  // https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+  //
+  // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+
+  // orig let img = document.querySelector('img');
+  let img = document.getElementById('camera_feed');
 
   // make <canvas> of the same size
   let canvas = document.createElement('canvas');
