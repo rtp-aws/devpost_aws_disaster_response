@@ -4,6 +4,13 @@ var AWS = require('aws-sdk')
 // requires npm install node-fetch@2
 const fetch = require('node-fetch')
 
+
+
+// This was a var and not a const?
+var ctx = canvas.getContext('2d')
+
+
+
 // To get tools.js
 // const tools = require('./tools.js')
 
@@ -75,8 +82,6 @@ class MvpRc1Predict {
     var canvas = document.getElementById('my_canvas')
     const predictBtn = document.getElementById('predict-btn')
 
-    // This was a var and not a const?
-    var ctx = this.canvas.getContext('2d')
 
     // The camera feed img
     // This was a var and not a const?
