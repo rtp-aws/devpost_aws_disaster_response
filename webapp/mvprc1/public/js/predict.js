@@ -4,6 +4,8 @@ var AWS = require('aws-sdk')
 // requires npm install node-fetch@2
 const fetch = require('node-fetch')
 
+const {createCanvas, loadImage} = require('canvas')
+
 
 
 // This was a var and not a const?
