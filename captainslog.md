@@ -379,7 +379,28 @@ Added some more camera images.
 More snowfall.  Will have meeting with Adrian to help him on his entry.
 I am rewroking the face app to have a navigator so I can use it in conjunction with the node version.
 
+## 20220130
 
+Finished the rewrite of faces demo app.  Started the prediction page.
+
+## 20220131
+
+Worked some more on the predictions page where I am trying to upload to 
+S3 the image from the webcam.
+
+I've learned that node.js does not implement everything in S3.
+
+Moved code from node to javascript to attempt to download the saved images.
+
+## 20220201
+
+Learned some stuff about Blobs.  Learned how to get bytes from images.  
+Learned that I can not get past this CORS error since I have no cooperation
+from NCDOT and they will not allow a change in their server.  This is not a 
+problem and understandable.  
+
+However, it did give me the opportunity to learn about CORS and javascript/Node.
+That is a good thing.  I will go to plan C and use images in S3 from raw uploads.
 
 
 
