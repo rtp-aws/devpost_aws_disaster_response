@@ -108,78 +108,78 @@ class MvpRc1Predict {
   addListeners () {
     this.TOLL147_DAVIS_DR.addEventListener('click', button => {
       console.log('TOLL147_DAVIS_DR: click() %o %o', button, this.TOLL147_DAVIS_DR)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.I40W_MM8.addEventListener('click', button => {
       console.log('I40W_MM8: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg'
+      this.eraseCanvas()
     }
     )
 
     this.I440_US64_Bypass.addEventListener('click', button => {
       console.log('I440_US64_Bypass: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.I26_BROADWAY.addEventListener('click', button => {
       console.log('I26_BROADWAY: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg'
+      this.eraseCanvas()
     }
     )
 
     this.TOLL147_HOPSON_RD.addEventListener('click', button => {
       console.log('TOLL147_HOPSON_RD: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.TOLL147_NC54.addEventListener('click', button => {
       console.log('TOLL147_NC54: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.TOLL54_APEXBBQ.addEventListener('click', button => {
       console.log('TOLL54_APEXBBQ: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.TOLL540_TOLL147.addEventListener('click', button => {
       console.log('TOLL540_TOLL147: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.TOLL540_NC55.addEventListener('click', button => {
       console.log('TOLL540_NC55: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG'
+      this.eraseCanvas()
     }
     )
 
     this.TOLL540_MCCRIMMON.addEventListener('click', button => {
       console.log('TOLL540_MCCRIMMON: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg'
+      this.eraseCanvas()
     }
     )
 
     this.I40_DAVIS_DR.addEventListener('click', button => {
       console.log('I40_DAVIS_DR: click() %o ', button)
-      this.camera_feed_img.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-      this.erase_canvas()
+      this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+      this.eraseCanvas()
     }
     )
 
@@ -187,13 +187,13 @@ class MvpRc1Predict {
     this.slider.addEventListener('click', button => {
       console.log('slider: click() value is %o %o', this.slider.checked, button)
       if (this.slider.checked) {
-        this.camera_feed_img.style.maxWidth = ''
-        this.camera_feed_img.style.maxHeight = ''
+        this.cameraFeedImg.style.maxWidth = ''
+        this.cameraFeedImg.style.maxHeight = ''
       } else {
-        this.camera_feed_img.style.maxWidth = '200px'
-        this.camera_feed_img.style.maxHeight = '200px'
+        this.cameraFeedImg.style.maxWidth = '200px'
+        this.cameraFeedImg.style.maxHeight = '200px'
       }
-      this.erase_canvas()
+      this.eraseCanvas()
     }
     )
     // slider end
@@ -201,7 +201,7 @@ class MvpRc1Predict {
   // add_listeners end
 
   // json version
-  async fetchMyconfig () {
+  async fetchMyConfig () {
     console.log('MyApp: getJSON()')
     return await fetch('/myconfig').then((response) => response.json()).then((responseJson) => {
       this.bucketRegion = responseJson.bucketRegion
@@ -233,7 +233,7 @@ class MvpRc1Predict {
   async doMyInit () {
     console.log('MyApp: do_init()')
 
-    var msg = await this.fetch_myconfig()
+    var msg = await this.fetchMyConfig()
     console.log(msg)
   }
   // do_my)init END
