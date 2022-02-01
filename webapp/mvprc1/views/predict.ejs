@@ -312,7 +312,7 @@ function download_test_three() {
   let blob = new Blob(["Hello, world!"], {type: 'text/plain'});
 
   link.href = URL.createObjectURL(blob);
-  console.log(blobToString(a_blob))
+  console.log(blobToString(blob))
 } // download test end
 
 function Predict() {
