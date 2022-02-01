@@ -113,70 +113,70 @@ class MvpRc1Predict {
     }
     )
 
-    this.I40W_MM8.addEventListener('click', button => {
+    I40W_MM8.addEventListener('click', button => {
       console.log('I40W_MM8: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg'
       this.eraseCanvas()
     }
     )
 
-    this.I440_US64_Bypass.addEventListener('click', button => {
+    I440_US64_Bypass.addEventListener('click', button => {
       console.log('I440_US64_Bypass: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG'
       this.eraseCanvas()
     }
     )
 
-    this.I26_BROADWAY.addEventListener('click', button => {
+    I26_BROADWAY.addEventListener('click', button => {
       console.log('I26_BROADWAY: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg'
       this.eraseCanvas()
     }
     )
 
-    this.TOLL147_HOPSON_RD.addEventListener('click', button => {
+    TOLL147_HOPSON_RD.addEventListener('click', button => {
       console.log('TOLL147_HOPSON_RD: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG'
       this.eraseCanvas()
     }
     )
 
-    this.TOLL147_NC54.addEventListener('click', button => {
+    TOLL147_NC54.addEventListener('click', button => {
       console.log('TOLL147_NC54: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG'
       this.eraseCanvas()
     }
     )
 
-    this.TOLL54_APEXBBQ.addEventListener('click', button => {
+    TOLL54_APEXBBQ.addEventListener('click', button => {
       console.log('TOLL54_APEXBBQ: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG'
       this.eraseCanvas()
     }
     )
 
-    this.TOLL540_TOLL147.addEventListener('click', button => {
+    TOLL540_TOLL147.addEventListener('click', button => {
       console.log('TOLL540_TOLL147: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG'
       this.eraseCanvas()
     }
     )
 
-    this.TOLL540_NC55.addEventListener('click', button => {
+    TOLL540_NC55.addEventListener('click', button => {
       console.log('TOLL540_NC55: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG'
       this.eraseCanvas()
     }
     )
 
-    this.TOLL540_MCCRIMMON.addEventListener('click', button => {
+    TOLL540_MCCRIMMON.addEventListener('click', button => {
       console.log('TOLL540_MCCRIMMON: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg'
       this.eraseCanvas()
     }
     )
 
-    this.I40_DAVIS_DR.addEventListener('click', button => {
+    I40_DAVIS_DR.addEventListener('click', button => {
       console.log('I40_DAVIS_DR: click() %o ', button)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
       this.eraseCanvas()
