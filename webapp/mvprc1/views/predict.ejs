@@ -172,8 +172,27 @@
   </div>
 
   <!-- download attribute forces the browser to download instead of navigating -->
+  <!--
+    What is href='#'
+   
+    https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used
+
+    1. Absolute path: move to another site like href="http://www.google.com"
+    2. Relative path: move to another page within the site like herf ="defaultpage.aspx"
+    3. Move to an element with a specified id within the page like href="#bottom"
+    4. href="javascript:void(0)", it does not move anywhere.
+    5. href="#" , it does not move anywhere but scroll on the top of the current page.
+    6. href= "" , it will load the current page but some browsers causes forbidden errors.
+
+    Note: When we do not need to specified any url inside a anchor tag then use 
+    <a href="javascript:void(0)">Test1</a>
+
+          <a download="hello.txt" href='#' id="link">Download</a>
+
+  -->
+
   <div>
-      <a download="hello.txt" href='#' id="link">Download</a>
+      <a download="hello.txt" href='javascript:void(0)' id="link">Download</a>
   </div>
 
 
