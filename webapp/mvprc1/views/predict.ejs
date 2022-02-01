@@ -447,8 +447,87 @@ function download_test_five() {
   };
 
 
+  // Both ways of making a URL of a Blob are usable. But usually 
+  // URL.createObjectURL(blob) is simpler and faster.
+  //
+  // URL.createObjectURL(blob)
+  // o We need to revoke them if care about memory.
+  // o Direct access to blob, no “encoding/decoding”
+  //
+  // 
+  // Blob to data url
+  // o No need to revoke anything.
+  // o Performance and memory losses on big Blob objects for encoding.
+  //
+  // This download test code is using the second option here.
+
+
 } // download test end
 
+
+
+function download_test_six() {
+  console.log('download_test_six()')
+
+  // from https://javascript.info/blob#image-to-blob
+  //
+  // Image to blob
+  // We can create a Blob of an image, an image part, 
+  // or even make a page screenshot. That’s handy to upload it somewhere.
+  //
+  // Image operations are done via <canvas> element:
+  // 
+  // 1. Draw an image (or its part) on canvas using canvas.drawImage.
+  //
+  // 2. Call canvas method .toBlob(callback, format, quality) that creates 
+  // a Blob and runs callback with it when done.
+  // 
+  // In the example below, an image is just copied, but we could 
+  // cut from it, or transform it on canvas prior to making a blob:
+
+
+
+  // take any image
+  // the image i want is 'camera_feed'
+  //
+  // The Document method querySelector() returns the first Element within 
+  // the document that matches the specified selector, or group of selectors. 
+  // If no matches are found, null is returned.
+  //
+  // Note: The matching is done using depth-first pre-order traversal of the
+  //  document's nodes starting with the first element in the document's markup 
+  // and iterating through sequential nodes by order of the number of child nodes.
+  
+  let img = document.querySelector('img');
+
+  // make <canvas> of the same size
+  let canvas = document.createElement('canvas');
+  canvas.width = img.clientWidth;
+  canvas.height = img.clientHeight;
+
+  let context = canvas.getContext('2d');
+
+  // copy image to it (this method allows to cut image)
+  context.drawImage(img, 0, 0);
+  // we can context.rotate(), and do many other things on canvas
+
+  // toBlob is async operation, callback is called when done
+  canvas.toBlob(function(blob) {
+    // blob ready, download it
+    let link = document.createElement('a');
+    link.download = 'example.png';
+
+    link.href = URL.createObjectURL(blob);
+    link.click();
+
+    // delete the internal blob reference, to let the browser clear memory from it
+    URL.revokeObjectURL(link.href);
+  }, 'image/png');
+
+
+
+
+} // download test end
 
 
 function Predict() {
@@ -458,7 +537,8 @@ function Predict() {
     //download_test_two();
     //download_test_three();
     //download_test_four();
-    download_test_five();
+    // download_test_five();
+    download_test_six();
 
 }
 // predict_btn on click end
