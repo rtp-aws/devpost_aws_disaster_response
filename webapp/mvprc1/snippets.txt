@@ -133,16 +133,3 @@
 //                                 });
 
 // control is the predict button
-//         this.predict_btn.addEventListener('click', button=>{
-//             console.log("predict_btn: click() value is %o", this.predict_btn);
-
-//             //this.download_test_one();
-//             //this.download_test_two();
-//             this.download_test_three();
-//             //this.download_test_one();
-//             //this.download_test_one();
-//             //this.download_test_one();
-
-//         }
-//         )
-// predict_btn on click end

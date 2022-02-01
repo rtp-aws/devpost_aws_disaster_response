@@ -4,15 +4,6 @@ var AWS = require('aws-sdk')
 // requires npm install node-fetch@2
 const fetch = require('node-fetch')
 
-const {createCanvas, loadImage} = require('canvas')
-
-
-
-// This was a var and not a const?
-var ctx = canvas.getContext('2d')
-
-
-
 // To get tools.js
 // const tools = require('./tools.js')
 
@@ -82,8 +73,10 @@ class MvpRc1Predict {
     // with the pedantic class member variables above?
     const slider = document.getElementById('slider')
     var canvas = document.getElementById('my_canvas')
-    const predictBtn = document.getElementById('predict-btn')
+    // const predictBtn = document.getElementById('predict-btn')
 
+    // This was a var and not a const?
+    var ctx = this.canvas.getContext('2d')
 
     // The camera feed img
     // This was a var and not a const?
@@ -98,7 +91,7 @@ class MvpRc1Predict {
     console.log(TOLL54_APEXBBQ)
     console.log(slider)
     console.log(canvas)
-    console.log(predictBtn)
+    // console.log(predictBtn)
     console.log(ctx)
     console.log(cameraFeedImg)
     console.log()
