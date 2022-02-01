@@ -171,6 +171,10 @@
 
   </div>
 
+  <!-- download attribute forces the browser to download instead of navigating -->
+  <div>
+      <a download="hello.txt" href='#' id="link">Download</a>
+  </div>
 
 
 </div>
@@ -222,8 +226,7 @@ function downloadTestOne () {
     document.getElementById('predict_img').appendChild(myImage)
   }
   )
-}
-  // download test end
+} // download test end
 
 
 function download_test_two() {
@@ -265,6 +268,34 @@ function download_test_two() {
   /* These requiree in this class. */
   console.log(blobToString(a_blob0))
 } // download test end
+
+
+
+function download_test_three() {
+  console.log('download_test_three()')
+
+  // from this website
+  // https://javascript.info/blob
+
+  // A Blob can be easily used as a URL for <a>, <img> or other tags, 
+  // to show its contents.
+
+  // Thanks to type, we can also download/upload Blob objects, and the 
+  // type naturally becomes Content-Type in network requests.
+
+  // Let’s start with a simple example. By clicking on a link you 
+  // download a dynamically-generated Blob with hello world contents 
+  // as a file:
+
+
+  let blob = new Blob(["Hello, world!"], {type: 'text/plain'});
+
+  link.href = URL.createObjectURL(blob);
+  console.log(blobToString(a_blob0))
+} // download test end
+
+
+
 
 function Draw() {
 // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
@@ -312,12 +343,11 @@ function Draw() {
 function Predict() {
     console.log("predict_btn: click() ");
 
-    //this.download_test_one();
-    //this.download_test_two();
-    download_test_two();
-    //this.download_test_one();
-    //this.download_test_one();
-    //this.download_test_one();
+    //download_test_one();
+    //download_test_two();
+    download_test_three();
+    //download_test_one();
+    //download_test_one();
 
 }
 // predict_btn on click end
