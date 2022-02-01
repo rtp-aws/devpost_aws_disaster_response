@@ -78,6 +78,11 @@ var ctx = canvas.getContext('2d')
 // This was a var and not a const?
 var cameraFeedImg = document.getElementsByClassName('camera_feed')[0]
 
+// AWS Creds
+var bucketRegion = ''
+var identityPoolId = ''
+var albumBucketName = ''
+
 console.log(TOLL147_DAVIS_DR)
 console.log(I40W_MM8)
 console.log(I440_US64_BYPASS)
@@ -99,99 +104,99 @@ function eraseCanvas () {
 }
 // erase_canvas end
 
-    TOLL147_DAVIS_DR.addEventListener('click', button => {
-      console.log('TOLL147_DAVIS_DR: click() %o %o', button, TOLL147_DAVIS_DR)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG'
-      eraseCanvas()
-    }
-    )
+TOLL147_DAVIS_DR.addEventListener('click', button => {
+  console.log('TOLL147_DAVIS_DR: click() %o %o', button, TOLL147_DAVIS_DR)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG'
+  eraseCanvas()
+}
+)
 
-    I40W_MM8.addEventListener('click', button => {
-      console.log('I40W_MM8: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg'
-      eraseCanvas()
-    }
-    )
+I40W_MM8.addEventListener('click', button => {
+  console.log('I40W_MM8: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg'
+  eraseCanvas()
+}
+)
 
-    I440_US64_Bypass.addEventListener('click', button => {
-      console.log('I440_US64_Bypass: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG'
-      eraseCanvas()
-    }
-    )
+I440_US64_BYPASS.addEventListener('click', button => {
+  console.log('I440_US64_Bypass: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG'
+  eraseCanvas()
+}
+)
 
-    I26_BROADWAY.addEventListener('click', button => {
-      console.log('I26_BROADWAY: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg'
-      eraseCanvas()
-    }
-    )
+I26_BROADWAY.addEventListener('click', button => {
+  console.log('I26_BROADWAY: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg'
+  eraseCanvas()
+}
+)
 
-    TOLL147_HOPSON_RD.addEventListener('click', button => {
-      console.log('TOLL147_HOPSON_RD: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG'
-      eraseCanvas()
-    }
-    )
+TOLL147_HOPSON_RD.addEventListener('click', button => {
+  console.log('TOLL147_HOPSON_RD: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG'
+  eraseCanvas()
+}
+)
 
-    TOLL147_NC54.addEventListener('click', button => {
-      console.log('TOLL147_NC54: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG'
-      eraseCanvas()
-    }
-    )
+TOLL147_NC54.addEventListener('click', button => {
+  console.log('TOLL147_NC54: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG'
+  eraseCanvas()
+}
+)
 
-    TOLL54_APEXBBQ.addEventListener('click', button => {
-      console.log('TOLL54_APEXBBQ: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG'
-      eraseCanvas()
-    }
-    )
+TOLL54_APEXBBQ.addEventListener('click', button => {
+  console.log('TOLL54_APEXBBQ: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG'
+  eraseCanvas()
+}
+)
 
-    TOLL540_TOLL147.addEventListener('click', button => {
-      console.log('TOLL540_TOLL147: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG'
-      eraseCanvas()
-    }
-    )
+TOLL540_TOLL147.addEventListener('click', button => {
+  console.log('TOLL540_TOLL147: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG'
+  eraseCanvas()
+}
+)
 
-    TOLL540_NC55.addEventListener('click', button => {
-      console.log('TOLL540_NC55: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG'
-      eraseCanvas()
-    }
-    )
+TOLL540_NC55.addEventListener('click', button => {
+  console.log('TOLL540_NC55: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG'
+  eraseCanvas()
+}
+)
 
-    TOLL540_MCCRIMMON.addEventListener('click', button => {
-      console.log('TOLL540_MCCRIMMON: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg'
-      eraseCanvas()
-    }
-    )
+TOLL540_MCCRIMMON.addEventListener('click', button => {
+  console.log('TOLL540_MCCRIMMON: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg'
+  eraseCanvas()
+}
+)
 
-    I40_DAVIS_DR.addEventListener('click', button => {
-      console.log('I40_DAVIS_DR: click() %o ', button)
-      cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-      eraseCanvas()
-    }
-    )
+I40_DAVIS_DR.addEventListener('click', button => {
+  console.log('I40_DAVIS_DR: click() %o ', button)
+  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+  eraseCanvas()
+}
+)
 
-    // Control is the slider
-    slider.addEventListener('click', button => {
-      console.log('slider: click() value is %o %o', slider.checked, button)
-      if (slider.checked) {
-        cameraFeedImg.style.maxWidth = ''
-        cameraFeedImg.style.maxHeight = ''
-      } else {
-        cameraFeedImg.style.maxWidth = '200px'
-        cameraFeedImg.style.maxHeight = '200px'
-      }
-      eraseCanvas()
-    }
-    )
-    // slider end
+// Control is the slider
+slider.addEventListener('click', button => {
+  console.log('slider: click() value is %o %o', slider.checked, button)
+  if (slider.checked) {
+    cameraFeedImg.style.maxWidth = ''
+    cameraFeedImg.style.maxHeight = ''
+  } else {
+    cameraFeedImg.style.maxWidth = '200px'
+    cameraFeedImg.style.maxHeight = '200px'
+  }
+  eraseCanvas()
+}
+)
+// slider end
 
-  // json version
+
 async function fetchMyConfig () {
   console.log('MyApp: getJSON()')
   return await fetch('/myconfig').then((response) => response.json()).then((responseJson) => {
@@ -207,12 +212,14 @@ async function fetchMyConfig () {
       })
     })
 
-    s3 = new AWS.S3({
+    var s3 = new AWS.S3({
       apiVersion: '2006-03-01',
       params: {
         Bucket: albumBucketName
       }
     })
+
+    console.log('s3: ', s3)
 
     console.log('Region: ', AWS.config.region)
 
