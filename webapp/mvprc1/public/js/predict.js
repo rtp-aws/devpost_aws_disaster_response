@@ -187,11 +187,11 @@ class MvpRc1Predict {
     slider.addEventListener('click', button => {
       console.log('slider: click() value is %o %o', slider.checked, button)
       if (slider.checked) {
-        cameraFeedImg.style.maxWidth = ''
-        cameraFeedImg.style.maxHeight = ''
+        this.cameraFeedImg.style.maxWidth = ''
+        this.cameraFeedImg.style.maxHeight = ''
       } else {
-        cameraFeedImg.style.maxWidth = '200px'
-        cameraFeedImg.style.maxHeight = '200px'
+        this.cameraFeedImg.style.maxWidth = '200px'
+        this.cameraFeedImg.style.maxHeight = '200px'
       }
       this.eraseCanvas()
     }
