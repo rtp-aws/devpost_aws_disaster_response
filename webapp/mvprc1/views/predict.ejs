@@ -347,6 +347,8 @@ function download_test_four() {
 
   link.href = URL.createObjectURL(blob3);
 
+  console.log('link.href is %o', link.href)
+
   link.click();
 
   URL.revokeObjectURL(link.href);  
