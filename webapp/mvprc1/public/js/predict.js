@@ -92,7 +92,6 @@ console.log(ctx)
 console.log(cameraFeedImg)
 console.log()
 console.log()
-addListeners()
 
 // erase the canvas
 function eraseCanvas () {
