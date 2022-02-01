@@ -187,7 +187,8 @@
     Note: When we do not need to specified any url inside a anchor tag then use 
     <a href="javascript:void(0)">Test1</a>
 
-          <a download="hello.txt" href='#' id="link">Download</a>
+    Note: The above note does not work for this example
+    ie. this will not work:
           <a download="hello.txt" href='javascript:void(0)' id="link">Download</a>
 
   -->
@@ -311,9 +312,20 @@ function download_test_three() {
   let blob = new Blob(["Hello, world!"], {type: 'text/plain'});
 
   link.href = URL.createObjectURL(blob);
-  console.log(blobToString(a_blob0))
+  console.log(blobToString(a_blob))
 } // download test end
 
+function Predict() {
+    console.log("predict_btn: click() ");
+
+    //download_test_one();
+    //download_test_two();
+    download_test_three();
+    //download_test_one();
+    //download_test_one();
+
+}
+// predict_btn on click end
 
 
 
@@ -360,17 +372,6 @@ function Draw() {
   ctx.stroke()
 }
 
-function Predict() {
-    console.log("predict_btn: click() ");
-
-    //download_test_one();
-    //download_test_two();
-    download_test_three();
-    //download_test_one();
-    //download_test_one();
-
-}
-// predict_btn on click end
 
 
 

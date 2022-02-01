@@ -64,7 +64,6 @@ const I26_BROADWAY = document.getElementById('I26_BROADWAY')
 const TOLL147_HOPSON_RD = document.getElementById('TOLL147_HOPSON_RD')
 const TOLL147_NC54 = document.getElementById('TOLL147_NC54')
 const TOLL54_APEXBBQ = document.getElementById('TOLL54_APEXBBQ')
-
 const TOLL540_TOLL147 = document.getElementById('TOLL540_TOLL147')
 const TOLL540_NC55 = document.getElementById('TOLL540_NC55')
 const TOLL540_MCCRIMMON = document.getElementById('TOLL540_MCCRIMMON')
@@ -200,7 +199,6 @@ slider.addEventListener('click', button => {
 }
 )
 // slider end
-
 
 async function fetchMyConfig () {
   console.log('MyApp: getJSON()')
