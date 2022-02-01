@@ -106,7 +106,7 @@ class MvpRc1Predict {
   // erase_canvas end
 
   addListeners () {
-    this.TOLL147_DAVIS_DR.addEventListener('click', button => {
+    TOLL147_DAVIS_DR.addEventListener('click', button => {
       console.log('TOLL147_DAVIS_DR: click() %o %o', button, this.TOLL147_DAVIS_DR)
       this.cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG'
       this.eraseCanvas()
