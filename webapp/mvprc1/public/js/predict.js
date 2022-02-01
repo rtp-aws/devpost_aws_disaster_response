@@ -65,6 +65,11 @@ const TOLL147_HOPSON_RD = document.getElementById('TOLL147_HOPSON_RD')
 const TOLL147_NC54 = document.getElementById('TOLL147_NC54')
 const TOLL54_APEXBBQ = document.getElementById('TOLL54_APEXBBQ')
 
+const TOLL540_TOLL147 = document.getElementById('TOLL540_TOLL147')
+const TOLL540_NC55 = document.getElementById('TOLL540_NC55')
+const TOLL540_MCCRIMMON = document.getElementById('TOLL540_MCCRIMMON')
+const I40_DAVIS_DR = document.getElementById('I40_DAVIS_DR')
+
 // I had these original as global const.  I wonder how to do this
 // with the pedantic class member variables above?
 const slider = document.getElementById('slider')
