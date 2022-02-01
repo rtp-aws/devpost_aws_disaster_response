@@ -541,6 +541,42 @@ function download_test_six() {
 } // download test end
 
 
+
+function download_test_seven() {
+  console.log('download_test_seven()')
+
+  // From
+  // https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin
+
+  // test six did not work.
+  const imageUrl = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg";
+  const container = document.querySelector(".the_body");
+
+  function loadImage(url) {
+    const image = new Image(200, 200);
+    image.addEventListener("load",
+      () => container.prepend(image)
+    );
+
+    image.addEventListener("error", () => {
+      const errMsg = document.createElement("output");
+      errMsg.value = `Error loading image at ${url}`;
+      container.append(errMsg);
+    });
+
+    image.crossOrigin = "anonymous";
+    image.alt = "";
+    image.src = url;
+  }
+
+  loadImage(imageUrl);
+
+
+} // download test end
+
+
+
+
 function Predict() {
     console.log("predict_btn: click() ");
 
@@ -548,8 +584,9 @@ function Predict() {
     //download_test_two();
     //download_test_three();
     //download_test_four();
-    // download_test_five();
-    download_test_six();
+    //download_test_five();
+    //download_test_six();
+    download_test_seven();
 
 }
 // predict_btn on click end
