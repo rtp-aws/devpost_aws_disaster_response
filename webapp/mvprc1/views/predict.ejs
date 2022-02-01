@@ -343,7 +343,7 @@ function download_test_four() {
 
   let blob0 = new Blob(["Hello, world!"], {type: 'text/plain'})
 
-  link.href = URL.createObjectURL(blob)
+  link.href = URL.createObjectURL(blob0)
   console.log(blobToString(blob))
 
   // We can also create a link dynamically in JavaScript and simulate a 
@@ -357,7 +357,7 @@ function download_test_four() {
 
   let blob1 = new Blob(['Hello, world!'], {type: 'text/plain'});
 
-  link.href = URL.createObjectURL(blob);
+  link.href = URL.createObjectURL(blob1);
 
   link.click();
 
