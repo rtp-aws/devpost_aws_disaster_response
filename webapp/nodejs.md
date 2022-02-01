@@ -5,6 +5,10 @@
 
 Steps to install
 
+I am using an older version of node-fetch, since I am using fetch in node.
+Supposedly there is a promise method to do this, since this is a
+plain javascript api.
+
 ```
 mkdir goes_webapp
 cd goes_webapp
@@ -15,7 +19,8 @@ npm i ejs
 sudo npm install -g browserify
 npm install aws-sdk
 npm install uuid
-
+npm install node-fetch@2
+npm install canvas
 
 ```
 
@@ -122,6 +127,10 @@ Type `:resize 20%` to resize the current screen to be 30% of total available spa
 https://nodejs.org/en/download/current/
 ```
 
+
+# Nodejs url
+
+https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
 
 
 

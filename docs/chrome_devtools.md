@@ -24,3 +24,16 @@ Type `ctrl shift p`
 * If the red button is active, it is profiling the code
 * Exercise the code.  When done, click the red button.
 * Click the source file of interest.  It will show `blue` for code in use and `red` for unused code.  
+
+
+# colors represent
+
+The colors represent the areas of elements corresponding to the CSS box-model.
+
+* Blue is the content
+* Green is the padding
+* Orange is the border
+* Red is the margin
+
+
+
