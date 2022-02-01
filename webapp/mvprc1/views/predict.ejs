@@ -328,24 +328,7 @@ function download_test_three() {
 function download_test_four() {
   console.log('download_test_four()')
 
-  // from this website
-  // https://javascript.info/blob
-
-  // A Blob can be easily used as a URL for <a>, <img> or other tags, 
-  // to show its contents.
-  //
-  // Thanks to type, we can also download/upload Blob objects, and the 
-  // type naturally becomes Content-Type in network requests.
-  //
-  // Let’s start with a simple example. By clicking on a link you 
-  // download a dynamically-generated Blob with hello world contents 
-  // as a file:
-
-  let blob2 = new Blob(["Hello, world!"], {type: 'text/plain'})
-
-  link.href = URL.createObjectURL(blob2)
-  console.log("blob 2 is %0 ", blobToString(a_blob2))
-
+  
   // We can also create a link dynamically in JavaScript and simulate a 
   // click by link.click(), then downl  oad starts automatically.
   //
