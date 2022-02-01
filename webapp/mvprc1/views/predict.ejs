@@ -297,8 +297,8 @@ function download_test_two() {
   // character in a string, but we can make a new corrected string.
 
   /* These requiree in this class. */
-  console.log("blob 0 is %0 ", blobToString(a_blob0))
-  console.log("blob 1 is %0 ", blobToString(a_blob1))
+  console.log("blob 0 is %o ", blobToString(a_blob0))
+  console.log("blob 1 is %o ", blobToString(a_blob1))
 } // download test end
 
 
@@ -328,6 +328,11 @@ function download_test_three() {
 function download_test_four() {
   console.log('download_test_four()')
 
+
+  // TLDR. This will automatically download a blob as a file.  
+  // The file will be named "hello.txt" and it will contain  
+  // one line which says 'Hello from blob!'.
+
   
   // We can also create a link dynamically in JavaScript and simulate a 
   // click by link.click(), then downl  oad starts automatically.
@@ -338,7 +343,7 @@ function download_test_four() {
   let link = document.createElement('a');
   link.download = 'hello.txt';
 
-  let blob3 = new Blob(['Hello, world!'], {type: 'text/plain'});
+  let blob3 = new Blob(['Hello from blob!'], {type: 'text/plain'});
 
   link.href = URL.createObjectURL(blob3);
 
@@ -351,7 +356,7 @@ function download_test_four() {
   //
   // That’s what the value of link.href looks like:
 
-  console.log("blob 3 is %0 ", blobToString(blob3))
+  console.log("blob 3 is %o ", blobToString(blob3))
 
 
 } // download test end
