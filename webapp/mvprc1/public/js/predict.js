@@ -76,7 +76,7 @@ class MvpRc1Predict {
     // const predictBtn = document.getElementById('predict-btn')
 
     // This was a var and not a const?
-    var ctx = this.canvas.getContext('2d')
+    var ctx = canvas.getContext('2d')
 
     // The camera feed img
     // This was a var and not a const?
