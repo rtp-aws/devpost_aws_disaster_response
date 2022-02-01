@@ -297,7 +297,8 @@ function download_test_two() {
   // character in a string, but we can make a new corrected string.
 
   /* These requiree in this class. */
-  console.log(blobToString(a_blob0))
+  console.log("blob 0 is %0 ", blobToString(a_blob0))
+  console.log("blob 1 is %0 ", blobToString(a_blob1))
 } // download test end
 
 
@@ -340,7 +341,7 @@ function download_test_four() {
   // download a dynamically-generated Blob with hello world contents 
   // as a file:
 
-  let blob = new Blob(["Hello, world!"], {type: 'text/plain'})
+  let blob0 = new Blob(["Hello, world!"], {type: 'text/plain'})
 
   link.href = URL.createObjectURL(blob)
   console.log(blobToString(blob))
@@ -354,7 +355,7 @@ function download_test_four() {
   let link = document.createElement('a');
   link.download = 'hello.txt';
 
-  let blob = new Blob(['Hello, world!'], {type: 'text/plain'});
+  let blob1 = new Blob(['Hello, world!'], {type: 'text/plain'});
 
   link.href = URL.createObjectURL(blob);
 
@@ -367,6 +368,8 @@ function download_test_four() {
   //
   // That’s what the value of link.href looks like:
 
+  console.log("blob 0 is %0 ", blobToString(a_blob0))
+  console.log("blob 1 is %0 ", blobToString(a_blob1))
 
 
 } // download test end
