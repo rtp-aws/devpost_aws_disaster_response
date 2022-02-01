@@ -96,7 +96,7 @@ class MvpRc1Predict {
     console.log(cameraFeedImg)
     console.log()
     console.log()
-    addListeners()
+    this.addListeners()
   }
 
   // erase the canvas
