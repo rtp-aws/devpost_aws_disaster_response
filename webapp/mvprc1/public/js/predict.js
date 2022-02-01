@@ -241,4 +241,4 @@ class MvpRc1Predict {
 
 // Build class with some of these specified?
 const mvprc1predict = new MvpRc1Predict()
-mvprc1predict.do_my_init()
+mvprc1predict.doMyInit()
