@@ -150,6 +150,12 @@
 
     <!-- crossorigin="anonymous" -->
     <!--    crossorigin="https://mvprc1.rtp-aws.org/predict.ejs" -->
+    <!-- camera urls changed
+        old way 
+         https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG
+        new way 
+         https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=HillsboroughSt_BlueRidgeRd.jpg&t=1643830561936
+    -->
 
     <img id="camera_feed" 
          class="camera_feed" 
@@ -159,7 +165,7 @@
                 max-width: 200px;
                 max-height: 200px;
                 transition: background-color 300ms;"
-         src="https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG">
+         src="https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=HillsboroughSt_BlueRidgeRd.jpg&t=1643830561936">
     <canvas id='my_canvas'></canvas>
 
   </div>
