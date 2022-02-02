@@ -402,5 +402,14 @@ problem and understandable.
 However, it did give me the opportunity to learn about CORS and javascript/Node.
 That is a good thing.  I will go to plan C and use images in S3 from raw uploads.
 
+I was reading and found the following documents
+
+* https://www.atmos.washington.edu/~cliff/Roadway2.htm
+* https://www.weather.gov/phi/winter1
+* https://tc.copernicus.org/preprints/tc-2021-259/tc-2021-259.pdf
+
+Daily weather
+
+https://www.weather.gov/wrh/Climate?wfo=rah
 
 
