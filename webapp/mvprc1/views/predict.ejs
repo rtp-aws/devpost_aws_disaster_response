@@ -50,8 +50,8 @@
       <label for='ver-select'>Choose a version:</label>
 
       <select name='version' id='ver-select' onchange='onClickVersion(this)'>
-          <option value="">--Please choose an option--</option>
-          <option value="0" selected>zero</option>
+          <option value="" selected>--Please choose an option--</option>
+          <option value="0">zero</option>
           <option value="1">one</option>
           <option value="2">two</option>
           <option value="3">three</option>
@@ -64,7 +64,7 @@
 <script>
 
 function onClickVersion(item) {
-  Console.log(item)
+  console.log(item)
 
   var selectedItem = item.options[item.selectedIndex]
   
