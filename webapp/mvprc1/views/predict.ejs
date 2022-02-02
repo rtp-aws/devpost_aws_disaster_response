@@ -215,7 +215,32 @@ function onClickVersion(item) {
   <div>
    <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
    <input id='predict-btn' type='button' value='Predict' onclick='Predict()'/>
+
+  <div>
+
+      <label for='testy-select'>Choose a test:</label>
+
+      <select name='testy' id='testy-select' onchange='onClickTesty(this)'>
+          <option value="" >--Please choose an option--</option>
+          <option value="0">zero</option>
+          <option value="1">one</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+          <option value="4">four</option>
+          <option value="5">five</option>
+      </select>
+
   </div>
+
+
+
+
+
+  </div>
+
+
+
+
 
   <div>
 
@@ -657,13 +682,47 @@ function download_test_seven() {
 function Predict() {
     console.log("predict_btn: click() ");
 
-    //download_test_one();
-    //download_test_two();
-    //download_test_three();
-    //download_test_four();
-    //download_test_five();
-    //download_test_six();
-    download_test_seven();
+
+  let item = document.getElementById('testy');
+
+  var selectedItem = item.options[item.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '1':
+      console.log('one')
+      download_test_one();
+      break;
+    case '2':
+      console.log('two')
+      download_test_two();
+      break;
+    case '3':
+      console.log('three')
+      download_test_three();
+      break;
+    case '4':
+      console.log('four')
+      download_test_four();
+      break;
+    case '5':
+      console.log('five')
+      download_test_five();
+      break;
+    case '6':
+      console.log('six')
+      download_test_six();
+      break;
+    case '7':
+      console.log('seven')
+      download_test_seven();
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+
 
 }
 // predict_btn on click end
@@ -712,6 +771,43 @@ function Draw() {
   ctx.strokeStyle = '#00ff88'
   ctx.stroke()
 }
+
+
+
+
+function onClickTesty(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '0':
+      console.log('zero')
+      break;
+    case '1':
+      console.log('one')
+      break;
+    case '2':
+      console.log('two')
+      break;
+    case '3':
+      console.log('three')
+      break;
+    case '4':
+      console.log('four')
+      break;
+    case '5':
+      console.log('five')
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
 
 
 
