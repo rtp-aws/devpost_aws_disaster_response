@@ -412,4 +412,11 @@ Daily weather
 
 https://www.weather.gov/wrh/Climate?wfo=rah
 
+## 20220202
+
+Stopped the cronjob.  No upcoming snow.  I got a response from NCDOT that
+camera api was changing.  I did not see any errors as of 10am when I
+stopped the webscrape.  I figure I have enough data at this point 
+anyway.
+
 
