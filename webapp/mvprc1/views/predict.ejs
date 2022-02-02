@@ -47,9 +47,9 @@
 
   <div>
 
-      <label for="ver-select">Choose a version:</label>
+      <label for='ver-select'>Choose a version:</label>
 
-      <select name="version" id="ver-select">
+      <select name='version' id='ver-select' onchange='onClickVersion(this)'>
           <option value="">--Please choose an option--</option>
           <option value="0" selected>zero</option>
           <option value="1">one</option>
@@ -63,7 +63,12 @@
 
 <script>
 
-function onClickVersion(e) {
+function onClickVersion(item) {
+  Console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  
+  alert("selected item is :" + selectedItem.value)
 
   var a = document.getElementById('face.ejs');
   a.click();
