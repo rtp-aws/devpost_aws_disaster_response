@@ -74,30 +74,35 @@ function onClickVersion(item) {
     case '0':
       console.log('zero')
       // change pages
-      window.location.replace('bridge.ejs');
+      window.location.replace('predict.ejs');
       break;
     case '1':
       console.log('one')
       // change pages
-      window.location.replace('road.ejs');
+      window.location.replace('predict1.ejs');
       break;
     case '2':
       console.log('two')
       // change pages
-      window.location.replace('both.ejs');
+      window.location.replace('predict2.ejs');
       break;
     case '3':
       console.log('three')
       // change pages
-      window.location.replace('odd.ejs');
+      window.location.replace('predict3.ejs');
       break;
     case '4':
       console.log('four')
       // change pages
-      window.location.replace('face.ejs');
+      window.location.replace('predict4.ejs');
+      break;
+    case '5':
+      console.log('five')
+      // change pages
+      window.location.replace('predict5.ejs');
       break;
     default:
-      console.log('Sorry, we are broken')
+      alert('Sorry, we are broken')
   }
 
 };

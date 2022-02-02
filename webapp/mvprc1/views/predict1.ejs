@@ -43,7 +43,78 @@
 
 <div class="the_body">
 
-	<H1> MVP-RC1 </H1>
+	<H1> Predict </H1>
+
+  <div>
+
+      <label for='ver-select'>Choose a version:</label>
+
+      <select name='version' id='ver-select' onchange='onClickVersion(this)'>
+          <option value="" >--Please choose an option--</option>
+          <option value="0">zero</option>
+          <option value="1">one</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+          <option value="4">four</option>
+          <option value="5">five</option>
+      </select>
+
+  </div>
+
+<script>
+
+function onClickVersion(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '0':
+      console.log('zero')
+      // change pages
+      window.location.replace('predict.ejs');
+      break;
+    case '1':
+      console.log('one')
+      // change pages
+      window.location.replace('predict1.ejs');
+      break;
+    case '2':
+      console.log('two')
+      // change pages
+      window.location.replace('predict2.ejs');
+      break;
+    case '3':
+      console.log('three')
+      // change pages
+      window.location.replace('predict3.ejs');
+      break;
+    case '4':
+      console.log('four')
+      // change pages
+      window.location.replace('predict4.ejs');
+      break;
+    case '5':
+      console.log('five')
+      // change pages
+      window.location.replace('predict5.ejs');
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
+
+
+</script>
+
+<!-- ---------------------------------------------------------------- -->
+
+
 
   <div>
     <H2> Cameras for Prediction </H2>
@@ -655,4 +726,15 @@ function Draw() {
 -->
 
 </body>
+<footer>
+    <a href="http://www.vim.org/" >
+        <img src="imgs/vim_header.png" alt="logo" class="logo">
+    </a>
+    <a href="https://developer.chrome.com/docs/devtools/" >
+        <img src="imgs/devtools-96x48.png" alt="logo" class="logo">
+    </a>
+    <a href="https://atom.io/" >
+        <img src="imgs/atom-logo-48x48.png" alt="logo" class="logo">
+    </a>
+</footer>
 </html>
