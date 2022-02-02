@@ -50,7 +50,7 @@
       <label for='ver-select'>Choose a version:</label>
 
       <select name='version' id='ver-select' onchange='onClickVersion(this)'>
-          <option value="" selected>--Please choose an option--</option>
+          <option value="" >--Please choose an option--</option>
           <option value="0">zero</option>
           <option value="1">one</option>
           <option value="2">two</option>
@@ -68,10 +68,38 @@ function onClickVersion(item) {
 
   var selectedItem = item.options[item.selectedIndex]
   
-  alert("selected item is :" + selectedItem.value)
+  //alert("selected item is :" + selectedItem.value)
 
-  // change pages
-  window.location.replace('face.ejs');
+  switch (selectedItem.value) {
+    case '0':
+      console.log('zero')
+      // change pages
+      window.location.replace('bridge.ejs');
+      break;
+    case '1':
+      console.log('one')
+      // change pages
+      window.location.replace('road.ejs');
+      break;
+    case '2':
+      console.log('two')
+      // change pages
+      window.location.replace('both.ejs');
+      break;
+    case '3':
+      console.log('three')
+      // change pages
+      window.location.replace('odd.ejs');
+      break;
+    case '4':
+      console.log('four')
+      // change pages
+      window.location.replace('face.ejs');
+      break;
+    default:
+      console.log('Sorry, we are broken')
+  }
+
 };
 
 
