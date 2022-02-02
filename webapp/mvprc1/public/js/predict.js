@@ -4,51 +4,6 @@ var AWS = require('aws-sdk')
 // requires npm install node-fetch@2
 const fetch = require('node-fetch')
 
-// To get tools.js
-// const tools = require('./tools.js')
-
-// function data_uri_to_blob(dataURI) {
-//     var binary = atob(dataURI.split(',')[1]);
-//     var array = [];
-//     for (var i = 0; i < binary.length; i++) {
-//         array.push(binary.charCodeAt(i));
-//     }
-//     return new Blob([new Uint8Array(array)],{
-//         type: 'image/png'
-//     });
-// }
-
-// function get_id() {
-//     var newDate = new Date();
-//     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
-// }
-
-// // function loadXHR(url) {
-
-// //     return new Promise(function(resolve, reject) {
-// //         try {
-// //             var xhr = new XMLHttpRequest();
-// //             xhr.open("GET", url);
-// //             xhr.responseType = "blob";
-// //             xhr.onerror = function() {
-// //                 reject("Network error.")
-// //             }
-// //             ;
-// //             xhr.onload = function() {
-// //                 if (xhr.status === 200) {
-// //                     resolve(xhr.response)
-// //                 } else {
-// //                     reject("Loading error:" + xhr.statusText)
-// //                 }
-// //             }
-// //             ;
-// //             xhr.send();
-// //         } catch (err) {
-// //             reject(err.message)
-// //         }
-// //     }
-// //     );
-// // }
 
 /// //////////////////////////////////////////////////////////////
 // PREDICT radio buttons
@@ -82,6 +37,8 @@ var ctx = canvas.getContext('2d')
 // This was a var and not a const?
 var cameraFeedImg = document.getElementsByClassName('camera_feed')[0]
 
+const baseCameraURL = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename='
+
 // AWS Creds
 var bucketRegion = ''
 var identityPoolId = ''
@@ -110,77 +67,77 @@ function eraseCanvas () {
 
 TOLL147_DAVIS_DR.addEventListener('click', button => {
   console.log('TOLL147_DAVIS_DR: click() %o %o', button, TOLL147_DAVIS_DR)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG'
+  cameraFeedImg.src = baseCameraURL + 'Toll147_DavisDr.JPG'
   eraseCanvas()
 }
 )
 
 I40W_MM8.addEventListener('click', button => {
   console.log('I40W_MM8: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40W_mm8.jpg'
+  cameraFeedImg.src = baseCameraURL + 'I40W_mm8.jpg'
   eraseCanvas()
 }
 )
 
 I440_US64_BYPASS.addEventListener('click', button => {
   console.log('I440_US64_Bypass: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG'
+  cameraFeedImg.src = baseCameraURL + 'I440_I87.JPG'
   eraseCanvas()
 }
 )
 
 I26_BROADWAY.addEventListener('click', button => {
   console.log('I26_BROADWAY: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I26_Broadway.jpg'
+  cameraFeedImg.src = baseCameraURL + 'I26_Broadway.jpg'
   eraseCanvas()
 }
 )
 
 TOLL147_HOPSON_RD.addEventListener('click', button => {
   console.log('TOLL147_HOPSON_RD: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG'
+  cameraFeedImg.src = baseCameraURL + 'Toll147_HopsonRd.JPG'
   eraseCanvas()
 }
 )
 
 TOLL147_NC54.addEventListener('click', button => {
   console.log('TOLL147_NC54: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG'
+  cameraFeedImg.src = baseCameraURL + 'Toll147_NC54.JPG'
   eraseCanvas()
 }
 )
 
 TOLL54_APEXBBQ.addEventListener('click', button => {
   console.log('TOLL54_APEXBBQ: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG'
+  cameraFeedImg.src = baseCameraURL + 'Toll540_Apex-BBQ.JPG'
   eraseCanvas()
 }
 )
 
 TOLL540_TOLL147.addEventListener('click', button => {
   console.log('TOLL540_TOLL147: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Toll147.JPG'
+  cameraFeedImg.src = baseCameraURL + 'Toll540_Toll147.JPG'
   eraseCanvas()
 }
 )
 
 TOLL540_NC55.addEventListener('click', button => {
   console.log('TOLL540_NC55: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC55.JPG'
+  cameraFeedImg.src = baseCameraURL + 'Toll540_NC55.JPG'
   eraseCanvas()
 }
 )
 
 TOLL540_MCCRIMMON.addEventListener('click', button => {
   console.log('TOLL540_MCCRIMMON: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_McCrimmonRd.jpg'
+  cameraFeedImg.src = baseCameraURL + 'Toll540_McCrimmonRd.jpg'
   eraseCanvas()
 }
 )
 
 I40_DAVIS_DR.addEventListener('click', button => {
   console.log('I40_DAVIS_DR: click() %o ', button)
-  cameraFeedImg.src = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+  cameraFeedImg.src = baseCameraURL + 'I40_DavisDr.jpg'
   eraseCanvas()
 }
 )
