@@ -214,13 +214,13 @@ function onClickVersion(item) {
 
   <div>
    <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
-   <input id='predict-btn' type='button' value='Predict' onclick='Predict()'/>
+   <input id='download-btn' type='button' value='Download' onclick='Download()'/>
 
   <div>
 
       <label for='testy-select'>Choose a test:</label>
 
-      <select name='testy' id='testy-select' onchange='onClickTesty(this)'>
+      <select name='testy' id='testy-select' >
           <option value="1" selected>one</option>
           <option value="2">two</option>
           <option value="3">three</option>
@@ -677,11 +677,11 @@ function download_test_seven() {
 
 
 
-function Predict() {
-    console.log("predict_btn: click() ");
+function Download() {
+    console.log("download_btn: click() ");
 
 
-  let item = document.getElementById('testy');
+  let item = document.getElementById('testy-select');
 
   var selectedItem = item.options[item.selectedIndex]
   
@@ -770,40 +770,6 @@ function Draw() {
   ctx.stroke()
 }
 
-
-
-
-function onClickTesty(item) {
-  console.log(item)
-
-  var selectedItem = item.options[item.selectedIndex]
-  
-  //alert("selected item is :" + selectedItem.value)
-
-  switch (selectedItem.value) {
-    case '0':
-      console.log('zero')
-      break;
-    case '1':
-      console.log('one')
-      break;
-    case '2':
-      console.log('two')
-      break;
-    case '3':
-      console.log('three')
-      break;
-    case '4':
-      console.log('four')
-      break;
-    case '5':
-      console.log('five')
-      break;
-    default:
-      alert('Sorry, we are broken')
-  }
-
-};
 
 
 
