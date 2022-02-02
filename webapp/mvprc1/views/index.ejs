@@ -47,35 +47,61 @@
 
 
   <div>
-    <p> This app has dual use.  Intially it was used to examine the cameras in order to find
-        suitable cameras for training and prediction data.<br>
+    <p> 
+        This app has dual use.  Intially it was used to examine the cameras in order to find
+        suitable cameras for training and prediction data.  Later it was setup to demo
+        the use of ML to identify potential bridges with black ice.
+    </p>
+  </div>
 
-        Soon after it was learned that the cameras moved viewpoints.  ie a camera looking
-        at a bridge intially could be pointed at a roadway later.  Cameras which always
-        look at a bridge do not always have the same view point.<br>
+  <div>
+    <p> 
+        Soon after it was learned that the cameras moved viewpoints.  ie. a camera looking
+        at a bridge intially could be pointed at a roadway later.  Furthermore, cameras which always
+        look at a bridge do not always have the same view point.
+    </p>
+  </div>
 
+  <div>
+    <p> 
         In addition to different camera positions, the cameras also vary in quality.  Some
-        cameras are of high resolution and others are of low resolution.<br>
+        cameras are of high resolution and others are of low resolution.
+    </p>
+  </div>
 
+  <div>
+    <p> 
         Some cameras are lit at night and as expected most are not.  Web scraping of camera 
         images were configured for Dawn to Dusk.  Some initial cameras chosen at random
         were later omitted because of constant labels on the image.  Other cameras had 
         periodic moisture or sun glare on the lens.  Still others would not report an image
         at all.  Instead a blank screen would be returned with a text overlay saving 
-        "Camera Image Unavailable"<br>
+        "Camera Image Unavailable"
+    </p>
+  </div>
+
+  <div>
+    <p> 
 
         Camera updates was another issue.  Some cameras would update every five minutes and others
         would update on a longer interval.  A tool was written to delete duplicate images in this
-        case. <br>
+        case. 
+    </p>
+  </div>
 
+  <div>
+    <p> 
         Once cameras were identified as cameras of interest they were moved to the <b>Predict</b> page.
         On that page the goal was to use these images live for prediction.  To do so, the plan was
         to use the current image for prediction.  The plan was to convert the image to a blob, upload
         the image to S3 and then provide it to the models for analysis.  However, it was discovered
         late in the game that there was no way to do this due to CORS policy.   I tried considerably
         to do so.  The silver lining to this problem was I learned additional Javascript HTML and Node.js.
-        <br>
+    </p>
+  </div>
 
+  <div>
+    <p> 
         Consquently, use the <b>Bridge</b>, <b>Road</p>, <b>Both</p>, <b>Odd</p> pages simply to get an idea
         what the data looks like for sampled data.  The images are still <i>live</i> on the predict0 page.
 
@@ -85,12 +111,13 @@
 
 
   <div>
-    <p> Later a prediction page was added.  However, as mentioned above, the prediction page changed from
+    <p> 
+        Later a prediction page was added.  However, as mentioned above, the prediction page changed from
         predict on the live image to predict on a previous sampled image.  Of the thousands of images
         a subset was set aside from the test data to be in a bucket for this use.
     </p>
   </div>
-  
+
 
 
 
