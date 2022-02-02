@@ -26,43 +26,44 @@ const TOLL147_HOPSON_RD = document.getElementById("TOLL147_HOPSON_RD");
 const TOLL147_NC54 = document.getElementById("TOLL147_NC54");
 const TOLL54_APEXBBQ = document.getElementById("TOLL54_APEXBBQ");
 
+const baseCameraURL = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename='
 
 
 I40_MM53.addEventListener('click', button => {
  console.log("I40_MM53: click() ");
- camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm53.jpg"
+ camera_feed_both_img.src = baseCameraURL + "I40_mm53.jpg"
 })
 
 BUS40_MACY.addEventListener('click', button => {
   console.log("BUS40_MACY: click() ");
-  camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_MacyGrove.jpg"
+  camera_feed_both_img.src = baseCameraURL + "Bus40_MacyGrove.jpg"
 })
 
 
 NC147_US15501.addEventListener('click', button => {
   console.log("NC147_US15501: click() ");
-  camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=NC147_15501.JPG"
+  camera_feed_both_img.src = baseCameraURL + "NC147_15501.JPG"
 
 })
 
 US52_UNIV.addEventListener('click', button => {
  console.log("US52_UNIV: click() ");
- camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=US52_Univ.jpg"
+ camera_feed_both_img.src = baseCameraURL + "US52_Univ.jpg"
 })
 
 TOLL147_HOPSON_RD.addEventListener('click', button => {
   console.log("TOLL147_HOPSON_RD: click() ");
-  camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_HopsonRd.JPG"
+  camera_feed_both_img.src = baseCameraURL + "Toll147_HopsonRd.JPG"
 })
 
 TOLL147_NC54.addEventListener('click', button => {
   console.log("TOLL147_NC54: click() ");
-  camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_NC54.JPG"
+  camera_feed_both_img.src = baseCameraURL + "Toll147_NC54.JPG"
 })
 
 TOLL54_APEXBBQ.addEventListener('click', button => {
   console.log("TOLL54_APEXBBQ: click() ");
-  camera_feed_both_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG"
+  camera_feed_both_img.src = baseCameraURL + "Toll540_Apex-BBQ.JPG"
 })
 
 

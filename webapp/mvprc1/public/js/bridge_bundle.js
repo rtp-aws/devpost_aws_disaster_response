@@ -19,20 +19,21 @@ class MvpRc1Bridge {
 const i85_churton = document.getElementById("i85_churton");
 const BUS40_SALEM = document.getElementById("BUS40_SALEM");
 
+const baseCameraURL = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename='
 
 
 
 
 i85_churton.addEventListener('click', button => {
   console.log("i85_churton: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I85_Churton.JPG"
+  camera_feed_bridge_img.src = baseCameraURL + "I85_Churton.JPG"
 })
 
 
 
 BUS40_SALEM.addEventListener('click', button => {
   console.log("BUS40_SALEM: click() ");
-  camera_feed_bridge_img.src = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Bus40_SalemLake.jpg"
+  camera_feed_bridge_img.src = baseCameraURL + "Bus40_SalemLake.jpg"
 })
 
 
