@@ -386,6 +386,15 @@ function downloadTestOne (value) {
     const myImage = new Image()
     myImage.src = objectURL
     document.getElementById('predict_img').appendChild(myImage)
+
+
+    // NOTE: Hmm, can I use test 3 method to download the new blob?
+    link.href = URL.createObjectURL(blob);
+    console.log('link.href is %o', link.href)
+    link.click();
+    URL.revokeObjectURL(link.href);  
+
+
   }
   )
 } // download test end
