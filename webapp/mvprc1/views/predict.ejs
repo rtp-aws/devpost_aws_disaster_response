@@ -7,7 +7,9 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <link rel="stylesheet" type="text/css" href="css/stylesnav.css">
 <link rel="manifest" href="manifest.json" >
+
 <script src="js/predict_bundle.js" defer></script>
+<script src="js/aws-sdk.js"></script>
 <meta charset="UTF-8">
 
 <title>Icy Bridge Detector</title>
@@ -551,6 +553,80 @@ function Draw() {
 
 
 
+async function fetchMyConfig () {
+  console.log('MyApp: getJSON()')
+  return await fetch('/myconfig').then((response) => response.json()).then((responseJson) => {
+    bucketRegion = responseJson.bucketRegion
+    identityPoolId = responseJson.identityPoolId
+    albumBucketName = responseJson.albumBucketName
+    //console.log('region: %s  poolId: %s  bucket: %s', bucketRegion, identityPoolId, albumBucketName)
+
+    AWS.config.update({
+      region: bucketRegion,
+      credentials: new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: identityPoolId
+      })
+    })
+
+    var s3 = new AWS.S3({
+      apiVersion: '2006-03-01',
+      params: {
+        Bucket: albumBucketName
+      }
+    })
+
+    console.log('s3: ', s3)
+
+    console.log('Region: ', AWS.config.region)
+
+    return responseJson
+  }
+  ) // then END
+} // fetchMyConfig() END
+
+
+
+async function doMyInit () {
+  console.log('MyApp: do_init()')
+
+  var msg = await fetchMyConfig()
+  console.log(msg)
+}
+// doMyInit() END
+
+
+function uploadBlob(blobData) {
+    // hack
+    console.log('hook to see if we upload to s3');
+    //var blobData = this.the_blob;
+    var fileName = "pix." + get_id() + ".png";
+    var params = {
+        Key: fileName,
+        ContentType: 'image/png',
+        Body: blobData
+    };
+
+    this.s3.upload(params, function(err, data) {
+        console.log(data);
+        console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+        var params = {
+            Image: {
+                S3Object: {
+                    Bucket: this.albumBucketName,
+                    Name: fileName
+                }
+            },
+            Attributes: ["ALL"]
+        };
+    })
+} 
+// uploadBlob() end
+
+
+
+
+doMyInit()
 
 
 
