@@ -328,7 +328,14 @@ function onClickVersion(item) {
 
 <script>
 
- function blobToString (b) {
+// AWS Creds
+var bucketRegion = ''
+var identityPoolId = ''
+var albumBucketName = ''
+
+
+
+function blobToString (b) {
    var u
    var x
    u = URL.createObjectURL(b)
@@ -338,7 +345,7 @@ function onClickVersion(item) {
    x.send();
    URL.revokeObjectURL(u);
    return x.responseText;
- }
+}
 
 function uploadBlob(blobData) {
     // hack
@@ -351,14 +358,14 @@ function uploadBlob(blobData) {
         Body: blobData
     };
 
-    this.s3.upload(params, function(err, data) {
+    s3.upload(params, function(err, data) {
         console.log(data);
         console.log(err ? 'ERROR!' : 'UPLOADED.');
 
         var params = {
             Image: {
                 S3Object: {
-                    Bucket: this.albumBucketName,
+                    Bucket: albumBucketName,
                     Name: fileName
                 }
             },
