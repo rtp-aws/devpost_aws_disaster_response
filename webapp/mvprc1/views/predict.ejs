@@ -619,18 +619,18 @@ async function fetchMyConfig () {
 
     console.log('Region: ', AWS.config.region)
 
-    return responseJson
+    return s3
   }
   ) // then END
 } // fetchMyConfig() END
 
+var s3
 
-
-async function doMyInit () {
+async function doMyS3Init () {
   console.log('MyApp: do_init()')
 
-  var msg = await fetchMyConfig()
-  console.log(msg)
+  var s3 = await fetchMyConfig()
+  //console.log(msg)
 }
 // doMyInit() END
 
@@ -638,7 +638,7 @@ async function doMyInit () {
 
 
 
-doMyInit()
+s3 = doMyS3Init()
 
 
 

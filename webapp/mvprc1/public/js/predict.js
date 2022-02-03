@@ -225,11 +225,6 @@ function uploadBlob(blobData) {
 } 
 // uploadBlob() end
 
-function get_id() {
-    var newDate = new Date();
-    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
-}
-// get_id() end
 
 
 doMyInit()
