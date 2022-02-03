@@ -219,6 +219,13 @@ function onClickVersion(item) {
 
         <label for='testy-select'>Choose a test:</label>
 
+
+        <select name='url_select' id='url-select' >
+            <option value="1" selected>non CORS</option>
+            <option value="2">ncdot</option>
+        </select>
+
+
         <select name='testy' id='testy-select' >
             <option value="1" selected>one</option>
             <option value="2">two</option>
@@ -341,7 +348,7 @@ function onClickVersion(item) {
  }
 
 
-function downloadTestOne () {
+function downloadTestOne (theUrlItem) {
   console.log('download_test_one()')
 
   // var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
@@ -357,8 +364,15 @@ function downloadTestOne () {
   //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
   //  net::ERR_FAILED 200
 
-  var theUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
-  // This url works though:
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (theUrlItem == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
 
   // Gets the response and returns it as a blob
   fetch(theUrl).then(res => res.blob()).then(blob => {
@@ -645,14 +659,26 @@ function downloadTestSix() {
 
 
 
-function downloadTestSeven() {
+function downloadTestSeven(theUrlItem) {
   console.log('download_test_seven()')
 
   // From
   // https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin
 
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (theUrlItem == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
+
+
+
   // test six did not work.
-  const imageUrl = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg";
+  const imageUrl = theUrl;
   const container = document.querySelector(".the_body");
 
   function loadImage(url) {
@@ -685,15 +711,17 @@ function Download() {
 
 
   let item = document.getElementById('testy-select');
+  let theUrl = document.getElementById('testy-select');
 
   var selectedItem = item.options[item.selectedIndex]
+  var selectedUrlItem = theUrl.options[theUrl.selectedIndex]
   
   //alert("selected item is :" + selectedItem.value)
 
   switch (selectedItem.value) {
     case '1':
       console.log('one')
-      downloadTestOne();
+      downloadTestOne(selectedUrlItem);
       break;
     case '2':
       console.log('two')
@@ -717,7 +745,7 @@ function Download() {
       break;
     case '7':
       console.log('seven')
-      downloadTestSeven();
+      downloadTestSeven(selectedUrlItem);
       break;
     default:
       alert('Sorry, we are broken')
