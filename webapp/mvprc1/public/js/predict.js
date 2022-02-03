@@ -163,7 +163,7 @@ async function fetchMyConfig () {
     bucketRegion = responseJson.bucketRegion
     identityPoolId = responseJson.identityPoolId
     albumBucketName = responseJson.albumBucketName
-    console.log('region: %s  poolId: %s  bucket: %s', bucketRegion, identityPoolId, albumBucketName)
+    //console.log('region: %s  poolId: %s  bucket: %s', bucketRegion, identityPoolId, albumBucketName)
 
     AWS.config.update({
       region: bucketRegion,
