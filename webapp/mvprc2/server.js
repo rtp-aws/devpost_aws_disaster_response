@@ -61,49 +61,7 @@ app.get('/about.ejs', (req, res) => {
     res.render("about")
 })
 
-////
 
-app.get('/bridge.ejs', (req, res) => {
-
-    console.log("get /bridge.ejs")
-    //console.log(req)
-
-    res.render("bridge")
-})
-
-
-app.get('/road.ejs', (req, res) => {
-
-    console.log("get /road.ejs")
-    //console.log(req)
-
-    res.render("road")
-})
-
-
-app.get('/odd.ejs', (req, res) => {
-
-    console.log("get /odd.ejs")
-    //console.log(req)
-
-    res.render("odd")
-})
-
-app.get('/both.ejs', (req, res) => {
-
-    console.log("get /both.ejs")
-    //console.log(req)
-
-    res.render("both")
-})
-
-app.get('/face.ejs', (req, res) => {
-
-    console.log("get /face.ejs")
-    //console.log(req)
-
-    res.render("face")
-})
 
 app.get('/myconfig', (req, res) => {
 
@@ -125,13 +83,6 @@ app.get('/predict.ejs', (req, res) => {
     res.render("predict")
 })
 
-app.get('/predict1.ejs', (req, res) => {
-
-    console.log("get /predict1.ejs")
-    //console.log(req)
-
-    res.render("predict1")
-})
 
 
 
