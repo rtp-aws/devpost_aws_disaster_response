@@ -340,21 +340,8 @@ function onClickVersion(item) {
 
 
 
-function downloadTestEight (value) {
-  console.log('downloadTestEight()')
-
-  // var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
-  // This url fails with:
-  // Access to fetch at
-  //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
-  //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by
-  //  CORS policy: No 'Access-Control-Allow-Origin'
-  //  header is present on the requested resource.
-  //  If an opaque response serves your needs,
-  //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-  //
-  //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
-  //  net::ERR_FAILED 200
+function imgUrlToBlob (value) {
+  console.log('imgUrlToBlob()')
 
   var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
   var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
@@ -366,26 +353,6 @@ function downloadTestEight (value) {
     theUrl = theNcDotUrl    
   }
 
-
-  // Regarding => functions
-  //
-  // // Traditional Anonymous Function
-  // function (a){
-  //   return a + 100;
-  // }
-  //
-  // // Arrow Function Break Down
-  //
-  // // 1. Remove the word "function" and place arrow between the argument and opening body bracket
-  // (a) => {
-  //   return a + 100;
-  // }
-  //
-  // // 2. Remove the body braces and word "return" -- the return is implied.
-  // (a) => a + 100;
-  //
-  // // 3. Remove the argument parentheses
-  // a => a + 100;
 
 
 
@@ -418,7 +385,7 @@ function downloadTestEight (value) {
     URL.revokeObjectURL(linkBlob.href);  
   }
   )
-} // download test end
+} // imgUrlToBlob() end
 
 
 
@@ -494,7 +461,7 @@ function Download() {
   switch (selectedItem.value) {
     case '1':
       console.log('one')
-      downloadTestOne(selectedUrlItem.value);
+      imgUrlToBlob(selectedUrlItem.value);
       break;
     case '2':
       console.log('two')
@@ -531,7 +498,7 @@ function Download() {
 
 
 }
-// predict_btn on click end
+// Download() on click end
 
 
 
