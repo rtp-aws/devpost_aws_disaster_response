@@ -1,0 +1,7 @@
+# JFD mods
+*.backup
+*.BACKUP
+*.swp
+node_modules/
+.elasticbeanstalk
+

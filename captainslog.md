@@ -419,4 +419,18 @@ camera api was changing.  I did not see any errors as of 10am when I
 stopped the webscrape.  I figure I have enough data at this point 
 anyway.
 
+I updated the urls to use new web cam urls.
+
+I learned how to download the CORS images.
+
+
+
+## 20220203
+
+I learned I had worked myself into a hole with NodeJs.  I was using it the wrong way.
+
+I left what I had with MVP RC1 and moved to a new version MVP RC2.  In this case, I will
+keep the nodejs out of the browser code.  Remove the face and bridge stuff.  It will 
+be simpler to maintain and build faster.
+
 
