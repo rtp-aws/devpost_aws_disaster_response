@@ -772,10 +772,18 @@ function downloadTestEight (value) {
 
     // NOTE: Hmm, can I use test 3 method to download the new blob?
     // YES YES YES, but file name is wrong?
-    link.href = URL.createObjectURL(blob8);
-    console.log('link.href is %o', link.href)
-    link.click();
-    URL.revokeObjectURL(link.href);  
+    // create a new link
+    let linkBlob = document.createElement('a');
+    linkBlob.download = 'predict_image.png';
+
+
+
+    linkBlob.href = URL.createObjectURL(blob8);
+    console.log('link.href is %o', linkBlob.href)
+    // simular a click on the link
+    linkBlob.click();
+    // remove the url for the link
+    URL.revokeObjectURL(linkBlob.href);  
   }
   )
 } // download test end
