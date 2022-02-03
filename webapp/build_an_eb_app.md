@@ -280,6 +280,23 @@ Choose the rtp-aws website distribution
 2. add alternate CNAME mvprc2.rtp-aws.org
 3. click save
 
+## elastic beanstalk
+
+Choose the mvprc2-env
+
+1. click configuration
+2. scroll to load balancer
+3. click edit
+4. click add listener
+5. listener port to 443
+6. listener protocol to https
+7. instance port 80
+8. instance protocol http
+9. ssl cert choose the rtp-aws one
+10. click add
+11. click save changes
+
+
 ## S3
 
 Choose the bucket for uploads of images
