@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--meta name="viewport" content="width=device-width", initial-scale=1.0"-->
+<!--meta http-equiv="X-UA-Compatible" content="ie=edge"-->
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/stylesnav.css">
+<link rel="manifest" href="manifest.json" >
+
+<script src="js/predict_bundle.js" defer></script>
+<script src="js/aws-sdk.js"></script>
+<meta charset="UTF-8">
+
+<title>Icy Bridge Detector</title>
+<link rel="shortcut icon" type="image/png" href="imgs/rtp-aws-disolved-nose-16x16.png">
+</head>
+
+
+<body>
+
+<header>
+
+<div class="container">
+  <img src="imgs/rtp-aws-disolved-nose-112x112.png" alt="logo" class="logo">
+
+  <nav>
+    <ul>
+      <li><a href="index.ejs">App</a></li>
+      <li><a href="bridge.ejs">Bridge</a></li>
+      <li><a href="road.ejs">Road</a></li>
+      <li><a href="both.ejs">Both</a></li>
+      <li><a href="odd.ejs">Odd</a></li>
+      <li><a href="face.ejs">Face</a></li>
+      <li><a href="predict.ejs">Predict</a></li>
+      <li><a href="about.ejs">About</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+
+<!-- ---------------------------------------------------------------- -->
+
+
+
+<div class="the_body">
+
+	<H1> Predict </H1>
+
+  <div>
+
+      <label for='ver-select'>Choose a version:</label>
+
+      <select name='version' id='ver-select' onchange='onClickVersion(this)'>
+          <option value="" >--Please choose an option--</option>
+          <option value="0" selected >Latest</option>
+          <option value="1">download live image tests</option>
+          <option value="2">2 tbd</option>
+          <option value="3">3 tbd</option>
+          <option value="4">4 tbd</option>
+          <option value="5">5 tbd</option>
+      </select>
+
+  </div>
+
+<script>
+
+function onClickVersion(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '0':
+      console.log('zero')
+      // change pages
+      window.location.replace('predict.ejs');
+      break;
+    case '1':
+      console.log('one')
+      // change pages
+      window.location.replace('predict1.ejs');
+      break;
+    case '2':
+      console.log('two')
+      // change pages
+      window.location.replace('predict2.ejs');
+      break;
+    case '3':
+      console.log('three')
+      // change pages
+      window.location.replace('predict3.ejs');
+      break;
+    case '4':
+      console.log('four')
+      // change pages
+      window.location.replace('predict4.ejs');
+      break;
+    case '5':
+      console.log('five')
+      // change pages
+      window.location.replace('predict5.ejs');
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
+
+
+</script>
+
+<!-- ---------------------------------------------------------------- -->
+
+
+
+  <div>
+    <H2> Cameras for Prediction </H2>
+    <p> These are the cameras chosen for prediction. </p><br>
+  </div>
+
+  <div>
+    <label class="switch">
+      <input type="checkbox" id="slider">
+      <span class="slider round"></span>
+    </label>
+    Actual Size
+  </div>
+
+
+  <div>
+    <p>Select a camera feed:</p>
+  </div>
+
+
+  <div>
+    <input type="radio" id="TOLL147_DAVIS_DR" name="feed_rb" value="TOLL147_DAVIS_DR" checked>
+    <label for="TOLL147_DAVIS_DR">TOLL147_DAVIS_DR</label>
+  </div>
+
+
+  <div>
+    <input type="radio" id="I40W_MM8" name="feed_rb" value="I40W_MM8">
+    <label for="I40W_MM8">I40W_MM8</label>
+  </div>
+
+  <div>
+    <input type="radio" id="I440_US64_Bypass" name="feed_rb" value="I440_US64_Bypass">
+    <label for="I440_US64_Bypass">I440_US64_Bypass</label>
+  </div>
+
+  <div>
+    <input type="radio" id="I26_BROADWAY" name="feed_rb" value="I26_BROADWAY">
+    <label for="I26_BROADWAY">I26_BROADWAY</label>
+  </div>
+
+
+  <div>
+     <input type="radio" id="TOLL147_HOPSON_RD" name="feed_rb" value="TOLL147_HOPSON_RD">
+     <label for="TOLL147_HOPSON_RD">TOLL147_HOPSON_RD</label>
+  </div>
+
+
+  <div>
+     <input type="radio" id="TOLL147_NC54" name="feed_rb" value="TOLL147_NC54">
+     <label for="TOLL147_NC54">TOLL147_NC54</label>
+  </div>
+
+
+  <div>
+     <input type="radio" id="TOLL54_APEXBBQ" name="feed_rb" value="TOLL54_APEXBBQ">
+     <label for="TOLL54_APEXBBQ">TOLL54_APEXBBQ</label>
+  </div>
+
+  <div>
+     <input type="radio" id="TOLL540_TOLL147" name="feed_rb" value="TOLL540_TOLL147">
+     <label for="TOLL540_TOLL147">TOLL540_TOLL147</label>
+  </div>
+
+  <div>
+     <input type="radio" id="TOLL540_NC55" name="feed_rb" value="TOLL540_NC55">
+     <label for="TOLL540_NC55">TOLL540_NC55</label>
+  </div>
+
+
+  <div>
+     <input type="radio" id="TOLL540_MCCRIMMON" name="feed_rb" value="TOLL540_MCCRIMMON">
+     <label for="TOLL540_MCCRIMMON">TOLL540_MCCRIMMON</label>
+  </div>
+
+
+  <div>
+     <input type="radio" id="I40_DAVIS_DR" name="feed_rb" value="I40_DAVIS_DR">
+     <label for="I40_DAVIS_DR">I40_DAVIS_DR</label>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div>
+    <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
+  </div>
+
+  <div>
+    <label for='testy-select'>Choose a test:</label>
+    <select name='testy' id='testy-select'  onchange='onClickTesty(this)'>
+        <option value="1" selected>one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+        <option value="4">four</option>
+        <option value="5">five</option>
+        <option value="6">six</option>
+        <option value="7">seven</option>
+        <option value="8">eight</option>
+    </select>
+  </div>
+
+  <div>
+    <label for='url-select' class='url-select'>Choose a URL:</label>
+    <select name='url_select' id='url-select' class='url-select'>
+        <option value="1" selected>non CORS</option>
+        <option value="2">ncdot</option>
+    </select>
+  </div>
+
+  <div>
+    <input id='download-btn' type='button' value='Download' onclick='Download()'/>
+  </div>
+
+
+
+  </div>
+
+
+
+
+
+  <div>
+
+    <!-- crossorigin="anonymous" -->
+    <!--    crossorigin="https://mvprc1.rtp-aws.org/predict.ejs" -->
+    <!-- camera urls changed
+        old way 
+         https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG
+        new way 
+         https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=HillsboroughSt_BlueRidgeRd.jpg&t=1643830561936
+    -->
+
+    <img id="camera_feed" 
+         class="camera_feed" 
+         style="-webkit-user-select: none;
+                margin: auto;
+                background-color: hsl(0, 0%, 90%);
+                max-width: 200px;
+                max-height: 200px;
+                transition: background-color 300ms;"
+         src='https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'>
+    <canvas id='my_canvas'></canvas>
+
+  </div>
+
+  <div>
+      <div id="predict_img"></div>
+
+  </div>
+
+
+
+  <div>
+      <!-- Hidden canvas element. Used for taking snapshot of video. -->
+      <canvas id='blob_canvas'></canvas>
+
+  </div>
+
+  <!-- download attribute forces the browser to download instead of navigating -->
+  <!--
+    These tests were done for download test three and four
+    
+    What is href='#'
+   
+    https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used
+
+    1. Absolute path: move to another site like href="http://www.google.com"
+    2. Relative path: move to another page within the site like herf ="defaultpage.aspx"
+    3. Move to an element with a specified id within the page like href="#bottom"
+    4. href="javascript:void(0)", it does not move anywhere.
+    5. href="#" , it does not move anywhere but scroll on the top of the current page.
+    6. href= "" , it will load the current page but some browsers causes forbidden errors.
+    7. href= "#!", it goes to a non existant link
+
+    Note: When we do not need to specified any url inside a anchor tag then use 
+    <a href="javascript:void(0)">Test1</a>
+
+    Note: The above note does not work for this example
+    ie. this will not work:
+          <a download="hello.txt" href='javascript:void(0)' id="link">Download</a>
+    
+    These will work:
+      <a download="hello.txt" href='#' id="link">Download</a>
+      <a download="hello.txt" href='#!' id="link">Download</a>
+
+    Other posts in the thread mention that '#' is bad but '#!' is better.
+
+
+  -->
+
+
+
+
+</div>
+
+<script>
+
+// AWS Creds
+var bucketRegion = ''
+var identityPoolId = ''
+var albumBucketName = ''
+
+
+
+function blobToString (b) {
+   var u
+   var x
+   u = URL.createObjectURL(b)
+   x = new XMLHttpRequest()
+   // although sync, you're not fetching over internet
+   x.open('GET', u, false);
+   x.send();
+   URL.revokeObjectURL(u);
+   return x.responseText;
+}
+
+function uploadBlob(blobData) {
+    // hack
+    console.log('hook to see if we upload to s3');
+    //var blobData = this.the_blob;
+    var fileName = "pix." + get_id() + ".png";
+    var params = {
+        Key: fileName,
+        ContentType: 'image/png',
+        Body: blobData
+    };
+
+    s3.upload(params, function(err, data) {
+        console.log(data);
+        console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+        var params = {
+            Image: {
+                S3Object: {
+                    Bucket: albumBucketName,
+                    Name: fileName
+                }
+            },
+            Attributes: ["ALL"]
+        };
+    })
+} 
+// uploadBlob() end
+
+function get_id() {
+    var newDate = new Date();
+    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
+}
+// get_id() end
+
+
+function imgUrlToBlob (value) {
+  console.log('imgUrlToBlob()')
+
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (value == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
+
+
+
+
+  // Gets the response and returns it as a blob
+  fetch(theUrl).then(res => res.blob()).then(blob8 => {
+    // Here's where you get access to the blob
+    // And you can use it for whatever you want
+    // Like calling ref().put(blob)
+
+
+    uploadBlob(blob8);
+
+
+    // Here, I use it to make an image appear on the page
+     const objectURL = URL.createObjectURL(blob8)
+//     const myImage = new Image()
+//     myImage.src = objectURL
+//     document.getElementById('predict_img').appendChild(myImage)
+
+
+//     // NOTE: Hmm, can I use test 3 method to download the new blob?
+//     // YES YES YES, but file name is wrong?
+//     // create a new link
+//     let linkBlob = document.createElement('a');
+//     linkBlob.download = 'predict_image.png';
+
+
+
+//     linkBlob.href = URL.createObjectURL(blob8);
+//     console.log('link.href is %o', linkBlob.href)
+//     // simular a click on the link
+//     linkBlob.click();
+//     // remove the url for the link
+//     URL.revokeObjectURL(linkBlob.href);  
+  }
+  )
+} // imgUrlToBlob() end
+
+
+
+function onClickTesty(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  var urlSelectors = document.getElementsByClassName('url-select')
+
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '1':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    case '2':
+      urlSelectors[1].style.display='none'
+      urlSelectors[0].style.display='none'
+      break;
+    case '3':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '4':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '6':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '7':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    case '8':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
+
+
+function Download() {
+    console.log("download_btn: click() ");
+
+
+  let item = document.getElementById('testy-select');
+  let theUrl = document.getElementById('url-select');
+
+  var selectedItem = item.options[item.selectedIndex]
+  var selectedUrlItem = theUrl.options[theUrl.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+
+
+  switch (selectedItem.value) {
+    case '1':
+      console.log('one')
+      imgUrlToBlob(selectedUrlItem.value);
+      break;
+    case '2':
+      console.log('two')
+      downloadTestTwo();
+      break;
+    case '3':
+      console.log('three')
+      downloadTestThree();
+      break;
+    case '4':
+      console.log('four')
+      downloadTestFour();
+      break;
+    case '5':
+      console.log('five')
+      downloadTestFive();
+      break;
+    case '6':
+      console.log('six')
+      downloadTestSix();
+      break;
+    case '7':
+      console.log('seven')
+      downloadTestSeven(selectedUrlItem.value);
+      break;
+    case '8':
+      console.log('eight')
+      downloadTestEight(selectedUrlItem.value);
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+
+
+}
+// Download() on click end
+
+
+
+function Draw() {
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+
+  var img = document.getElementById('camera_feed')
+  var cnvs = document.getElementById('my_canvas')
+  cnvs.width = img.width
+  cnvs.height = img.height
+
+  cnvs.style.position = 'absolute'
+  cnvs.style.left = img.offsetLeft + 'px'
+  cnvs.style.top = img.offsetTop + 'px'
+
+  // hmm, both settings are identical?
+  console.log('width = %i', img.width)
+  console.log('height = %i', img.height)
+  console.log('offset width = %i', img.offsetWidth)
+  console.log('offset height = %i', img.offsetHeight)
+
+  var TOP = 0
+  var BOTTOM = img.height
+  var LEFT = 0
+  var RIGHT = img.width
+
+  console.log('TOP = %i', TOP)
+  console.log('BOTTOM = %i', BOTTOM)
+  console.log('LEFT = %i', LEFT)
+  console.log('RIGHT = %i', RIGHT)
+
+  var ctx = cnvs.getContext('2d')
+  ctx.clearRect(0, 0, cnvs.width, cnvs.height)
+
+  ctx.beginPath()
+  ctx.moveTo(LEFT + 10, TOP + 10) // top left
+  ctx.lineTo(RIGHT - 10, TOP + 10) // top right
+  ctx.lineTo(RIGHT - 10, BOTTOM - 10) // bottom right
+  ctx.lineTo(LEFT + 10, BOTTOM - 10) // bottom right
+  ctx.lineTo(LEFT + 10, TOP + 10) // bottom right
+
+  ctx.lineWidth = 3
+  ctx.strokeStyle = '#00ff88'
+  ctx.stroke()
+}
+
+
+
+async function fetchMyConfig () {
+  console.log('MyApp: getJSON()')
+  return await fetch('/myconfig').then((response) => response.json()).then((responseJson) => {
+    bucketRegion = responseJson.bucketRegion
+    identityPoolId = responseJson.identityPoolId
+    albumBucketName = responseJson.albumBucketName
+    //console.log('region: %s  poolId: %s  bucket: %s', bucketRegion, identityPoolId, albumBucketName)
+
+    AWS.config.update({
+      region: bucketRegion,
+      credentials: new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: identityPoolId
+      })
+    })
+
+    var s3 = new AWS.S3({
+      apiVersion: '2006-03-01',
+      params: {
+        Bucket: albumBucketName
+      }
+    })
+
+    console.log('s3: ', s3)
+
+    console.log('Region: ', AWS.config.region)
+
+    return s3
+  }
+  ) // then END
+} // fetchMyConfig() END
+
+var s3
+
+async function doMyS3Init () {
+  console.log('MyApp: do_init()')
+
+  var s3 = await fetchMyConfig()
+  //console.log(msg)
+}
+// doMyInit() END
+
+
+
+
+
+s3 = doMyS3Init()
+
+
+
+
+</script>
+
+
+<!-- display: inline        make horizontal
+     display: block         default, vertical
+     display: none          hidden
+     visibility: hidden     also hidden
+-->
+
+</body>
+<footer>
+    <a href="http://www.vim.org/" >
+        <img src="imgs/vim_header.png" alt="logo" class="logo">
+    </a>
+    <a href="https://developer.chrome.com/docs/devtools/" >
+        <img src="imgs/devtools-96x48.png" alt="logo" class="logo">
+    </a>
+    <a href="https://atom.io/" >
+        <img src="imgs/atom-logo-48x48.png" alt="logo" class="logo">
+    </a>
+</footer>
+</html>
