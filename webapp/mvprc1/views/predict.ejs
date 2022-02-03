@@ -213,35 +213,33 @@ function onClickVersion(item) {
 
 
   <div>
-   <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
+    <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
+  </div>
 
-    <div>
+  <div>
+    <label for='testy-select'>Choose a test:</label>
+    <select name='testy' id='testy-select'  onchange='onClickTesty(this)'>
+        <option value="1" selected>one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+        <option value="4">four</option>
+        <option value="5">five</option>
+        <option value="6">six</option>
+        <option value="7">seven</option>
+    </select>
+  </div>
 
+  <div>
+    <label for='url-select' class='url-select'>Choose a URL:</label>
+    <select name='url_select' id='url-select' class='url-select'>
+        <option value="1" selected>non CORS</option>
+        <option value="2">ncdot</option>
+    </select>
+  </div>
 
-        <label for='testy-select'>Choose a test:</label>
-        <select name='testy' id='testy-select'  onchange='onClickTesty(this)'>
-            <option value="1" selected>one</option>
-            <option value="2">two</option>
-            <option value="3">three</option>
-            <option value="4">four</option>
-            <option value="5">five</option>
-            <option value="6">six</option>
-            <option value="7">seven</option>
-        </select>
-
-
-        <label for='url-select' class='url-select'>Choose a URL:</label>
-        <select name='url_select' id='url-select' class='url-select'>
-            <option value="1" selected>non CORS</option>
-            <option value="2">ncdot</option>
-        </select>
-
-
-        <input id='download-btn' type='button' value='Download' onclick='Download()'/>
-
-    </div>
-
-
+  <div>
+    <input id='download-btn' type='button' value='Download' onclick='Download()'/>
+  </div>
 
 
 
