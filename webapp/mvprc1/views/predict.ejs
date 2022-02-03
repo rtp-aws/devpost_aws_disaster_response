@@ -734,13 +734,13 @@ function downloadTestEight (value) {
   }
 
   // Gets the response and returns it as a blob
-  fetch(theUrl).then(res => res.blob()).then(blob => {
+  fetch(theUrl).then(res => res.blob(),'image/png').then(blob8 => {
     // Here's where you get access to the blob
     // And you can use it for whatever you want
     // Like calling ref().put(blob)
 
     // Here, I use it to make an image appear on the page
-    const objectURL = URL.createObjectURL(blob)
+    const objectURL = URL.createObjectURL(blob8)
     const myImage = new Image()
     myImage.src = objectURL
     document.getElementById('predict_img').appendChild(myImage)
@@ -748,7 +748,7 @@ function downloadTestEight (value) {
 
     // NOTE: Hmm, can I use test 3 method to download the new blob?
     // YES YES YES, but file name is wrong?
-    link.href = URL.createObjectURL(blob);
+    link.href = URL.createObjectURL(blob8);
     console.log('link.href is %o', link.href)
     link.click();
     URL.revokeObjectURL(link.href);  
@@ -789,12 +789,20 @@ function onClickTesty(item) {
       urlSelectors[1].style.display='none'
       break;
     case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
       break;
     case '6':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
       break;
     case '7':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
       break;
     case '8':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
       break;
     default:
       alert('Sorry, we are broken')
