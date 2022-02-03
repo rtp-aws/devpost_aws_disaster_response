@@ -219,7 +219,7 @@ function onClickVersion(item) {
 
 
         <label for='testy-select'>Choose a test:</label>
-        <select name='testy' id='testy-select' >
+        <select name='testy' id='testy-select'  onchange='onClickTesty(this)'>
             <option value="1" selected>one</option>
             <option value="2">two</option>
             <option value="3">three</option>
@@ -389,10 +389,7 @@ function downloadTestOne (value) {
 
 
     // NOTE: Hmm, can I use test 3 method to download the new blob?
-    link.href = URL.createObjectURL(blob);
-    console.log('link.href is %o', link.href)
-    link.click();
-    URL.revokeObjectURL(link.href);  
+    // TODO: See test eight
   }
   )
 } // download test end
@@ -712,6 +709,94 @@ function downloadTestSeven(value) {
 } // download test end
 
 
+function downloadTestEight (value) {
+  console.log('downloadTestEight()')
+
+  // var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
+  // This url fails with:
+  // Access to fetch at
+  //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+  //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by
+  //  CORS policy: No 'Access-Control-Allow-Origin'
+  //  header is present on the requested resource.
+  //  If an opaque response serves your needs,
+  //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+  //
+  //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
+  //  net::ERR_FAILED 200
+
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (value == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
+
+  // Gets the response and returns it as a blob
+  fetch(theUrl).then(res => res.blob()).then(blob => {
+    // Here's where you get access to the blob
+    // And you can use it for whatever you want
+    // Like calling ref().put(blob)
+
+    // Here, I use it to make an image appear on the page
+    const objectURL = URL.createObjectURL(blob)
+    const myImage = new Image()
+    myImage.src = objectURL
+    document.getElementById('predict_img').appendChild(myImage)
+
+
+    // NOTE: Hmm, can I use test 3 method to download the new blob?
+    // YES YES YES, but file name is wrong?
+    link.href = URL.createObjectURL(blob);
+    console.log('link.href is %o', link.href)
+    link.click();
+    URL.revokeObjectURL(link.href);  
+  }
+  )
+} // download test end
+
+
+
+function onClickTesty(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  var urlSelectors = document.getElementsByClassName('url-select')
+
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '1':
+      urlSelectors.style.display=block
+      break;
+    case '2':
+      urlSelectors.style.display=block
+      break;
+    case '3':
+      break;
+    case '4':
+      break;
+    case '5':
+      break;
+    case '5':
+      break;
+    case '6':
+      break;
+    case '7':
+      break;
+    case '8':
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
 
 
 function Download() {
@@ -725,6 +810,8 @@ function Download() {
   var selectedUrlItem = theUrl.options[theUrl.selectedIndex]
   
   //alert("selected item is :" + selectedItem.value)
+
+
 
   switch (selectedItem.value) {
     case '1':
@@ -754,6 +841,10 @@ function Download() {
     case '7':
       console.log('seven')
       downloadTestSeven(selectedUrlItem.value);
+      break;
+    case '8':
+      console.log('eight')
+      downloadTestEight(selectedUrlItem.value);
       break;
     default:
       alert('Sorry, we are broken')
