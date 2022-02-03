@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //     myApp.do_my_init();
 
     s3 = doMyS3Init()
-    
+  console.log('wtf devtools')    
 
 
 });
