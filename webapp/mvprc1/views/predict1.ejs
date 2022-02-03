@@ -213,9 +213,42 @@ function onClickVersion(item) {
 
 
   <div>
-   <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
-   <input id='predict-btn' type='button' value='Predict' onclick='Predict()'/>
+    <input id='draw-btn' type='button' value='Draw' onclick='Draw()' />
   </div>
+
+  <div>
+    <label for='testy-select'>Choose a test:</label>
+    <select name='testy' id='testy-select'  onchange='onClickTesty(this)'>
+        <option value="1" selected>one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+        <option value="4">four</option>
+        <option value="5">five</option>
+        <option value="6">six</option>
+        <option value="7">seven</option>
+        <option value="8">eight</option>
+    </select>
+  </div>
+
+  <div>
+    <label for='url-select' class='url-select'>Choose a URL:</label>
+    <select name='url_select' id='url-select' class='url-select'>
+        <option value="1" selected>non CORS</option>
+        <option value="2">ncdot</option>
+    </select>
+  </div>
+
+  <div>
+    <input id='download-btn' type='button' value='Download' onclick='Download()'/>
+  </div>
+
+
+
+  </div>
+
+
+
+
 
   <div>
 
@@ -315,7 +348,7 @@ function onClickVersion(item) {
  }
 
 
-function downloadTestOne () {
+function downloadTestOne (value) {
   console.log('download_test_one()')
 
   // var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
@@ -331,8 +364,15 @@ function downloadTestOne () {
   //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
   //  net::ERR_FAILED 200
 
-  var theUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
-  // This url works though:
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (value == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
 
   // Gets the response and returns it as a blob
   fetch(theUrl).then(res => res.blob()).then(blob => {
@@ -345,12 +385,16 @@ function downloadTestOne () {
     const myImage = new Image()
     myImage.src = objectURL
     document.getElementById('predict_img').appendChild(myImage)
+
+
+    // NOTE: Hmm, can I use test 3 method to download the new blob?
+    // TODO: See test eight
   }
   )
 } // download test end
 
 
-function download_test_two() {
+function downloadTestTwo() {
   console.log('download_test_two()')
 
   // from this website
@@ -393,7 +437,7 @@ function download_test_two() {
 
 
 
-function download_test_three() {
+function downloadTestThree() {
   console.log('download_test_three()')
 
   // from this website
@@ -415,7 +459,7 @@ function download_test_three() {
   console.log(blobToString(blob))
 } // download test end
 
-function download_test_four() {
+function downloadTestFour() {
   console.log('download_test_four()')
 
 
@@ -488,7 +532,7 @@ function download_test_four() {
 
 
 
-function download_test_five() {
+function downloadTestFive() {
   console.log('download_test_five()')
 
   // from https://javascript.info/blob#blob-to-base64
@@ -549,7 +593,7 @@ function download_test_five() {
 
 
 
-function download_test_six() {
+function downloadTestSix() {
   console.log('download_test_six()')
 
   // from https://javascript.info/blob#image-to-blob
@@ -619,14 +663,26 @@ function download_test_six() {
 
 
 
-function download_test_seven() {
+function downloadTestSeven(value) {
   console.log('download_test_seven()')
 
   // From
   // https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin
 
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (value == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
+
+
+
   // test six did not work.
-  const imageUrl = "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg";
+  const imageUrl = theUrl;
   const container = document.querySelector(".the_body");
 
   function loadImage(url) {
@@ -652,18 +708,195 @@ function download_test_seven() {
 } // download test end
 
 
+function downloadTestEight (value) {
+  console.log('downloadTestEight()')
+
+  // var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
+  // This url fails with:
+  // Access to fetch at
+  //  'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg'
+  //  from origin 'https://mvprc1.rtp-aws.org' has been blocked by
+  //  CORS policy: No 'Access-Control-Allow-Origin'
+  //  header is present on the requested resource.
+  //  If an opaque response serves your needs,
+  //  set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+  //
+  //  predict_bundle.js:255660 GET https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg
+  //  net::ERR_FAILED 200
+
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
+
+  if (value == 1) {
+    theUrl = theNormalUrl
+  } else {
+    theUrl = theNcDotUrl    
+  }
 
 
-function Predict() {
-    console.log("predict_btn: click() ");
+  // Regarding => functions
+  //
+  // // Traditional Anonymous Function
+  // function (a){
+  //   return a + 100;
+  // }
+  //
+  // // Arrow Function Break Down
+  //
+  // // 1. Remove the word "function" and place arrow between the argument and opening body bracket
+  // (a) => {
+  //   return a + 100;
+  // }
+  //
+  // // 2. Remove the body braces and word "return" -- the return is implied.
+  // (a) => a + 100;
+  //
+  // // 3. Remove the argument parentheses
+  // a => a + 100;
 
-    //download_test_one();
-    //download_test_two();
-    //download_test_three();
-    //download_test_four();
-    //download_test_five();
-    //download_test_six();
-    download_test_seven();
+
+
+  // Gets the response and returns it as a blob
+  fetch(theUrl).then(res => res.blob()).then(blob8 => {
+    // Here's where you get access to the blob
+    // And you can use it for whatever you want
+    // Like calling ref().put(blob)
+
+    // Here, I use it to make an image appear on the page
+    const objectURL = URL.createObjectURL(blob8)
+    const myImage = new Image()
+    myImage.src = objectURL
+    document.getElementById('predict_img').appendChild(myImage)
+
+
+    // NOTE: Hmm, can I use test 3 method to download the new blob?
+    // YES YES YES, but file name is wrong?
+    // create a new link
+    let linkBlob = document.createElement('a');
+    linkBlob.download = 'predict_image.png';
+
+
+
+    linkBlob.href = URL.createObjectURL(blob8);
+    console.log('link.href is %o', linkBlob.href)
+    // simular a click on the link
+    linkBlob.click();
+    // remove the url for the link
+    URL.revokeObjectURL(linkBlob.href);  
+  }
+  )
+} // download test end
+
+
+
+function onClickTesty(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  var urlSelectors = document.getElementsByClassName('url-select')
+
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '1':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    case '2':
+      urlSelectors[1].style.display='none'
+      urlSelectors[0].style.display='none'
+      break;
+    case '3':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '4':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '6':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '7':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    case '8':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
+
+
+function Download() {
+    console.log("download_btn: click() ");
+
+
+  let item = document.getElementById('testy-select');
+  let theUrl = document.getElementById('url-select');
+
+  var selectedItem = item.options[item.selectedIndex]
+  var selectedUrlItem = theUrl.options[theUrl.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+
+
+  switch (selectedItem.value) {
+    case '1':
+      console.log('one')
+      downloadTestOne(selectedUrlItem.value);
+      break;
+    case '2':
+      console.log('two')
+      downloadTestTwo();
+      break;
+    case '3':
+      console.log('three')
+      downloadTestThree();
+      break;
+    case '4':
+      console.log('four')
+      downloadTestFour();
+      break;
+    case '5':
+      console.log('five')
+      downloadTestFive();
+      break;
+    case '6':
+      console.log('six')
+      downloadTestSix();
+      break;
+    case '7':
+      console.log('seven')
+      downloadTestSeven(selectedUrlItem.value);
+      break;
+    case '8':
+      console.log('eight')
+      downloadTestEight(selectedUrlItem.value);
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+
 
 }
 // predict_btn on click end
@@ -712,6 +945,9 @@ function Draw() {
   ctx.strokeStyle = '#00ff88'
   ctx.stroke()
 }
+
+
+
 
 
 
