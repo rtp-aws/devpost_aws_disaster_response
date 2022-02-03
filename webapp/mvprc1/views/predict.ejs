@@ -348,7 +348,7 @@ function onClickVersion(item) {
  }
 
 
-function downloadTestOne (theUrlItem) {
+function downloadTestOne (value) {
   console.log('download_test_one()')
 
   // var the_url = 'https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_DavisDr.jpg';
@@ -368,7 +368,7 @@ function downloadTestOne (theUrlItem) {
   var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
   var theUrl
 
-  if (theUrlItem == 1) {
+  if (value == 1) {
     theUrl = theNormalUrl
   } else {
     theUrl = theNcDotUrl    
@@ -659,7 +659,7 @@ function downloadTestSix() {
 
 
 
-function downloadTestSeven(theUrlItem) {
+function downloadTestSeven(value) {
   console.log('download_test_seven()')
 
   // From
@@ -669,7 +669,7 @@ function downloadTestSeven(theUrlItem) {
   var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
   var theUrl
 
-  if (theUrlItem == 1) {
+  if (value == 1) {
     theUrl = theNormalUrl
   } else {
     theUrl = theNcDotUrl    
@@ -721,7 +721,7 @@ function Download() {
   switch (selectedItem.value) {
     case '1':
       console.log('one')
-      downloadTestOne(selectedUrlItem);
+      downloadTestOne(selectedUrlItem.value);
       break;
     case '2':
       console.log('two')
@@ -745,7 +745,7 @@ function Download() {
       break;
     case '7':
       console.log('seven')
-      downloadTestSeven(selectedUrlItem);
+      downloadTestSeven(selectedUrlItem.value);
       break;
     default:
       alert('Sorry, we are broken')
