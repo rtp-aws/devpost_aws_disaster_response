@@ -1,161 +1,267 @@
-var AWS = require('aws-sdk')
-
-// see https://www.npmjs.com/package/node-fetch
-// requires npm install node-fetch@2
-const fetch = require('node-fetch')
-
-
-/// //////////////////////////////////////////////////////////////
-// PREDICT radio buttons
-/// //////////////////////////////////////////////////////////////
-//
-// hmm, you can't specify var or const but you can specify and assign
-// in one step.  Then not use   Is this the method for specifying
-// a class variable in javascript?
-const TOLL147_DAVIS_DR = document.getElementById('TOLL147_DAVIS_DR')
-const I40W_MM8 = document.getElementById('I40W_MM8')
-const I440_US64_BYPASS = document.getElementById('I440_US64_Bypass')
-const I26_BROADWAY = document.getElementById('I26_BROADWAY')
-const TOLL147_HOPSON_RD = document.getElementById('TOLL147_HOPSON_RD')
-const TOLL147_NC54 = document.getElementById('TOLL147_NC54')
-const TOLL54_APEXBBQ = document.getElementById('TOLL54_APEXBBQ')
-const TOLL540_TOLL147 = document.getElementById('TOLL540_TOLL147')
-const TOLL540_NC55 = document.getElementById('TOLL540_NC55')
-const TOLL540_MCCRIMMON = document.getElementById('TOLL540_MCCRIMMON')
-const I40_DAVIS_DR = document.getElementById('I40_DAVIS_DR')
-
-// I had these original as global const.  I wonder how to do this
-// with the pedantic class member variables above?
-const slider = document.getElementById('slider')
-var canvas = document.getElementById('my_canvas')
-// const predictBtn = document.getElementById('predict-btn')
-
-// This was a var and not a const?
-var ctx = canvas.getContext('2d')
-
-// The camera feed img
-// This was a var and not a const?
-var cameraFeedImg = document.getElementsByClassName('camera_feed')[0]
-
-const baseCameraURL = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename='
-
 // AWS Creds
 var bucketRegion = ''
 var identityPoolId = ''
 var albumBucketName = ''
 
-console.log(TOLL147_DAVIS_DR)
-console.log(I40W_MM8)
-console.log(I440_US64_BYPASS)
-console.log(I26_BROADWAY)
-console.log(TOLL147_HOPSON_RD)
-console.log(TOLL147_NC54)
-console.log(TOLL54_APEXBBQ)
-console.log(slider)
-console.log(canvas)
-// console.log(predictBtn)
-console.log(ctx)
-console.log(cameraFeedImg)
-console.log()
-console.log()
 
-// erase the canvas
-function eraseCanvas () {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+function blobToString (b) {
+   var u
+   var x
+   u = URL.createObjectURL(b)
+   x = new XMLHttpRequest()
+   // although sync, you're not fetching over internet
+   x.open('GET', u, false);
+   x.send();
+   URL.revokeObjectURL(u);
+   return x.responseText;
 }
-// erase_canvas end
 
-TOLL147_DAVIS_DR.addEventListener('click', button => {
-  console.log('TOLL147_DAVIS_DR: click() %o %o', button, TOLL147_DAVIS_DR)
-  cameraFeedImg.src = baseCameraURL + 'Toll147_DavisDr.JPG'
-  eraseCanvas()
+function uploadBlob(blobData) {
+    // hack
+    console.log('hook to see if we upload to s3');
+    //var blobData = this.the_blob;
+    var fileName = "pix." + get_id() + ".png";
+    var params = {
+        Key: fileName,
+        ContentType: 'image/png',
+        Body: blobData
+    };
+
+    s3.upload(params, function(err, data) {
+        console.log(data);
+        console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+        var params = {
+            Image: {
+                S3Object: {
+                    Bucket: albumBucketName,
+                    Name: fileName
+                }
+            },
+            Attributes: ["ALL"]
+        };
+    })
+} 
+// uploadBlob() end
+
+function get_id() {
+    var newDate = new Date();
+    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
 }
-)
+// get_id() end
 
-I40W_MM8.addEventListener('click', button => {
-  console.log('I40W_MM8: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'I40W_mm8.jpg'
-  eraseCanvas()
-}
-)
 
-I440_US64_BYPASS.addEventListener('click', button => {
-  console.log('I440_US64_Bypass: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'I440_I87.JPG'
-  eraseCanvas()
-}
-)
+function imgUrlToBlob (value) {
+  console.log('imgUrlToBlob()')
 
-I26_BROADWAY.addEventListener('click', button => {
-  console.log('I26_BROADWAY: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'I26_Broadway.jpg'
-  eraseCanvas()
-}
-)
+  var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
+  var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+  var theUrl
 
-TOLL147_HOPSON_RD.addEventListener('click', button => {
-  console.log('TOLL147_HOPSON_RD: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'Toll147_HopsonRd.JPG'
-  eraseCanvas()
-}
-)
-
-TOLL147_NC54.addEventListener('click', button => {
-  console.log('TOLL147_NC54: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'Toll147_NC54.JPG'
-  eraseCanvas()
-}
-)
-
-TOLL54_APEXBBQ.addEventListener('click', button => {
-  console.log('TOLL54_APEXBBQ: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'Toll540_Apex-BBQ.JPG'
-  eraseCanvas()
-}
-)
-
-TOLL540_TOLL147.addEventListener('click', button => {
-  console.log('TOLL540_TOLL147: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'Toll540_Toll147.JPG'
-  eraseCanvas()
-}
-)
-
-TOLL540_NC55.addEventListener('click', button => {
-  console.log('TOLL540_NC55: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'Toll540_NC55.JPG'
-  eraseCanvas()
-}
-)
-
-TOLL540_MCCRIMMON.addEventListener('click', button => {
-  console.log('TOLL540_MCCRIMMON: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'Toll540_McCrimmonRd.jpg'
-  eraseCanvas()
-}
-)
-
-I40_DAVIS_DR.addEventListener('click', button => {
-  console.log('I40_DAVIS_DR: click() %o ', button)
-  cameraFeedImg.src = baseCameraURL + 'I40_DavisDr.jpg'
-  eraseCanvas()
-}
-)
-
-// Control is the slider
-slider.addEventListener('click', button => {
-  console.log('slider: click() value is %o %o', slider.checked, button)
-  if (slider.checked) {
-    cameraFeedImg.style.maxWidth = ''
-    cameraFeedImg.style.maxHeight = ''
+  if (value == 1) {
+    theUrl = theNormalUrl
   } else {
-    cameraFeedImg.style.maxWidth = '200px'
-    cameraFeedImg.style.maxHeight = '200px'
+    theUrl = theNcDotUrl    
   }
-  eraseCanvas()
+
+
+
+
+  // Gets the response and returns it as a blob
+  fetch(theUrl).then(res => res.blob()).then(blob8 => {
+    // Here's where you get access to the blob
+    // And you can use it for whatever you want
+    // Like calling ref().put(blob)
+
+
+    uploadBlob(blob8);
+
+
+    // Here, I use it to make an image appear on the page
+     const objectURL = URL.createObjectURL(blob8)
+//     const myImage = new Image()
+//     myImage.src = objectURL
+//     document.getElementById('predict_img').appendChild(myImage)
+
+
+//     // NOTE: Hmm, can I use test 3 method to download the new blob?
+//     // YES YES YES, but file name is wrong?
+//     // create a new link
+//     let linkBlob = document.createElement('a');
+//     linkBlob.download = 'predict_image.png';
+
+
+
+//     linkBlob.href = URL.createObjectURL(blob8);
+//     console.log('link.href is %o', linkBlob.href)
+//     // simular a click on the link
+//     linkBlob.click();
+//     // remove the url for the link
+//     URL.revokeObjectURL(linkBlob.href);  
+  }
+  )
+} // imgUrlToBlob() end
+
+
+
+function onClickTesty(item) {
+  console.log(item)
+
+  var selectedItem = item.options[item.selectedIndex]
+  var urlSelectors = document.getElementsByClassName('url-select')
+
+  
+  //alert("selected item is :" + selectedItem.value)
+
+  switch (selectedItem.value) {
+    case '1':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    case '2':
+      urlSelectors[1].style.display='none'
+      urlSelectors[0].style.display='none'
+      break;
+    case '3':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '4':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '5':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '6':
+      urlSelectors[0].style.display='none'
+      urlSelectors[1].style.display='none'
+      break;
+    case '7':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    case '8':
+      urlSelectors[0].style.display='block'
+      urlSelectors[1].style.display='block'
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+};
+
+
+
+
+function Download() {
+    console.log("download_btn: click() ");
+
+
+  let item = document.getElementById('testy-select');
+  let theUrl = document.getElementById('url-select');
+
+  var selectedItem = item.options[item.selectedIndex]
+  var selectedUrlItem = theUrl.options[theUrl.selectedIndex]
+  
+  //alert("selected item is :" + selectedItem.value)
+
+
+
+  switch (selectedItem.value) {
+    case '1':
+      console.log('one')
+      imgUrlToBlob(selectedUrlItem.value);
+      break;
+    case '2':
+      console.log('two')
+      downloadTestTwo();
+      break;
+    case '3':
+      console.log('three')
+      downloadTestThree();
+      break;
+    case '4':
+      console.log('four')
+      downloadTestFour();
+      break;
+    case '5':
+      console.log('five')
+      downloadTestFive();
+      break;
+    case '6':
+      console.log('six')
+      downloadTestSix();
+      break;
+    case '7':
+      console.log('seven')
+      downloadTestSeven(selectedUrlItem.value);
+      break;
+    case '8':
+      console.log('eight')
+      downloadTestEight(selectedUrlItem.value);
+      break;
+    default:
+      alert('Sorry, we are broken')
+  }
+
+
+
 }
-)
-// slider end
+// Download() on click end
+
+
+
+function Draw() {
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+
+  var img = document.getElementById('camera_feed')
+  var cnvs = document.getElementById('my_canvas')
+  cnvs.width = img.width
+  cnvs.height = img.height
+
+  cnvs.style.position = 'absolute'
+  cnvs.style.left = img.offsetLeft + 'px'
+  cnvs.style.top = img.offsetTop + 'px'
+
+  // hmm, both settings are identical?
+  console.log('width = %i', img.width)
+  console.log('height = %i', img.height)
+  console.log('offset width = %i', img.offsetWidth)
+  console.log('offset height = %i', img.offsetHeight)
+
+  var TOP = 0
+  var BOTTOM = img.height
+  var LEFT = 0
+  var RIGHT = img.width
+
+  console.log('TOP = %i', TOP)
+  console.log('BOTTOM = %i', BOTTOM)
+  console.log('LEFT = %i', LEFT)
+  console.log('RIGHT = %i', RIGHT)
+
+  var ctx = cnvs.getContext('2d')
+  ctx.clearRect(0, 0, cnvs.width, cnvs.height)
+
+  ctx.beginPath()
+  ctx.moveTo(LEFT + 10, TOP + 10) // top left
+  ctx.lineTo(RIGHT - 10, TOP + 10) // top right
+  ctx.lineTo(RIGHT - 10, BOTTOM - 10) // bottom right
+  ctx.lineTo(LEFT + 10, BOTTOM - 10) // bottom right
+  ctx.lineTo(LEFT + 10, TOP + 10) // bottom right
+
+  ctx.lineWidth = 3
+  ctx.strokeStyle = '#00ff88'
+  ctx.stroke()
+}
+
+
 
 async function fetchMyConfig () {
   console.log('MyApp: getJSON()')
@@ -183,48 +289,39 @@ async function fetchMyConfig () {
 
     console.log('Region: ', AWS.config.region)
 
-    return responseJson
+    return s3
   }
   ) // then END
-}
+} // fetchMyConfig() END
 
-async function doMyInit () {
+var s3
+
+async function doMyS3Init () {
   console.log('MyApp: do_init()')
 
-  var msg = await fetchMyConfig()
-  console.log(msg)
+  var s3 = await fetchMyConfig()
+  //console.log(msg)
 }
-// do_my)init END
-
-
-function uploadBlob(blobData) {
-    // hack
-    console.log('hook to see if we upload to s3');
-    //var blobData = this.the_blob;
-    var fileName = "pix." + get_id() + ".png";
-    var params = {
-        Key: fileName,
-        ContentType: 'image/png',
-        Body: blobData
-    };
-
-    this.s3.upload(params, function(err, data) {
-        console.log(data);
-        console.log(err ? 'ERROR!' : 'UPLOADED.');
-
-        var params = {
-            Image: {
-                S3Object: {
-                    Bucket: this.albumBucketName,
-                    Name: fileName
-                }
-            },
-            Attributes: ["ALL"]
-        };
-    })
-} 
-// uploadBlob() end
+// doMyInit() END
 
 
 
-doMyInit()
+
+
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// entry point
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+
+//     const myApp = new MyApp();
+//     myglobals.myApp = myApp;
+//     myApp.do_my_init();
+
+    s3 = doMyS3Init()
+
+
+});
+// document.addEventListener
