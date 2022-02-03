@@ -217,16 +217,8 @@ function onClickVersion(item) {
 
     <div>
 
-        <label for='url-select'>Choose a URL:</label>
-
-
-        <select name='url_select' id='url-select' >
-            <option value="1" selected>non CORS</option>
-            <option value="2">ncdot</option>
-        </select>
 
         <label for='testy-select'>Choose a test:</label>
-
         <select name='testy' id='testy-select' >
             <option value="1" selected>one</option>
             <option value="2">two</option>
@@ -236,6 +228,14 @@ function onClickVersion(item) {
             <option value="6">six</option>
             <option value="7">seven</option>
         </select>
+
+
+        <label for='url-select' class='url-select'>Choose a URL:</label>
+        <select name='url_select' id='url-select' class='url-select'>
+            <option value="1" selected>non CORS</option>
+            <option value="2">ncdot</option>
+        </select>
+
 
         <input id='download-btn' type='button' value='Download' onclick='Download()'/>
 
@@ -393,8 +393,6 @@ function downloadTestOne (value) {
     console.log('link.href is %o', link.href)
     link.click();
     URL.revokeObjectURL(link.href);  
-
-
   }
   )
 } // download test end
