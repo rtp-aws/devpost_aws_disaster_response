@@ -250,6 +250,7 @@ venv.bak/
 *.backup
 *.swp
 *foo*
+*icy-bridge*
 
 
 

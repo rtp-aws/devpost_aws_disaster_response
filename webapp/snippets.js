@@ -1,6 +1,52 @@
 // These are snippets for various tasks
 
 
+// To get tools.js
+// const tools = require('./tools.js')
+
+function data_uri_to_blob(dataURI) {
+    var binary = atob(dataURI.split(',')[1]);
+    var array = [];
+    for (var i = 0; i < binary.length; i++) {
+        array.push(binary.charCodeAt(i));
+    }
+    return new Blob([new Uint8Array(array)],{
+        type: 'image/png'
+    });
+}
+
+function get_id() {
+    var newDate = new Date();
+    return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
+}
+
+function loadXHR(url) {
+
+    return new Promise(function(resolve, reject) {
+        try {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.responseType = "blob";
+            xhr.onerror = function() {
+                reject("Network error.")
+            }
+            ;
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    resolve(xhr.response)
+                } else {
+                    reject("Loading error:" + xhr.statusText)
+                }
+            }
+            ;
+            xhr.send();
+        } catch (err) {
+            reject(err.message)
+        }
+    }
+    );
+}
+
 
 
 // To get the string back out from the blob
