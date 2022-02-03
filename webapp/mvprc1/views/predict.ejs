@@ -362,27 +362,31 @@ function imgUrlToBlob (value) {
     // And you can use it for whatever you want
     // Like calling ref().put(blob)
 
+
+    uploadBlob(blob8);
+
+
     // Here, I use it to make an image appear on the page
-    const objectURL = URL.createObjectURL(blob8)
-    const myImage = new Image()
-    myImage.src = objectURL
-    document.getElementById('predict_img').appendChild(myImage)
+//     const objectURL = URL.createObjectURL(blob8)
+//     const myImage = new Image()
+//     myImage.src = objectURL
+//     document.getElementById('predict_img').appendChild(myImage)
 
 
-    // NOTE: Hmm, can I use test 3 method to download the new blob?
-    // YES YES YES, but file name is wrong?
-    // create a new link
-    let linkBlob = document.createElement('a');
-    linkBlob.download = 'predict_image.png';
+//     // NOTE: Hmm, can I use test 3 method to download the new blob?
+//     // YES YES YES, but file name is wrong?
+//     // create a new link
+//     let linkBlob = document.createElement('a');
+//     linkBlob.download = 'predict_image.png';
 
 
 
-    linkBlob.href = URL.createObjectURL(blob8);
-    console.log('link.href is %o', linkBlob.href)
-    // simular a click on the link
-    linkBlob.click();
-    // remove the url for the link
-    URL.revokeObjectURL(linkBlob.href);  
+//     linkBlob.href = URL.createObjectURL(blob8);
+//     console.log('link.href is %o', linkBlob.href)
+//     // simular a click on the link
+//     linkBlob.click();
+//     // remove the url for the link
+//     URL.revokeObjectURL(linkBlob.href);  
   }
   )
 } // imgUrlToBlob() end

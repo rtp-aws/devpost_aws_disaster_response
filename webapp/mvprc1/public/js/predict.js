@@ -196,4 +196,36 @@ async function doMyInit () {
 }
 // do_my)init END
 
+
+function uploadBlob(blobData) {
+    // hack
+    console.log('hook to see if we upload to s3');
+    //var blobData = this.the_blob;
+    var fileName = "pix." + get_id() + ".png";
+    var params = {
+        Key: fileName,
+        ContentType: 'image/png',
+        Body: blobData
+    };
+
+    this.s3.upload(params, function(err, data) {
+        console.log(data);
+        console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+        var params = {
+            Image: {
+                S3Object: {
+                    Bucket: this.albumBucketName,
+                    Name: fileName
+                }
+            },
+            Attributes: ["ALL"]
+        };
+    })
+} 
+// uploadBlob() end
+
+
+
+
 doMyInit()
