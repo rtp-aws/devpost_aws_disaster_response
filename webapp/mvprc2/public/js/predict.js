@@ -67,7 +67,19 @@ function blobToString(b) {
 
 function uploadCallback(err, data) {
 
-    performRekognition(gParams, data)
+
+    var params = {
+        Image: {
+            S3Object: {
+                Bucket: albumBucketName,
+                Name: fileName
+            }
+        },
+        Attributes: ["ALL"]
+    };
+
+    
+    performRekognition(params, data)
 
     
 }
@@ -85,8 +97,6 @@ function uploadBlob(blobData) {
 
     console.log('s3 %o', s3)
 
-    // TODO: err is not set?
-
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html
 
     // Set the globals
@@ -95,25 +105,6 @@ function uploadBlob(blobData) {
     
     s3.upload(params, uploadCallback)
 
-    // s3.upload(params, function(err, data) {
-    //     console.log(data);
-    //     console.log(err ? 'ERROR!' : 'UPLOADED.');
-
-    //     var params = {
-    //         Image: {
-    //             S3Object: {
-    //                 Bucket: albumBucketName,
-    //                 Name: fileName
-    //             }
-    //         },
-    //         Attributes: ["ALL"]
-    //     };
-
-    //     // Set the globals
-    //     gParams = params
-    //     gData = data
-        
-    // })
 }
 // uploadBlob() end
 
@@ -136,18 +127,10 @@ function performRekognition(params, data) {
     
     var rekognition = new AWS.Rekognition()
 
-    // TODO: err is not set?
+    // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html#detectLabels-property
 
     rekognition.detectLabels(params, rekCallback)
     
-    //rekognition.detectFaces(params, function(err, data) {
-    // rekognition.detectLabels(params, function(err, data) {
-    //     if (err)
-    //         console.log(err, err.stack)
-    //     else {
-    //         gRekResult = data
-    //     }
-    // });
     
 }
 // performRekognition() END
