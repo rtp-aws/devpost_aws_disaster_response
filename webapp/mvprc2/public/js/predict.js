@@ -126,6 +126,14 @@ function rekCallback(err, data) {
         console.log(err, err.stack)
     else {
         gRekResult = data
+
+        var mainContainer = document.getElementById('prediction_result')
+        for (var i = 0; i < data.Labels.length; i++) {
+            var div = document.createElement("div");
+            div.innerHTML = 'Label: ' + data[i].Name + ' ' + 'Confidence:' + data[i].Confidence
+            //div.innerHTML = 'Label: ' + data[i].Name + ' ' + 'Confidence:' + data[i].Confidence.toFixed(2);
+            mainContainer.appendChild(div)
+        }
     }
     
 }
