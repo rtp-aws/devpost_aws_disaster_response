@@ -67,7 +67,7 @@ function blobToString(b) {
 
 function uploadCallback(err, data) {
 
-    performRekognition(gParams, gData)
+    performRekognition(gParams, data)
 
     
 }
