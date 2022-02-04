@@ -137,7 +137,8 @@ function rekCallback(err, data) {
         for (var i = 0; i < data.Labels.length; i++) {
             var div = document.createElement("div");
             console.log(data.Labels[i])
-            div.innerHTML = 'Label: ' + data.Labels[i].Name + ' ' + 'Confidence:' + data.Labels[i].Confidence
+//            div.innerHTML = 'Label: ' + data.Labels[i].Name + ' ' + 'Confidence:' + data.Labels[i].Confidence
+            div.innerHTML = 'Label: ' + data.Labels[i].Name + ' ' + 'Confidence:' + data.Labels[i].Confidence.toFixed(3)
             //div.innerHTML = 'Label: ' + data[i].Name + ' ' + 'Confidence:' + data[i].Confidence.toFixed(2);
             mainContainer.appendChild(div)
         }
@@ -178,7 +179,9 @@ function imgUrlToBlob(value) {
     console.log('imgUrlToBlob()')
 
     var theNormalUrl = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Delete_key1.jpg'
-    var theNcDotUrl = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG'
+    var img = document.getElementById('camera_feed')
+    console.log('img is %o', img)
+    var theNcDotUrl = img.src;
     var theUrl
 
     if (value == 1) {
