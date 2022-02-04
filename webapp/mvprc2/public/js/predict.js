@@ -3,6 +3,52 @@ var bucketRegion = ''
 var identityPoolId = ''
 var albumBucketName = ''
 
+
+async function fetchMyConfig() {
+    console.log('MyApp: getJSON()')
+    return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
+        bucketRegion = responseJson.bucketRegion
+        identityPoolId = responseJson.identityPoolId
+        albumBucketName = responseJson.albumBucketName
+        //console.log('region: %s  poolId: %s  bucket: %s', bucketRegion, identityPoolId, albumBucketName)
+
+        AWS.config.update({
+            region: bucketRegion,
+            credentials: new AWS.CognitoIdentityCredentials({
+                IdentityPoolId: identityPoolId
+            })
+        })
+
+        var s3 = new AWS.S3({
+            apiVersion: '2006-03-01',
+            params: {
+                Bucket: albumBucketName
+            }
+        })
+
+        console.log('s3: ', s3)
+
+        console.log('Region: ', AWS.config.region)
+
+        return s3
+    }
+    )
+    // then END
+}
+// fetchMyConfig() END
+
+
+
+
+async function doMyS3Init() {
+    console.log('MyApp: do_init()')
+
+    var s3 = await fetchMyConfig()
+    //console.log(msg)
+}
+// doMyInit() END
+
+
 function blobToString(b) {
     var u
     var x
@@ -243,54 +289,8 @@ function Draw() {
     ctx.stroke()
 }
 
-async function fetchMyConfig() {
-    console.log('MyApp: getJSON()')
-    return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
-        bucketRegion = responseJson.bucketRegion
-        identityPoolId = responseJson.identityPoolId
-        albumBucketName = responseJson.albumBucketName
-        //console.log('region: %s  poolId: %s  bucket: %s', bucketRegion, identityPoolId, albumBucketName)
-
-        AWS.config.update({
-            region: bucketRegion,
-            credentials: new AWS.CognitoIdentityCredentials({
-                IdentityPoolId: identityPoolId
-            })
-        })
-
-        var s3 = new AWS.S3({
-            apiVersion: '2006-03-01',
-            params: {
-                Bucket: albumBucketName
-            }
-        })
-
-        console.log('s3: ', s3)
-
-        console.log('Region: ', AWS.config.region)
-
-        return s3
-    }
-    )
-    // then END
-}
-// fetchMyConfig() END
 
 
-
-
-async function doMyS3Init() {
-    console.log('MyApp: do_init()')
-
-    var s3 = await fetchMyConfig()
-    //console.log(msg)
-}
-// doMyInit() END
-
-
-function foo() {
-  console.log('foo')
-}
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -299,7 +299,6 @@ function foo() {
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-foo();
 var s3 = doMyS3Init()
 
 ///////////////////////////////////////////////////////////////////////////
