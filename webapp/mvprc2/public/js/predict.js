@@ -4,6 +4,10 @@ var identityPoolId = ''
 var albumBucketName = ''
 var s3 = null
 
+var gParams = null
+var gData = null
+var gRekResult = null
+
 async function fetchMyConfig() {
     console.log('MyApp: getJSON()')
     return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
@@ -74,6 +78,10 @@ function uploadBlob(blobData) {
 
     console.log('s3 %o', s3)
 
+    // TODO: err is not set?
+
+    // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html
+
     s3.upload(params, function(err, data) {
         console.log(data);
         console.log(err ? 'ERROR!' : 'UPLOADED.');
@@ -87,9 +95,36 @@ function uploadBlob(blobData) {
             },
             Attributes: ["ALL"]
         };
+
+        // Set the globals
+        gParams = params
+        gData = data
+        
     })
 }
 // uploadBlob() end
+
+
+function performRekognition(params, data) {
+    console.log('performRekognition() %o %o', params, data)
+
+    // 
+    
+    var rekognition = new AWS.Rekognition()
+
+    // TODO: err is not set?
+    
+    //rekognition.detectFaces(params, function(err, data) {
+    rekognition.detectLabels(params, function(err, data) {
+        if (err)
+            console.log(err, err.stack)
+        else {
+            gRekResult = data
+        }
+    });
+    
+}
+// performRekognition() END
 
 function get_id() {
     var newDate = new Date();
@@ -116,7 +151,8 @@ function imgUrlToBlob(value) {
         // And you can use it for whatever you want
         // Like calling ref().put(blob)
 
-        uploadBlob(blob8);
+        uploadBlob(blob8)
+        performRekognition(gParams, gData)
 
         // Here, I use it to make an image appear on the page
         const objectURL = URL.createObjectURL(blob8)
