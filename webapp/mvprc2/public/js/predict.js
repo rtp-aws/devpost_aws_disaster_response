@@ -118,7 +118,11 @@ function uploadBlob(blobData) {
 }
 // uploadBlob() end
 
-
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild)
+    }
+}
 
 function rekCallback(err, data) {
 
@@ -128,6 +132,8 @@ function rekCallback(err, data) {
         gRekResult = data
 
         var mainContainer = document.getElementById('prediction_result')
+        // erase existing entries if present
+        removeAllChildNodes(mainContainer)
         for (var i = 0; i < data.Labels.length; i++) {
             var div = document.createElement("div");
             console.log(data.Labels[i])
