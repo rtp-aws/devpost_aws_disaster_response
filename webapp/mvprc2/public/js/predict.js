@@ -2,7 +2,7 @@
 var bucketRegion = ''
 var identityPoolId = ''
 var albumBucketName = ''
-
+var s3 = null
 
 async function fetchMyConfig() {
     console.log('MyApp: getJSON()')
@@ -19,7 +19,7 @@ async function fetchMyConfig() {
             })
         })
 
-        var s3 = new AWS.S3({
+        s3 = new AWS.S3({
             apiVersion: '2006-03-01',
             params: {
                 Bucket: albumBucketName
