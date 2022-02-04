@@ -5,7 +5,6 @@ var albumBucketName = ''
 var s3 = null
 
 var gParams = null
-var gData = null
 var gRekResult = null
 
 async function fetchMyConfig() {
@@ -92,7 +91,6 @@ function uploadBlob(blobData) {
 
     // Set the globals
     gParams = params
-    gData = data
 
     
     s3.upload(params, uploadCallback)
