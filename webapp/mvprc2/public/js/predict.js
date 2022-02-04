@@ -3,7 +3,7 @@ var bucketRegion = ''
 var identityPoolId = ''
 var albumBucketName = ''
 var s3 = null
-
+var gFileName = null
 var gParams = null
 var gRekResult = null
 
@@ -72,7 +72,7 @@ function uploadCallback(err, data) {
         Image: {
             S3Object: {
                 Bucket: albumBucketName,
-                Name: fileName
+                Name: gFileName
             }
         },
         Attributes: ["ALL"]
@@ -95,13 +95,15 @@ function uploadBlob(blobData) {
         Body: blobData
     };
 
+    
+    
     console.log('s3 %o', s3)
 
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html
 
     // Set the globals
     gParams = params
-
+    gFileName = fileName
     
     s3.upload(params, uploadCallback)
 
