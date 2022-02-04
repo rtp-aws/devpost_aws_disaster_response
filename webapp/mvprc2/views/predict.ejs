@@ -232,8 +232,8 @@ function onClickVersion(item) {
   <div>
     <label for='url-select' class='url-select'>Choose a URL:</label>
     <select name='url_select' id='url-select' class='url-select'>
-        <option value="1" selected>non CORS</option>
-        <option value="2">ncdot</option>
+        <option value="1" >non CORS image</option>
+        <option value="2" selected>selected ncdot camera</option>
     </select>
   </div>
 
@@ -265,12 +265,15 @@ function onClickVersion(item) {
 
   </div>
 
+
+
+  <!-- I can delete this now
   <div>
       <div id="predict_img"></div>
 
   </div>
 
-
+  -->
 
   <div>
       <!-- Hidden canvas element. Used for taking snapshot of video. -->
@@ -278,7 +281,9 @@ function onClickVersion(item) {
 
   </div>
 
+  <div id='prediction_result'>
 
+  </div>
 
 
 </div>
