@@ -75,7 +75,8 @@ function uploadCallback(err, data) {
                 Name: gFileName
             }
         },
-        Attributes: ["ALL"]
+        MaxLabels: 100,
+        MinConfidence: 70
     };
 
     
