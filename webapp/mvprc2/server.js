@@ -83,6 +83,14 @@ app.get('/predict.ejs', (req, res) => {
     res.render("predict")
 })
 
+app.get('/predict1.ejs', (req, res) => {
+
+    console.log("get /predict1.ejs")
+    //console.log(req)
+
+    res.render("predict1")
+})
+
 
 
 
