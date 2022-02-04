@@ -72,6 +72,8 @@ function uploadBlob(blobData) {
         Body: blobData
     };
 
+    console.log('s3 %o', s3)
+
     s3.upload(params, function(err, data) {
         console.log(data);
         console.log(err ? 'ERROR!' : 'UPLOADED.');
