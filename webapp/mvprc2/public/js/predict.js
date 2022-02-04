@@ -9,6 +9,8 @@ var gFileName = null
 var gParams = null
 var gRekResult = null
 
+
+
 async function fetchMyConfig() {
     console.log('MyApp: getJSON()')
     return await fetch('/myconfig').then((response)=>response.json()).then((responseJson)=>{
@@ -54,6 +56,8 @@ async function doMyS3Init() {
 // doMyInit() END
 
 
+
+
 function blobToString(b) {
     var u
     var x
@@ -67,8 +71,9 @@ function blobToString(b) {
 }
 
 
-function uploadCallback(err, data) {
 
+
+function uploadCallback(err, data) {
 
     var params = {
         Image: {
@@ -80,12 +85,13 @@ function uploadCallback(err, data) {
         MaxLabels: 100,
         MinConfidence: 70
     };
-
     
     performRekognition(params, data)
-
     
 }
+
+
+
 
 function uploadBlob(blobData) {
     // hack
@@ -98,8 +104,7 @@ function uploadBlob(blobData) {
         Body: blobData
     };
 
-    
-    
+      
     console.log('s3 %o', s3)
 
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html
@@ -125,6 +130,9 @@ function rekCallback(err, data) {
     
 }
 
+
+
+
 function performRekognition(params, data) {
     console.log('performRekognition() %o %o', params, data)
 
@@ -140,11 +148,16 @@ function performRekognition(params, data) {
 }
 // performRekognition() END
 
+
+
 function get_id() {
     var newDate = new Date();
     return '' + parseInt(newDate.getMonth() + 1) + '-' + newDate.getDate() + '-' + newDate.getFullYear() + '-' + newDate.getTime()
 }
 // get_id() end
+
+
+
 
 function imgUrlToBlob(value) {
     console.log('imgUrlToBlob()')
@@ -166,29 +179,12 @@ function imgUrlToBlob(value) {
         // Like calling ref().put(blob)
 
         uploadBlob(blob8)
-
-        // Here, I use it to make an image appear on the page
-        const objectURL = URL.createObjectURL(blob8)
-        //     const myImage = new Image()
-        //     myImage.src = objectURL
-        //     document.getElementById('predict_img').appendChild(myImage)
-
-        //     // NOTE: Hmm, can I use test 3 method to download the new blob?
-        //     // YES YES YES, but file name is wrong?
-        //     // create a new link
-        //     let linkBlob = document.createElement('a');
-        //     linkBlob.download = 'predict_image.png';
-
-        //     linkBlob.href = URL.createObjectURL(blob8);
-        //     console.log('link.href is %o', linkBlob.href)
-        //     // simular a click on the link
-        //     linkBlob.click();
-        //     // remove the url for the link
-        //     URL.revokeObjectURL(linkBlob.href);  
     }
     )
 }
 // imgUrlToBlob() end
+
+
 
 function onClickTesty(item) {
     console.log(item)
@@ -240,7 +236,8 @@ function onClickTesty(item) {
     }
 
 }
-;
+
+
 function Predict() {
     console.log("predict-btn: click() ");
 
