@@ -49,7 +49,7 @@
       <select name='version' id='ver-select' onchange='onClickVersion(this)'>
           <option value="" >--Please choose an option--</option>
           <option value="0" selected >Latest</option>
-          <option value="1">download live image tests</option>
+          <option value="1">Predict default label test</option>
           <option value="2">2 tbd</option>
           <option value="3">3 tbd</option>
           <option value="4">4 tbd</option>
@@ -236,7 +236,7 @@ function onClickVersion(item) {
   </div>
 
   <div>
-    <input id='download-btn' type='button' value='Download' onclick='Download()'/>
+    <input id='predict-btn' type='button' value='Download' onclick='Predict()'/>
   </div>
 
 
@@ -249,14 +249,6 @@ function onClickVersion(item) {
 
   <div>
 
-    <!-- crossorigin="anonymous" -->
-    <!--    crossorigin="https://mvprc1.rtp-aws.org/predict.ejs" -->
-    <!-- camera urls changed
-        old way 
-         https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG
-        new way 
-         https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=HillsboroughSt_BlueRidgeRd.jpg&t=1643830561936
-    -->
 
     <img id="camera_feed" 
          class="camera_feed" 
@@ -284,38 +276,6 @@ function onClickVersion(item) {
 
   </div>
 
-  <!-- download attribute forces the browser to download instead of navigating -->
-  <!--
-    These tests were done for download test three and four
-    
-    What is href='#'
-   
-    https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used
-
-    1. Absolute path: move to another site like href="http://www.google.com"
-    2. Relative path: move to another page within the site like herf ="defaultpage.aspx"
-    3. Move to an element with a specified id within the page like href="#bottom"
-    4. href="javascript:void(0)", it does not move anywhere.
-    5. href="#" , it does not move anywhere but scroll on the top of the current page.
-    6. href= "" , it will load the current page but some browsers causes forbidden errors.
-    7. href= "#!", it goes to a non existant link
-
-    Note: When we do not need to specified any url inside a anchor tag then use 
-    <a href="javascript:void(0)">Test1</a>
-
-    Note: The above note does not work for this example
-    ie. this will not work:
-          <a download="hello.txt" href='javascript:void(0)' id="link">Download</a>
-    
-    These will work:
-      <a download="hello.txt" href='#' id="link">Download</a>
-      <a download="hello.txt" href='#!' id="link">Download</a>
-
-    Other posts in the thread mention that '#' is bad but '#!' is better.
-
-
-  -->
-
 
 
 
@@ -329,11 +289,6 @@ function onClickVersion(item) {
 </script>
 
 
-<!-- display: inline        make horizontal
-     display: block         default, vertical
-     display: none          hidden
-     visibility: hidden     also hidden
--->
 
 </body>
 <footer>

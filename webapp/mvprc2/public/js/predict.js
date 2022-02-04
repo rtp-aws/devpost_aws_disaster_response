@@ -2,6 +2,8 @@
 var bucketRegion = ''
 var identityPoolId = ''
 var albumBucketName = ''
+
+// globals why not?
 var s3 = null
 var gFileName = null
 var gParams = null
@@ -44,9 +46,9 @@ async function fetchMyConfig() {
 
 
 async function doMyS3Init() {
-    console.log('MyApp: do_init()')
+    console.log('doMyS3Init()')
 
-    var s3 = await fetchMyConfig()
+    s3 = await fetchMyConfig()
     //console.log(msg)
 }
 // doMyInit() END
@@ -239,8 +241,8 @@ function onClickTesty(item) {
 
 }
 ;
-function Download() {
-    console.log("download_btn: click() ");
+function Predict() {
+    console.log("predict-btn: click() ");
 
     let item = document.getElementById('testy-select');
     let theUrl = document.getElementById('url-select');
@@ -348,18 +350,5 @@ function Draw() {
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-var s3 = doMyS3Init()
-
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-// entry point - no need to do this
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-// document.addEventListener('DOMContentLoaded', function() {
-
-//     s3 = doMyS3Init()
-//     console.log('wtf devtools')
-
-// });
-// document.addEventListener
+s3 = doMyS3Init()
 
