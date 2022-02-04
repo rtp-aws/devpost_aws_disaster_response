@@ -131,7 +131,7 @@ function rekCallback(err, data) {
         for (var i = 0; i < data.Labels.length; i++) {
             var div = document.createElement("div");
             console.log(data.Labels[i])
-            div.innerHTML = 'Label: ' + data[i].Labels.Name + ' ' + 'Confidence:' + data[i].Labels.Confidence
+            div.innerHTML = 'Label: ' + data.Labels[i].Name + ' ' + 'Confidence:' + data.Labels[i].Confidence
             //div.innerHTML = 'Label: ' + data[i].Name + ' ' + 'Confidence:' + data[i].Confidence.toFixed(2);
             mainContainer.appendChild(div)
         }
