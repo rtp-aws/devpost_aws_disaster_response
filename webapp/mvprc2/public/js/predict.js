@@ -65,6 +65,14 @@ function blobToString(b) {
     return x.responseText;
 }
 
+
+function uploadCallback(err, data) {
+
+    performRekognition(gParams, gData)
+
+    
+}
+
 function uploadBlob(blobData) {
     // hack
     console.log('hook to see if we upload to s3');
@@ -82,28 +90,46 @@ function uploadBlob(blobData) {
 
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html
 
-    s3.upload(params, function(err, data) {
-        console.log(data);
-        console.log(err ? 'ERROR!' : 'UPLOADED.');
+    // Set the globals
+    gParams = params
+    gData = data
 
-        var params = {
-            Image: {
-                S3Object: {
-                    Bucket: albumBucketName,
-                    Name: fileName
-                }
-            },
-            Attributes: ["ALL"]
-        };
+    
+    s3.upload(params, uploadCallback)
 
-        // Set the globals
-        gParams = params
-        gData = data
+    // s3.upload(params, function(err, data) {
+    //     console.log(data);
+    //     console.log(err ? 'ERROR!' : 'UPLOADED.');
+
+    //     var params = {
+    //         Image: {
+    //             S3Object: {
+    //                 Bucket: albumBucketName,
+    //                 Name: fileName
+    //             }
+    //         },
+    //         Attributes: ["ALL"]
+    //     };
+
+    //     // Set the globals
+    //     gParams = params
+    //     gData = data
         
-    })
+    // })
 }
 // uploadBlob() end
 
+
+
+function rekCallback(err, data) {
+
+    if (err)
+        console.log(err, err.stack)
+    else {
+        gRekResult = data
+    }
+    
+}
 
 function performRekognition(params, data) {
     console.log('performRekognition() %o %o', params, data)
@@ -113,15 +139,17 @@ function performRekognition(params, data) {
     var rekognition = new AWS.Rekognition()
 
     // TODO: err is not set?
+
+    rekognition.detectLabels(params, rekCallback)
     
     //rekognition.detectFaces(params, function(err, data) {
-    rekognition.detectLabels(params, function(err, data) {
-        if (err)
-            console.log(err, err.stack)
-        else {
-            gRekResult = data
-        }
-    });
+    // rekognition.detectLabels(params, function(err, data) {
+    //     if (err)
+    //         console.log(err, err.stack)
+    //     else {
+    //         gRekResult = data
+    //     }
+    // });
     
 }
 // performRekognition() END
@@ -152,7 +180,6 @@ function imgUrlToBlob(value) {
         // Like calling ref().put(blob)
 
         uploadBlob(blob8)
-        performRekognition(gParams, gData)
 
         // Here, I use it to make an image appear on the page
         const objectURL = URL.createObjectURL(blob8)
