@@ -29,6 +29,8 @@ Each directory has a README.md.  Each directory has a Makefile.  Operations for 
 * `R/`  Sample R experiments.
 * `secrets`  encrypted keys for AWS authentication.
 * `video` Any videos are put here.  
+* `icy-bridge` Curated images for labeling tasks and notes on weather conditions are here.
+* `gt_rek` Notes on SageMaker Ground Truth datasets and Rekognition models are here.
 
 # Project Requirments
 
@@ -168,57 +170,36 @@ The cameras used for the project are reflected in the web app.  These are the in
 
 #### NC 147 (Toll) & Davis Drive
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll147_DavisDr.JPG)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll147_DavisDr.JPG
-```
 
 #### I-440 & US 64 Bypass
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=I440_I87.JPG)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I440_I87.JPG
-```
 
 #### I-540 & US 401
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=I540_US401.JPG)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG
-```
 #### Toll 540/US 1
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=I40_US1-64.jpg)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg
-```
 
 #### Toll 540 & NC 54
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll540_NC54.JPG)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_NC54.JPG
-```
 
 #### I-40 @ US-1
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_US1.JPG)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll540_US1.JPG)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg
-```
 #### TOLL540 and Apex BBQ Rd
 
-![img](https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG)
+![img](https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/images?filename=Toll540_Apex-BBQ.JPG)
 
-```
-https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_Apex-BBQ.JPG
-```
 
 
 # Quickstart for contributors
