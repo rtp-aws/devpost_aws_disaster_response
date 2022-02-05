@@ -34,4 +34,11 @@ The results were absysmal.  The dotted white lines were identified as ice for ex
 
 Focus on a single bridge.  The goal is to identify the bridge seam.  As another test I also labeled the bridge seam to see if it could be regularly identified.  A simple predictor would be given an image can the model predict where the seam is located?  If the seam can not be located its a pretty good chance that 
 
+As an additional reference I selected auto labeling option in ground truth.  I don't see any difference though.
+
+
+For reference this is how I setup the C4 model from sagemaker ground truth.
+
+![img](rekognition_import_dataset_from_gt.png)
+
 
