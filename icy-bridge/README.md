@@ -1,4 +1,4 @@
-# Notes on Curated Cameras Images
+# Notes on Curated Cameras Images used for Model Development
 
 These are the cameras chosen for the experiment.  These are the notes
 on which cameras have the best views of the bridge before and after the ice
@@ -12,6 +12,17 @@ storm.
 | `TOLL147_DAVIS_DR`    |   30KB  |  720x576    | Bridge | Road | Bridge | Bridge |
 | `TOLL147_HOPSON_RD`   |  240KB  | 1920x1080   | Road   | Road |  Both  |   Road |
 | `TOLL540_DAVIS_DR`    |   50KB  |  720x480    |        |      |  Both  |   Both |
+
+## Model C3
+
+The images in the c3 directory were chosen for the first model. The images were labeled via Sage Maker Ground Truth
+and then the result was imported into AWS Rekognition.  The results were dismal. See the Sagemaker and Rekognition directory for more details.
+
+## Model C4
+
+The camera `BUS40_SALEM` is chosen for C4 model.  It was chosen despite the low resolution because
+it has images of both ice storms and was fixed for all four days.  The goal of this model is to simply locate
+the bridge seam and ice.
 
 
 
