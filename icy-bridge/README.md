@@ -24,6 +24,20 @@ The camera `BUS40_SALEM` is chosen for C4 model.  It was chosen despite the low 
 it has images of both ice storms and was fixed for all four days.  The goal of this model is to simply locate
 the bridge seam and ice.
 
+The model failed to train.  It said I did  not include enough images.  I added 12 more images to the rekognition dataset stage.
+
+The model still failed to train after the addtional images.
+
+I added more images so that there are 48 images, all with similar camera angle.  I deleted any night time shots also.
+
+Its difficult to figure out the UI. It has a mix of existing labels and non.
+
+## Model C5
+
+Can we detect a bridge and a seam?
+
+Same images as before.  Not even looking for ice.
+
 
 
 # Weather Report week of 20220113-20220119
