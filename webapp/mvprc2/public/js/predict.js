@@ -177,9 +177,15 @@ function performRekognition(params, data) {
     //    ContentType: 'image/png',
     //    Body: blobData
     //};
+    //
+    // I need to remove 
+    //
+    // MaxLabels
 
     params['ProjectVersionArn'] = 'arn:aws:rekognition:us-east-1:265627204426:project/c5/version/c5.2022-02-06T08.38.41/1644154721096'
-
+    params['MaxResults'] = 10
+    delete params['MaxLabels']
+    
     // This calls the default model 
     rekognition.detectCustomLabels(params, rekCallback)
     
