@@ -149,10 +149,12 @@ function rekCallback(err, data) {
 
 function performRekognition(params, data) {
     console.log('performRekognition() %o %o', params, data)
-
-    // 
-    
-    var rekognition = new AWS.Rekognition()
+   
+    var rekognition = new AWS.Rekognition({
+            apiVersion: '2016-06T08-27',        
+    }
+        
+    )
 
     // Default Labels
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html#detectLabels-property
