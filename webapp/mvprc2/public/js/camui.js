@@ -5,6 +5,7 @@
 // hmm, you can't specify var or const but you can specify and assign
 // in one step.  Then not use   Is this the method for specifying
 // a class variable in javascript?
+const BUS40_SALEM = document.getElementById('BUS40_SALEM')
 const TOLL147_DAVIS_DR = document.getElementById('TOLL147_DAVIS_DR')
 const I40W_MM8 = document.getElementById('I40W_MM8')
 const I440_US64_BYPASS = document.getElementById('I440_US64_Bypass')
@@ -38,6 +39,15 @@ function eraseCanvas () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 // erase_canvas end
+
+
+BUS40_SALEM.addEventListener('click', button => {
+  console.log('BUS40_SALEM: click() %o %o', button, TOLL147_DAVIS_DR)
+  cameraFeedImg.src = baseCameraURL + 'Bus40_SalemLake.jpg'
+  eraseCanvas()
+}
+)
+
 
 TOLL147_DAVIS_DR.addEventListener('click', button => {
   console.log('TOLL147_DAVIS_DR: click() %o %o', button, TOLL147_DAVIS_DR)
