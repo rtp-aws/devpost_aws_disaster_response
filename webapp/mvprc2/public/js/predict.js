@@ -134,7 +134,7 @@ function rekCallback(err, data) {
         var mainContainer = document.getElementById('prediction_result')
         // erase existing entries if present
         removeAllChildNodes(mainContainer)
-        for (var i = 0; i < data.Labels.length; i++) {
+        for (var i = 0; i < data.CustomLabels.length; i++) {
             var div = document.createElement("div");
             console.log(data.Labels[i])
             div.innerHTML = 'Label: ' + data.Labels[i].Name + ' ' + 'Confidence:' + data.Labels[i].Confidence.toFixed(3)
