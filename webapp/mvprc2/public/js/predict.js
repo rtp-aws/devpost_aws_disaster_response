@@ -151,7 +151,7 @@ function performRekognition(params, data) {
     console.log('performRekognition() %o %o', params, data)
    
     var rekognition = new AWS.Rekognition({
-            apiVersion: '2016-06T08-27',        
+            apiVersion: '2016-06-27',        
     }
         
     )
