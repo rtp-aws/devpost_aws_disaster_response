@@ -113,6 +113,7 @@ The curl for this one is
 ``` 
 curl -H "Content-Type:application/json" \
 -d '{ "at": 1, "al": 1, "ab": 3, "ar": 3, "bt": 2, "bl": 2, "bb": 4, "br": 4 }' \
+
 https://8n3aw73a3m.execute-api.us-east-1.amazonaws.com/default/intersection_over_union
 
 ```
@@ -216,8 +217,281 @@ def lambda_handler(event, context):
 
 ```
 
+# from cloudacademy lab
+
+Therefore, you will define two HTTP endpoints:
+
+```
+/items/
+/items/{ID}/
+```
+
+> Of course, you could achieve the very same result with a query string parameter (i.e. /items/?ID=XXX)
 
 
 
+Model
+
+```
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Item Schema",
+    "type": "object",
+    "properties": {
+        "ID": {"type" : "number"},
+        "name": {"type" : "string"},
+        "price": {"type" : "number"}
+    }
+}
+```
+
+First model is
+
+Model name: Item
+
+Model Schema `application/json`
+
+```
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Item Schema",
+  "type": "object",
+  "properties": {
+    "ID": { "type": "number" },
+    "name": { "type": "string" },
+    "price": { "type": "number" }
+  }
+}
+```
+
+Second model is
+
+Mode name: Items
+
+Model Schema: 
+
+Notice, this schema links to the first.  The `YOUR_API_ID` is found
+in the gray title bar: `APIs > ItemsAPI (somerandom) > Models > Create`
+
+The `somerandom` is what you put in place of `YOUR_API_ID`
+
+```
+{
+  "id": "Items",
+  "title": "Items",
+  "type": "array",
+  "items": {"$ref": "https://apigateway.amazonaws.com/restapis/YOUR_API_ID/models/Item"}
+}
+```
+
+Create Resource
+
+Under `Actions` select `Create Resource`
+
+Configure as so:
+
+- [ ] proxy resource
+- Resource Name: `Items`
+- Resource Path: `/items`
+- [ ] Enable API Gateway CORS
+
+Click `Create Resource`
+
+Create a `GET` method for this resource
+
+Click `Actions->Create Method`, specify `GET` in pulldown.
+
+Select `Mock` and click `Save`
+
+Click `Integration Response`
+
+Click arrow in `Method response status: 200` row.
+
+Expand `Mapping Templates`
+
+Click `application/json`
+
+In pull down select `Items`
+
+Overwrite the code with this:
+
+```
+[
+#foreach($ID in [1, 2, 3])
+    #set($price = $ID * 1.5)
+    #set($name = "foo" + $ID)
+    {
+        "ID" : $ID,
+        "name" : "$name",
+        "price" : $price
+    }
+    #if($foreach.hasNext),#end
+#end
+]
+
+```
+
+Click the `Save Button` at bottom and `Save` button at top.
+
+Click `<-Method Execution` to go back and then click `Test`
+
+Click `Test` again in the `<- Method Execution /items - GET - Method Test` page.
+
+Add the /{} item specific get.
+
+Click in `Resource` panel, the `/items` then click `Actions->Create Resource`
+
+Configure the `New Child Resource` page like so:
+
+
+
+- [ ] proxy resource
+- Resource Name: `Item`
+- Resource Path: `/items/{ID}`
+- [ ] Enable API Gateway CORS
+
+Click `Create Resource`
+
+While `/{ID}` is selected in `Resources` panel, click `Actions->Create Method` and choose `GET`
+
+Choose `Mock`
+
+Click `Save`
+
+Click `Integration Response`
+
+Click `>`, `Mapping Templates`, `application/json`, `Item` in `Generate templace` pulldown, ` and add the following:
+
+```
+#set($Integer = 1)
+#set($ID = $Integer.parseInt($input.params("ID")))
+#set($name = "foo" + $ID)
+#set($price = $ID * 1.5)
+{
+    "ID" : $ID,
+    "name" : "$name",
+    "price" : $price
+}
+```
+
+Click gray `Save` and then blue `Save`
+
+Click `<- Method Execution`
+
+Doing the `Deployment`
+
+Click `Actions`-> `Deploy` and select `New Stage` enter the following values
+
+Deployment Stage `[New Stage]`
+Stage Name `dev`
+Stage Description `Development environment`
+Deployment description `Only mock items`
+
+
+## Create Lambda Function
+
+``` 
+
+# static list of items
+items = [
+  {"ID": 1, "name": "Pen", "price": 2.5},
+  {"ID": 2, "name": "Pencil", "price": 1.5},
+  {"ID": 3, "name": "Highlighter", "price": 3.0},
+  {"ID": 4, "name": "Ruler", "price": 5.0},
+]
+
+def lambda_handler(event, context):
+  print("Event: %s" % event) # log event data
+  ID = event.get("ID") # extract ID
+
+  # list case
+  if not ID:
+    return items
+
+  # ID case
+  found = [item for item in items if item["ID"] == ID]
+  if found:
+    return next(iter(found))
+
+  # nothing was found
+  raise Exception("NotFoundError")
+```
+
+Test code for getitems
+
+```
+{}
+```
+
+Test code for get_item_1
+
+```
+{
+    "ID":1
+}
+```
+
+
+Test code for get_item_6
+
+```
+{
+    "ID":6
+}
+```
+
+Creating versions
+
+The following are examples of how the version and alias mappings work:
+
+* ItemsFunction -> `$LATEST Version`
+* ItemsFunction:1 -> `Version 1`
+* ItemsFunction:prod -> `prod alias -> Version 1`
+
+
+
+
+Create a version.
+
+Create an Alias:
+
+Name: dev
+Description: dev alias
+Version: $LATEST
+
+
+Create an Alias:
+
+Name: prod
+Description: prod alias
+Version: 3
+
+To see aliases, click the function name ie. `Lambda > Functions > ItemsFunction`.
+
+Click the `Aliases` tab
+
+BAck in API Gateway
+
+Click /items GET. Click Integration Request
+
+Specify:
+
+Integration Type : Lambda Function
+- [] Use Lambda Proxy Integration
+Lambda Region 'us-west-2'
+Lambda Function 'ItemsFunctions:dev'  <- change this from dev to prod.
+- [x] Use Default Timeout
+
+For /Items/{} do the same, but for 'Mapping Templates' choose 'when there are no teimplates defined recommended'
+
+click application/json
+
+Select Item in pull down. Add
+
+```
+{
+  "ID": $input.params("ID")
+}
+```
 
 
