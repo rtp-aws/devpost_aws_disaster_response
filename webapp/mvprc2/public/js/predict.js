@@ -156,6 +156,25 @@ function performRekognition(params, data) {
 
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html#detectLabels-property
 
+    // params will have already
+    //
+    // Image which is a S3 object 
+    // MaxLabels which 100 
+    // MinConfidence which is 70 
+    // 
+    // I need to add 
+    //
+    // ProjectVersionArn
+    // MaxResults  instead of MaxLabels 
+    //var params = {
+    //    Key: fileName,
+    //    ContentType: 'image/png',
+    //    Body: blobData
+    //};
+
+    params['ProjectVersionArn'] = 'arn:aws:rekognition:us-east-1:265627204426:project/c5/version/c5.2022-02-06T08.38.41/1644154721096'
+
+    // This calls the default model 
     rekognition.detectLabels(params, rekCallback)
     
     
