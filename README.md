@@ -9,6 +9,13 @@ While working on this project, [this](https://www.wral.com/tractor-trailer-slide
 Later still [this](https://www.wral.com/ambulance-carrying-patient-skids-off-i-87-in-slew-of-ice-related-wrecks/20089162/) happened.
 
 
+
+# Project Goal Architecture
+
+![img](imgs/ProjectGoal.png)
+
+
+
 # Devpost Entry
 
 https://devpost.com/software/todo-ot17ds
@@ -56,6 +63,14 @@ and the edge version
 
 ![img](imgs/NC147_DAVIS_DR_subset_edge.png)
 
+
+Sadly the NC147 camera moved and never showed the same camera angle on the day of the ice storms.  With that said, here is a comparison of two images of a similar bridge.
+
+Consider this process instead
+
+![img](imgs/method.png)
+
+You can see the bridge seam is different and given image processing you could determine the change.
 
 
 ## Development Method
