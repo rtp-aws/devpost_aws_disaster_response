@@ -83,7 +83,7 @@ function uploadCallback(err, data) {
             }
         },
         MaxLabels: 100,
-        MinConfidence: 10
+        MinConfidence: 0
     };
     
     performRekognition(params, data)
