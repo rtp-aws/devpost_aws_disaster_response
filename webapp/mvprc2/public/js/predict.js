@@ -154,7 +154,11 @@ function performRekognition(params, data) {
     
     var rekognition = new AWS.Rekognition()
 
+    // Default Labels
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html#detectLabels-property
+    //
+    // Custom Labels
+    // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html#detectCustomLabels-property
 
     // params will have already
     //
@@ -175,7 +179,7 @@ function performRekognition(params, data) {
     params['ProjectVersionArn'] = 'arn:aws:rekognition:us-east-1:265627204426:project/c5/version/c5.2022-02-06T08.38.41/1644154721096'
 
     // This calls the default model 
-    rekognition.detectLabels(params, rekCallback)
+    rekognition.detectCustomLabels(params, rekCallback)
     
     
 }
