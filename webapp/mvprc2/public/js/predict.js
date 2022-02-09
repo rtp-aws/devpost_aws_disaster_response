@@ -287,6 +287,8 @@ function onClickTesty(item) {
 
 function Predict() {
     console.log("predict-btn: click() ");
+    alert("contest deadline ended Feb 7th. Custom model stopped to save cost. email davisjf@gmail.com to restart");
+    return
 
     let item = document.getElementById('testy-select');
     let theUrl = document.getElementById('url-select');
