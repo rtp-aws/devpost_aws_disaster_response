@@ -433,4 +433,14 @@ I left what I had with MVP RC1 and moved to a new version MVP RC2.  In this case
 keep the nodejs out of the browser code.  Remove the face and bridge stuff.  It will 
 be simpler to maintain and build faster.
 
+20220209
+
+A lot has transpired and I have been amis with my notes.
+
+I deployed a few models.  Made a workable setup for AWS API Gateway for a rest
+api which calls a lambda.  The models were bad.  They could not identify a 
+bridge much less a seam or ice.
+
+I was getting the dotted white lines detected as ice.  The bridge was detected with portions in the sky.
+
 
