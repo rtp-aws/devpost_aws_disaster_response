@@ -443,4 +443,52 @@ bridge much less a seam or ice.
 
 I was getting the dotted white lines detected as ice.  The bridge was detected with portions in the sky.
 
+20220212
+
+I am still working on a killswitch to avoid the ~$400 monthly bill.  Even though
+aws credits from the usergroup leaders, cloud builders, and three months of 600 hours of rekognition meant no out of pocket money was spent, I don't want to have this problem in the future.  Not to mention some security exploits were 
+exposed in order to get something working.  All these need to be tightened 
+up.  The killswitch is something needed as a backup.
+
+I have the throttle portion of the killswitch for api gateway in place.
+I also know that lambda's use roles to determine which resource they 
+can modify.  I added the role to manipulate api gateway.  I am in process
+of putting in a mod for rekognition now.
+
+I learned how to implement cloudfront invalidation.  Its not important 
+here but is something to know.  I did that.
+
+I think I mentioned I am planning to rotate the images in mxnet.  That is added
+as a [todo.](https://github.com/rtp-aws/devpost_aws_disaster_response/issues/19)
+
+Ive also been busy looking for a job.  One of the jobs I had everything but
+go.  I saw a test of javascript and go.  I was impressed how much faster
+go was than pure javascript.  I did some go back in 2014 when I worked in 
+sunnyvale.  I resumed it for a day sometime afterwards.  I resumed in ernest
+learning go a few days ago.  I might not incorporate it, but some things
+which impressed me so that I might use it here.
+
+* can run on a arduino - still prefer C - but interesting
+* has some tooling which reminds me of what I have seen with dart
+* the speed versus javascript
+* i even saw some dataframe libs/modules
+* looks like C - ive noted this before
+* one of the authors was Ken Thompson
+
+As part of looking for a job, and applying to interviews again, I updated
+the classwork section and project pages on skink.net.  That is when I learned
+about the cloudfront stuff we will use here.
+
+Regarding this project.  I answered emails from the contest judges.
+
+I submitted a few proposals to the call for papers at a few conferences.
+
+I submitted an entry to a new hackathon.  I answered some questions.
+I am in the pipeline to get some credits.  
+
+I did some more recruiting.  I seem to be getting more responses.  I 
+guess when you have something to show it helps drum up support.
+
+
+
 
