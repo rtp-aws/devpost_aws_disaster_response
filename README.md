@@ -1,4 +1,8 @@
-# devpost_aws_disaster_recovery
+# devpost_aws_disaster_response
+
+This title was chosen since it original was for the devpost hackathon 
+below.  Its now an entry for the deep learning challenge.  Perhaps
+it should be renamed to icy_bridge.
 
 rtp-aws.org submission for devpost.com AWS Disaster Response Hackathon
 
