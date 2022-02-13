@@ -2,10 +2,28 @@
 
 assuming you have activated your virtual envivornment
 
+```
+pyenv activate devpost
+```
+
+
 # install
 
 ```
-pip install notebook
+# previously. possibly works with both
+# pip install notebook
+pip install juypter
+
+pip install gluoncv
+pip install mxnet
+```
+pip install ipyplot
+pip install pyplotlib
+pip install numpy
+pip install pillow
+
+
+
 ```
 
 # run 
