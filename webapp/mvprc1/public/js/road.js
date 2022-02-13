@@ -30,37 +30,37 @@ const baseCameraURL = 'https://eapps.ncdot.gov/services/traffic-prod/v1/cameras/
 
 HANESMALL_JONES.addEventListener('click', button => {
   console.log("HANESMALL_JONES: click() ");
-  camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-Jonestown.jpg"
+  camera_feed_road_img.src = baseCameraURL + "HanesMall-Jonestown.jpg"
 })
 
 HANESMALL_KESTER.addEventListener('click', button => {
   console.log("HANESMALL_KESTER: click() ");
-  camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=HanesMall-KesterMill.jpg"
+  camera_feed_road_img.src = baseCameraURL + "HanesMall-KesterMill.jpg"
 })
 
 I40_MM27.addEventListener('click', button => {
  console.log(": click() ");
- camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_mm27.jpg"
+ camera_feed_road_img.src = baseCameraURL + "I40_mm27.jpg"
 })
 
 I540_US401.addEventListener('click', button => {
   console.log("I540_US401: click() ");
-  camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I540_US401.JPG"
+  camera_feed_road_img.src = baseCameraURL + "I540_US401.JPG"
 })
 
 I540_US1.addEventListener('click', button => {
   console.log("I540_US1: click() ");
-  camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=I40_US1-64.jpg"
+  camera_feed_road_img.src = baseCameraURL + "I40_US1-64.jpg"
 })
 
 TOLL540_DAVIS_DR.addEventListener('click', button => {
   console.log(": click() ");
-  camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DavisDr.JPG"
+  camera_feed_road_img.src = baseCameraURL + "Toll540_DavisDr.JPG"
 })
 
 TOLL540_DMS7.addEventListener('click', button => {
   console.log("TOLL540_DMS7: click() ");
-  camera_feed_road_img.src = baseCameraURL + "https://tims.ncdot.gov/TIMS/cameras/viewimage.ashx?id=Toll540_DMS7.JPG"
+  camera_feed_road_img.src = baseCameraURL + "Toll540_DMS7.JPG"
 })
 
 
