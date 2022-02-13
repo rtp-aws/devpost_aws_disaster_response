@@ -18,5 +18,12 @@ curl -w "\n" http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key
 In this Lab Step, you learned how you can obtain instance metadata. This metadata can be extremely useful if you want to automate the setup of new instances.
 
 
+##############
+
+# to remember your passphrase
+
+ssh-agent bash
+ssh-add ~/.ssh/id_rsa
+
 ```
 
