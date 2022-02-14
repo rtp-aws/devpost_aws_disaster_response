@@ -492,3 +492,10 @@ guess when you have something to show it helps drum up support.
 
 
 
+20220213
+
+Did some image processing mxnet.  I was able to make grayscale, but unable to remember how
+to make 1 layer image.  Need to be able to add method for rotate and this requires
+I take the grayscale 3 layer image into one layer.
+
+
