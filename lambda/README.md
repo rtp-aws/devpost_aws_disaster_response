@@ -1,4 +1,41 @@
-# lambda functions
+# API Gateway and Lambda functions
+
+
+This is a jumbled mess, but its raw notes and not revisited.  I'm still adding to them.
+
+The first shots here are of API gateway showing the model->resource->method setup.  The
+details of how to manipulate the connection(integration?) to mock or lambda are in the
+text below.  The syntax of the mock integration syntax for returning variable results
+is lookie lookie at the moment.  I'll update and elaborate that bit as I learn it.
+
+I'm not worried about the api key at the moment since its throttled to zero usage.  I'll update
+that as I revisit this section.  In reality I plan to use HTTP API style config rather
+than REST API style since it is cheaper. I just haven't figure it out yet.  I've only
+done some initial stabs without reading at this point.
+
+## Model screenshots
+
+The base bounding box
+
+![img](../imgs/api_gw_model_boundingbox.png)
+
+The connection to a pair.  I don't need to identify each box since I test a pair.
+
+![img](../imgs/api_gw_model_boundingboxes.png)
+
+
+The POST method
+
+![img](../imgs/api_gw_rsrc_method.png)
+
+The stage where I set the throttle to zero.  If the cost goes up unexpectantly I set the
+throttle to zero via the killswitch lambda.
+
+![img](../imgs/api_gw_stage.png)
+
+
+
+# Here down is a mess.  Yikes!
 
 Rather than trying to implement `Intersection over union`, in Javascript, lets try to make a python lambda function.
 
