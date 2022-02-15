@@ -498,4 +498,8 @@ Did some image processing mxnet.  I was able to make grayscale, but unable to re
 to make 1 layer image.  Need to be able to add method for rotate and this requires
 I take the grayscale 3 layer image into one layer.
 
+20220214
+
+Found the UC Berkely MXNet video series they have for a class on youtube.  I did a type along on the linear algebra.  Took some latex notes as I implemented 
+the videos formulas.  I also did the mxnet code in a jupyter notebook again.
 
