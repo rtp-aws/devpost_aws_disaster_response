@@ -503,3 +503,10 @@ I take the grayscale 3 layer image into one layer.
 Found the UC Berkely MXNet video series they have for a class on youtube.  I did a type along on the linear algebra.  Took some latex notes as I implemented 
 the videos formulas.  I also did the mxnet code in a jupyter notebook again.
 
+
+20220218
+
+Still working on the mxnet code.  I believe I have an understanding enough to attempt
+to do the rotate using only mxnet again.
+
+
