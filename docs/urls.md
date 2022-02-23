@@ -49,3 +49,8 @@ https://plnkr.co/edit/?p=preview&preview
 # AWS URLS
 
 https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Rekognition.html
+
+# mxnet URLS
+
+https://github.com/chinakook/Awesome-MXNet
+
