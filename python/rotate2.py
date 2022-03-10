@@ -64,7 +64,7 @@ MODEL_NAME = 'c6'
 MODEL_TOP_DIR = ICY_BRIDGE_DIR + MODEL_NAME + '/'
 my_print(False, 'MODEL_TOP_DIR = ', MODEL_TOP_DIR)
 MODEL_RAW_IMAGE_DIR = MODEL_TOP_DIR + 'raw/'
-MODEL_POST_IMAGE_DIR = MODEL_TOP_DIR + 'post_gray_rotate/'
+MODEL_POST_IMAGE_DIR = MODEL_TOP_DIR + 'post_rotate/'
 my_print(False, 'MODEL_RAW_IMAGE_DIR = ', MODEL_RAW_IMAGE_DIR)
 my_print(False, 'MODEL_POST_IMAGE_DIR = ', MODEL_POST_IMAGE_DIR)
 
@@ -89,21 +89,15 @@ nd_array_uint8_HWC3 = mx.image.imread(a_file_name)
 nd_array_f32_HWC3 = nd_array_uint8_HWC3.astype("float32")
 nd_array_f3201_HWC3 = nd_array_f32_HWC3/255
 
+# Make CHW
+nd_array_f3201_C3HW = nd.moveaxis(nd_array_f3201_HWC3, 2, 0)
 
-# make it gray
-gray_aug = mx.image.RandomGrayAug(p=1)
-
-# Use the RandomGrayAug Image Augment routine to convert to Grayscale
-aug = mx.image.RandomGrayAug(p=1)
-nd_array_f3201_HWC3 = aug(nd_array_f3201_HWC3)
-# This just sets all three channels to same value.
-my_print(False, 'nd_array_f3201_HWC3.shape = ', nd_array_f3201_HWC3.shape)
-
-nd_array_f3201_HWC1 = nd_array_f3201_HWC3[:,:,0] # can pick any channel
-my_print(False, 'nd_array_f3201_HWC1.shape = ', nd_array_f3201_HWC1.shape)
 
 # make batch
-in_img_batch = nd_array_f3201_HWC1.expand_dims(axis=0)
+in_img_batch = nd_array_f3201_C3HW.expand_dims(axis=0)
+print('in_img_batch.shape = ', in_img_batch.shape)
+
+
 
 
 # rotate angle
@@ -116,14 +110,16 @@ out_img_batch = mx.image.imrotate(in_img_batch, the_angle, zoom_out=True)
 
 
 
-# write the rotated image as a png with GR2 suffix to the post rotate crop dir
+# write the rotated image as a png with R2 suffix to the post rotate crop dir
 a_file_name = MODEL_POST_IMAGE_DIR + sys.argv[1]
-a_file_name = a_file_name.replace('.jpg', 'GR2.png')
+a_file_name = a_file_name.replace('.jpg', 'R2.png')
 print('using ', a_file_name, ' as output file')
 
+# matplotlib requires HWC3 or HWC1
+out_img = nd.moveaxis(out_img_batch[0], 0, 2)
 
-#image.save('foo.png')
-#plt.imsave('foo.png', out_img_batch[0].asnumpy(), cmap='Greys')
-plt.imsave(a_file_name, out_img_batch[0].asnumpy(), cmap='gray')
+
+#plt.imsave(a_file_name, out_img_batch[0].asnumpy(), cmap='gray')
+plt.imsave(a_file_name, out_img.asnumpy())
 
 

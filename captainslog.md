@@ -509,4 +509,17 @@ the videos formulas.  I also did the mxnet code in a jupyter notebook again.
 Still working on the mxnet code.  I believe I have an understanding enough to attempt
 to do the rotate using only mxnet again.
 
+20220310
+
+Finally figured out how to do the rotate, albeit not great, and when looking to see
+how to save the results using the mxnet.image api, I noticed a rotate api. lol
+With that said, I updated the gray_rotate.py script to gray_rotate2.py script
+to use the api.  This api zooms out to maintain the same image size while showing
+the new pixels as a result of the rotate.
+
+Last weekend Adrian found this url which uses opencv for lane detection.  It
+seems interesting.  It is [here](https://github.com/utkarshiam/Road-Lane-Detection).
+FWIW, I added some notes how the two routines for rotate using mxnet compares
+with imagemagick.  Note, I did not use a GPU nor did I parallel subregions of
+an image.  The python directory has the timings markdown file.
 

@@ -368,9 +368,9 @@ print('out_img_batch.shape ', out_img_batch.shape)
 out_img = out_img_batch[0,500:699,0:199]
 
 
-# write the rotated image as a png with GR suffix to the post rotate crop dir
+# write the rotated image as a png with GRC suffix to the post rotate crop dir
 a_file_name = MODEL_POST_IMAGE_DIR + sys.argv[1]
-a_file_name = a_file_name.replace('.jpg', 'GR.png')
+a_file_name = a_file_name.replace('.jpg', 'GRC.png')
 print('using ', a_file_name, ' as output file')
 
 # use matplotlib to write file rather than pil
