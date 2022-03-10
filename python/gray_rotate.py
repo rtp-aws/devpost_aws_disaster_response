@@ -8,6 +8,13 @@ from mxnet import nd
 import os
 import math # for pi
 
+# script parameters
+import sys
+
+#
+# for writing tensor back to file
+#
+import matplotlib.pyplot as plt
 
 ###########################################
 # print based upon log level
@@ -268,6 +275,21 @@ def my_rotate(input_image_batch, rotate_matrix, verbose=False):
 #####################################
 
 
+
+#
+# Read script parameters
+#
+
+
+num_params = len(sys.argv)
+
+print('num params = ', num_params)
+if (1 == num_params):
+    print('need to specify filename')
+    exit 
+
+
+
 #
 # setup file system locations
 #
@@ -298,7 +320,10 @@ my_print(False, 'MODEL_POST_IMAGE_DIR = ', MODEL_POST_IMAGE_DIR)
 ###################################
 
 # Load image from file into tensor
-a_file_name = MODEL_RAW_IMAGE_DIR + 'BUS40_SALEM_20220114Z1255.jpg'
+# a_file_name = MODEL_RAW_IMAGE_DIR + 'BUS40_SALEM_20220114Z1255.jpg'
+a_file_name = MODEL_RAW_IMAGE_DIR + sys.argv[1]
+print('using ', a_file_name, ' as input file')
+
 nd_array_uint8_HWC3 = mx.image.imread(a_file_name)
 nd_array_f32_HWC3 = nd_array_uint8_HWC3.astype("float32")
 nd_array_f3201_HWC3 = nd_array_f32_HWC3/255
@@ -335,4 +360,10 @@ my_print(False, 'rotate variable angle nd array is ', rotate_variable_angle)
 # Rotate image
 out_img_batch = my_rotate(in_img_batch, rotate_variable_angle, False)
 
+
+# write the rotated image as a png with GR suffix.
+a_file_name = a_file_name.replace('.jpg', 'GR.png')
+#image.save('foo.png')
+#plt.imsave('foo.png', out_img_batch[0].asnumpy(), cmap='Greys')
+plt.imsave(a_file_name, out_img_batch[0].asnumpy(), cmap='gray')
 
