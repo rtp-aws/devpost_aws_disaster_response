@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 
-
+echo "this script is broken.  the images returned are invalid"
+exit
 
 # simple config
 TOP_DIR="/home/davis/progs/devpost_aws_disaster_response/"
