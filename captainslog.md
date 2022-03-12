@@ -523,3 +523,10 @@ FWIW, I added some notes how the two routines for rotate using mxnet compares
 with imagemagick.  Note, I did not use a GPU nor did I parallel subregions of
 an image.  The python directory has the timings markdown file.
 
+20220311
+
+Tried to build the model using 20 images using my grayscale, rotate, crop method.  I got
+a failure where I did not have enough images.  I redid with 100 images using just the
+mxnet rotate method.  Even used color images.  The first two training sessions failed. The third
+session passed but still has a very low F1 score.
+
