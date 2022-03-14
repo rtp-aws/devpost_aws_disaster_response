@@ -530,3 +530,7 @@ a failure where I did not have enough images.  I redid with 100 images using jus
 mxnet rotate method.  Even used color images.  The first two training sessions failed. The third
 session passed but still has a very low F1 score.
 
+20220314
+
+Finished the presentation for aidaug.org pi day event.
+
