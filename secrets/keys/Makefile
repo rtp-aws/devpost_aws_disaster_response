@@ -36,3 +36,4 @@ decrypt:
 decrypt_tofile:
 	gpg --output devpost-administrator.md --decrypt devpost-administrator.md.gpg
 	gpg --output devpost-jfd.md --decrypt devpost-jfd.md.gpg
+
